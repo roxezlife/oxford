@@ -509,7 +509,10 @@ const AUDIO_BASE='audio/';
 function drv(id){return'https://docs.google.com/uc?export=download&id='+id+'&confirm=t';}
 function auUrl(w){
   const k=(w||'').toLowerCase().trim();
-  // GitHub audio first (fastest)
+  return AUDIO_BASE+encodeURIComponent(k)+'.m4a';
+}
+function auUrlSyn(set){
+  const k=set.map(w=>(w||'').toLowerCase().trim()).join('_ ');
   return AUDIO_BASE+encodeURIComponent(k)+'.m4a';
 }
 let _cw=null;
@@ -517,8 +520,7 @@ function playCur(){fPlay(_cw,['ap-wv']);}
 function playAu(url){if(!url){toast('ไม่มีไฟล์เสียง');return;}playUrl(url,['ap-wv','rap-wv'],null);}
 async function fPlay(word,wIds){
   if(!word)return;
-  const k=(word||'').toLowerCase().trim();
-  const url=AUDIO_BASE+encodeURIComponent(k)+'.m4a';
+  const url=Array.isArray(word)?auUrlSyn(word):auUrl(word);
   playUrl(url,wIds,null);
 }
 function playUrl(url,wIds,fid){
@@ -604,7 +606,7 @@ function renderFlash(){
   document.getElementById('fl-ctr').textContent=(fIdx+1)+'/'+fCards.length;
   const c=fCards[fIdx];
   if(c.type==='word'){document.getElementById('fl-body').innerHTML=wordCardHTML(c);_cw=c.word;document.getElementById('ap-word').textContent=c.word;}
-  else{document.getElementById('fl-body').innerHTML=synCardHTML(c);_cw=c.set[0];document.getElementById('ap-word').textContent=c.set.join(' · ');}
+  else{document.getElementById('fl-body').innerHTML=synCardHTML(c);_cw=c.set;document.getElementById('ap-word').textContent=c.set.join(' · ');}
   document.getElementById('fl-audio').style.display='block';
 }
 function markFlash(res){
@@ -636,7 +638,7 @@ function doRandom(mode){
     if(!SYNS.length){doRandom('words');return;}
     const s=SYNS[Math.floor(Math.random()*SYNS.length)];
     document.getElementById('rand-body').innerHTML=synCardHTML(s);
-    window._rAu=auUrl(s.set[0]);document.getElementById('rap-word').textContent=s.set.join(' · ');
+    window._rAu=auUrlSyn(s.set);document.getElementById('rap-word').textContent=s.set.join(' · ');
   }
   document.getElementById('rand-audio').style.display=window._rAu?'block':'none';
 }
