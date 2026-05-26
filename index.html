@@ -420,9 +420,7 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:'DM Sans'
         <div class="card" style="margin-bottom:12px">
           <div class="clbl">ชื่อผู้เรียน</div>
           <input class="cin" id="cfg-name" type="text" placeholder="ชื่อของคุณ" oninput="saveCfg('name',this.value)">
-          <div class="clbl">GAS Web App URL</div>
-          <input class="cin" id="cfg-gas" type="text" placeholder="https://script.google.com/..." oninput="saveCfg('gasUrl',this.value)">
-          <div class="chint">URL จาก Apps Script → Deploy → Web App</div>
+          <div class="chint" style="margin-bottom:0">ข้อมูลดึงจาก GitHub โดยตรง ไม่ต้องตั้งค่าอะไรเพิ่ม</div>
         </div>
         <div class="card" style="margin-bottom:12px">
           <div class="clbl">คำต่อวัน</div>
@@ -467,53 +465,67 @@ async function init(){
 }
 function hideLoading(){document.getElementById('loading').style.display='none';document.getElementById('app').style.display='flex';}
 
+const DATA_BASE='https://roxezlife.github.io/oxford/';
+
 async function loadData(){
-  const gas=CFG.gasUrl||GAS;toast('กำลังโหลด...');
+  toast('กำลังโหลด...');
   try{
-    const ctrl=new AbortController();const tid=setTimeout(()=>ctrl.abort(),12000);
-    const r=await fetch(gas+'?action=all',{signal:ctrl.signal});clearTimeout(tid);
-    const t=await r.text();
-    const d=JSON.parse(t.replace(/^\)\]\}'\s*/,'').trim());
-    if(d.words&&d.words.length){
-      WORDS=d.words.map(r=>({word:S(r.word),cls:S(r['class']),level:S(r.level).toUpperCase(),meaning:S(r.meaning),example:S(r.example)})).filter(w=>w.word);
-      if(d.synonyms&&d.synonyms.length) SYNS=d.synonyms.map(r=>({set:[r.Word1||'',r.Word2||'',r.Word3||''].map(x=>S(x)).filter(Boolean),meaning:S(r.MeaningTH)})).filter(s=>s.set.length);
-      AMAP=d.audioMap||{};
-      const na=Object.keys(AMAP).length;
-      document.getElementById('cfg-info').textContent=WORDS.length+' คำ | '+SYNS.length+' Synonym | '+na+' เสียง';
-      applyHdr();renderHome();toast('✓ '+WORDS.length+' คำ + '+na+' เสียง');
+    const ctrl=new AbortController();
+    const tid=setTimeout(()=>ctrl.abort(),15000);
+    const [rw,rs]=await Promise.all([
+      fetch(DATA_BASE+'words.json',{signal:ctrl.signal}),
+      fetch(DATA_BASE+'synonyms.json',{signal:ctrl.signal})
+    ]);
+    clearTimeout(tid);
+    const [dw,ds]=await Promise.all([rw.json(),rs.json()]);
+    if(dw&&dw.length){
+      WORDS=dw.map(r=>({
+        word:S(r.word),cls:S(r['class']),
+        level:S(r.level).toUpperCase(),
+        meaning:S(r.meaning),example:S(r.example)
+      })).filter(w=>w.word);
+      SYNS=ds.map(r=>({
+        set:[r.w1||'',r.w2||'',r.w3||''].map(x=>S(x)).filter(Boolean),
+        meaning:S(r.meaning)
+      })).filter(s=>s.set.length);
+      document.getElementById('cfg-info').textContent=
+        WORDS.length+' คำ | '+SYNS.length+' Synonym';
+      applyHdr();renderHome();
+      toast('✓ '+WORDS.length+' คำ + '+SYNS.length+' Synonym');
     }else throw new Error('empty');
   }catch(e){
     if(!WORDS.length)WORDS=SAMPLE_W;
-    document.getElementById('cfg-info').textContent='offline: '+WORDS.length+' คำ | '+SYNS.length+' Synonym';
-    applyHdr();renderHome();toast('คำศัพท์โหลดไม่ได้ ใช้ offline');hideLoading();
+    document.getElementById('cfg-info').textContent=
+      'offline: '+WORDS.length+' คำ | '+SYNS.length+' Synonym';
+    applyHdr();renderHome();
+    toast('โหลดไม่ได้ ใช้ offline');
+    hideLoading();
   }
 }
 
 function S(x){return String(x||'').trim();}
 function esc(s){const d=document.createElement('div');d.textContent=String(s||'');return d.innerHTML;}
+const AUDIO_BASE='https://roxezlife.github.io/oxford/audio/';
 function drv(id){return'https://docs.google.com/uc?export=download&id='+id+'&confirm=t';}
-function auUrl(w){const k=(w||'').toLowerCase().trim();if(_ac[k])return drv(_ac[k]);if(AMAP[k])return drv(AMAP[k]);return null;}
+function auUrl(w){
+  const k=(w||'').toLowerCase().trim();
+  // GitHub audio first (fastest)
+  return AUDIO_BASE+encodeURIComponent(k)+'.m4a';
+}
 let _cw=null;
 function playCur(){fPlay(_cw,['ap-wv']);}
 function playAu(url){if(!url){toast('ไม่มีไฟล์เสียง');return;}playUrl(url,['ap-wv','rap-wv'],null);}
 async function fPlay(word,wIds){
-  if(!word)return;const k=(word||'').toLowerCase().trim();
-  if(_ac[k]){playUrl(drv(_ac[k]),wIds,_ac[k]);return;}
-  if(AMAP[k]){playUrl(drv(AMAP[k]),wIds,AMAP[k]);return;}
-  const gas=CFG.gasUrl||GAS;
-  try{
-    const r=await fetch(gas+'?action=word&word='+encodeURIComponent(k));
-    const d=await r.json();
-    if(d.fileId){_ac[k]=d.fileId;playUrl(drv(d.fileId),wIds,d.fileId);}
-    else toast('ไม่มีไฟล์เสียง "'+word+'"');
-  }catch(e){toast('โหลดเสียงไม่ได้');}
+  if(!word)return;
+  const k=(word||'').toLowerCase().trim();
+  const url=AUDIO_BASE+encodeURIComponent(k)+'.m4a';
+  playUrl(url,wIds,null);
 }
 function playUrl(url,wIds,fid){
   const el=document.getElementById('aud');
   el.type='audio/mp4';el.src=url;
-  el.onerror=()=>{if(fid){el.src='https://drive.google.com/uc?export=view&id='+fid;el.onerror=()=>toast('เล่นไม่ได้');el.load();}else toast('เล่นไม่ได้');};
+  el.onerror=()=>toast('ไม่มีไฟล์เสียงสำหรับคำนี้');
   el.oncanplay=null;el.load();
-  // play triggered by user gesture directly via button
   el.addEventListener('canplay',function onReady(){el.removeEventListener('canplay',onReady);el.play().catch(()=>{});},{once:true});
   (wIds||[]).forEach(id=>{const w=document.getElementById(id);if(w){w.classList.add('go');setTimeout(()=>w.classList.remove('go'),3500);}});
 }
