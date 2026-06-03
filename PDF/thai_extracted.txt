@@ -1,0 +1,527 @@
+﻿=== แหกโค้ง 1 เมษา (14 pages) ===
+Final 
+Round 
+1
+
+PRIORITIZATION, DELEGATION AND STAFF MANAGEMENT 
+ 
+PRIORITIZATION  
+You need to… decide which patient is sickest or healthiest.  
+• 
+Be sure you know which one you’re looking for  
+EXAMPLES: 
+o There’s been a disaster in your town and you have to discharge one of the 
+following people to make room for incoming wounded, which patient would you 
+discharge? Highest priority or lowest priority? LOWEST 
+o You receive report on all of the following four patients, which patient will you 
+check first before you get out of report? Highest priority or lowest priority? 
+HIGHEST 
+ 
+The answer will always have four parts. 
+• 
+Age 
+• 
+Gender 
+• 
+Diagnosis 
+• 
+Modifying phrase  
+ 
+EXAMPLES:  
+10-year-old male with hypospadias whose throwing out bile stained emesis.  
+ 
+* Two of those are always irrelevant and you do NOT use them in your answer, 
+EXCEPT in pediatric question.  
+• 
+Age  
+• 
+Gender 
+ 
+* Diagnosis and the Modifying phrase are both important. Which is MORE 
+important?  
+• Modifying phrase is always more important  
+ 
+EXAMPLES: 
+o The patient had angina pectoris versus myocardial infarction; who is the 
+higher priority patient? MI.  
+o The patient with angina pectoris + with unstable VS versus MI with stable 
+VS? Angina pectoris with unstable VS. 
+ 
+THIS IS WHY YOU CANNOT USE ABC’S! 
+ 
+ 
+ 
+
+THE RULES FOR PRIORITIZATION 
+ 
+1. ACUTE BEATS CHRONIC 
+ 
+Example: If you have the following patients, who is the highest priority?  
+a. CHF 
+b. COPD 
+c. Appendicitis  
+ 
+Appendicitis, because it’s acute versus the others which are chronic. 
+ 
+If you used the ABC’s à COPD à WRONG!  
+ 
+2. FRESH POST-OP (FIRST 12 HOURS) BEATS MEDICAL OR OTHER SURGICAL 
+ 
+Example: Who is your highest priority patient?  
+a. COPD 
+b. Acute Appendicitis  
+c. CHF 
+d. 2 hr post-op cholecystectomy 
+e. 2 day post-op CABG  
+f. Radical neck dissection 
+g. Bilateral above the knee amputation 
+h. Right frontal craniotomy  
+ 
+2 hr post op cholecystectomy, because they are FRESH post op.  
+ 
+Doesn’t matter how bad the surgery is, if you aren’t 12 hours in, you aren’t high risk. You 
+are recovery! 
+ 
+3. UNSTABLE BEATS STABLE 
+ 
+Words to look for in an answer or modifying phase that makes a patient either: 
+ 
+STABLE 
+UNSTABLE 
+“Stable” 
+“Unstable” 
+Chronic Illness 
+Acute Illness 
+Post-op > 12 hours 
+Post-op < 12 hours 
+Local or Regional anesthesia 
+General anesthesia but only in first 12 hrs 
+Lab abnormalities of an A or B level 
+Lab abnormalities of a C or D level 
+“Ready for discharge” 
+“To be discharged” 
+“Admitted longer than 24 hours ago” 
+“Not ready for discharge” 
+“Newly admitted” 
+“Newly diagnosed” 
+“Admitted less than 24 hours ago” 
+Unchanged assessments 
+Changing or changed assessments 
+Experiencing the typical expected signs 
+and symptoms of the disease with which 
+they were diagnosed 
+Experiencing 
+MISTAKE: Do not prioritize based on symptom severity. Prioritize on appropriateness of 
+symptom occurrence.  
+Example: 
+One patient experiencing mild pain versus a patient experiencing severe pain.  
+If the patient has severe colick pain who has kidney stones à This is EXPECTED. 
+If the patient has mild pain who had a CXR à This is UNEXPECTED.  
+Therefore, mild pain is unstable! 
+Learning check à APPLICATION OF THE RULES: 
+ 
+1. Who is the higher priority?  
+a) 16 year old female with meningococcal meningitis who has had a temperature of 103.8F 
+(39C) since admission 3 days ago.  
+b) 67 year old male with IBS who spiked a temperature of 100.3F (37.9C) this afternoon.  
+ 
+Thought process: 
+OPTION A 
+OPTION B 
+Rule out age and gender 
+1. Meningitis = Acute (^) 
+1. IBS = chronic (v) 
+2. No fresh post op 
+2. No fresh post op  
+3. “who has had” = stable (v) 
+“fever” = expected (v) 
+“admission 3 days ago” = stable (v) 
+3. “spiked” = unstable (^) 
+“fever” = unexpected (^) 
+“this afternoon” = unstable (^) 
+B has more ^ than A and they are in the MODIFYING PHRASE. B is the answer. 
+ 
+FOUR THINGS THAT ARE ALWAYS UNSTABLE REGARDLESS OF WHETHER IT IS 
+EXPECTED OR NOT: 
+ 
+1. Hemorrhage 
+o DIC and hemophilia. He’s hemorrhaging.  
+§ 
+Don’t say that you would expect a pt with DIC and hemophilia to hemorrhage, 
+so since it’s expected, it’s low priority. NO, this is a medical emergency!  
+§ 
+Don’t confuse hemorrhage with bleeding. There’s a huge difference.  
+§ 
+“Bleeding” = could be high or lo
+ 
+THREE THINGS THAT RESULT IN A BLACK TAG IN AN UNWITNESSED 
+ACCIDENT: 
+If they have ANY of the three, you gotta go to someone else because they need your 
+help more. 
+1. Pulselessness 
+2. Breathlessness  
+3. Fixed and dilated pupils (even if they are breathing and have a pulse)  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+4. CAUTION: ONLY USE THIS AS A TIE BREAKER 
+The more vital the organ, the higher the priority. It is the organ of the MODIFYING 
+PHRASE! 
+ 
+ORDER OF ORGAN VITALITY 
+1. Brain  
+2. Lung  
+3. Heart  
+4. Liver  
+5. Kidney  
+6. Pancreas  
+ 
+Example: 
+a. CHF with K of 6.6, no EKG changes.  
+b. CRF with creatinine of 24.7 with pink frothy sputum.  
+c. Acute hepatitis with jaundice, increase ammonia level who you cannot arouse  
+d. Angina pectoris with crushing chest pain not relieved by rest or 3 nitroglycerin  
+ 
+ 
+OPTION 
+ACUTE VS CHRONIC 
+STABLE VS UNSTABLE 
+ORGAN SYSTEM 
+A 
+v 
+^ (K level) 
+Heart 
+B 
+v 
+v (expected) 
+^ (unexpected)  
+Lung NOT kidney 
+because of the pink 
+frothy sputum 
+C 
+^ 
+v (jaundice expected) 
+v (ammonia level)  
+^ (LOC unexpected) 
+Brain NOT liver 
+D 
+V 
+v (expected) 
+^ (unexpected) 
+Heart  
+Therefore, C wins because of the tie breaker!!!  
+
+
+=== แหกโค้ง 2 พค (25 pages) ===
+Final round 2
+
+
+
+
+
+
+=== แหกโค้ง 3 พค (38 pages) ===
+Final 
+round 
+3
+
+ 
+Revised 37-page NCLEX Study Guide 
+1. ABCs (Airway, Breathing, Circulation)  
+2. When in distress DO NOT ASSESS! Unless 2nd hand information is received.  
+3. Scenario  
+x Expected outcome with Disease Process  
+o Continue to monitor 
+o Document finding 
+x Unexpected finding with Disease Process  
+o Nursing intervention that must make a difference 
+o Call HCP 
+4. DŝŶŝDĂƐůŽǁ͛Ɛ 
+              1) ABCs (& Pain unrelieved by meds) 
+              2) Safety 
+3) Comfort (Pain) 
+4) Psychological 
+5) Social 
+ 
+6) Spiritual 
+5. STAT words їPick the answer that failing to do so will kill or cause great harm 
+භ Highest Priority 
+භ Most Important 
+භ Immediate Action 
+6. *Least Invasive First* 
+7. Secondhand Info ї Any time you have 2nd hand info, the right answer is assess 
+ͼ UAP  
+ 
+ͼ&ĂŵŝůǇ 
+ͼ Labs  
+ 
+ͼDZ 
+ͼ EKG  
+ 
+ͼWŵĂĐŚŝŶĞ 
+8. Never ever take away the coping mechanism a patient uses during a crisis, except if the mechanism puts the 
+patient or others @ risk 
+9. Eliminate answer choices & DNR 
+10. Never withhold Tx͊/ĨǇŽƵ͛ƌĞůĞĨƚǁŝƚŚƚǁŽĂŶƐǁĞƌĐŚŽices and the options are to Tx, or watch the patient, 
+Pick Tx! 
+ϭϭ͘ŶǇƚŝŵĞƚŚĞƌĞ͛ƐĂƌĞǀĞƌƐĂůĨƌŽŵƚŚĞŶŽƌŵ͕ǇŽƵŵƵƐƚworry! 
+ 
+Ex: rebound tenderness (pain after you relieve pressure) 
+12. Stable Patients 
+ͼ UAP  
+ 
+ͼ>WE  
+ 
+ͼEĞǁŶƵƌƐĞ 
+ͼ Graduate Nurse 
+ͼ&ůŽĂƚNurse  
+ͼdƌĂǀĞůŶƵƌƐĞ 
+ϭϯ͘ŶǇƚŝŵĞǇŽƵƐĞĞĞǆĐĞƐƐŝǀĞĨŝŶĚŝŶŐƐ͕dŚĂƚ͛ƐŶŽƚŶŽƌŵĂů͊ 
+14. Always empower your patient 
+ϭϱ͘/ĨĂƋƵĞƐƚŝŽŶŚĂƐ͞͕͟ƉŝĐŬĂŶĂŶƐǁĞƌƚŚĂƚŚ
+ 
+Default Answers 
+1. Give meds either 1 hour before meal or 2 hours after meal 
+2. Give antacids 1 hour before med or 4 hours after med 
+3. When in doubt pick K (potassium) 
+4. 2 ʹ 3 L of fluids 
+5. When in doubt pick answer that has you stay with patient 
+6. Anytime you see restless & љ level of consciousness = early sign always pick 
+7. Head of Bead ї30-45 degrees for any neuro patient 
+8. Elderly with acute onset confusion ї UTI 
+9. Secretions will turn Orange/Red for meds 
+10. Anytime you have GI problem/exacerbation = NPO 
+11.  All surgeries 
+ 
+1st 24 hrs ʹ bleeding 
+ 
+     48 hrs ʹ infection  
+ϭϮ͘ŚĞĐŬĚĂŝůǇǁĞŝŐŚƚƐŝĨŝƚ͛ƐĂĨůƵŝĚƉƌŽďůĞŵ 
+13. Lateral position for maternity 
+14. Remove answer choices thĂƚĂƌĞ͚ĂďƐŽůƵƚĞƐ͛ 
+ 
+Kaplan NCLEX Strategies 
+Kaplan RN Decision Tree 
+Step 1 ʹ Can you identify the topic of the question 
+Step 2 ʹ Are the answers assessment (get data) or implementation (to effect change)? 
+Step 3 ʹ Apply Maslow: Are the answers physical or psychosocial? (Physical trumps psychosocial) 
+Step 4 ʹ Are the answer choices related to ABCs? 
+Step 5 ʹ What is the outcome of each of the remaining answers? 
+ 
+Rules for Delegation 
+RN ASSIGNMENT 
+භ Cannot delegate assessment, teaching, or nursing judgement 
+LPN/LVN ASSIGNMENT 
+භ Assign stable with expected outcomes 
+UAP ASSIGNMENT 
+භ Delegate standard, unchanging procedures 
+ 
+Five Rights of Delegation 
+RIGHT TASK ʹ scope of practice, stable client 
+RIGHT CIRCUMSTANCES ʹ workload 
+RIGHT PERSON ʹ scope of pra
+ 
+Who Do You See First? 
+ 
+Consider: 
+ͼ Unstable vs. Stable 
+ 
+ͼ Acute vs. Chronic 
+ͼ Unexpected vs. Expected 
+ͼĐƚƵĂůǀƐ͘WŽƚĞŶƚŝĂů 
+ͼ ABCs 
+Common NCLEX Traps 
+ 
+ͼŽŶŽƚĂƐŬ͞tŚǇ͍͟  
+ 
+ 
+ 
+ͼŽŶŽƚ͚ĚŽŶŽƚŚŝŶŐ͛͘ 
+ 
+ͼŽŶŽƚůĞĂǀĞƚŚĞĐůŝĞŶƚ͘ 
+ 
+ 
+ 
+ͼŽŶŽƚƌĞĂĚŝŶƚŽƚŚĞƋƵĞƐƚŝŽŶ 
+ 
+ͼŽŶŽƚƉĞƌƐƵĂĚĞƚŚĞĐůŝĞŶƚ͘  
+ 
+ 
+ͼŽ not pass the buck. 
+ 
+ͼŽŶŽƚƐĂǇ͕͞ŽŶ͛ƚǁŽƌƌǇ͊͟ 
+ 
+Strategies 
+භ Only use textbook nursing ʹ textbook knowledge 
+භ WĂŝŶŝƐƉƐǇĐŚŽƐŽĐŝĂů͕ƵŶůĞƐƐ͕ŝƚ͛ƐƐĞǀĞƌĞ͕ĂĐƵƚĞ͕ΘƵŶƌĞůĞŶƚŝŶŐ 
+භ /Ĩŝƚ͛ƐĂƉŽƐŝƚŝŽŶƋƵĞƐƚŝŽŶ͕ŝƐŝƚŐŽŝŶŐƚŽƉƌĞǀĞŶƚŽƌƉƌŽŵŽƚĞƐŽŵĞƚŚŝŶŐʹ position, prevent, promote 
+භ Teaching/learning ʹ use T/F on each answer 
+භ Risk Questions ʹ use Risk Factors 
+භ If the answers have an absolute in them, do not pick them  
+භ YƵĞƐƚŝŽŶƚŚĂƚŚĂǀĞƚŚĞƉŚƌĂƐĞ͚ŶĚdŚĞŶ͛ʹ did they miss something 
+ 
+Important Lab Values 
+WBC 
+4K ʹ 11K 
+RBC 
+4 ʹ 6 
+Hgb 
+12 ʹ 16, 0r 12-18 
+Hct 
+36 ʹ 48, or 37-52 
+Plt 
+150K ʹ 400K 
+BUN 
+8 ʹ  20, or 7-22 
+Cr/Lithium 
+0.6 ʹ 1.2 
+Urine 
+Clearance 
+85 ʹ 135, 
+(GFR)=maintain above 
+60 
+Uric Acid 
+250 ʹ 750 mg 
+Na 
+135 ʹ 145 
+Cl 
+98 ʹ 106 
+Ca 
+8.5 ʹ 10.5 
+K 
+3.5 ʹ 5.0 
+PO 
+2.5 ʹ 4.5g 
+Mag 
+1.5 ʹ 2.5, 4-7 if pregnant 
+and receiving Toco 
+ 
+Warfarin 
+INR 
+2.0 ʹ 3.5 
+Heparin 
+PT 
+10 ʹ 13 Seconds 
+ 
+PTT 
+25 ʹ 35 Seconds 
+ 
+Therapeutic PTT: 1.5 ʹ 2x the normal value (46 ʹ 76 Seconds) 
+ 
+ 
+
+ 
+Cholesterol 
+HDL 
+x > 
+50 
+LDL 
+x < 
+100 
+Triglycerides 
+x < 
+150 
+Total Cholesterol 
+x < 
+200 
+ 
+Therapeutic Ranges 
+Dilantin Theophylline 
+Acetaminophen 
+10 ʹ 20 
+Digoxin 
+0.5 ʹ 2.0 
+ 
+Albumin level 3.5 to 5.5 
+ 
+Acid-Base Balance 
+From the ass (diarrhea)  
+ʹMetabolic Acidosis 
+From the mouth (vomitus) 
+ʹMetabolic Alkalosis 
+ 
+Potassium & Alkalosis ʹ ALKALOSIS: K is LOW 
+ʹ Acidosis is just the opposite: K is High  
+ 
+Arterial Blood Gases 
+1. WƌŝŽƌƚŽĚƌĂǁŝŶŐĂŶ'͕ƉĞƌĨŽƌŵƚŚĞůůĞŶ͛ƐdĞƐƚƚŽĐŚĞĐŬĨŽƌƐƵĨĨŝĐŝĞŶƚďůŽŽĚĨůŽǁ 
+2. When drawing an ABG, the blood needs to be put in a heparinized tube.  
+භ Ensuring there are no bubbles.  
+3. Put on ice immediately after drawing, with a label. 
+භ  The label should indicate if the pt was on room air, or how many liters of O2.  
+ 
+General Notes 
+භ The person who hyperventilates is most likely to experience respiratory alkalosis.  
+ 
+Antidotes 
+භ Aspirin  
+ 
+ 
+ 
+ 
+Activated Charcoal 
+භ Coumadin (Warfarin)   
+ 
+  
+Vitamin K 
+භ Heparin  
+ 
+ 
+ 
+   
+Protamine Sulfate 
+භ Tylenol (Acetaminophen) 
+ 
+   
+Mucomyst (acetylcysteine) ʹ administered orally 
+භ Digoxin (Lanoxin) 
+ 
+ 
+   
+Digibind (immune Fab) 
+භ Opioids  
+ 
+ 
+ 
+  
+Narcan 
+භ Iron overdose  
+ 
+ 
+  
+Deferoxamine 
+භ PCP 
+ 
+ 
+ 
+ 
+  
+Activated charcoal 
+භ Magnesium Sulfate 
+ 
+ 
+  
+Calcium Gluconate 
+භ TPA 
+ 
+ 
+ 
+ 
+  
+Aminocaproic acid 
+භ Pancuronium Br (NM blocking agent) 
+  
+Neostigmine/Atropine 
+ 
+Blood 
+For blood types: 
+භ "O" is the universal donor (remember "o" in donor) 
+භ "AB"
+

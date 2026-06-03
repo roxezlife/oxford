@@ -211,6 +211,10 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:'Sarabun'
 .fcard-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
 .fcard-chip{font-family:'Inter',sans-serif;font-size:20px;font-weight:700;color:var(--gd);background:var(--gd2);border:1px solid rgba(212,168,75,.2);padding:8px 16px;border-radius:99px}
 @media (orientation:landscape) and (max-height:500px){@media (orientation:landscape) and (max-height:500px){.wword{font-size:32px}.wmean{font-size:20px}.sc-foot{padding:8px 16px calc(8px + env(safe-area-inset-bottom,0px))}.wcard{padding:16px}.aplayer{padding:8px 12px}}
+.gkh-choices{display:flex;flex-direction:column;gap:8px}
+.gkh-choices button{flex:1;min-height:52px}
+.gkh-passage{background:var(--sf2);border:1px solid var(--br2);border-left:3px solid var(--gd);border-radius:10px;padding:12px 14px;margin-bottom:10px;font-size:13px;line-height:1.8;color:var(--tx2);white-space:pre-wrap}
+.gkh-qbody{font-size:15px;line-height:1.7;color:var(--tx);white-space:pre-wrap;word-break:break-word}
 </style>
 </head>
 <body>
@@ -231,33 +235,77 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:'Sarabun'
     <!-- HOME -->
     <div id="sc-home" class="sc on">
       <div class="sc-body">
-        <div class="hero">
-          <div class="hero-date" id="home-date"></div>
-          <div class="hero-name">สวัสดี <em id="home-name">ผู้เรียน</em></div>
-          <div class="prog-row"><span class="prog-lbl" id="home-ptxt">0 / 0 คำ</span><span class="prog-pct" id="home-ppct">0%</span></div>
+        <!-- Header row -->
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+          <div>
+            <div style="font-size:11px;color:var(--tx2)" id="home-date"></div>
+            <div style="font-size:15px;font-weight:700;margin-top:2px">สวัสดี <span id="home-name" style="color:var(--gd)">ผู้เรียน</span></div>
+          </div>
+          <div class="streak" id="home-streak">🔥 0 วัน</div>
+        </div>
+        <!-- 2 mode cards -->
+        <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:14px">
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:18px 20px;gap:16px" onclick="goSc('vocab')">
+            <div class="mc-ico" style="width:52px;height:52px;border-radius:14px;flex-shrink:0">
+              <svg viewBox="0 0 24 24" style="width:24px;height:24px"><path d="M13 2L4.5 13H11L10 22L19.5 11H13Z"/></svg>
+            </div>
+            <div style="flex:1">
+              <div class="mc-t" style="font-size:16px;margin-bottom:3px">คำศัพท์</div>
+              <div class="mc-d">Oxford 3000</div>
+              <div style="font-size:11px;color:var(--gd);font-weight:600;margin-top:4px" id="home-ptxt">0/0 คำ</div>
+            </div>
+            <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:18px 20px;gap:16px" onclick="goSc('gkh')">
+            <div class="mc-ico" style="width:52px;height:52px;border-radius:14px;flex-shrink:0">
+              <svg viewBox="0 0 24 24" style="width:22px;height:22px"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+            </div>
+            <div style="flex:1">
+              <div class="mc-t" style="font-size:16px;margin-bottom:3px">ก.พ.</div>
+              <div class="mc-d">English Exam</div>
+              <div style="font-size:11px;color:var(--tx2);font-weight:600;margin-top:4px">1,735 ข้อ</div>
+            </div>
+            <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+        </div>
+        <!-- Progress -->
+        <div class="card" style="margin-bottom:12px;padding:14px 16px">
+          <div class="prog-row" style="margin-bottom:6px">
+            <span class="prog-lbl">ความก้าวหน้า</span>
+            <span class="prog-pct" id="home-ppct">0%</span>
+          </div>
           <div class="prog-track"><div class="prog-fill" id="home-pbar" style="width:0%"></div></div>
         </div>
-        <div class="sec">เริ่มเลย</div>
-        <div class="menu2">
-          <div class="mc hi" onclick="goSc('flash');startFlash()">
-            <div class="mc-ico"><svg viewBox="0 0 24 24"><path d="M13 2L4.5 13H11L10 22L19.5 11H13Z"/></svg></div>
-            <div class="mc-t">แฟลชวันนี้</div><div class="mc-d">7 คำ + 3 Synonym</div>
+        <div id="home-recent" style="display:none"></div>
+      </div>
+    </div>
+
+    <!-- VOCAB HUB -->
+    <div id="sc-vocab" class="sc">
+      <div class="sc-body">
+        <div class="sec" style="margin-bottom:12px">คำศัพท์ Oxford 3000</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:16px 18px;gap:14px" onclick="goSc('flash');startFlash()">
+            <div class="mc-ico" style="width:44px;height:44px;border-radius:12px;flex-shrink:0"><svg viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M13 2L4.5 13H11L10 22L19.5 11H13Z"/></svg></div>
+            <div style="flex:1"><div class="mc-t">แฟลชวันนี้</div><div class="mc-d">คำใหม่ + ทบทวน</div></div>
+            <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
           </div>
-          <div class="mc" onclick="goSc('rand');doRandom('mixed')">
-            <div class="mc-ico"><svg viewBox="0 0 24 24"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg></div>
-            <div class="mc-t">สุ่มคำ</div><div class="mc-d">สุ่มจากคลัง</div>
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:16px 18px;gap:14px" onclick="goSc('test');showTStart()">
+            <div class="mc-ico" style="width:44px;height:44px;border-radius:12px;flex-shrink:0"><svg viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 12h6M9 16h4"/></svg></div>
+            <div style="flex:1"><div class="mc-t">ทดสอบ</div><div class="mc-d">Words + Synonym</div></div>
+            <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
           </div>
-          <div class="mc" onclick="goSc('test');showTStart()">
-            <div class="mc-ico"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 12h6M9 16h4"/></svg></div>
-            <div class="mc-t">ทดสอบ</div><div class="mc-d">10 ข้อ</div>
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:16px 18px;gap:14px" onclick="goSc('rand');doRandom('mixed')">
+            <div class="mc-ico" style="width:44px;height:44px;border-radius:12px;flex-shrink:0"><svg viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg></div>
+            <div style="flex:1"><div class="mc-t">สุ่มคำ</div><div class="mc-d">สุ่มจากคลัง</div></div>
+            <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
           </div>
-          <div class="mc" onclick="goSc('srch')">
-            <div class="mc-ico"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg></div>
-            <div class="mc-t">ค้นหาคำ</div><div class="mc-d">ค้นหาความหมาย</div>
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:16px 18px;gap:14px" onclick="goSc('srch')">
+            <div class="mc-ico" style="width:44px;height:44px;border-radius:12px;flex-shrink:0"><svg viewBox="0 0 24 24" style="width:20px;height:20px"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg></div>
+            <div style="flex:1"><div class="mc-t">ค้นหาคำ</div><div class="mc-d">ค้นหาความหมาย</div></div>
+            <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
           </div>
         </div>
-        <div class="sec">ล่าสุด</div>
-        <div class="card" id="home-recent"><div class="empty" style="padding:10px 0"><span class="empty-ico">📖</span>เริ่มเรียนเพื่อดูประวัติ</div></div>
       </div>
     </div>
 
@@ -326,7 +374,7 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:'Sarabun'
       <div id="t-start" style="flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:16px">
         <div class="sec" style="margin-bottom:12px">เลือกประเภท</div>
         <div class="menu2">
-          <div class="mc hi" onclick="startTest('mixed')">
+          <div class="mc" onclick="startTest('mixed')">
             <div class="mc-ico"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
             <div class="mc-t">ผสม</div><div class="mc-d">Words + Synonym</div>
           </div>
@@ -392,21 +440,90 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:'Sarabun'
     <!-- STATS -->
     <div id="sc-stats" class="sc">
       <div class="sc-body">
-        <div class="sec" style="margin-bottom:12px">สถิติ</div>
-        <div class="stgrid">
+        <div class="sec" style="margin-bottom:12px">คำศัพท์</div>
+        <div class="stgrid" style="margin-bottom:12px">
           <div class="stbox gd"><div class="stn" id="st-learn">0</div><div class="stl">คำที่เรียน</div></div>
           <div class="stbox bl"><div class="stn" id="st-streak">0</div><div class="stl">วันติดต่อกัน 🔥</div></div>
           <div class="stbox gr"><div class="stn" id="st-ok">0</div><div class="stl">ตอบถูก</div></div>
           <div class="stbox rd"><div class="stn" id="st-fail">0</div><div class="stl">ตอบผิด</div></div>
         </div>
-        <div class="card" style="margin-bottom:12px">
+        <div class="card" style="margin-bottom:20px">
           <div class="prog-row" style="margin-bottom:7px"><span class="prog-lbl">ความแม่นยำ</span><span class="prog-pct" id="st-acc">0%</span></div>
           <div class="prog-track"><div class="prog-fill" id="st-acc-bar" style="width:0%"></div></div>
         </div>
-        <div class="sec" style="margin-bottom:8px">ประวัติล่าสุด</div>
-        <div class="card" id="st-hist"><div class="empty" style="padding:10px 0"><span class="empty-ico">📋</span>ยังไม่มีประวัติ</div></div>
-        <div style="margin:12px 0 24px">
+        <div class="sec" style="margin-bottom:12px">ก.พ. English</div>
+        <div class="stgrid" style="margin-bottom:12px">
+          <div class="stbox gd"><div class="stn" id="st-gkh-total">0</div><div class="stl">ทำไปแล้ว</div></div>
+          <div class="stbox gr"><div class="stn" id="st-gkh-ok">0</div><div class="stl">ตอบถูก</div></div>
+          <div class="stbox rd"><div class="stn" id="st-gkh-fail">0</div><div class="stl">ตอบผิด</div></div>
+          <div class="stbox bl"><div class="stn" id="st-gkh-acc">0%</div><div class="stl">ความแม่นยำ</div></div>
+        </div>
+        <div class="card" style="margin-bottom:20px">
+          <div class="prog-row" style="margin-bottom:7px"><span class="prog-lbl">ความแม่นยำ ก.พ.</span><span class="prog-pct" id="st-gkh-acc2">0%</span></div>
+          <div class="prog-track"><div class="prog-fill" id="st-gkh-bar" style="width:0%"></div></div>
+        </div>
+        <div style="margin:0 0 24px">
           <button class="btn bout" style="width:100%;padding:14px;border-radius:12px" onclick="resetProg()">ล้างข้อมูลทั้งหมด</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ก.พ. ENGLISH -->
+    <div id="sc-gkh" class="sc">
+      <!-- Menu -->
+      <div id="gkh-start" style="flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:16px">
+        <div class="sec" style="margin-bottom:12px">ข้อสอบ ก.พ. ภาษาอังกฤษ</div>
+        <div class="menu2">
+          <div class="mc" onclick="startGkh('conv')">
+            <div class="mc-ico"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+            <div class="mc-t">บทสนทนา</div><div class="mc-d">Conversation ~20%</div>
+          </div>
+          <div class="mc" onclick="startGkh('gram')">
+            <div class="mc-ico"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 10h12M4 14h10M4 18h6"/></svg></div>
+            <div class="mc-t">ไวยากรณ์</div><div class="mc-d">Grammar ~20%</div>
+          </div>
+          <div class="mc" onclick="startGkh('read')">
+            <div class="mc-ico"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
+            <div class="mc-t">การอ่าน</div><div class="mc-d">Reading ~40%</div>
+          </div>
+          <div class="mc" onclick="startGkh('vocab')">
+            <div class="mc-ico"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+            <div class="mc-t">คำศัพท์</div><div class="mc-d">Vocabulary ~20%</div>
+          </div>
+        </div>
+        <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:16px 18px;gap:14px;margin-top:10px;border-color:rgba(212,168,75,.35);background:var(--gd2)" onclick="startGkh('all')">
+          <div class="mc-ico" style="width:44px;height:44px;border-radius:12px;flex-shrink:0;background:rgba(212,168,75,.2);color:var(--gd)"><svg viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg></div>
+          <div style="flex:1"><div class="mc-t" style="color:var(--gd)">สลับทุกหมวด</div><div class="mc-d">ผสมทุกหัวข้อแบบสุ่ม</div></div>
+          <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--gd);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+        <div id="gkh-load-info" style="text-align:center;font-size:12px;color:var(--tx2);padding:8px 0"></div>
+      </div>
+      <!-- Quiz -->
+      <div id="gkh-quiz" style="display:none;flex-direction:column;flex:1;overflow:hidden">
+        <div style="flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:16px 16px 0">
+          <div class="tprog"><div class="tprogf" id="gkh-prog" style="width:0%"></div></div>
+          <div class="tmeta"><span>ข้อ <b id="gkh-qn">1</b>/<b id="gkh-tot">15</b></span><span>✓ <b id="gkh-sc">0</b></span></div>
+          <div class="qcard"><div id="gkh-qbody"></div></div>
+          <div class="fb" id="gkh-fb"></div>
+        </div>
+        <div style="flex-shrink:0;display:flex;flex-direction:column;gap:10px;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:var(--bg);border-top:1px solid var(--br)">
+          <div class="gkh-choices" id="gkh-choices"></div>
+          <button class="bnext" id="gkh-next" onclick="nextGkhQ()" style="display:block;visibility:hidden;flex-shrink:0">ข้อถัดไป →</button>
+        </div>
+      </div>
+      <!-- Result -->
+      <div id="gkh-result" style="display:none;flex-direction:column;flex:1;overflow-y:auto">
+        <div class="rh"><div class="rn" id="gkhr-n">0</div><div class="rof">จาก <span id="gkhr-tot">15</span> ข้อ</div><div class="rmsg" id="gkhr-msg">ดีมาก!</div></div>
+        <div class="rgrid">
+          <div class="rbox ok"><div class="rboxn" id="gkhr-c">0</div><div class="rboxl">ถูก</div></div>
+          <div class="rbox fl"><div class="rboxn" id="gkhr-w">0</div><div class="rboxl">ผิด</div></div>
+        </div>
+        <div id="gkhr-wrong-wrap" style="padding:0 16px;margin-bottom:12px;display:none">
+          <div class="card"><div class="sec" style="margin-bottom:8px">คำที่ตอบผิด</div><div id="gkhr-wrong-list"></div></div>
+        </div>
+        <div class="rbtns">
+          <button class="bgold" style="flex:1;border-radius:10px" onclick="startGkh(window._gkhMode)">ทำใหม่</button>
+          <button class="btn bout" onclick="showGkhStart()">เมนู</button>
         </div>
       </div>
     </div>
@@ -439,10 +556,6 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:'Sarabun'
 
   <div id="nav">
     <button class="nb on" data-sc="home" onclick="goSc('home')"><svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H14v-5h-4v5H4a1 1 0 01-1-1V9.5z"/></svg>หน้าหลัก</button>
-    <button class="nb" data-sc="flash" onclick="goSc('flash')"><svg viewBox="0 0 24 24"><path d="M13 2L4.5 13H11L10 22L19.5 11H13Z"/></svg>แฟลช</button>
-    <button class="nb" data-sc="rand" onclick="goSc('rand')"><svg viewBox="0 0 24 24"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>สุ่มคำ</button>
-    <button class="nb" data-sc="test" onclick="goSc('test')"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 12h6M9 16h4"/></svg>ทดสอบ</button>
-    <button class="nb" data-sc="srch" onclick="goSc('srch')"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>ค้นหา</button>
     <button class="nb" data-sc="stats" onclick="goSc('stats')"><svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>สถิติ</button>
     <button class="nb" data-sc="cfg" onclick="goSc('cfg')"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06-.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>ตั้งค่า</button>
   </div>
@@ -451,11 +564,14 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:'Sarabun'
 <audio id="aud" preload="none"></audio>
 <div id="toast" style="opacity:0"></div>
 
+<script src="gkh_english.js"></script>
 <script>
 const GAS='https://script.google.com/macros/s/AKfycbzc5_XNMTolhs2DXVWVjK67MNqSZR6b_s159j_KrvaG9LcnA5U6AkcvbfbyJeTtEuyM/exec';
 let WORDS=[],SYNS=[],AMAP={},PROG=[],CFG={};
 let fCards=[],fIdx=0,tQs=[],tIdx=0,tOk=0,tFail=[];
 window._rMode='mixed';window._rAu=null;window._tMode='mixed';
+let GKH_QS=null,gkh_qs=[],gkh_idx=0,gkh_ok=0,gkh_fail=[];
+window._gkhMode='conv';
 const _ac={};
 
 async function init(){
@@ -536,8 +652,9 @@ function goSc(id){
   document.querySelectorAll('.sc').forEach(s=>s.classList.remove('on'));
   document.querySelectorAll('.nb').forEach(b=>b.classList.remove('on'));
   document.getElementById('sc-'+id).classList.add('on');
-  document.querySelector('.nb[data-sc="'+id+'"]').classList.add('on');
+  const nb=document.querySelector('.nb[data-sc="'+id+'"]');if(nb)nb.classList.add('on');
   if(id==='stats')updateStats();if(id==='home')renderHome();
+  if(id==='gkh')ensureGkh();
 }
 
 function renderHome(){
@@ -545,8 +662,10 @@ function renderHome(){
   const d=new Date();
   document.getElementById('home-date').textContent='วัน'+days[d.getDay()]+' '+d.getDate()+'/'+(d.getMonth()+1)+'/'+(d.getFullYear()+543);
   document.getElementById('home-name').textContent=CFG.name||'ผู้เรียน';
+  const streak=calcStreak();
+  const streakEl=document.getElementById('home-streak');if(streakEl)streakEl.textContent='🔥 '+streak+' วัน';
   const ln=[...new Set(PROG.map(p=>p.word))].length,tot=WORDS.length||1,pct=Math.min(100,Math.round(ln/tot*100));
-  document.getElementById('home-ptxt').textContent='เรียนแล้ว '+ln+' จาก '+tot+' คำ';
+  document.getElementById('home-ptxt').textContent=ln+'/'+tot+' คำ';
   document.getElementById('home-ppct').textContent=pct+'%';
   document.getElementById('home-pbar').style.width=pct+'%';
   const rec=[...PROG].reverse().slice(0,5),el=document.getElementById('home-recent');
@@ -758,17 +877,28 @@ function doSearch(){
 function clearSrch(){document.getElementById('srch-in').value='';doSearch();}
 
 function updateStats(){
-  const ln=[...new Set(PROG.map(p=>p.word))].length;
+  // Vocab
+  const ln=[...new Set(PROG.filter(p=>p.mode!=='gkh').map(p=>p.word))].length;
   const tests=PROG.filter(p=>p.mode==='test_ok'||p.mode==='test_fail');
   const ok=tests.filter(p=>p.result==='ok').length,fail=tests.filter(p=>p.result==='fail').length;
   const acc=(ok+fail)?Math.round(ok/(ok+fail)*100):0;
-  document.getElementById('st-learn').textContent=ln;document.getElementById('st-streak').textContent=calcStreak();
-  document.getElementById('st-ok').textContent=ok;document.getElementById('st-fail').textContent=fail;
-  document.getElementById('st-acc').textContent=acc+'%';document.getElementById('st-acc-bar').style.width=acc+'%';
+  document.getElementById('st-learn').textContent=ln;
+  document.getElementById('st-streak').textContent=calcStreak();
+  document.getElementById('st-ok').textContent=ok;
+  document.getElementById('st-fail').textContent=fail;
+  document.getElementById('st-acc').textContent=acc+'%';
+  document.getElementById('st-acc-bar').style.width=acc+'%';
+  // ก.พ.
+  const gkh=PROG.filter(p=>p.mode==='gkh');
+  const gok=gkh.filter(p=>p.result==='ok').length,gfail=gkh.filter(p=>p.result==='fail').length;
+  const gacc=gkh.length?Math.round(gok/gkh.length*100):0;
+  document.getElementById('st-gkh-total').textContent=gkh.length;
+  document.getElementById('st-gkh-ok').textContent=gok;
+  document.getElementById('st-gkh-fail').textContent=gfail;
+  document.getElementById('st-gkh-acc').textContent=gacc+'%';
+  document.getElementById('st-gkh-acc2').textContent=gacc+'%';
+  document.getElementById('st-gkh-bar').style.width=gacc+'%';
   applyHdr();
-  const rec=[...PROG].reverse().slice(0,30),el=document.getElementById('st-hist');
-  if(!rec.length){el.innerHTML='<div class="empty" style="padding:10px 0"><span class="empty-ico">📋</span>ยังไม่มีประวัติ</div>';return;}
-  el.innerHTML=rec.map(p=>'<div class="hi"><div class="hd '+(p.result==='ok'?'ok':p.result==='fail'?'fl':'ln')+'"></div><div style="flex:1"><div class="hw">'+p.word+'</div><div class="hm">'+mL(p.mode)+'</div></div><div class="ht">'+p.date+'</div></div>').join('');
 }
 
 function fmtD(d){return String(d.getDate()).padStart(2,'0')+'/'+String(d.getMonth()+1).padStart(2,'0')+'/'+d.getFullYear();}
@@ -793,6 +923,134 @@ let _tt;function toast(m){const el=document.getElementById('toast');el.textConte
 
 const SAMPLE_W=[{word:'abandon',cls:'verb',level:'B2',meaning:'ละทิ้ง',example:'They had to abandon their plans.'},{word:'ability',cls:'noun',level:'A2',meaning:'ความสามารถ',example:'She has the ability to speak three languages.'},{word:'achieve',cls:'verb',level:'A2',meaning:'บรรลุ',example:'She worked hard to achieve her goals.'},{word:'action',cls:'noun',level:'A1',meaning:'การกระทำ',example:'She took action to help her friend.'},{word:'adapt',cls:'verb',level:'B2',meaning:'ปรับตัว',example:'Animals must adapt to their environment.'}];
 const SAMPLE_S=[{"set": ["big", "large", "huge"], "meaning": "ใหญ่"}, {"set": ["fast", "quick", "rapid"], "meaning": "เร็ว"}, {"set": ["happy", "joyful", "cheerful"], "meaning": "มีความสุข"}, {"set": ["smart", "intelligent", "clever"], "meaning": "ฉลาด"}, {"set": ["difficult", "hard", "challenging"], "meaning": "ยาก"}, {"set": ["important", "significant", "crucial"], "meaning": "สำคัญ"}, {"set": ["help", "assist", "aid"], "meaning": "ช่วย"}, {"set": ["beautiful", "attractive", "pretty"], "meaning": "สวยงาม"}, {"set": ["sad", "unhappy", "sorrowful"], "meaning": "เศร้า"}, {"set": ["easy", "simple", "straightforward"], "meaning": "ง่าย"}, {"set": ["ugly", "unattractive", "unsightly"], "meaning": "น่าเกลียด"}, {"set": ["interesting", "fascinating", "engaging"], "meaning": "น่าสนใจ"}, {"set": ["boring", "dull", "tedious"], "meaning": "น่าเบื่อ"}, {"set": ["strong", "powerful", "forceful"], "meaning": "แข็งแรง"}, {"set": ["weak", "fragile", "feeble"], "meaning": "อ่อนแอ"}, {"set": ["rich", "wealthy", "affluent"], "meaning": "รวย"}, {"set": ["poor", "needy", "impoverished"], "meaning": "จน"}, {"set": ["friendly", "kind", "amiable"], "meaning": "เป็นมิตร"}, {"set": ["angry", "mad", "furious"], "meaning": "โกรธ"}, {"set": ["calm", "peaceful", "tranquil"], "meaning": "สงบ"}, {"set": ["brave", "courageous", "fearless"], "meaning": "กล้าหาญ"}, {"set": ["lazy", "indolent", "slothful"], "meaning": "ขี้เกียจ"}, {"set": ["funny", "humorous", "comical"], "meaning": "ตลก"}, {"set": ["quiet", "silent", "still"], "meaning": "เงียบ"}, {"set": ["noisy", "loud", "boisterous"], "meaning": "เสียงดัง"}, {"set": ["clean", "tidy", "neat"], "meaning": "สะอาด"}, {"set": ["dirty", "filthy", "soiled"], "meaning": "สกปรก"}, {"set": ["hardworking", "diligent", "industrious"], "meaning": "ขยัน"}, {"set": ["generous", "giving", "charitable"], "meaning": "ใจดี"}, {"set": ["selfish", "greedy", "stingy"], "meaning": "เห็นแก่ตัว"}, {"set": ["sincere", "genuine", "honest"], "meaning": "จริงใจ"}, {"set": ["deceitful", "dishonest", "fraudulent"], "meaning": "ไม่ซื่อสัตย์"}, {"set": ["curious", "inquisitive", "nosy"], "meaning": "อยากรู้อยากเห็น"}, {"set": ["confident", "self-assured", "assured"], "meaning": "มั่นใจ"}, {"set": ["nervous", "anxious", "worried"], "meaning": "ประหม่า"}, {"set": ["tired", "weary", "exhausted"], "meaning": "เหนื่อย"}, {"set": ["exciting", "thrilling", "stimulating"], "meaning": "น่าตื่นเต้น"}, {"set": ["creative", "inventive", "original"], "meaning": "สร้างสรรค์"}, {"set": ["traditional", "conventional", "classic"], "meaning": "ดั้งเดิม"}, {"set": ["modern", "contemporary", "current"], "meaning": "ทันสมัย"}, {"set": ["silly", "foolish", "absurd"], "meaning": "โง่"}, {"set": ["shy", "bashful", "timid"], "meaning": "ขี้อาย"}, {"set": ["famous", "renowned", "celebrated"], "meaning": "มีชื่อเสียง"}, {"set": ["eager", "enthusiastic", "keen"], "meaning": "กระตือรือร้น"}, {"set": ["old", "ancient", "aged"], "meaning": "เก่า"}, {"set": ["young", "youthful", "juvenile"], "meaning": "เยาว์"}, {"set": ["bored", "uninterested", "disinterested"], "meaning": "เบื่อ"}, {"set": ["bright", "shiny", "radiant"], "meaning": "สว่าง"}, {"set": ["dark", "dim", "gloomy"], "meaning": "มืด"}, {"set": ["new", "fresh", "novel"], "meaning": "ใหม่"}, {"set": ["old-fashioned", "outdated", "antiquated"], "meaning": "ล้าสมัย"}, {"set": ["careful", "cautious", "prudent"], "meaning": "ระมัดระวัง"}, {"set": ["reliable", "dependable", "trustworthy"], "meaning": "เชื่อถือได้"}, {"set": ["polite", "courteous", "respectful"], "meaning": "สุภาพ"}, {"set": ["rude", "impolite", "offensive"], "meaning": "ไม่สุภาพ"}, {"set": ["disappointing", "dismal", "unsatisfactory"], "meaning": "น่าผิดหวัง"}, {"set": ["common", "ordinary", "usual"], "meaning": "ธรรมดา"}, {"set": ["safe", "secure", "protected"], "meaning": "ปลอดภัย"}, {"set": ["dangerous", "hazardous", "risky"], "meaning": "อันตราย"}, {"set": ["tasty", "delicious", "savory"], "meaning": "อร่อย"}, {"set": ["bitter", "sour", "acidic"], "meaning": "ขม"}, {"set": ["healthy", "fit", "well"], "meaning": "สุขภาพดี"}, {"set": ["sick", "ill", "unwell"], "meaning": "ป่วย"}, {"set": ["helpful", "useful", "beneficial"], "meaning": "มีประโยชน์"}, {"set": ["useless", "ineffective", "worthless"], "meaning": "ไร้ประโยชน์"}, {"set": ["brilliant", "excellent", "superb"], "meaning": "ยอดเยี่ยม"}, {"set": ["strange", "weird", "odd"], "meaning": "แปลก"}, {"set": ["fearful", "afraid", "scared"], "meaning": "กลัว"}, {"set": ["active", "energetic", "lively"], "meaning": "กระตือรือร้น"}, {"set": ["sophisticated", "refined", "cultured"], "meaning": "มีรสนิยม"}, {"set": ["unimportant", "trivial", "insignificant"], "meaning": "ไม่สำคัญ"}, {"set": ["disorganized", "chaotic", "messy"], "meaning": "ยุ่งเหยิง"}, {"set": ["organized", "systematic", "methodical"], "meaning": "มีระเบียบ"}, {"set": ["flexible", "adaptable", "versatile"], "meaning": "ยืดหยุ่น"}, {"set": ["rigid", "inflexible", "stiff"], "meaning": "แข็ง"}, {"set": ["fake", "insincere", "phony"], "meaning": "ปลอม"}, {"set": ["clear", "obvious", "evident"], "meaning": "ชัดเจน"}, {"set": ["confusing", "bewildering", "puzzling"], "meaning": "สับสน"}, {"set": ["careless", "negligent", "reckless"], "meaning": "ประมาท"}, {"set": ["rare", "uncommon", "infrequent"], "meaning": "หายาก"}, {"set": ["bland", "tasteless", "insipid"], "meaning": "จืดชืด"}, {"set": ["fun", "enjoyable", "entertaining"], "meaning": "สนุก"}, {"set": ["sensitive", "delicate", "tender"], "meaning": "อ่อนไหว"}, {"set": ["bold", "audacious", "daring"], "meaning": "กล้าหาญ"}, {"set": ["ambitious", "aspiring", "driven"], "meaning": "ทะเยอทะยาน"}, {"set": ["loyal", "faithful", "devoted"], "meaning": "ซื่อสัตย์"}, {"set": ["early", "prompt", "timely"], "meaning": "ตรงเวลา"}, {"set": ["late", "delayed", "tardy"], "meaning": "สาย"}, {"set": ["serious", "grave", "solemn"], "meaning": "จริงจัง"}, {"set": ["indifferent", "apathetic", "unconcerned"], "meaning": "ไม่สนใจ"}, {"set": ["disloyal", "unfaithful", "treacherous"], "meaning": "ไม่ซื่อสัตย์"}, {"set": ["optimistic", "hopeful", "positive"], "meaning": "มองโลกในแง่ดี"}, {"set": ["pessimistic", "negative", "cynical"], "meaning": "มองโลกในแง่ร้าย"}, {"set": ["patient", "tolerant", "understanding"], "meaning": "อดทน"}, {"set": ["impatient", "restless", "agitated"], "meaning": "ไม่มีความอดทน"}, {"set": ["quickly", "rapidly", "swiftly"], "meaning": "อย่างรวดเร็ว"}, {"set": ["slowly", "leisurely", "gradually"], "meaning": "อย่างช้าๆ"}, {"set": ["start", "begin", "commence"], "meaning": "เริ่ม"}, {"set": ["end", "finish", "conclude"], "meaning": "จบ"}, {"set": ["learn", "study", "understand"], "meaning": "เรียนรู้"}, {"set": ["teach", "instruct", "educate"], "meaning": "สอน"}, {"set": ["speak", "talk", "communicate"], "meaning": "พูด"}, {"set": ["listen", "hear", "attend"], "meaning": "ฟัง"}, {"set": ["see", "view", "observe"], "meaning": "เห็น"}, {"set": ["think", "consider", "ponder"], "meaning": "คิด"}, {"set": ["show", "display", "exhibit"], "meaning": "แสดง"}, {"set": ["find", "discover", "locate"], "meaning": "ค้นหา"}, {"set": ["create", "make", "produce"], "meaning": "สร้าง"}, {"set": ["improve", "enhance", "upgrade"], "meaning": "ปรับปรุง"}, {"set": ["change", "alter", "modify"], "meaning": "เปลี่ยน"}, {"set": ["travel", "journey", "explore"], "meaning": "เดินทาง"}, {"set": ["gather", "collect", "assemble"], "meaning": "รวบรวม"}, {"set": ["enjoy", "appreciate", "relish"], "meaning": "สนุก"}, {"set": ["share", "distribute", "allocate"], "meaning": "แบ่งปัน"}, {"set": ["disagree", "oppose", "contradict"], "meaning": "ไม่เห็นด้วย"}, {"set": ["agree", "consent", "accept"], "meaning": "เห็นด้วย"}, {"set": ["remember", "recall", "recollect"], "meaning": "จำ"}, {"set": ["forget", "overlook", "neglect"], "meaning": "ลืม"}, {"set": ["surprise", "astonish", "amaze"], "meaning": "ประหลาดใจ"}, {"set": ["fear", "dread", "apprehend"], "meaning": "กลัว"}, {"set": ["trust", "believe", "rely"], "meaning": "เชื่อใจ"}, {"set": ["hope", "wish", "aspire"], "meaning": "หวัง"}, {"set": ["doubt", "question", "suspect"], "meaning": "สงสัย"}, {"set": ["try", "attempt", "endeavor"], "meaning": "พยายาม"}, {"set": ["give", "offer", "present"], "meaning": "ให้"}, {"set": ["take", "receive", "obtain"], "meaning": "รับ"}, {"set": ["buy", "purchase", "acquire"], "meaning": "ซื้อ"}, {"set": ["sell", "trade", "market"], "meaning": "ขาย"}, {"set": ["hide", "conceal", "bury"], "meaning": "ซ่อน"}, {"set": ["decide", "choose", "select"], "meaning": "ตัดสินใจ"}, {"set": ["play", "engage", "participate"], "meaning": "เล่น"}, {"set": ["work", "labor", "toil"], "meaning": "ทำงาน"}, {"set": ["stay", "remain", "linger"], "meaning": "อยู่"}, {"set": ["destroy", "ruin", "demolish"], "meaning": "ทำลาย"}, {"set": ["hurt", "injure", "wound"], "meaning": "บาดเจ็บ"}, {"set": ["love", "adore", "cherish"], "meaning": "รัก"}, {"set": ["hate", "loathe", "despise"], "meaning": "เกลียด"}, {"set": ["say", "state", "declare"], "meaning": "พูด"}, {"set": ["lose", "misplace", "forfeit"], "meaning": "สูญเสีย"}, {"set": ["build", "construct", "erect"], "meaning": "สร้าง"}, {"set": ["harmful", "detrimental", "injurious"], "meaning": "เป็นอันตราย"}, {"set": ["unimaginative", "uninspired", "mundane"], "meaning": "ไร้จินตนาการ"}, {"set": ["unreliable", "undependable", "inconsistent"], "meaning": "ไม่เชื่อถือ"}, {"set": ["content", "satisfied", "pleased"], "meaning": "พอใจ"}, {"set": ["mean", "cruel", "unkind"], "meaning": "ใจร้าย"}, {"set": ["hinder", "obstruct", "impede"], "meaning": "ขัดขวาง"}, {"set": ["lead", "guide", "direct"], "meaning": "นำ"}, {"set": ["follow", "pursue", "chase"], "meaning": "ติดตาม"}, {"set": ["rest", "relax", "repose"], "meaning": "พักผ่อน"}, {"set": ["exercise", "workout", "train"], "meaning": "ออกกำลังกาย"}, {"set": ["eat", "consume", "devour"], "meaning": "กิน"}, {"set": ["drink", "sip", "quench"], "meaning": "ดื่ม"}, {"set": ["hasty", "precipitous", "rash"], "meaning": "รีบเร่ง"}, {"set": ["disappointed", "disheartened", "dismayed"], "meaning": "ผิดหวัง"}, {"set": ["enormous", "gigantic", "colossal"], "meaning": "มหึมา"}, {"set": ["vital", "essential", "paramount"], "meaning": "สำคัญ"}, {"set": ["gorgeous", "stunning", "exquisite"], "meaning": "สวยงาม"}, {"set": ["robust", "sturdy", "potent"], "meaning": "แข็งแรง"}, {"set": ["benevolent", "compassionate", "altruistic"], "meaning": "ใจดี"}, {"set": ["irate", "indignant", "infuriated"], "meaning": "โกรธ"}, {"set": ["serene", "placid", "composed"], "meaning": "สงบ"}, {"set": ["valiant", "intrepid", "undaunted"], "meaning": "กล้าหาญ"}, {"set": ["sluggish", "lethargic", "inactive"], "meaning": "เฉื่อย"}, {"set": ["spotless", "pristine", "immaculate"], "meaning": "สะอาด"}, {"set": ["quirky", "eccentric", "unconventional"], "meaning": "แปลก"}, {"set": ["transform", "convert", "metamorphose"], "meaning": "เปลี่ยนแปลง"}, {"set": ["swift", "brisk", "fleet"], "meaning": "รวดเร็ว"}, {"set": ["lovely", "charming", "alluring"], "meaning": "น่ารัก"}, {"set": ["student", "learner", "pupil"], "meaning": "นักเรียน"}, {"set": ["curriculum", "syllabus", "program"], "meaning": "หลักสูตร"}, {"set": ["analyze", "examine", "assess"], "meaning": "วิเคราะห์"}, {"set": ["evaluate", "appraise", "rate"], "meaning": "ประเมิน"}, {"set": ["collaborate", "cooperate", "partner"], "meaning": "ร่วมมือ"}, {"set": ["motivate", "inspire", "encourage"], "meaning": "กระตุ้น"}, {"set": ["discipline", "field", "area"], "meaning": "สาขา"}, {"set": ["expertise", "proficiency", "skill"], "meaning": "ความเชี่ยวชาญ"}, {"set": ["assignment", "task", "project"], "meaning": "งาน"}, {"set": ["seminar", "workshop", "conference"], "meaning": "สัมมนา"}, {"set": ["knowledgeable", "informed", "educated"], "meaning": "มีความรู้"}, {"set": ["scholar", "academic", "intellectual"], "meaning": "นักวิชาการ"}, {"set": ["career", "profession", "occupation"], "meaning": "อาชีพ"}, {"set": ["competence", "capability", "ability"], "meaning": "ความสามารถ"}, {"set": ["initiative", "enterprise", "drive"], "meaning": "ความคิดริเริ่ม"}, {"set": ["innovate", "invent", "originate"], "meaning": "นวัตกรรม"}, {"set": ["curriculum vitae", "resume", "CV"], "meaning": "ประวัติย่อ"}, {"set": ["feedback", "response", "reaction"], "meaning": "ข้อเสนอแนะ"}, {"set": ["goal", "objective", "aim"], "meaning": "เป้าหมาย"}, {"set": ["training", "coaching", "mentoring"], "meaning": "การฝึกอบรม"}, {"set": ["scholarship", "grant", "fellowship"], "meaning": "ทุนการศึกษา"}, {"set": ["presentation", "demonstration", "exposition"], "meaning": "การนำเสนอ"}, {"set": ["literature", "texts", "documents"], "meaning": "วรรณกรรม"}, {"set": ["assessment", "evaluation", "judgment"], "meaning": "การประเมิน"}, {"set": ["enrollment", "registration", "admission"], "meaning": "การลงทะเบียน"}, {"set": ["tutoring", "guidance", "mentorship"], "meaning": "การติว"}, {"set": ["expert", "specialist", "authority"], "meaning": "ผู้เชี่ยวชาญ"}, {"set": ["networking", "connecting", "associating"], "meaning": "การสร้างเครือข่าย"}, {"set": ["organism", "creature", "being"], "meaning": "สิ่งมีชีวิต"}, {"set": ["ecosystem", "biome", "habitat"], "meaning": "ระบบนิเวศ"}, {"set": ["environment", "surroundings", "locale"], "meaning": "สิ่งแวดล้อม"}, {"set": ["species", "variety", "type"], "meaning": "สายพันธุ์"}, {"set": ["cell", "unit", "component"], "meaning": "เซลล์"}, {"set": ["photosynthesis", "assimilation", "synthesis"], "meaning": "การสังเคราะห์ด้วยแสง"}, {"set": ["genetics", "heredity", "inheritance"], "meaning": "พันธุศาสตร์"}, {"set": ["hypothesis", "theory", "proposition"], "meaning": "สมมติฐาน"}, {"set": ["experiment", "test", "trial"], "meaning": "การทดลอง"}, {"set": ["data", "information", "statistics"], "meaning": "ข้อมูล"}, {"set": ["analysis", "examination", "scrutiny"], "meaning": "การวิเคราะห์"}, {"set": ["chemical", "substance", "compound"], "meaning": "สารเคมี"}, {"set": ["phenomenon", "event", "occurrence"], "meaning": "ปรากฏการณ์"}, {"set": ["climate", "weather", "atmosphere"], "meaning": "สภาพอากาศ"}, {"set": ["pollution", "contamination", "tainting"], "meaning": "มลพิษ"}, {"set": ["adaptation", "adjustment", "modification"], "meaning": "การปรับตัว"}, {"set": ["evolution", "development", "progression"], "meaning": "วิวัฒนาการ"}, {"set": ["energy", "power", "force"], "meaning": "พลังงาน"}, {"set": ["gravity", "attraction", "pull"], "meaning": "แรงโน้มถ่วง"}, {"set": ["temperature", "heat", "warmth"], "meaning": "อุณหภูมิ"}, {"set": ["simulation", "modeling", "replication"], "meaning": "การจำลอง"}, {"set": ["nucleus", "core", "center"], "meaning": "นิวเคลียส"}, {"set": ["friend", "companion", "ally"], "meaning": "เพื่อน"}, {"set": ["community", "society", "collective"], "meaning": "ชุมชน"}, {"set": ["collaboration", "partnership", "association"], "meaning": "ความร่วมมือ"}, {"set": ["interaction", "engagement", "communication"], "meaning": "การมีส่วนร่วม"}, {"set": ["conflict", "disagreement", "dispute"], "meaning": "ความขัดแย้ง"}, {"set": ["relationship", "connection", "bond"], "meaning": "ความสัมพันธ์"}, {"set": ["influence", "impact", "effect"], "meaning": "อิทธิพล"}, {"set": ["value", "worth", "significance"], "meaning": "คุณค่า"}, {"set": ["discourse", "dialogue", "conversation"], "meaning": "การสนทนา"}, {"set": ["integration", "incorporation", "unification"], "meaning": "การบูรณาการ"}, {"set": ["negotiation", "discussion", "deliberation"], "meaning": "การเจรจา"}, {"set": ["solidarity", "unity", "togetherness"], "meaning": "ความเป็นน้ำหนึ่งใจเดียวกัน"}, {"set": ["identity", "selfhood", "individuality"], "meaning": "อัตลักษณ์"}, {"set": ["contribution", "donation", "gift"], "meaning": "การบริจาค"}, {"set": ["obligation", "responsibility", "duty"], "meaning": "หน้าที่"}, {"set": ["reconciliation", "restoration", "resolution"], "meaning": "การคืนดี"}, {"set": ["advocacy", "support", "promotion"], "meaning": "การสนับสนุน"}, {"set": ["affinity", "likeness", "similarity"], "meaning": "ความใกล้ชิด"}, {"set": ["emotion", "feeling", "sentiment"], "meaning": "อารมณ์"}, {"set": ["empathy", "compassion", "sympathy"], "meaning": "ความเห็นอกเห็นใจ"}, {"set": ["network", "web", "system"], "meaning": "เครือข่าย"}, {"set": ["altruism", "selflessness", "philanthropy"], "meaning": "การเสียสละ"}, {"set": ["tolerance", "acceptance", "open-mindedness"], "meaning": "การอดทน"}, {"set": ["dissemination", "distribution", "circulation"], "meaning": "การเผยแพร่"}, {"set": ["affection", "fondness", "attachment"], "meaning": "ความรักใคร่"}, {"set": ["concept", "notion", "idea"], "meaning": "แนวคิด"}, {"set": ["perspective", "viewpoint", "standpoint"], "meaning": "มุมมอง"}, {"set": ["interpretation", "exegesis", "clarification"], "meaning": "การตีความ"}, {"set": ["paradigm", "model", "framework"], "meaning": "กรอบแนวคิด"}, {"set": ["cognition", "perception", "awareness"], "meaning": "การรับรู้"}, {"set": ["principle", "tenet", "doctrine"], "meaning": "หลักการ"}, {"set": ["thesis", "dissertation", "treatise"], "meaning": "วิทยานิพนธ์"}, {"set": ["methodology", "approach", "strategy"], "meaning": "ระเบียบวิธี"}, {"set": ["argument", "claim", "assertion"], "meaning": "ข้อโต้แย้ง"}, {"set": ["criteria", "standards", "benchmarks"], "meaning": "เกณฑ์"}, {"set": ["implication", "consequence", "ramification"], "meaning": "ผลที่ตามมา"}, {"set": ["debate", "disputation", "contention"], "meaning": "การถกเถียง"}, {"set": ["context", "background", "setting"], "meaning": "บริบท"}, {"set": ["conclusion", "inference", "deduction"], "meaning": "ข้อสรุป"}, {"set": ["conjecture", "speculation", "theorization"], "meaning": "การคาดเดา"}, {"set": ["validation", "confirmation", "verification"], "meaning": "การตรวจสอบ"}, {"set": ["discrepancy", "inconsistency", "variance"], "meaning": "ความไม่ตรงกัน"}, {"set": ["rationale", "justification", "explanation"], "meaning": "เหตุผล"}, {"set": ["contextualization", "localization", "situating"], "meaning": "การวางบริบท"}, {"set": ["abstract", "theoretical", "conceptual"], "meaning": "เชิงนามธรรม"}, {"set": ["differentiate", "distinguish", "discriminate"], "meaning": "แยกแยะ"}, {"set": ["exemplify", "illustrate", "demonstrate"], "meaning": "แสดงให้เห็น"}, {"set": ["formulate", "develop", "design"], "meaning": "ออกแบบ"}, {"set": ["hypothesize", "postulate", "propose"], "meaning": "ตั้งสมมติฐาน"}, {"set": ["justify", "rationalize", "defend"], "meaning": "ให้เหตุผล"}, {"set": ["organize", "arrange", "systematize"], "meaning": "จัดระเบียบ"}, {"set": ["refute", "disprove", "counter"], "meaning": "โต้แย้ง"}, {"set": ["summarize", "condense", "recap"], "meaning": "สรุป"}, {"set": ["synthesize", "integrate", "combine"], "meaning": "รวมกัน"}, {"set": ["validate", "authenticate", "verify"], "meaning": "ตรวจสอบ"}, {"set": ["articulate", "express", "voice"], "meaning": "แสดงออก"}, {"set": ["clarify", "elucidate", "expound"], "meaning": "ชี้แจง"}, {"set": ["correlate", "link", "connect"], "meaning": "เชื่อมโยง"}, {"set": ["interpret", "translate", "render"], "meaning": "ตีความ"}, {"set": ["device", "gadget", "instrument"], "meaning": "อุปกรณ์"}, {"set": ["innovation", "invention", "creation"], "meaning": "นวัตกรรม"}, {"set": ["interface", "platform", "portal"], "meaning": "ส่วนติดต่อ"}, {"set": ["hardware", "equipment", "machinery"], "meaning": "ฮาร์ดแวร์"}, {"set": ["algorithm", "procedure", "formula"], "meaning": "อัลกอริธึม"}, {"set": ["automation", "mechanization", "robotization"], "meaning": "การทำให้เป็นอัตโนมัติ"}, {"set": ["transmission", "transfer", "conveyance"], "meaning": "การส่งข้อมูล"}, {"set": ["security", "protection", "safeguard"], "meaning": "ความปลอดภัย"}, {"set": ["function", "operation", "role"], "meaning": "ฟังก์ชัน"}, {"set": ["repository", "database", "archive"], "meaning": "คลังข้อมูล"}, {"set": ["protocol", "standard", "guideline"], "meaning": "โปรโตคอล"}, {"set": ["visualization", "representation", "illustration"], "meaning": "การสร้างภาพ"}, {"set": ["emergency", "crisis", "contingency"], "meaning": "เหตุฉุกเฉิน"}, {"set": ["output", "result", "yield"], "meaning": "ผลลัพธ์"}, {"set": ["synchronization", "coordination", "alignment"], "meaning": "การซิงโครไนซ์"}, {"set": ["connectivity", "accessibility", "reachability"], "meaning": "การเข้าถึง"}, {"set": ["performance", "efficiency", "effectiveness"], "meaning": "ประสิทธิภาพ"}, {"set": ["signal", "wave", "frequency"], "meaning": "สัญญาณ"}, {"set": ["resource", "asset", "tool"], "meaning": "ทรัพยากร"}, {"set": ["access", "entry", "admittance"], "meaning": "การเข้าถึง"}, {"set": ["installation", "setup", "configuration"], "meaning": "การติดตั้ง"}, {"set": ["compatibility", "conformity", "suitability"], "meaning": "ความเข้ากันได้"}, {"set": ["small", "tiny", "miniature"], "meaning": "เล็ก"}, {"set": ["vast", "immense", "expansive"], "meaning": "กว้างขวาง"}, {"set": ["numerous", "countless", "myriad"], "meaning": "นับไม่ถ้วน"}, {"set": ["abundant", "plentiful", "ample"], "meaning": "มากมาย"}, {"set": ["few", "scarce", "limited"], "meaning": "น้อย"}, {"set": ["sizable", "considerable", "substantial"], "meaning": "มีขนาดพอสมควร"}, {"set": ["petite", "slight", "diminutive"], "meaning": "ตัวเล็ก"}, {"set": ["copious", "profuse", "overflowing"], "meaning": "มากมาย"}, {"set": ["countable", "enumerable", "quantifiable"], "meaning": "นับได้"}, {"set": ["vastness", "extent", "scope"], "meaning": "ขอบเขต"}, {"set": ["infinite", "boundless", "limitless"], "meaning": "ไม่มีที่สิ้นสุด"}, {"set": ["incremental", "gradual", "progressive"], "meaning": "เพิ่มขึ้นทีละน้อย"}, {"set": ["magnitude", "size", "scale"], "meaning": "ขนาด"}, {"set": ["multitude", "host", "crowd"], "meaning": "จำนวนมาก"}, {"set": ["sparse", "thin", "scattered"], "meaning": "กระจาย"}, {"set": ["abundance", "overflow", "surplus"], "meaning": "ความอุดมสมบูรณ์"}, {"set": ["meager", "paltry", "insufficient"], "meaning": "ไม่เพียงพอ"}, {"set": ["mass", "bulk", "volume"], "meaning": "มวล"}, {"set": ["diminished", "reduced", "lessened"], "meaning": "ลดลง"}, {"set": ["excessive", "overabundant", "superfluous"], "meaning": "มากเกินไป"}, {"set": ["prodigious", "extraordinary", "phenomenal"], "meaning": "มหัศจรรย์"}, {"set": ["gargantuan", "massive", "titanic"], "meaning": "ยักษ์"}, {"set": ["plentitude", "profusion", "ample supply"], "meaning": "ความอุดมสมบูรณ์"}, {"set": ["dense", "thick", "compact"], "meaning": "หนาแน่น"}, {"set": ["large-scale", "extensive", "broad"], "meaning": "ขนาดใหญ่"}, {"set": ["increment", "increase", "rise"], "meaning": "การเพิ่มขึ้น"}, {"set": ["overabundance", "surfeit", "glut"], "meaning": "ความมากเกินไป"}, {"set": ["observable", "noticeable", "perceptible"], "meaning": "สังเกตเห็นได้"}, {"set": ["increased", "amplified", "expanded"], "meaning": "เพิ่มขึ้น"}, {"set": ["vibrant", "colorful", "dynamic"], "meaning": "มีชีวิตชีวา"}, {"set": ["rugged", "rough", "harsh"], "meaning": "ขรุขระ"}, {"set": ["sleek", "smooth", "polished"], "meaning": "เรียบ"}, {"set": ["striking", "remarkable", "notable"], "meaning": "โดดเด่น"}, {"set": ["subtle", "nuanced", "fine"], "meaning": "ละเอียด"}, {"set": ["imposing", "grand", "majestic"], "meaning": "ยิ่งใหญ่"}, {"set": ["unusual", "peculiar", "bizarre"], "meaning": "แปลก"}, {"set": ["choppy", "uneven", "irregular"], "meaning": "ขรุขระ"}, {"set": ["shabby", "tattered", "worn-out"], "meaning": "เก่าและโทรม"}, {"set": ["flamboyant", "ostentatious", "extravagant"], "meaning": "ฉูดฉาด"}, {"set": ["vague", "ambiguous", "obscure"], "meaning": "คลุมเครือ"}, {"set": ["glistening", "sparkling", "shimmering"], "meaning": "เปล่งประกาย"}, {"set": ["fuzzy", "blurred", "hazy"], "meaning": "มัว"}, {"set": ["curvy", "wavy", "bendy"], "meaning": "โค้ง"}, {"set": ["rustic", "rural", "country"], "meaning": "ชนบท"}, {"set": ["glamorous", "fabulous", "chic"], "meaning": "หรูหรา"}, {"set": ["feminine", "ladylike", "womanly"], "meaning": "ผู้หญิง"}, {"set": ["masculine", "manly", "male"], "meaning": "ผู้ชาย"}, {"set": ["tall", "lofty", "elevated"], "meaning": "สูง"}, {"set": ["pale", "light", "fair"], "meaning": "ซีด"}, {"set": ["tangy", "zesty", "sharp"], "meaning": "รสจัด"}, {"set": ["lush", "luxuriant", "verdant"], "meaning": "เขียวชอุ่ม"}, {"set": ["faded", "washed-out", "bleached"], "meaning": "ซีดจาง"}, {"set": ["mellow", "soft", "gentle"], "meaning": "นุ่มนวล"}, {"set": ["translucent", "semi-transparent", "sheer"], "meaning": "โปร่งแสง"}, {"set": ["gleaming", "shining", "glossy"], "meaning": "เงางาม"}, {"set": ["blooming", "flourishing", "thriving"], "meaning": "เบ่งบาน"}, {"set": ["monochrome", "single-colored", "uniform"], "meaning": "สีเดียว"}, {"set": ["textured", "patterned", "decorated"], "meaning": "มีลวดลาย"}, {"set": ["gleeful", "jubilant", "exuberant"], "meaning": "ดีใจ"}, {"set": ["elegant", "graceful", "stylish"], "meaning": "มีเสน่ห์"}, {"set": ["ornate", "decorative", "elaborate"], "meaning": "ประณีต"}, {"set": ["luxurious", "opulent", "lavish"], "meaning": "หรูหรา"}, {"set": ["barren", "desolate", "bleak"], "meaning": "รกร้าง"}, {"set": ["cozy", "comfortable", "snug"], "meaning": "อบอุ่น"}, {"set": ["unrefined", "raw", "crude"], "meaning": "ดิบ"}, {"set": ["twin", "duplicate", "pair"], "meaning": "คู่"}, {"set": ["fanciful", "imaginative", "whimsical"], "meaning": "เพ้อฝัน"}, {"set": ["chilly", "cool", "crisp"], "meaning": "เย็น"}, {"set": ["mysterious", "enigmatic", "cryptic"], "meaning": "ลึกลับ"}, {"set": ["eerie", "spooky", "creepy"], "meaning": "น่าขนลุก"}, {"set": ["distorted", "warped", "misshapen"], "meaning": "บิดเบี้ยว"}, {"set": ["distinctive", "unique", "individual"], "meaning": "โดดเด่น"}, {"set": ["muted", "softened", "subdued"], "meaning": "เบา"}, {"set": ["tint", "shade", "hue"], "meaning": "เฉดสี"}, {"set": ["frosted", "glazed", "iced"], "meaning": "เคลือบ"}, {"set": ["ethereal", "otherworldly", "celestial"], "meaning": "เหนือจริง"}, {"set": ["glimmering", "glinting", "flickering"], "meaning": "แวววาว"}, {"set": ["complex", "complicated", "intricate"], "meaning": "ซับซ้อน"}, {"set": ["fierce", "intense", "ferocious"], "meaning": "ดุร้าย"}, {"set": ["hot", "scorching", "sizzling"], "meaning": "ร้อน"}, {"set": ["humble", "modest", "unassuming"], "meaning": "ถ่อมตน"}, {"set": ["tough", "resilient", "durable"], "meaning": "ทนทาน"}, {"set": ["tacky", "gaudy", "showy"], "meaning": "ฉูดฉาด"}, {"set": ["austere", "severe", "stern"], "meaning": "เคร่งขรึม"}, {"set": ["dizzying", "staggering", "overwhelming"], "meaning": "ทำให้มึนงง"}, {"set": ["stale", "decrepit", "worn"], "meaning": "เก่า"}, {"set": ["turbulent", "stormy", "tempestuous"], "meaning": "มีพายุ"}, {"set": ["fading", "waning", "diminishing"], "meaning": "ลดน้อยลง"}, {"set": ["glorious", "splendid", "magnificent"], "meaning": "รุ่งโรจน์"}, {"set": ["futuristic", "advanced", "innovative"], "meaning": "ล้ำสมัย"}, {"set": ["rusty", "corroded", "oxidized"], "meaning": "เป็นสนิม"}, {"set": ["fickle", "changeable", "unstable"], "meaning": "ไม่แน่นอน"}, {"set": ["heavyset", "stocky", "solid"], "meaning": "อ้วน"}, {"set": ["haughty", "arrogant", "conceited"], "meaning": "หยิ่ง"}, {"set": ["haphazard", "random", "unplanned"], "meaning": "ไม่เป็นระเบียบ"}, {"set": ["vigilant", "watchful", "alert"], "meaning": "ตื่นตัว"}, {"set": ["clumsy", "awkward", "ungraceful"], "meaning": "งุ่มง่าม"}, {"set": ["invisible", "unseen", "hidden"], "meaning": "มองไม่เห็น"}, {"set": ["jagged", "serrated", "sharp-edged"], "meaning": "มีขอบแหลม"}, {"set": ["candid", "frank", "open"], "meaning": "ตรงไปตรงมา"}, {"set": ["decent", "respectable", "proper"], "meaning": "เหมาะสม"}, {"set": ["disseminate", "spread", "circulate"], "meaning": "เผยแพร่"}, {"set": ["reveal", "disclose", "unveil"], "meaning": "เปิดเผย"}, {"set": ["reiterate", "repeat", "restate"], "meaning": "กล่าวซ้ำ"}, {"set": ["summon", "invoke", "call"], "meaning": "เรียก"}, {"set": ["negotiate", "discuss", "bargain"], "meaning": "เจรจา"}, {"set": ["advise", "counsel", "recommend"], "meaning": "แนะนำ"}, {"set": ["imply", "suggest", "indicate"], "meaning": "บ่งชี้"}, {"set": ["respond", "reply", "react"], "meaning": "ตอบสนอง"}, {"set": ["articulation", "expression", "verbalization"], "meaning": "การแสดงออก"}, {"set": ["perceive", "discern", "recognize"], "meaning": "รับรู้"}, {"set": ["persuasive", "convincing", "influential"], "meaning": "โน้มน้าวใจ"}, {"set": ["disclosure", "revelation", "unveiling"], "meaning": "การเปิดเผย"}, {"set": ["inquisition", "query", "interrogation"], "meaning": "การสอบถาม"}, {"set": ["summation", "summary", "recapitulation"], "meaning": "การสรุป"}, {"set": ["suggestion", "recommendation", "proposal"], "meaning": "ข้อเสนอ"}, {"set": ["highlight", "emphasize", "stress"], "meaning": "เน้น"}, {"set": ["transcribe", "record", "document"], "meaning": "บันทึก"}, {"set": ["unravel", "untangle", "solve"], "meaning": "คลี่คลาย"}, {"set": ["reconcile", "resolve", "settle"], "meaning": "ปรองดอง"}, {"set": ["convey", "transmit", "relay"], "meaning": "ถ่ายทอด"}, {"set": ["inform", "notify", "apprise"], "meaning": "แจ้งให้ทราบ"}, {"set": ["mediate", "intervene", "arbitrate"], "meaning": "ไกล่เกลี่ย"}, {"set": ["cogitate", "reflect", "mull"], "meaning": "คิด"}, {"set": ["dictate", "command", "order"], "meaning": "สั่ง"}, {"set": ["evidence", "proof", "testimony"], "meaning": "หลักฐาน"}, {"set": ["relevance", "pertinence", "applicability"], "meaning": "ความเกี่ยวข้อง"}, {"set": ["observation", "monitoring", "surveillance"], "meaning": "การสังเกต"}, {"set": ["premise", "assumption", "basis"], "meaning": "สมมติฐาน"}, {"set": ["explication", "expounding", "elaboration"], "meaning": "การอธิบาย"}, {"set": ["reflection", "consideration", "thought"], "meaning": "การสะท้อน"}, {"set": ["clarity", "lucidity", "transparency"], "meaning": "ความชัดเจน"}, {"set": ["exploration", "investigation", "inquiry"], "meaning": "การสำรวจ"}, {"set": ["conceptualization", "formulation", "construction"], "meaning": "การสร้างแนวคิด"}, {"set": ["application", "utilization", "implementation"], "meaning": "การประยุกต์ใช้"}, {"set": ["structure", "organization", "arrangement"], "meaning": "โครงสร้าง"}, {"set": ["dilemma", "predicament", "quandary"], "meaning": "สถานการณ์ลำบาก"}, {"set": ["situation", "condition", "circumstance"], "meaning": "สถานการณ์"}, {"set": ["convergence", "intersection", "meeting"], "meaning": "การบรรจบกัน"}, {"set": ["characteristic", "trait", "feature"], "meaning": "ลักษณะ"}, {"set": ["congruence", "harmony", "consistency"], "meaning": "ความสอดคล้อง"}, {"set": ["expansion", "growth", "extension"], "meaning": "การขยายตัว"}, {"set": ["distinction", "difference", "variation"], "meaning": "ความแตกต่าง"}, {"set": ["disparity", "inequality", "imbalance"], "meaning": "ความไม่เท่าเทียม"}, {"set": ["consensus", "agreement", "accord"], "meaning": "ฉันทามติ"}, {"set": ["impetus", "motivation", "stimulus"], "meaning": "แรงจูงใจ"}, {"set": ["validity", "soundness", "legitimacy"], "meaning": "ความถูกต้อง"}, {"set": ["specification", "detail", "description"], "meaning": "รายละเอียด"}, {"set": ["ambiguity", "uncertainty", "vagueness"], "meaning": "ความไม่ชัดเจน"}, {"set": ["disposition", "attitude", "inclination"], "meaning": "ทัศนคติ"}, {"set": ["abstraction", "generalization", "simplification"], "meaning": "การทำให้เป็นนามธรรม"}, {"set": ["refinement", "enhancement", "improvement"], "meaning": "การปรับปรุง"}, {"set": ["orientation", "positioning", "placement"], "meaning": "การวางแนว"}, {"set": ["user", "operator", "consumer"], "meaning": "ผู้ใช้"}, {"set": ["sensor", "detector", "transducer"], "meaning": "เซนเซอร์"}, {"set": ["cloud", "server", "storage"], "meaning": "คลาวด์"}, {"set": ["robot", "automaton", "machine"], "meaning": "หุ่นยนต์"}, {"set": ["encryption", "coding", "ciphering"], "meaning": "การเข้ารหัส"}, {"set": ["debugging", "troubleshooting", "fixing"], "meaning": "การแก้ไขข้อผิดพลาด"}, {"set": ["functionality", "utility", "usefulness"], "meaning": "ฟังก์ชันการทำงาน"}, {"set": ["activation", "initiation", "commencement"], "meaning": "การเปิดใช้งาน"}, {"set": ["battery", "power source", "energy cell"], "meaning": "แบตเตอรี่"}, {"set": ["bandwidth", "capacity", "throughput"], "meaning": "แบนด์วิธ"}, {"set": ["processor", "chip", "microprocessor"], "meaning": "โปรเซสเซอร์"}, {"set": ["accessory", "add-on", "supplement"], "meaning": "อุปกรณ์เสริม"}, {"set": ["input", "data entry", "feed"], "meaning": "ข้อมูลนำเข้า"}, {"set": ["monitor", "supervisor", "overseer"], "meaning": "ผู้ดูแล"}, {"set": ["circuit", "pathway", "route"], "meaning": "วงจร"}, {"set": ["toolkit", "set of tools", "collection"], "meaning": "ชุดเครื่องมือ"}, {"set": ["module", "section", "segment"], "meaning": "โมดูล"}, {"set": ["source", "origin", "root"], "meaning": "แหล่งที่มา"}, {"set": ["code", "script", "markup"], "meaning": "โค้ด"}, {"set": ["download", "retrieve", "fetch"], "meaning": "การดาวน์โหลด"}, {"set": ["collaborative", "cooperative"], "meaning": "ทำงานร่วมกัน"}, {"set": ["affectionate", "fond"], "meaning": "มีความรักใคร่"}, {"set": ["disparaging", "derogatory"], "meaning": "ดูถูก"}, {"set": ["interpersonal", "social"], "meaning": "เกี่ยวกับสังคม"}, {"set": ["nurturing", "supportive"], "meaning": "สนับสนุน"}, {"set": ["inclusive", "welcoming"], "meaning": "ยินดีต้อนรับ"}, {"set": ["comradely", "brotherly"], "meaning": "เป็นมิตร"}, {"set": ["communal", "shared"], "meaning": "ร่วมกัน"}, {"set": ["harmonious", "concordant"], "meaning": "กลมกลืน"}, {"set": ["reciprocal", "mutual"], "meaning": "ตอบแทนกัน"}, {"set": ["diplomatic", "tactful"], "meaning": "มีทักษะในการเจรจา"}, {"set": ["interconnected", "interrelated"], "meaning": "เกี่ยวข้องกัน"}, {"set": ["cohesive", "unified"], "meaning": "เป็นหนึ่งเดียว"}, {"set": ["facilitative", "enabling"], "meaning": "ทำให้เกิดขึ้น"}, {"set": ["tactile", "physical"], "meaning": "เกี่ยวกับร่างกาย"}, {"set": ["conversational", "dialogic"], "meaning": "เกี่ยวกับการสนทนา"}, {"set": ["compromise", "concession"], "meaning": "การประนีประนอม"}, {"set": ["intervention", "mediation"], "meaning": "การแทรกแซง"}, {"set": ["collusion", "conspiracy"], "meaning": "การสมรู้ร่วมคิด"}, {"set": ["coexistence", "cohabitation"], "meaning": "การอยู่ร่วมกัน"}, {"set": ["camaraderie", "friendship"], "meaning": "มิตรภาพ"}, {"set": ["sociable", "outgoing"], "meaning": "เข้าสังคม"}, {"set": ["peer", "colleague"], "meaning": "เพื่อนร่วมงาน"}, {"set": ["contextualize", "situate"], "meaning": "ตั้งอยู่ในบริบท"}, {"set": ["extrapolate", "infer"], "meaning": "อนุมาน"}, {"set": ["contrast", "compare"], "meaning": "เปรียบเทียบ"}, {"set": ["conceptualize", "imagine"], "meaning": "จินตนาการ"}, {"set": ["speculate", "theorize"], "meaning": "ตั้งทฤษฎี"}, {"set": ["define", "describe"], "meaning": "นิยาม"}, {"set": ["substantiate", "confirm"], "meaning": "ยืนยัน"}, {"set": ["categorize", "classify"], "meaning": "จัดประเภท"}, {"set": ["collate", "compile"], "meaning": "รวบรวม"}, {"set": ["proliferate", "multiply"], "meaning": "เพิ่มขึ้น"}, {"set": ["formalize", "institutionalize"], "meaning": "ทำให้เป็นทางการ"}, {"set": ["critique", "review"], "meaning": "การวิจารณ์"}, {"set": ["continuity", "persistence"], "meaning": "ความต่อเนื่อง"}, {"set": ["quantification", "measurement"], "meaning": "การวัด"}, {"set": ["method", "technique"], "meaning": "วิธีการ"}, {"set": ["interdisciplinary", "multidisciplinary"], "meaning": "ระหว่างสาขา"}, {"set": ["analytical", "critical"], "meaning": "เชิงวิเคราะห์"}, {"set": ["spectrum", "range"], "meaning": "สเปกตรัม"}, {"set": ["classification", "categorization"], "meaning": "การจัดประเภท"}, {"set": ["ascertain", "determine"], "meaning": "พิจารณา"}, {"set": ["persuade", "convince"], "meaning": "โน้มน้าว"}, {"set": ["proficient", "skilled"], "meaning": "ชำนาญ"}, {"set": ["reassess", "re-evaluate"], "meaning": "ประเมินใหม่"}, {"set": ["distill", "extract"], "meaning": "กลั่น"}, {"set": ["advocate", "promote"], "meaning": "สนับสนุน"}, {"set": ["quantify", "measure"], "meaning": "วัด"}, {"set": ["explicate", "explain"], "meaning": "อธิบาย"}, {"set": ["simulate", "replicate"], "meaning": "จำลอง"}, {"set": ["summate", "aggregate"], "meaning": "รวมกัน"}, {"set": ["delineation", "demarcation"], "meaning": "การกำหนดขอบเขต"}, {"set": ["elucidation", "illumination"], "meaning": "การชี้แจง"}, {"set": ["facilitation", "enablement"], "meaning": "การทำให้เกิด"}, {"set": ["variable", "factor"], "meaning": "ตัวแปร"}, {"set": ["profound", "deep"], "meaning": "ลึกซึ้ง"}, {"set": ["extrapolation", "projection"], "meaning": "การคาดการณ์"}, {"set": ["terminology", "lexicon"], "meaning": "ศัพท์"}, {"set": ["nuance", "subtlety"], "meaning": "ความละเอียดอ่อน"}, {"set": ["interrelation", "interconnection"], "meaning": "ความสัมพันธ์ระหว่างกัน"}, {"set": ["sophistication", "complexity"], "meaning": "ความซับซ้อน"}, {"set": ["annotation", "commentary"], "meaning": "หมายเหตุ"}, {"set": ["refutation", "disproof"], "meaning": "การปฏิเสธ"}, {"set": ["reiteration", "repetition"], "meaning": "การกล่าวซ้ำ"}, {"set": ["dimension", "aspect"], "meaning": "มิติ"}, {"set": ["paradox", "contradiction"], "meaning": "อภิมหา"}, {"set": ["persuasion", "coercion"], "meaning": "การโน้มน้าว"}, {"set": ["modality", "form"], "meaning": "รูปแบบ"}, {"set": ["firmware", "software"], "meaning": "เฟิร์มแวร์"}, {"set": ["cache", "buffer"], "meaning": "แคช"}, {"set": ["webpage", "site"], "meaning": "หน้าเว็บ"}, {"set": ["stream", "flow"], "meaning": "การสตรีม"}, {"set": ["runtime", "execution"], "meaning": "การรัน"}, {"set": ["scalability", "expandability"], "meaning": "ความสามารถในการขยาย"}, {"set": ["update", "revision"], "meaning": "การอัปเดต"}, {"set": ["surprised", "astonished", "astounded"], "meaning": "ประหลาดใจ"}, {"set": ["grateful", "thankful", "appreciative"], "meaning": "ขอบคุณ"}, {"set": ["jealous", "envious", "covetous"], "meaning": "อิจฉา"}, {"set": ["ashamed", "embarrassed", "humiliated"], "meaning": "อับอาย"}, {"set": ["disgusted", "revolted", "repulsed"], "meaning": "รู้สึกขยะแขยง"}, {"set": ["nostalgic", "wistful", "sentimental"], "meaning": "คิดถึงอดีต"}, {"set": ["embittered", "resentful", "soured"], "meaning": "ขมขื่น"}, {"set": ["overwhelmed", "overawed", "stunned"], "meaning": "รู้สึกท่วมท้น"}, {"set": ["relieved", "comforted", "soothed"], "meaning": "รู้สึกโล่งใจ"}, {"set": ["suspicious", "distrustful", "skeptical"], "meaning": "สงสัย"}, {"set": ["fascinated", "captivated", "enthralled"], "meaning": "หลงใหล"}, {"set": ["pensive", "reflective", "thoughtful"], "meaning": "คิดมาก"}, {"set": ["irritated", "annoyed", "vexed"], "meaning": "รำคาญ"}, {"set": ["elated", "euphoric", "ecstatic"], "meaning": "มีความสุขอย่างมาก"}, {"set": ["vulnerable", "exposed", "defenseless"], "meaning": "เปราะบาง"}, {"set": ["accelerate", "hasten", "quicken"], "meaning": "เร่งความเร็ว"}, {"set": ["advance", "progress", "proceed"], "meaning": "ก้าวหน้า"}, {"set": ["rotate", "spin", "twirl"], "meaning": "หมุน"}, {"set": ["descend", "drop", "fall"], "meaning": "ตกลง"}, {"set": ["drift", "glide", "float"], "meaning": "ลอย"}, {"set": ["sprint", "dash", "race"], "meaning": "วิ่ง"}, {"set": ["leap", "jump", "bound"], "meaning": "กระโดด"}, {"set": ["stretch", "extend", "elongate"], "meaning": "ยืด"}, {"set": ["wander", "roam", "meander"], "meaning": "เดินเล่น"}, {"set": ["skid", "slip", "slide"], "meaning": "ลื่น"}, {"set": ["crawl", "creep", "inch"], "meaning": "คลาน"}, {"set": ["shuffle", "drag", "trudge"], "meaning": "ลาก"}, {"set": ["scurry", "hurry", "rush"], "meaning": "รีบ"}, {"set": ["sway", "rock", "oscillate"], "meaning": "แกว่ง"}, {"set": ["plunge", "dive", "sink"], "meaning": "ดำน้ำ"}, {"set": ["tread", "step", "walk"], "meaning": "เดิน"}, {"set": ["bounce", "rebound", "spring"], "meaning": "กระเด้ง"}, {"set": ["flee", "escape", "evade"], "meaning": "หลบหนี"}, {"set": ["lunge", "thrust", "jab"], "meaning": "ดัน"}, {"set": ["slink", "slither", "sneak"], "meaning": "เลื้อย"}, {"set": ["charge", "attack", "assault"], "meaning": "โจมตี"}, {"set": ["shimmer", "glimmer", "sparkle"], "meaning": "เปล่งประกาย"}, {"set": ["tremble", "shake", "quiver"], "meaning": "สั่น"}, {"set": ["falter", "waver", "hesitate"], "meaning": "ลังเล"}, {"set": ["gallop", "canter", "run"], "meaning": "วิ่ง"}, {"set": ["twist", "turn", "curl"], "meaning": "บิด"}, {"set": ["tackle", "confront", "address"], "meaning": "จัดการ"}, {"set": ["fling", "throw", "cast"], "meaning": "ขว้าง"}, {"set": ["jolt", "shock", "startle"], "meaning": "สะดุ้ง"}, {"set": ["flourish", "thrive", "prosper"], "meaning": "เจริญรุ่งเรือง"}, {"set": ["crash", "smash", "collide"], "meaning": "ชน"}, {"set": ["maneuver", "navigate", "steer"], "meaning": "บังคับทิศทาง"}, {"set": ["exert", "apply", "utilize"], "meaning": "ใช้"}, {"set": ["arrive", "reach", "get to"], "meaning": "มาถึง"}, {"set": ["encounter", "meet", "face"], "meaning": "เผชิญหน้า"}, {"set": ["emerge", "surface", "appear"], "meaning": "ปรากฏ"}, {"set": ["expand", "broaden", "widen"], "meaning": "ขยาย"}, {"set": ["withdraw", "retreat", "recede"], "meaning": "ถอยกลับ"}, {"set": ["push", "shove", "propel"], "meaning": "ผลัก"}, {"set": ["infiltrate", "penetrate", "invade"], "meaning": "แทรกซึม"}, {"set": ["multitudinous", "manifold", "varied"], "meaning": "มากมาย"}, {"set": ["paucity", "dearth", "shortage"], "meaning": "ความขาดแคลน"}, {"set": ["unlimited", "endless", "inexhaustible"], "meaning": "ไม่จำกัด"}, {"set": ["hefty", "bulky", "ponderous"], "meaning": "หนัก"}, {"set": ["count", "tally", "enumerate"], "meaning": "นับ"}, {"set": ["prolific", "fertile", "productive"], "meaning": "อุดมสมบูรณ์"}, {"set": ["diminish", "reduce", "lessen"], "meaning": "ลดลง"}, {"set": ["swell", "inflate", "augment"], "meaning": "พอง"}, {"set": ["concentrate", "focus", "cluster"], "meaning": "รวมกัน"}, {"set": ["numerical", "quantitative", "statistical"], "meaning": "เชิงปริมาณ"}, {"set": ["petiteness", "smallness", "littleness"], "meaning": "ความเล็ก"}, {"set": ["copiousness", "profuseness", "lavishness"], "meaning": "ความฟุ่มเฟือย"}, {"set": ["massiveness", "bulkiness", "heaviness"], "meaning": "ความใหญ่โต"}, {"set": ["scantiness", "scarcity", "deficiency"], "meaning": "ความขาดแคลน"}, {"set": ["vastly", "greatly", "immensely"], "meaning": "อย่างมหาศาล"}, {"set": ["sufficiently", "adequately", "satisfactorily"], "meaning": "อย่างเพียงพอ"}, {"set": ["minimally", "slightly", "marginally"], "meaning": "อย่างน้อย"}, {"set": ["infinity", "eternity", "limitlessness"], "meaning": "ไม่มีที่สิ้นสุด"}, {"set": ["plentifulness", "richness", "wealth"], "meaning": "ความมั่งคั่ง"}, {"set": ["sizeable", "moderate", "reasonable"], "meaning": "ขนาดพอสมควร"}, {"set": ["gigantism", "monstrosity", "behemoth"], "meaning": "ความยิ่งใหญ่"}, {"set": ["teensy", "wee", "minuscule"], "meaning": "เล็กจิ๋ว"}, {"set": ["sufficient", "adequate", "acceptable"], "meaning": "เพียงพอ"}, {"set": ["plump", "chubby", "round"], "meaning": "อวบ"}, {"set": ["frustrated", "exasperated"], "meaning": "หงุดหงิด"}, {"set": ["reluctant", "hesitant"], "meaning": "ไม่เต็มใจ"}, {"set": ["devastated", "heartbroken"], "meaning": "เสียใจอย่างมาก"}, {"set": ["grieved", "mourning"], "meaning": "เศร้าโศก"}, {"set": ["miserable", "wretched"], "meaning": "ทุกข์ใจ"}, {"set": ["intimidated", "daunted"], "meaning": "รู้สึกหวาดกลัว"}, {"set": ["thrilled", "exhilarated"], "meaning": "ตื่นเต้น"}, {"set": ["desperate", "hopeless"], "meaning": "สิ้นหวัง"}, {"set": ["discontented", "dissatisfied"], "meaning": "ไม่พอใจ"}, {"set": ["unsettled", "uneasy"], "meaning": "รู้สึกไม่สบายใจ"}, {"set": ["touched", "moved"], "meaning": "รู้สึกซาบซึ้ง"}, {"set": ["inspired", "motivated"], "meaning": "ได้รับแรงบันดาลใจ"}, {"set": ["disillusioned", "disenchanted"], "meaning": "ผิดหวัง"}, {"set": ["infatuated", "enamored"], "meaning": "หลงใหล"}, {"set": ["rebellious", "defiant"], "meaning": "กบฏ"}, {"set": ["curt", "brusque"], "meaning": "หยาบกระด้าง"}, {"set": ["afflicted", "troubled"], "meaning": "ทุกข์ทรมาน"}, {"set": ["lonely", "isolated"], "meaning": "เหงา"}, {"set": ["tense", "strained"], "meaning": "ตึงเครียด"}, {"set": ["zealous", "fervent"], "meaning": "กระตือรือร้น"}, {"set": ["passionate", "ardent"], "meaning": "กระตือรือร้น"}, {"set": ["emboldened", "encouraged"], "meaning": "ได้รับกำลังใจ"}, {"set": ["contentious", "argumentative"], "meaning": "ชอบโต้เถียง"}, {"set": ["trepidation", "apprehension"], "meaning": "ความวิตกกังวล"}, {"set": ["regretful", "remorseful"], "meaning": "รู้สึกเสียใจ"}, {"set": ["introspective", "self-reflective"], "meaning": "คิดทบทวนตัวเอง"}, {"set": ["disparate", "diverse"], "meaning": "แตกต่างกัน"}, {"set": ["handsome", "dapper", "debonair"], "meaning": "หล่อ"}, {"set": ["mature", "grown-up", "adult"], "meaning": "โตเต็มที่"}, {"set": ["distinct", "clear-cut", "unmistakable"], "meaning": "ชัดเจน"}, {"set": ["plain", "unembellished", "basic"], "meaning": "ธรรมดา"}, {"set": ["bald", "hairless", "shorn"], "meaning": "หัวล้าน"}, {"set": ["short", "brief", "concise"], "meaning": "สั้น"}, {"set": ["scruffy", "unkempt", "disheveled"], "meaning": "ยุ่งเหยิง"}, {"set": ["fragrant", "aromatic", "scented"], "meaning": "มีกลิ่นหอม"}, {"set": ["shapely", "well-proportioned", "elegantly-formed"], "meaning": "มีรูปร่างดี"}, {"set": ["saturated", "soaked", "drenched"], "meaning": "ชุ่มน้ำ"}, {"set": ["hollow", "empty", "void"], "meaning": "ว่างเปล่า"}, {"set": ["horrid", "awful", "terrible"], "meaning": "น่ากลัว"}, {"set": ["hoarse", "raspy", "gruff"], "meaning": "แหบแห้ง"}, {"set": ["svelte", "slim", "lean"], "meaning": "เพรียว"}, {"set": ["ominous", "threatening", "foreboding"], "meaning": "น่ากลัว"}, {"set": ["tremulous", "quivering", "shaky"], "meaning": "สั่น"}, {"set": ["furry", "hairy", "fluffy"], "meaning": "มีขน"}, {"set": ["coherent", "logical", "consistent"], "meaning": "สอดคล้อง"}, {"set": ["timeless", "evergreen", "enduring"], "meaning": "ไม่มีวันหมดอายุ"}, {"set": ["venerable", "esteemed", "respected"], "meaning": "เคารพนับถือ"}, {"set": ["breathtaking", "awe-inspiring", "astonishing"], "meaning": "น่าทึ่ง"}, {"set": ["taut", "tight", "firm"], "meaning": "กระชับ"}, {"set": ["shapeless", "formless", "amorphous"], "meaning": "ไร้รูปร่าง"}, {"set": ["tangible", "palpable", "material"], "meaning": "จับต้องได้"}, {"set": ["sparkly", "glittery", "twinkly"], "meaning": "ระยิบระยับ"}, {"set": ["chiseled", "sculpted", "defined"], "meaning": "มีรูปทรงชัดเจน"}, {"set": ["distraught", "distressed", "upset"], "meaning": "วิตกกังวล"}, {"set": ["symmetrical", "balanced", "proportional"], "meaning": "สมดุล"}, {"set": ["frigid", "icy", "cold"], "meaning": "หนาวเย็น"}, {"set": ["stark", "blunt", "bare"], "meaning": "เปลือย"}, {"set": ["tantalizing", "tempting", "enticing"], "meaning": "ดึงดูดใจ"}, {"set": ["opaque", "cloudy", "murky"], "meaning": "ทึบ"}, {"set": ["tarnished", "blemished", "marred"], "meaning": "มีรอยขีดข่วน"}, {"set": ["squandered", "wasted", "dissipated"], "meaning": "สูญเสีย"}, {"set": ["impeccable", "flawless", "perfect"], "meaning": "ไม่มีที่ติ"}, {"set": ["drab", "monotonous", "uninspiring"], "meaning": "น่าเบื่อ"}, {"set": ["unremarkable", "mediocre", "unexceptional"], "meaning": "ไม่โดดเด่น"}, {"set": ["dimensional", "three-dimensional", "volumetric"], "meaning": "สามมิติ"}, {"set": ["jarring", "strident", "discordant"], "meaning": "น่ารำคาญ"}, {"set": ["glum", "morose", "sullen"], "meaning": "ซึมเศร้า"}, {"set": ["meticulous", "scrupulous", "precise"], "meaning": "พิถีพิถัน"}, {"set": ["artful", "skillful", "crafty"], "meaning": "ชำนาญ"}, {"set": ["frumpy", "dowdy", "ungainly"], "meaning": "ดูไม่ดี"}, {"set": ["tawdry", "cheap", "shoddy"], "meaning": "ราคาถูก"}, {"set": ["mesmerizing", "captivating", "enthralling"], "meaning": "ดึงดูดใจ"}, {"set": ["inspiring", "uplifting", "motivating"], "meaning": "สร้างแรงบันดาลใจ"}, {"set": ["perspicacious", "insightful", "shrewd"], "meaning": "เฉียบแหลม"}, {"set": ["dedicate", "devote", "commit"], "meaning": "อุทิศ"}, {"set": ["reassure", "comfort", "console"], "meaning": "ปลอบใจ"}, {"set": ["expressive", "demonstrative", "vocal"], "meaning": "แสดงออก"}, {"set": ["fathom", "comprehend", "grasp"], "meaning": "เข้าใจ"}, {"set": ["anecdote", "tale", "story"], "meaning": "เรื่องเล่า"}, {"set": ["artistry", "creativity", "imagination"], "meaning": "ความคิดสร้างสรรค์"}, {"set": ["narrate", "recount", "tell"], "meaning": "เล่า"}, {"set": ["intellect", "reason", "mind"], "meaning": "สติปัญญา"}, {"set": ["pondering", "rumination", "meditation"], "meaning": "การคิดทบทวน"}, {"set": ["declaration", "announcement", "proclamation"], "meaning": "การประกาศ"}, {"set": ["assert", "maintain", "uphold"], "meaning": "ยืนกราน"}, {"set": ["inquire", "ask", "probe"], "meaning": "สอบถาม"}];
+
+// ── ก.พ. English Quiz ──────────────────────────
+function ensureGkh(){
+  if(GKH_QS!==null)return Promise.resolve();
+  const info=document.getElementById('gkh-load-info');
+  // Use embedded JS file (works with file://)
+  if(typeof GKH_DATA!=='undefined'&&GKH_DATA.length){
+    GKH_QS=GKH_DATA;
+    if(info)info.textContent=GKH_QS.length+' ข้อสอบพร้อมแล้ว';
+    return Promise.resolve();
+  }
+  // Fallback: fetch from GitHub Pages
+  if(info)info.textContent='กำลังโหลดข้อสอบ...';
+  return fetch(DATA_BASE+'gkh_english.json')
+    .then(r=>{if(!r.ok)throw new Error(r.status);return r.json();})
+    .then(d=>{GKH_QS=d;if(info)info.textContent=d.length+' ข้อสอบพร้อมแล้ว';})
+    .catch(()=>{GKH_QS=[];if(info)info.textContent='โหลดข้อสอบไม่ได้';});
+}
+
+async function startGkh(mode){
+  if(GKH_QS===null){await ensureGkh();}
+  if(!GKH_QS||!GKH_QS.length){toast('โหลดข้อสอบไม่ได้ — push gkh_english.json ขึ้น GitHub ก่อนนะครับ');return;}
+  window._gkhMode=mode;
+  const pool=GKH_QS.filter(q=>{
+    if(mode==='conv')return q.topic==='Conversation'||q.topic==='English';
+    if(mode==='gram')return q.topic==='Grammar';
+    if(mode==='read')return q.topic==='Reading';
+    if(mode==='vocab')return q.topic==='Vocabulary';
+    return true;
+  });
+  if(!pool.length){toast('ไม่มีข้อสอบในหัวข้อนี้');return;}
+  // Build history for this pool
+  const hist={};
+  PROG.filter(p=>p.mode==='gkh'&&p.word.startsWith('gkh_')).forEach(p=>{
+    const id=p.word.slice(4);
+    if(!hist[id])hist[id]={ok:0,fail:0};
+    if(p.result==='ok')hist[id].ok++;else hist[id].fail++;
+  });
+  const newQs=pool.filter(q=>!hist[q.id]);
+  const wrongQs=pool.filter(q=>hist[q.id]&&hist[q.id].fail>0&&hist[q.id].ok===0);
+  const doneQs=pool.filter(q=>hist[q.id]&&hist[q.id].ok>0);
+  const N=15;
+  const pick=(arr,n)=>shuf([...arr]).slice(0,n);
+  let picked=[...pick(wrongQs,Math.round(N*0.35)),...pick(doneQs,Math.round(N*0.15)),...pick(newQs,Math.round(N*0.50))];
+  // Fill remaining with new questions, then any remaining from pool
+  if(picked.length<N){
+    const used=new Set(picked.map(q=>q.id));
+    const fill=shuf([...newQs,...pool].filter(q=>!used.has(q.id)));
+    fill.forEach(q=>{if(picked.length<N){picked.push(q);}});
+  }
+  gkh_qs=shuf(picked).slice(0,N);
+  gkh_idx=0;gkh_ok=0;gkh_fail=[];
+  document.getElementById('gkh-start').style.display='none';
+  document.getElementById('gkh-quiz').style.display='flex';
+  document.getElementById('gkh-result').style.display='none';
+  renderGkhQ();
+}
+
+function renderGkhQ(){
+  if(gkh_idx>=gkh_qs.length){showGkhResult();return;}
+  const q=gkh_qs[gkh_idx];
+  document.getElementById('gkh-prog').style.width=(gkh_idx/gkh_qs.length*100)+'%';
+  document.getElementById('gkh-qn').textContent=gkh_idx+1;
+  document.getElementById('gkh-tot').textContent=gkh_qs.length;
+  document.getElementById('gkh-sc').textContent=gkh_ok;
+  const txt=q.text||'';
+  let html='';
+  if(/^Situation\s*:/i.test(txt)){
+    const nl=txt.indexOf('\n');
+    const situ=nl>0?txt.slice(0,nl):txt;
+    const rest=nl>0?txt.slice(nl+1).trim():'';
+    html='<div class="gkh-passage">'+esc(situ)+'</div>'+(rest?'<div class="gkh-qbody">'+esc(rest)+'</div>':'');
+  }else if(/^Passage\s*:/i.test(txt)){
+    const m=txt.match(/^(Passage\s*:[\s\S]+?)(?=\n[A-Z฀-๿]|\n\d+\.|$)/i);
+    if(m){const pass=m[1];const rest=txt.slice(m[0].length).trim();html='<div class="gkh-passage">'+esc(pass)+'</div>'+(rest?'<div class="gkh-qbody">'+esc(rest)+'</div>':'');}
+    else html='<div class="gkh-qbody">'+esc(txt)+'</div>';
+  }else{
+    html='<div class="gkh-qbody">'+esc(txt)+'</div>';
+  }
+  document.getElementById('gkh-qbody').innerHTML=html;
+  const fb=document.getElementById('gkh-fb');fb.className='fb';fb.textContent='';
+  document.getElementById('gkh-next').style.visibility='hidden';
+  const GOPT='width:100%;display:flex;align-items:center;background:var(--sf2);border:1.5px solid var(--br2);border-radius:10px;padding:10px 16px;font-family:Sarabun,sans-serif;font-size:14px;font-weight:500;color:var(--tx);cursor:pointer;text-align:left;line-height:1.4;overflow:hidden;transition:all .12s;-webkit-user-select:none;box-sizing:border-box';
+  document.getElementById('gkh-choices').innerHTML=[1,2,3,4].map(i=>'<button style="'+GOPT+'" onclick="ansGkh('+i+')">'+esc(q.choices[String(i)]||'')+'</button>').join('');
+}
+
+function ansGkh(i){
+  const q=gkh_qs[gkh_idx];const ok=i===q.answer;
+  const btns=document.querySelectorAll('#gkh-choices button');
+  btns.forEach((b,j)=>{b.disabled=true;if(j+1===q.answer){b.style.background='var(--gr2)';b.style.borderColor='var(--gr)';b.style.color='var(--gr)';}});
+  const sel=btns[i-1];if(ok){sel.style.background='var(--gr2)';sel.style.borderColor='var(--gr)';sel.style.color='var(--gr)';}else{sel.style.background='var(--rd2)';sel.style.borderColor='var(--rd)';sel.style.color='var(--rd)';}
+  const fb=document.getElementById('gkh-fb');
+  if(ok){gkh_ok++;fb.className='fb fb-ok on';fb.textContent='✓ ถูกต้อง!';}
+  else{
+    gkh_fail.push(q);
+    const expTxt=q.explain?'<div style="margin-top:6px;font-size:12px;line-height:1.6;opacity:.9">'+esc(q.explain)+'</div>':'';
+    fb.className='fb fb-fail on';
+    fb.style.flexDirection='column';fb.style.alignItems='flex-start';
+    fb.innerHTML='<div>✗ ผิด! เฉลย: <b>'+esc(q.choices[String(q.answer)])+'</b></div>'+expTxt;
+  }
+  addProg({word:'gkh_'+q.id,mode:'gkh',result:ok?'ok':'fail'});
+  document.getElementById('gkh-next').style.visibility='visible';
+}
+
+function nextGkhQ(){gkh_idx++;renderGkhQ();}
+
+function showGkhResult(){
+  document.getElementById('gkh-quiz').style.display='none';
+  document.getElementById('gkh-result').style.display='flex';
+  const tot=gkh_qs.length,c=gkh_ok,w=tot-c,pct=Math.round(c/tot*100);
+  document.getElementById('gkhr-n').textContent=c;
+  document.getElementById('gkhr-tot').textContent=tot;
+  document.getElementById('gkhr-c').textContent=c;
+  document.getElementById('gkhr-w').textContent=w;
+  const msgs=[[90,'🏆 ยอดเยี่ยม!'],[70,'👍 ดีมาก!'],[50,'📚 พอใช้ได้'],[0,'💪 ฝึกต่อไปนะ']];
+  document.getElementById('gkhr-msg').textContent=(msgs.find(m=>pct>=m[0])||msgs[3])[1];
+  const ww=document.getElementById('gkhr-wrong-wrap');
+  if(gkh_fail.length){
+    ww.style.display='block';
+    document.getElementById('gkhr-wrong-list').innerHTML=gkh_fail.map(q=>'<div class="hi"><div class="hd fl"></div><div style="flex:1"><div class="hw" style="font-size:12px;line-height:1.4">'+esc((q.text||'').slice(0,80))+'</div><div class="hm">เฉลย: '+esc(q.choices[String(q.answer)])+'</div></div></div>').join('');
+  }else ww.style.display='none';
+}
+
+function showGkhStart(){
+  document.getElementById('gkh-start').style.display='block';
+  document.getElementById('gkh-quiz').style.display='none';
+  document.getElementById('gkh-result').style.display='none';
+}
 
 // iOS keyboard input focus fix
 document.addEventListener('DOMContentLoaded',()=>{
