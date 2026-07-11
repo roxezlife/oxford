@@ -210,11 +210,51 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:'Sarabun'
 .fcard-ex{font-size:13px;color:var(--tx2);line-height:1.8;border-left:2px solid var(--gd2);padding-left:12px}
 .fcard-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
 .fcard-chip{font-family:'Inter',sans-serif;font-size:20px;font-weight:700;color:var(--gd);background:var(--gd2);border:1px solid rgba(212,168,75,.2);padding:8px 16px;border-radius:99px}
-@media (orientation:landscape) and (max-height:500px){@media (orientation:landscape) and (max-height:500px){.wword{font-size:32px}.wmean{font-size:20px}.sc-foot{padding:8px 16px calc(8px + env(safe-area-inset-bottom,0px))}.wcard{padding:16px}.aplayer{padding:8px 12px}}
+@media (orientation:landscape) and (max-height:500px){.wword{font-size:32px}.wmean{font-size:20px}.sc-foot{padding:8px 16px calc(8px + env(safe-area-inset-bottom,0px))}.wcard{padding:16px}.aplayer{padding:8px 12px}}
 .gkh-choices{display:flex;flex-direction:column;gap:8px}
 .gkh-choices button{flex:1;min-height:52px}
 .gkh-passage{background:var(--sf2);border:1px solid var(--br2);border-left:3px solid var(--gd);border-radius:10px;padding:12px 14px;margin-bottom:10px;font-size:13px;line-height:1.8;color:var(--tx2);white-space:pre-wrap}
 .gkh-qbody{font-size:15px;line-height:1.7;color:var(--tx);white-space:pre-wrap;word-break:break-word}
+.gt-set-instr{font-size:12px;color:var(--tx2);font-style:italic;line-height:1.6;margin-bottom:10px;padding-bottom:10px;border-bottom:1px dashed var(--br)}
+.gl-pattern{font-family:'Inter',sans-serif;font-size:13px;font-weight:700;color:var(--gd);background:var(--gd2);border:1px solid rgba(212,168,75,.25);border-radius:10px;padding:12px 14px;margin-bottom:18px;line-height:1.7;word-break:break-word}
+.gl-sec{font-size:10px;font-weight:700;letter-spacing:.8px;color:var(--gd);text-transform:uppercase;margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid var(--br)}
+.gl-block{margin-bottom:20px}
+.gl-block:last-child{margin-bottom:0}
+.gl-table{width:100%;border-collapse:collapse;font-size:13px}
+.gl-table tr{border-bottom:1px solid var(--br)}
+.gl-table tr:last-child{border-bottom:none}
+.gl-table td{padding:10px 6px;vertical-align:top;line-height:1.5}
+.gl-table td:first-child{font-family:'Inter',sans-serif;font-weight:800;color:var(--gd);width:32%;padding-left:0;font-size:13px}
+.gl-table td:last-child{color:var(--tx2);padding-right:0}
+.gl-ex{background:var(--sf2);border-radius:10px;padding:10px 12px;margin-bottom:8px;display:flex;gap:10px;align-items:flex-start}
+.gl-ex:last-child{margin-bottom:0}
+.gl-ex-n{font-family:'Inter',sans-serif;font-size:11px;font-weight:800;color:var(--gd);background:var(--gd2);border-radius:6px;width:20px;height:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.gl-ex-en{font-size:14px;color:var(--tx);font-weight:600;line-height:1.55}
+.gl-intro{background:var(--gr2);border:1px solid rgba(62,207,142,.25);border-radius:10px;padding:12px 14px;margin-bottom:18px}
+.gl-intro-lbl{font-size:10px;font-weight:700;letter-spacing:.6px;color:var(--gr);text-transform:uppercase;margin-bottom:5px}
+.gl-intro-en{font-size:14.5px;color:var(--tx);font-weight:600;line-height:1.5}
+.gl-mistake{background:var(--rd2);border:1px solid rgba(224,92,106,.25);border-radius:10px;padding:12px 14px}
+.gl-mistake-row{display:flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;margin-bottom:5px;line-height:1.5}
+.gl-mistake-row.w{color:var(--rd);text-decoration:line-through;text-decoration-color:rgba(224,92,106,.5)}
+.gl-mistake-row.r{color:var(--gr);margin-bottom:8px}
+.gl-mistake-note{color:var(--tx2);font-size:12.5px;line-height:1.6}
+.gl-tip{background:rgba(91,156,246,.1);border:1px solid rgba(91,156,246,.25);border-radius:10px;padding:12px 14px;font-size:13px;color:var(--tx2);line-height:1.6;display:flex;gap:8px;align-items:flex-start}
+.gl-summary{background:var(--sf2);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:7px}
+.gl-summary-item{font-size:12.5px;color:var(--tx2);line-height:1.5;padding-left:14px;position:relative}
+.gl-summary-item::before{content:'•';position:absolute;left:0;color:var(--gd)}
+.gl-usec{margin-bottom:18px}
+.gl-usec:last-child{margin-bottom:0}
+.gl-usec-lbl{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;background:var(--gd2);color:var(--gd);font-family:'Inter',sans-serif;font-size:12px;font-weight:800;margin-bottom:8px}
+.gl-usec-explain{font-size:13.5px;color:var(--tx2);line-height:1.7;margin-bottom:10px}
+.gl-tl-axis{position:relative;height:3px;background:var(--br2);border-radius:99px;margin:24px 4px 12px}
+.gl-tl-zone-lbl{position:absolute;top:-18px;font-size:9px;color:var(--tx3);transform:translateX(-50%);white-space:nowrap}
+.gl-tl-mark{position:absolute;top:50%;transform:translateY(-50%);height:3px;border-radius:99px}
+.gl-tl-mark.dot{width:9px;height:9px;border-radius:50%;margin-top:-3px}
+.gl-tl-legend{display:flex;flex-direction:column;gap:6px;margin-top:4px}
+.gl-tl-item{display:flex;align-items:flex-start;gap:7px;font-size:11.5px;color:var(--tx2);line-height:1.5}
+.gl-tl-swatch{width:9px;height:9px;border-radius:3px;flex-shrink:0;margin-top:3px}
+.gt-topic-row{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:var(--sf);border:1px solid var(--br2);border-radius:12px;margin-bottom:10px;cursor:pointer}
+.gt-topic-row:active{transform:scale(.98)}
 </style>
 </head>
 <body>
@@ -253,6 +293,17 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:'Sarabun'
               <div class="mc-t" style="font-size:16px;margin-bottom:3px">คำศัพท์</div>
               <div class="mc-d">Oxford 3000</div>
               <div style="font-size:11px;color:var(--gd);font-weight:600;margin-top:4px" id="home-ptxt">0/0 คำ</div>
+            </div>
+            <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:18px 20px;gap:16px" onclick="goSc('gram')">
+            <div class="mc-ico" style="width:52px;height:52px;border-radius:14px;flex-shrink:0">
+              <svg viewBox="0 0 24 24" style="width:22px;height:22px"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+            </div>
+            <div style="flex:1">
+              <div class="mc-t" style="font-size:16px;margin-bottom:3px">ไวยากรณ์</div>
+              <div class="mc-d">Grammar</div>
+              <div style="font-size:11px;color:var(--gd);font-weight:600;margin-top:4px" id="home-gtxt">0/6 บทเรียน</div>
             </div>
             <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
           </div>
@@ -451,6 +502,17 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:'Sarabun'
           <div class="prog-row" style="margin-bottom:7px"><span class="prog-lbl">ความแม่นยำ</span><span class="prog-pct" id="st-acc">0%</span></div>
           <div class="prog-track"><div class="prog-fill" id="st-acc-bar" style="width:0%"></div></div>
         </div>
+        <div class="sec" style="margin-bottom:12px">ไวยากรณ์ (Grammar)</div>
+        <div class="stgrid" style="margin-bottom:12px">
+          <div class="stbox gd"><div class="stn" id="st-gl-learn">0</div><div class="stl">บทเรียนที่เข้าใจแล้ว</div></div>
+          <div class="stbox bl"><div class="stn" id="st-gt-total">0</div><div class="stl">ข้อที่ทำไปแล้ว</div></div>
+          <div class="stbox gr"><div class="stn" id="st-gt-ok">0</div><div class="stl">ตอบถูก</div></div>
+          <div class="stbox rd"><div class="stn" id="st-gt-fail">0</div><div class="stl">ตอบผิด</div></div>
+        </div>
+        <div class="card" style="margin-bottom:20px">
+          <div class="prog-row" style="margin-bottom:7px"><span class="prog-lbl">ความแม่นยำไวยากรณ์</span><span class="prog-pct" id="st-gt-acc">0%</span></div>
+          <div class="prog-track"><div class="prog-fill" id="st-gt-bar" style="width:0%"></div></div>
+        </div>
         <div class="sec" style="margin-bottom:12px">ก.พ. English</div>
         <div class="stgrid" style="margin-bottom:12px">
           <div class="stbox gd"><div class="stn" id="st-gkh-total">0</div><div class="stl">ทำไปแล้ว</div></div>
@@ -528,6 +590,148 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:'Sarabun'
       </div>
     </div>
 
+    <!-- GRAMMAR HUB -->
+    <div id="sc-gram" class="sc">
+      <div class="sc-body">
+        <div class="sec" style="margin-bottom:12px">ไวยากรณ์ (Grammar)</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:16px 18px;gap:14px;border-color:rgba(212,168,75,.35);background:var(--gd2)" onclick="goSc('gramlesson');startGramLesson()">
+            <div class="mc-ico" style="width:44px;height:44px;border-radius:12px;flex-shrink:0;background:rgba(212,168,75,.2);color:var(--gd)"><svg viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M13 2L4.5 13H11L10 22L19.5 11H13Z"/></svg></div>
+            <div style="flex:1"><div class="mc-t" style="color:var(--gd)">บทเรียนวันนี้</div><div class="mc-d">อ่านซ้ำ ฝึกซ้ำ จำกฎการใช้งาน</div></div>
+            <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--gd);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:16px 18px;gap:14px" onclick="goSc('gramtest');showGramTStart()">
+            <div class="mc-ico" style="width:44px;height:44px;border-radius:12px;flex-shrink:0"><svg viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 12h6M9 16h4"/></svg></div>
+            <div style="flex:1"><div class="mc-t">ทดสอบ</div><div class="mc-d">ทำโจทย์แยกตามหมวด</div></div>
+            <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:16px 18px;gap:14px" onclick="goSc('gramtopics');renderGramTopics()">
+            <div class="mc-ico" style="width:44px;height:44px;border-radius:12px;flex-shrink:0"><svg viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div>
+            <div style="flex:1"><div class="mc-t">หมวดไวยากรณ์</div><div class="mc-d">เลือกอ่านทีละหมวด</div></div>
+            <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+        </div>
+        <div class="card" style="margin-top:14px;margin-bottom:12px;padding:14px 16px">
+          <div class="prog-row" style="margin-bottom:6px">
+            <span class="prog-lbl">บทเรียนที่เข้าใจแล้ว</span>
+            <span class="prog-pct" id="gram-hub-pct">0%</span>
+          </div>
+          <div class="prog-track"><div class="prog-fill" id="gram-hub-bar" style="width:0%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRAMMAR LESSON (flashcard-style, spaced repetition) -->
+    <div id="sc-gramlesson" class="sc">
+      <div class="sc-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+          <div style="font-family:'Inter',sans-serif;font-size:18px;font-weight:900" id="gl-title">บทเรียนวันนี้</div>
+          <div class="flctr" id="gl-ctr">0/0</div>
+        </div>
+        <div id="gl-body"><div class="empty"><span class="empty-ico">📘</span>กดเริ่มด้านล่าง</div></div>
+      </div>
+      <div class="sc-foot">
+        <div id="gl-ctrl" style="display:none">
+          <div class="row mb8">
+            <button class="btn bfail" onclick="markGramLesson('fail')">✕ ยังไม่เข้าใจ</button>
+            <button class="btn bok" onclick="markGramLesson('ok')">✓ เข้าใจแล้ว</button>
+          </div>
+          <div class="row">
+            <button class="btn bnav" onclick="prevGramLesson()">‹ ก่อนหน้า</button>
+            <button class="btn bnav" onclick="nextGramLesson()">ถัดไป ›</button>
+          </div>
+        </div>
+        <div id="gl-start">
+          <button class="bgold" onclick="startGramLesson()">เริ่มบทเรียนวันนี้</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRAMMAR TOPICS BROWSE -->
+    <div id="sc-gramtopics" class="sc">
+      <div class="sc-body">
+        <div class="sec" style="margin-bottom:12px">เลือกหมวดที่จะอ่าน</div>
+        <div id="gramtopics-list"></div>
+      </div>
+    </div>
+
+    <!-- GRAMMAR UNIT LIST (pick a specific Unit within a section) -->
+    <div id="sc-gramunits" class="sc">
+      <div class="sc-body">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+          <button class="btn bout" style="width:auto;padding:8px 14px;flex-shrink:0" onclick="goSc('gramtopics')">‹ กลับ</button>
+          <div class="sec" id="gu-section-title" style="margin-bottom:0;flex:1;text-align:right">หมวด</div>
+        </div>
+        <div id="gramunits-list"></div>
+      </div>
+    </div>
+
+    <!-- SINGLE UNIT STUDY: เนื้อหาบทเรียน -> แบบฝึกหัด (Exercise) ในตัว -->
+    <div id="sc-unitstudy" class="sc">
+      <div class="sc-body" id="us-scroll">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <button class="btn bout" style="width:auto;padding:8px 14px" onclick="goSc('gramunits')">‹ รายการบท</button>
+          <div class="flctr" id="us-ctr"></div>
+        </div>
+        <div id="us-lesson-wrap"><div id="us-lesson-body"></div></div>
+        <div id="us-ex-wrap" style="display:none">
+          <div class="tprog"><div class="tprogf" id="us-ex-prog" style="width:0%"></div></div>
+          <div class="tmeta"><span>แบบฝึกหัดข้อ <b id="us-ex-n">1</b>/<b id="us-ex-tot">1</b></span><span>✓ <b id="us-ex-sc">0</b></span></div>
+          <div class="qcard"><div class="qtype" id="us-ex-type">แบบฝึกหัด (Exercise)</div><div id="us-ex-qbody"></div></div>
+          <div class="fb" id="us-ex-fb"></div>
+        </div>
+        <div id="us-done-wrap" style="display:none"></div>
+      </div>
+      <div class="sc-foot" id="us-foot">
+        <button class="bgold" id="us-lesson-next-btn" onclick="beginUnitExercise()">ถัดไป: ทำแบบฝึกหัด →</button>
+      </div>
+    </div>
+
+    <!-- GRAMMAR TEST -->
+    <div id="sc-gramtest" class="sc">
+      <div id="gt-start" style="flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:16px">
+        <div class="sec" style="margin-bottom:12px">เลือกหมวดที่จะทดสอบ</div>
+        <div class="menu2" id="gt-menu"></div>
+        <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:16px 18px;gap:14px;margin-top:10px;border-color:rgba(212,168,75,.35);background:var(--gd2)" onclick="startGramTest('ALL')">
+          <div class="mc-ico" style="width:44px;height:44px;border-radius:12px;flex-shrink:0;background:rgba(212,168,75,.2);color:var(--gd)"><svg viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg></div>
+          <div style="flex:1"><div class="mc-t" style="color:var(--gd)">ผสมทุกหมวด</div><div class="mc-d">สุ่มจากทุกหัวข้อไวยากรณ์</div></div>
+          <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--gd);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+      </div>
+      <!-- quiz -->
+      <div id="gt-quiz" style="display:none;flex-direction:column;flex:1;overflow:hidden">
+        <div style="flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:16px 16px 0">
+          <div class="tprog"><div class="tprogf" id="gt-prog" style="width:0%"></div></div>
+          <div class="tmeta"><span>ข้อ <b id="gt-qn">1</b>/<b id="gt-tot">12</b></span><span>✓ <b id="gt-sc">0</b></span></div>
+          <div class="qcard"><div class="qtype" id="gt-type"></div><div id="gt-qbody"></div></div>
+          <div class="fb" id="gt-fb"></div>
+        </div>
+        <div style="flex-shrink:0;display:flex;flex-direction:column;gap:10px;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:var(--bg);border-top:1px solid var(--br)">
+          <div class="gkh-choices" id="gt-choices"></div>
+          <div id="gt-fill" style="display:none">
+            <input type="text" id="gt-fill-input" class="cin" style="margin-bottom:0" placeholder="พิมพ์คำตอบที่นี่..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" onkeydown="if(event.key==='Enter')checkGramFill()">
+            <button class="bgold" style="margin-top:8px" onclick="checkGramFill()">ตรวจคำตอบ</button>
+          </div>
+          <button class="bnext" id="gt-next" onclick="nextGramTQ()" style="display:block;visibility:hidden;flex-shrink:0">ข้อถัดไป →</button>
+        </div>
+      </div>
+      <!-- result -->
+      <div id="gt-result" style="display:none;flex-direction:column;flex:1;overflow-y:auto">
+        <div class="rh"><div class="rn" id="gtr-n">0</div><div class="rof">จาก <span id="gtr-tot">12</span> ข้อ</div><div class="rmsg" id="gtr-msg">ดีมาก!</div></div>
+        <div class="rgrid">
+          <div class="rbox ok"><div class="rboxn" id="gtr-c">0</div><div class="rboxl">ถูก</div></div>
+          <div class="rbox fl"><div class="rboxn" id="gtr-w">0</div><div class="rboxl">ผิด</div></div>
+        </div>
+        <div id="gtr-wrong-wrap" style="padding:0 16px;margin-bottom:12px;display:none">
+          <div class="card"><div class="sec" style="margin-bottom:8px">คำที่ตอบผิด</div><div id="gtr-wrong-list"></div></div>
+        </div>
+        <div class="rbtns">
+          <button class="bgold" style="flex:1;border-radius:10px" onclick="startGramTest(window._gtMode)">ทำใหม่</button>
+          <button class="btn bout" onclick="showGramTStart()">เมนู</button>
+        </div>
+      </div>
+    </div>
+
     <!-- SETTINGS -->
     <div id="sc-cfg" class="sc">
       <div class="sc-body">
@@ -565,6 +769,8 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:'Sarabun'
 <div id="toast" style="opacity:0"></div>
 
 <script src="gkh_english.js"></script>
+<script src="grammar_units.js"></script>
+<script src="grammar_unit_practice.js"></script>
 <script>
 const GAS='https://script.google.com/macros/s/AKfycbzc5_XNMTolhs2DXVWVjK67MNqSZR6b_s159j_KrvaG9LcnA5U6AkcvbfbyJeTtEuyM/exec';
 let WORDS=[],SYNS=[],AMAP={},PROG=[],CFG={};
@@ -572,6 +778,9 @@ let fCards=[],fIdx=0,tQs=[],tIdx=0,tOk=0,tFail=[];
 window._rMode='mixed';window._rAu=null;window._tMode='mixed';
 let GKH_QS=null,gkh_qs=[],gkh_idx=0,gkh_ok=0,gkh_fail=[];
 window._gkhMode='conv';
+let glCards=[],glIdx=0;
+let gtQs=[],gtIdx=0,gtOk=0,gtFail=[];
+window._gtMode='ALL';
 const _ac={};
 
 async function init(){
@@ -621,6 +830,7 @@ async function loadData(){
 
 function S(x){return String(x||'').trim();}
 function esc(s){const d=document.createElement('div');d.textContent=String(s||'');return d.innerHTML;}
+function mdBold(s){return esc(s||'').replace(/\*\*(.+?)\*\*/g,'<b style="color:var(--gd)">$1</b>');}
 const AUDIO_BASE='audio/';
 function drv(id){return'https://docs.google.com/uc?export=download&id='+id+'&confirm=t';}
 function auUrl(w){
@@ -655,6 +865,7 @@ function goSc(id){
   const nb=document.querySelector('.nb[data-sc="'+id+'"]');if(nb)nb.classList.add('on');
   if(id==='stats')updateStats();if(id==='home')renderHome();
   if(id==='gkh')ensureGkh();
+  if(id==='gram')ensureGram().then(renderGramHub);
 }
 
 function renderHome(){
@@ -668,6 +879,9 @@ function renderHome(){
   document.getElementById('home-ptxt').textContent=ln+'/'+tot+' คำ';
   document.getElementById('home-ppct').textContent=pct+'%';
   document.getElementById('home-pbar').style.width=pct+'%';
+  const glDone=[...new Set(PROG.filter(p=>p.mode==='gramlesson'&&p.result==='ok').map(p=>p.word))].length;
+  const glTot=(GU||[]).length||6;
+  document.getElementById('home-gtxt').textContent=glDone+'/'+glTot+' บทเรียน';
   const rec=[...PROG].reverse().slice(0,5),el=document.getElementById('home-recent');
   if(!rec.length){el.innerHTML='<div class="empty" style="padding:10px 0"><span class="empty-ico">📖</span>เริ่มเรียนเพื่อดูประวัติ</div>';return;}
   el.innerHTML=rec.map(p=>'<div class="hi"><div class="hd '+(p.result==='ok'?'ok':p.result==='fail'?'fl':'ln')+'"></div><div style="flex:1"><div class="hw">'+p.word+'</div><div class="hm">'+mL(p.mode)+'</div></div><div class="ht">'+p.date+'</div></div>').join('');
@@ -898,6 +1112,17 @@ function updateStats(){
   document.getElementById('st-gkh-acc').textContent=gacc+'%';
   document.getElementById('st-gkh-acc2').textContent=gacc+'%';
   document.getElementById('st-gkh-bar').style.width=gacc+'%';
+  // Grammar
+  const glOk=[...new Set(PROG.filter(p=>p.mode==='gramlesson'&&p.result==='ok').map(p=>p.word))].length;
+  const gt=PROG.filter(p=>p.mode==='gramtest');
+  const gtOkN=gt.filter(p=>p.result==='ok').length,gtFailN=gt.filter(p=>p.result==='fail').length;
+  const gtAcc=gt.length?Math.round(gtOkN/gt.length*100):0;
+  document.getElementById('st-gl-learn').textContent=glOk;
+  document.getElementById('st-gt-total').textContent=gt.length;
+  document.getElementById('st-gt-ok').textContent=gtOkN;
+  document.getElementById('st-gt-fail').textContent=gtFailN;
+  document.getElementById('st-gt-acc').textContent=gtAcc+'%';
+  document.getElementById('st-gt-bar').style.width=gtAcc+'%';
   applyHdr();
 }
 
@@ -970,8 +1195,14 @@ async function startGkh(mode){
   // Fill remaining with new questions, then any remaining from pool
   if(picked.length<N){
     const used=new Set(picked.map(q=>q.id));
-    const fill=shuf([...newQs,...pool].filter(q=>!used.has(q.id)));
-    fill.forEach(q=>{if(picked.length<N){picked.push(q);}});
+    const fill=shuf(pool.filter(q=>!used.has(q.id)));
+    fill.forEach(q=>{if(picked.length<N&&!used.has(q.id)){picked.push(q);used.add(q.id);}});
+  }
+  // Topic pool too small on its own: top up from the other ก.พ. topics
+  if(picked.length<N&&mode!=='all'){
+    const used=new Set(picked.map(q=>q.id));
+    const fillOther=shuf(GKH_QS.filter(q=>!used.has(q.id)));
+    fillOther.forEach(q=>{if(picked.length<N&&!used.has(q.id)){picked.push(q);used.add(q.id);}});
   }
   gkh_qs=shuf(picked).slice(0,N);
   gkh_idx=0;gkh_ok=0;gkh_fail=[];
@@ -1050,6 +1281,384 @@ function showGkhStart(){
   document.getElementById('gkh-start').style.display='block';
   document.getElementById('gkh-quiz').style.display='none';
   document.getElementById('gkh-result').style.display='none';
+}
+
+// ── Grammar Learning Module (independent curriculum, based on Murphy's "English Grammar in Use" unit structure) ──
+let GU=null,GUP=null;
+function ensureGram(){
+  if(GU!==null&&GUP!==null)return Promise.resolve();
+  const p1=(typeof GRAM_UNITS!=='undefined'&&GRAM_UNITS.length)?Promise.resolve(GRAM_UNITS):fetch(DATA_BASE+'grammar_units.json').then(r=>r.json()).catch(()=>[]);
+  const p2=(typeof GRAM_UNIT_PRACTICE!=='undefined'&&GRAM_UNIT_PRACTICE.length)?Promise.resolve(GRAM_UNIT_PRACTICE):fetch(DATA_BASE+'grammar_unit_practice.json').then(r=>r.json()).catch(()=>[]);
+  return Promise.all([p1,p2]).then(([u,p])=>{GU=u||[];GUP=p||[];});
+}
+function gramSections(){return[...new Set((GU||[]).map(u=>u.section))];}
+function gramPool(section){
+  return(GUP||[]).filter(q=>!section||section==='ALL'||q.section===section);
+}
+
+function renderGramHub(){
+  const glDone=[...new Set(PROG.filter(p=>p.mode==='gramlesson'&&p.result==='ok').map(p=>p.word))].length;
+  const tot=(GU||[]).length||1;
+  const pct=Math.min(100,Math.round(glDone/tot*100));
+  document.getElementById('gram-hub-pct').textContent=pct+'%';
+  document.getElementById('gram-hub-bar').style.width=pct+'%';
+}
+
+function buildGramPkg(scope){
+  const hist={};
+  PROG.filter(p=>p.mode==='gramlesson').forEach(p=>{
+    if(!hist[p.word])hist[p.word]={o:0,f:0};
+    if(p.result==='ok')hist[p.word].o++;else hist[p.word].f++;
+  });
+  let pool=GU||[];
+  if(scope)pool=pool.filter(l=>l.section===scope);
+  const nL=[],wL=[],oL=[];
+  pool.forEach(l=>{const h=hist['gl_u'+l.unit];if(!h)nL.push(l);else if(h.f>0&&h.o===0)wL.push(l);else oL.push(l);});
+  const pick=(a,k)=>shuf([...a]).slice(0,k);
+  if(scope)return shuf([...wL,...nL,...oL]);
+  const n=Math.min(8,pool.length);
+  let sel=[...pick(nL,Math.ceil(n*.57)),...pick(wL,Math.floor(n*.29)),...pick(oL,Math.floor(n*.14))];
+  if(sel.length<n){const u=new Set(sel.map(x=>x.unit));sel.push(...pick([...nL,...oL,...wL].filter(x=>!u.has(x.unit)),n-sel.length));}
+  return sel.slice(0,n);
+}
+window._glScope=null;
+async function startGramLesson(scope){
+  await ensureGram();
+  window._glScope=scope||null;
+  document.getElementById('gl-title').textContent=scope||'บทเรียนวันนี้';
+  glCards=shuf(buildGramPkg(scope));glIdx=0;
+  if(!glCards.length){
+    document.getElementById('gl-body').innerHTML='<div class="empty"><span class="empty-ico">🎉</span>ไม่มีบทเรียนในหมวดนี้ หรือเรียนครบแล้ว</div>';
+    document.getElementById('gl-ctrl').style.display='none';document.getElementById('gl-start').style.display='block';
+    return;
+  }
+  document.getElementById('gl-start').style.display='none';
+  document.getElementById('gl-ctrl').style.display='block';
+  renderGramLesson();
+}
+function glTimelineHTML(tl){
+  if(!tl||!tl.length)return'';
+  const colors=['var(--gd)','var(--bl)','var(--gr)'];
+  const marks=tl.map((m,i)=>{
+    const c=colors[i%colors.length];
+    if(m.style==='dot')return'<div class="gl-tl-mark dot" style="left:'+m.start+'%;background:'+c+'"></div>';
+    const left=Math.min(m.start,m.end),width=Math.abs(m.end-m.start);
+    const styleExtra=m.style==='dashed'?'border-top:3px dashed '+c+';background:none;height:0;top:calc(50% - 1px)':'background:'+c;
+    return'<div class="gl-tl-mark" style="left:'+left+'%;width:'+width+'%;'+styleExtra+'"></div>';
+  }).join('');
+  const legend=tl.map((m,i)=>'<div class="gl-tl-item"><span class="gl-tl-swatch" style="background:'+colors[i%colors.length]+'"></span><span><b style="color:var(--tx)">'+esc(m.label)+':</b> '+esc(m.note)+'</span></div>').join('');
+  return'<div class="gl-block"><div class="gl-sec">เส้นเวลา</div><div class="gl-tl-axis">'
+    +'<span class="gl-tl-zone-lbl" style="left:0%">อดีต</span>'
+    +'<span class="gl-tl-zone-lbl" style="left:50%">ปัจจุบัน</span>'
+    +'<span class="gl-tl-zone-lbl" style="left:100%">อนาคต</span>'
+    +marks+'</div><div class="gl-tl-legend">'+legend+'</div></div>';
+}
+function lessonCardHTML(l){
+  const secHtml=(l.sections||[]).map(s=>'<div class="gl-usec">'
+    +'<div class="gl-usec-lbl">'+esc(s.label)+'</div>'
+    +'<div class="gl-usec-explain">'+mdBold(s.explain)+'</div>'
+    +(s.examples||[]).map((e,i)=>'<div class="gl-ex"><div class="gl-ex-n">'+(i+1)+'</div><div class="gl-ex-en">'+mdBold(e)+'</div></div>').join('')
+    +'</div>').join('');
+  const notesHtml=(l.notes&&l.notes.length)?'<div class="gl-block"><div class="gl-sec">📌 ข้อสังเกต/ข้อยกเว้น</div><div class="gl-summary">'+l.notes.map(n=>'<div class="gl-summary-item">'+mdBold(n)+'</div>').join('')+'</div></div>':'';
+  const mistakeHtml=l.mistake?'<div class="gl-block"><div class="gl-sec">⚠️ ข้อผิดพลาดที่พบบ่อย</div><div class="gl-mistake">'
+    +'<div class="gl-mistake-row w">✗ '+mdBold(l.mistake.wrong)+'</div>'
+    +'<div class="gl-mistake-row r">✓ '+mdBold(l.mistake.right)+'</div>'
+    +'<div class="gl-mistake-note">'+mdBold(l.mistake.note)+'</div>'
+    +'</div></div>':'';
+  const tipHtml=l.tip?'<div class="gl-block"><div class="gl-sec">💡 เทคนิคจำ</div><div class="gl-tip">'+mdBold(l.tip)+'</div></div>':'';
+  const summaryHtml=(l.summary&&l.summary.length)?'<div class="gl-block"><div class="gl-sec">📝 สรุปท้ายบท</div><div class="gl-summary">'+l.summary.map(s=>'<div class="gl-summary-item">'+mdBold(s)+'</div>').join('')+'</div></div>':'';
+  const timelineHtml=glTimelineHTML(l.timeline);
+  return'<div class="fcard">'
+    +'<div class="fcard-top"><span class="fcard-tag" style="background:rgba(212,168,75,.15);color:var(--gd)">Unit '+l.unit+' · '+esc(l.section)+'</span></div>'
+    +'<div class="fcard-word" style="font-size:21px;line-height:1.35;margin-bottom:18px">'+esc(l.title)+'</div>'
+    +'<div class="gl-block"><div class="gl-sec">โครงสร้าง</div><div class="gl-pattern" style="margin-bottom:0">'+esc(l.pattern)+'</div></div>'
+    +timelineHtml
+    +'<div class="gl-block"><div class="gl-sec">คำอธิบายและตัวอย่าง</div>'+secHtml+'</div>'
+    +notesHtml
+    +mistakeHtml
+    +tipHtml
+    +summaryHtml
+    +'</div>';
+}
+function renderGramLesson(){
+  if(!glCards.length)return;
+  document.getElementById('gl-ctr').textContent=(glIdx+1)+'/'+glCards.length;
+  document.getElementById('gl-body').innerHTML=lessonCardHTML(glCards[glIdx]);
+}
+function markGramLesson(res){
+  const l=glCards[glIdx];if(!l)return;
+  addProg({word:'gl_u'+l.unit,mode:'gramlesson',result:res});
+  nextGramLesson();
+}
+function nextGramLesson(){if(glIdx<glCards.length-1){glIdx++;renderGramLesson();}else endGramLesson();}
+function prevGramLesson(){if(glIdx>0){glIdx--;renderGramLesson();}}
+function endGramLesson(){
+  document.getElementById('gl-body').innerHTML='<div class="empty"><span class="empty-ico">🎉</span>จบบทเรียนแล้ว!</div>';
+  document.getElementById('gl-ctrl').style.display='none';
+  document.getElementById('gl-start').style.display='block';
+  renderHome();renderGramHub();toast('🎉 จบบทเรียนแล้ว!');
+}
+
+async function renderGramTopics(){
+  await ensureGram();
+  const el=document.getElementById('gramtopics-list');
+  const hist={};
+  PROG.filter(p=>p.mode==='gramlesson'&&p.result==='ok').forEach(p=>hist[p.word]=true);
+  el.innerHTML=gramSections().map(t=>{
+    const lessons=(GU||[]).filter(l=>l.section===t);
+    const done=lessons.filter(l=>hist['gl_u'+l.unit]).length;
+    const qn=gramPool(t).length;
+    return'<div class="gt-topic-row" onclick="goSc(\'gramunits\');renderGramUnitsList(\''+t+'\')">'
+      +'<div><div style="font-size:14px;font-weight:600;color:var(--tx)">'+esc(t)+'</div>'
+      +'<div style="font-size:11px;color:var(--tx2);margin-top:2px">'+done+'/'+lessons.length+' บทเรียน · '+qn+' ข้อฝึก</div></div>'
+      +'<svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>'
+      +'</div>';
+  }).join('');
+}
+
+// ---- Per-Unit study: pick a section -> pick a Unit -> lesson -> embedded Exercise ----
+window._guSection=null;
+function exProgForUnit(unit){
+  const pool=(GUP||[]).filter(q=>q.unit===unit);
+  const okIds=new Set(PROG.filter(p=>p.mode==='gramexercise'&&p.result==='ok'&&p.word.indexOf('ue_')===0).map(p=>p.word.slice(3)));
+  const done=pool.filter(q=>okIds.has(String(q.id))).length;
+  return{done,total:pool.length};
+}
+async function renderGramUnitsList(section){
+  await ensureGram();
+  window._guSection=section;
+  document.getElementById('gu-section-title').textContent=section;
+  const units=(GU||[]).filter(u=>u.section===section).sort((a,b)=>a.unit-b.unit);
+  const lessonDone={};
+  PROG.filter(p=>p.mode==='gramlesson'&&p.result==='ok').forEach(p=>lessonDone[p.word]=true);
+  document.getElementById('gramunits-list').innerHTML=units.map(u=>{
+    const read=!!lessonDone['gl_u'+u.unit];
+    const ex=exProgForUnit(u.unit);
+    const exDone=ex.total>0&&ex.done>=ex.total;
+    return'<div class="gt-topic-row" onclick="goSc(\'unitstudy\');startUnitStudy('+u.unit+')">'
+      +'<div><div style="font-size:14px;font-weight:600;color:var(--tx)">Unit '+u.unit+' · '+esc(u.title)+'</div>'
+      +'<div style="font-size:11px;color:var(--tx2);margin-top:2px">'
+      +(read?'<span style="color:var(--gr)">✓ อ่านแล้ว</span>':'<span>ยังไม่ได้อ่าน</span>')
+      +' · แบบฝึกหัด '+ex.done+'/'+ex.total+(exDone?' <span style="color:var(--gr)">✓</span>':'')
+      +'</div></div>'
+      +'<svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>'
+      +'</div>';
+  }).join('');
+}
+
+let usUnit=null,usExQs=[],usExIdx=0,usExOk=0,usExFail=[];
+async function startUnitStudy(unitNum){
+  await ensureGram();
+  usUnit=(GU||[]).find(u=>u.unit===unitNum);
+  if(!usUnit){toast('ไม่พบบทเรียนนี้');return;}
+  document.getElementById('us-lesson-wrap').style.display='block';
+  document.getElementById('us-ex-wrap').style.display='none';
+  document.getElementById('us-done-wrap').style.display='none';
+  document.getElementById('us-lesson-body').innerHTML=lessonCardHTML(usUnit);
+  document.getElementById('us-ctr').textContent='Unit '+usUnit.unit;
+  document.getElementById('us-foot').innerHTML='<button class="bgold" onclick="beginUnitExercise()">ถัดไป: ทำแบบฝึกหัด →</button>';
+  document.getElementById('us-scroll').scrollTop=0;
+  addProg({word:'gl_u'+usUnit.unit,mode:'gramlesson',result:'ok'});
+}
+function beginUnitExercise(){
+  usExQs=(GUP||[]).filter(q=>q.unit===usUnit.unit).sort((a,b)=>a.id-b.id);
+  usExIdx=0;usExOk=0;usExFail=[];
+  document.getElementById('us-lesson-wrap').style.display='none';
+  document.getElementById('us-ex-wrap').style.display='block';
+  document.getElementById('us-done-wrap').style.display='none';
+  if(!usExQs.length){finishUnitExercise();return;}
+  document.getElementById('us-ex-tot').textContent=usExQs.length;
+  renderUnitExerciseQ();
+}
+function renderUnitExerciseQ(){
+  const q=usExQs[usExIdx];
+  document.getElementById('us-ex-prog').style.width=(usExIdx/usExQs.length*100)+'%';
+  document.getElementById('us-ex-n').textContent=usExIdx+1;
+  document.getElementById('us-ex-sc').textContent=usExOk;
+  document.getElementById('us-ex-type').textContent='แบบฝึกหัด (Exercise) · '+(q.setLabel?q.setLabel+' · ':'')+q.section;
+  const setHtml=q.setInstruction?'<div class="gt-set-instr">'+esc(q.setInstruction)+'</div>':'';
+  document.getElementById('us-ex-qbody').innerHTML=setHtml+'<div class="gkh-qbody">'+mdBold(q.text||'')+'</div>';
+  const fb=document.getElementById('us-ex-fb');fb.className='fb';fb.textContent='';fb.style.flexDirection='';fb.style.alignItems='';
+  const type=q.type||'mc';
+  const GOPT='width:100%;display:flex;align-items:center;background:var(--sf2);border:1.5px solid var(--br2);border-radius:10px;padding:10px 16px;font-family:Sarabun,sans-serif;font-size:14px;font-weight:500;color:var(--tx);cursor:pointer;text-align:left;line-height:1.4;overflow:hidden;transition:all .12s;-webkit-user-select:none;box-sizing:border-box';
+  const foot=document.getElementById('us-foot');
+  if(type==='mc'){
+    foot.innerHTML='<div class="gkh-choices" id="us-ex-choices">'+[1,2,3,4].map(i=>'<button style="'+GOPT+'" onclick="ansUnitExerciseQ('+i+')">'+esc(q.choices[String(i)]||'')+'</button>').join('')+'</div>'
+      +'<button class="bnext" id="us-ex-next" onclick="nextUnitExerciseQ()" style="display:block;visibility:hidden;flex-shrink:0">ข้อถัดไป →</button>';
+  }else{
+    foot.innerHTML='<input type="text" id="us-ex-fill-input" class="cin" style="margin-bottom:0" placeholder="พิมพ์คำตอบที่นี่..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" onkeydown="if(event.key===\'Enter\')checkUnitExerciseFill()">'
+      +'<button class="bgold" id="us-ex-fill-btn" style="margin-top:8px" onclick="checkUnitExerciseFill()">ตรวจคำตอบ</button>'
+      +'<button class="bnext" id="us-ex-next" onclick="nextUnitExerciseQ()" style="display:block;visibility:hidden;flex-shrink:0;margin-top:8px">ข้อถัดไป →</button>';
+    setTimeout(()=>{const inp=document.getElementById('us-ex-fill-input');if(inp)inp.focus();},50);
+  }
+}
+function usMarkResult(q,ok,correctDisplay){
+  const fb=document.getElementById('us-ex-fb');
+  fb.style.flexDirection='column';fb.style.alignItems='flex-start';
+  const why=q.explain||'';
+  if(ok){usExOk++;fb.className='fb fb-ok on';fb.innerHTML='<div>✓ ถูกต้อง!</div><div style="margin-top:6px;font-size:12px;line-height:1.6;opacity:.9">'+esc(why)+'</div>';}
+  else{usExFail.push(q);fb.className='fb fb-fail on';fb.innerHTML='<div>✗ ผิด! เฉลย: <b>'+esc(correctDisplay)+'</b></div><div style="margin-top:6px;font-size:12px;line-height:1.6;opacity:.9">'+esc(why)+'</div>';}
+  addProg({word:'ue_'+q.id,mode:'gramexercise',result:ok?'ok':'fail'});
+  const nx=document.getElementById('us-ex-next');if(nx)nx.style.visibility='visible';
+}
+function ansUnitExerciseQ(i){
+  const q=usExQs[usExIdx];const ok=i===q.answer;
+  const btns=document.querySelectorAll('#us-ex-choices button');
+  btns.forEach((b,j)=>{b.disabled=true;if(j+1===q.answer){b.style.background='var(--gr2)';b.style.borderColor='var(--gr)';b.style.color='var(--gr)';}});
+  const sel=btns[i-1];if(sel){if(ok){sel.style.background='var(--gr2)';sel.style.borderColor='var(--gr)';sel.style.color='var(--gr)';}else{sel.style.background='var(--rd2)';sel.style.borderColor='var(--rd)';sel.style.color='var(--rd)';}}
+  usMarkResult(q,ok,q.choices[String(q.answer)]);
+}
+function checkUnitExerciseFill(){
+  const q=usExQs[usExIdx];
+  const inp=document.getElementById('us-ex-fill-input');
+  if(inp.disabled)return;
+  const accept=(q.accept||[]).map(gramNorm);
+  const userVal=gramNorm(inp.value);
+  const ok=accept.includes(userVal);
+  inp.disabled=true;
+  inp.style.borderColor=ok?'var(--gr)':'var(--rd)';
+  const btn=document.getElementById('us-ex-fill-btn');if(btn)btn.style.display='none';
+  usMarkResult(q,ok,q.display||(q.accept&&q.accept[0])||'');
+}
+function nextUnitExerciseQ(){
+  if(usExIdx<usExQs.length-1){usExIdx++;renderUnitExerciseQ();}
+  else finishUnitExercise();
+}
+function finishUnitExercise(){
+  document.getElementById('us-ex-wrap').style.display='none';
+  document.getElementById('us-done-wrap').style.display='block';
+  const tot=usExQs.length,c=usExOk,w=tot-c,pct=tot?Math.round(c/tot*100):100;
+  const msgs=[[90,'🏆 ยอดเยี่ยม!'],[70,'👍 ดีมาก!'],[50,'📚 พอใช้ได้'],[0,'💪 ฝึกต่อไปนะ']];
+  const msg=tot?(msgs.find(m=>pct>=m[0])||msgs[3])[1]:'📘 อ่านจบบทแล้ว (ไม่มีแบบฝึกหัด)';
+  const sec=usUnit.section;
+  const nextUnit=(GU||[]).filter(u=>u.section===sec).sort((a,b)=>a.unit-b.unit).find(u=>u.unit>usUnit.unit);
+  document.getElementById('us-done-wrap').innerHTML='<div class="rh" style="padding:24px 0"><div class="rn">'+c+'</div><div class="rof">จาก '+tot+' ข้อฝึกหัด</div><div class="rmsg">'+msg+'</div></div>'
+    +(tot?'<div class="rgrid"><div class="rbox ok"><div class="rboxn">'+c+'</div><div class="rboxl">ถูก</div></div><div class="rbox fl"><div class="rboxn">'+w+'</div><div class="rboxl">ผิด</div></div></div>':'');
+  document.getElementById('us-foot').innerHTML='<div style="display:flex;flex-direction:column;gap:10px">'
+    +(nextUnit?'<button class="bgold" onclick="startUnitStudy('+nextUnit.unit+')">บทถัดไป: Unit '+nextUnit.unit+' →</button>':'')
+    +'<button class="btn bnav" onclick="goSc(\'gramtest\');showGramTStart().then(()=>startGramTest(\''+sec+'\'))">ทำแบบทดสอบหมวดนี้ (Test)</button>'
+    +'<button class="btn bout" onclick="goSc(\'gramunits\');renderGramUnitsList(\''+sec+'\')">กลับไปรายการบท</button>'
+    +'</div>';
+  renderHome();renderGramHub();
+}
+
+async function showGramTStart(){
+  await ensureGram();
+  document.getElementById('gt-start').style.display='block';
+  document.getElementById('gt-quiz').style.display='none';
+  document.getElementById('gt-result').style.display='none';
+  document.getElementById('gt-menu').innerHTML=gramSections().map(t=>{
+    const n=gramPool(t).length;
+    return'<div class="mc" onclick="startGramTest(\''+t+'\')"><div class="mc-t" style="font-size:13px">'+esc(t)+'</div><div class="mc-d">'+n+' ข้อ</div></div>';
+  }).join('');
+}
+async function startGramTest(topic){
+  await ensureGram();
+  window._gtMode=topic;
+  const pool=gramPool(topic);
+  if(!pool.length){toast('ยังไม่มีข้อสอบในหมวดนี้');return;}
+  const hist={};
+  PROG.filter(p=>p.mode==='gramtest'&&p.word.startsWith('gq_')).forEach(p=>{
+    const id=p.word.slice(3);
+    if(!hist[id])hist[id]={ok:0,fail:0};
+    if(p.result==='ok')hist[id].ok++;else hist[id].fail++;
+  });
+  const newQs=pool.filter(q=>!hist[q.id]);
+  const wrongQs=pool.filter(q=>hist[q.id]&&hist[q.id].fail>0&&hist[q.id].ok===0);
+  const doneQs=pool.filter(q=>hist[q.id]&&hist[q.id].ok>0);
+  const N=12;
+  const pick=(arr,n)=>shuf([...arr]).slice(0,n);
+  let picked=[...pick(wrongQs,Math.round(N*0.35)),...pick(doneQs,Math.round(N*0.15)),...pick(newQs,Math.round(N*0.50))];
+  if(picked.length<N){
+    const used=new Set(picked.map(q=>q.id));
+    const fill=shuf(pool.filter(q=>!used.has(q.id)));
+    fill.forEach(q=>{if(picked.length<N&&!used.has(q.id)){picked.push(q);used.add(q.id);}});
+  }
+  // Topic bank too small on its own: top up from the other grammar topics
+  if(picked.length<N&&topic&&topic!=='ALL'){
+    const used=new Set(picked.map(q=>q.id));
+    const fillOther=shuf(gramPool('ALL').filter(q=>!used.has(q.id)));
+    fillOther.forEach(q=>{if(picked.length<N&&!used.has(q.id)){picked.push(q);used.add(q.id);}});
+  }
+  gtQs=shuf(picked).slice(0,N);
+  gtIdx=0;gtOk=0;gtFail=[];
+  document.getElementById('gt-start').style.display='none';
+  document.getElementById('gt-quiz').style.display='flex';
+  document.getElementById('gt-result').style.display='none';
+  document.getElementById('gt-tot').textContent=gtQs.length;
+  renderGramTQ();
+}
+function renderGramTQ(){
+  if(gtIdx>=gtQs.length){showGramTResult();return;}
+  const q=gtQs[gtIdx];
+  document.getElementById('gt-prog').style.width=(gtIdx/gtQs.length*100)+'%';
+  document.getElementById('gt-qn').textContent=gtIdx+1;
+  document.getElementById('gt-sc').textContent=gtOk;
+  document.getElementById('gt-type').textContent=(q.setLabel?q.setLabel+' · ':'')+q.section;
+  const setHtml=q.setInstruction?'<div class="gt-set-instr">'+esc(q.setInstruction)+'</div>':'';
+  const bodyText=esc(q.text||'').replace(/\*\*(.+?)\*\*/g,'<b style="color:var(--gd)">$1</b>');
+  document.getElementById('gt-qbody').innerHTML=setHtml+'<div class="gkh-qbody">'+bodyText+'</div>';
+  const fb=document.getElementById('gt-fb');fb.className='fb';fb.textContent='';fb.style.flexDirection='';fb.style.alignItems='';
+  document.getElementById('gt-next').style.visibility='hidden';
+  const type=q.type||'mc';
+  document.getElementById('gt-choices').style.display=type==='mc'?'flex':'none';
+  document.getElementById('gt-fill').style.display=type==='mc'?'none':'block';
+  if(type==='mc'){
+    const GOPT='width:100%;display:flex;align-items:center;background:var(--sf2);border:1.5px solid var(--br2);border-radius:10px;padding:10px 16px;font-family:Sarabun,sans-serif;font-size:14px;font-weight:500;color:var(--tx);cursor:pointer;text-align:left;line-height:1.4;overflow:hidden;transition:all .12s;-webkit-user-select:none;box-sizing:border-box';
+    document.getElementById('gt-choices').innerHTML=[1,2,3,4].map(i=>'<button style="'+GOPT+'" onclick="ansGramTQ('+i+')">'+esc(q.choices[String(i)]||'')+'</button>').join('');
+  }else{
+    const inp=document.getElementById('gt-fill-input');
+    inp.value='';inp.disabled=false;inp.style.borderColor='';
+    document.getElementById('gt-fill').querySelector('button').style.display='block';
+    setTimeout(()=>inp.focus(),50);
+  }
+}
+function gramNorm(s){return String(s||'').trim().toLowerCase().replace(/\s+/g,' ').replace(/[.!?]+$/,'');}
+function gramMarkResult(q,ok,correctDisplay){
+  const fb=document.getElementById('gt-fb');
+  fb.style.flexDirection='column';fb.style.alignItems='flex-start';
+  const why=q.explain||'';
+  if(ok){gtOk++;fb.className='fb fb-ok on';fb.innerHTML='<div>✓ ถูกต้อง!</div><div style="margin-top:6px;font-size:12px;line-height:1.6;opacity:.9">'+esc(why)+'</div>';}
+  else{gtFail.push(q);fb.className='fb fb-fail on';fb.innerHTML='<div>✗ ผิด! เฉลย: <b>'+esc(correctDisplay)+'</b></div><div style="margin-top:6px;font-size:12px;line-height:1.6;opacity:.9">'+esc(why)+'</div>';}
+  addProg({word:'gq_'+q.id,mode:'gramtest',result:ok?'ok':'fail'});
+  document.getElementById('gt-next').style.visibility='visible';
+}
+function ansGramTQ(i){
+  const q=gtQs[gtIdx];const ok=i===q.answer;
+  const btns=document.querySelectorAll('#gt-choices button');
+  btns.forEach((b,j)=>{b.disabled=true;if(j+1===q.answer){b.style.background='var(--gr2)';b.style.borderColor='var(--gr)';b.style.color='var(--gr)';}});
+  const sel=btns[i-1];if(ok){sel.style.background='var(--gr2)';sel.style.borderColor='var(--gr)';sel.style.color='var(--gr)';}else{sel.style.background='var(--rd2)';sel.style.borderColor='var(--rd)';sel.style.color='var(--rd)';}
+  gramMarkResult(q,ok,q.choices[String(q.answer)]);
+}
+function checkGramFill(){
+  const q=gtQs[gtIdx];
+  const inp=document.getElementById('gt-fill-input');
+  if(inp.disabled)return;
+  const accept=(q.accept||[]).map(gramNorm);
+  const userVal=gramNorm(inp.value);
+  const ok=accept.includes(userVal);
+  inp.disabled=true;
+  inp.style.borderColor=ok?'var(--gr)':'var(--rd)';
+  document.getElementById('gt-fill').querySelector('button').style.display='none';
+  gramMarkResult(q,ok,q.display||(q.accept&&q.accept[0])||'');
+}
+function nextGramTQ(){gtIdx++;renderGramTQ();}
+function showGramTResult(){
+  document.getElementById('gt-quiz').style.display='none';
+  document.getElementById('gt-result').style.display='flex';
+  const tot=gtQs.length,c=gtOk,w=tot-c,pct=tot?Math.round(c/tot*100):0;
+  document.getElementById('gtr-n').textContent=c;
+  document.getElementById('gtr-tot').textContent=tot;
+  document.getElementById('gtr-c').textContent=c;
+  document.getElementById('gtr-w').textContent=w;
+  const msgs=[[90,'🏆 ยอดเยี่ยม!'],[70,'👍 ดีมาก!'],[50,'📚 พอใช้ได้'],[0,'💪 ฝึกต่อไปนะ']];
+  document.getElementById('gtr-msg').textContent=(msgs.find(m=>pct>=m[0])||msgs[3])[1];
+  const ww=document.getElementById('gtr-wrong-wrap');
+  if(gtFail.length){
+    ww.style.display='block';
+    document.getElementById('gtr-wrong-list').innerHTML=gtFail.map(q=>'<div class="hi"><div class="hd fl"></div><div style="flex:1"><div class="hw" style="font-size:12px;line-height:1.4">'+esc((q.text||'').slice(0,80))+'</div><div class="hm">เฉลย: '+esc(q.choices[String(q.answer)])+'</div></div></div>').join('');
+  }else ww.style.display='none';
+  updateStats();renderHome();
 }
 
 // iOS keyboard input focus fix
