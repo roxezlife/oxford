@@ -24,6 +24,7 @@ button,input,.mc,.wcard,.scard{touch-action:manipulation;}
   --gr:#3ecf8e;--gr2:rgba(62,207,142,0.1);
   --rd:#e05c6a;--rd2:rgba(224,92,106,0.1);
   --bl:#6ba3f5;
+  --pu:#a78bfa;--pu2:rgba(167,139,250,0.1);
 }
 html,body{height:100%;background:var(--bg);color:var(--tx);font-family:'Sarabun',sans-serif;font-size:16px;line-height:1.6;overflow:hidden}
 #app{display:flex;flex-direction:column;height:100dvh;max-width:430px;margin:0 auto}
@@ -246,6 +247,15 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:'Sarabun'
 .gl-usec:last-child{margin-bottom:0}
 .gl-usec-lbl{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;background:var(--gd2);color:var(--gd);font-family:'Inter',sans-serif;font-size:12px;font-weight:800;margin-bottom:8px}
 .gl-usec-explain{font-size:13.5px;color:var(--tx2);line-height:1.7;margin-bottom:10px}
+.gl-must{background:var(--pu2);border:1px solid rgba(167,139,250,.28);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:7px}
+.gl-must-item{font-size:12.5px;color:var(--tx2);line-height:1.6;padding-left:16px;position:relative}
+.gl-must-item::before{content:'✓';position:absolute;left:0;top:0;color:var(--pu);font-weight:700;font-size:11px}
+.gl-cmp-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px;border:1px solid var(--br2)}
+.gl-cmp-table{width:100%;border-collapse:collapse;font-size:12.5px;min-width:280px}
+.gl-cmp-table th{background:var(--sf2);color:var(--gd);font-weight:700;text-align:left;padding:9px 12px;white-space:nowrap;border-bottom:1px solid var(--br2)}
+.gl-cmp-table td{padding:9px 12px;color:var(--tx2);line-height:1.55;border-bottom:1px solid var(--br);vertical-align:top}
+.gl-cmp-table tr:last-child td{border-bottom:none}
+.gl-cmp-table b{color:var(--tx);font-weight:700}
 .gl-tl-axis{position:relative;height:3px;background:var(--br2);border-radius:99px;margin:24px 4px 12px}
 .gl-tl-zone-lbl{position:absolute;top:-18px;font-size:9px;color:var(--tx3);transform:translateX(-50%);white-space:nowrap}
 .gl-tl-mark{position:absolute;top:50%;transform:translateY(-50%);height:3px;border-radius:99px}
@@ -1368,17 +1378,29 @@ function lessonCardHTML(l){
   const tipHtml=l.tip?'<div class="gl-block"><div class="gl-sec">💡 เทคนิคจำ</div><div class="gl-tip">'+mdBold(l.tip)+'</div></div>':'';
   const summaryHtml=(l.summary&&l.summary.length)?'<div class="gl-block"><div class="gl-sec">📝 สรุปท้ายบท</div><div class="gl-summary">'+l.summary.map(s=>'<div class="gl-summary-item">'+mdBold(s)+'</div>').join('')+'</div></div>':'';
   const timelineHtml=glTimelineHTML(l.timeline);
+  const overviewHtml=l.overview?'<div class="gl-block"><div class="gl-intro"><div class="gl-intro-lbl">📖 ก่อนเริ่มเรียน (ภาพรวม)</div><div class="gl-intro-en" style="font-weight:400;font-size:13.5px;line-height:1.7">'+mdBold(l.overview)+'</div></div></div>':'';
+  const mustKnowHtml=(l.mustKnow&&l.mustKnow.length)?'<div class="gl-block"><div class="gl-sec">✅ ต้องรู้ก่อนไปต่อ</div><div class="gl-must">'+l.mustKnow.map(n=>'<div class="gl-must-item">'+mdBold(n)+'</div>').join('')+'</div></div>':'';
+  const compareTableHtml=glCompareTableHTML(l.compareTable);
   return'<div class="fcard">'
     +'<div class="fcard-top"><span class="fcard-tag" style="background:rgba(212,168,75,.15);color:var(--gd)">Unit '+l.unit+' · '+esc(l.section)+'</span></div>'
     +'<div class="fcard-word" style="font-size:21px;line-height:1.35;margin-bottom:18px">'+esc(l.title)+'</div>'
+    +overviewHtml
+    +mustKnowHtml
     +'<div class="gl-block"><div class="gl-sec">โครงสร้าง</div><div class="gl-pattern" style="margin-bottom:0">'+esc(l.pattern)+'</div></div>'
     +timelineHtml
-    +'<div class="gl-block"><div class="gl-sec">คำอธิบายและตัวอย่าง</div>'+secHtml+'</div>'
+    +'<div class="gl-block"><div class="gl-sec">คำอธิบายและตัวอย่าง (จากง่ายไปยาก)</div>'+secHtml+'</div>'
+    +compareTableHtml
     +notesHtml
     +mistakeHtml
     +tipHtml
     +summaryHtml
     +'</div>';
+}
+function glCompareTableHTML(t){
+  if(!t||!t.rows||!t.rows.length)return'';
+  const headHtml=(t.headers||[]).map(h=>'<th>'+esc(h)+'</th>').join('');
+  const rowsHtml=t.rows.map(r=>'<tr>'+r.map(c=>'<td>'+mdBold(c)+'</td>').join('')+'</tr>').join('');
+  return'<div class="gl-block"><div class="gl-sec">📊 '+esc(t.title||'ตารางเปรียบเทียบ')+'</div><div class="gl-cmp-wrap"><table class="gl-cmp-table"><thead><tr>'+headHtml+'</tr></thead><tbody>'+rowsHtml+'</tbody></table></div></div>';
 }
 function renderGramLesson(){
   if(!glCards.length)return;
