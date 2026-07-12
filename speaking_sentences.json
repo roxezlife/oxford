@@ -1,0 +1,20 @@
+[
+ {"id":1,"tier":"easy","text":"I like to read books.","translation":"ฉันชอบอ่านหนังสือ"},
+ {"id":2,"tier":"easy","text":"She goes to school every day.","translation":"เธอไปโรงเรียนทุกวัน"},
+ {"id":3,"tier":"easy","text":"The weather is nice today.","translation":"วันนี้อากาศดี"},
+ {"id":4,"tier":"easy","text":"We had dinner together last night.","translation":"เรากินข้าวเย็นด้วยกันเมื่อคืนนี้"},
+ {"id":5,"tier":"easy","text":"He works at a bank.","translation":"เขาทำงานที่ธนาคาร"},
+ {"id":6,"tier":"easy","text":"Can you help me, please?","translation":"ช่วยฉันหน่อยได้ไหมคะ"},
+ {"id":7,"tier":"medium","text":"I usually wake up early in the morning.","translation":"ฉันมักจะตื่นแต่เช้าตรู่"},
+ {"id":8,"tier":"medium","text":"They are planning to travel next summer.","translation":"พวกเขากำลังวางแผนจะเดินทางในฤดูร้อนหน้า"},
+ {"id":9,"tier":"medium","text":"She has been studying English for three years.","translation":"เธอเรียนภาษาอังกฤษมาสามปีแล้ว"},
+ {"id":10,"tier":"medium","text":"We need to finish this project by Friday.","translation":"เราต้องทำโปรเจกต์นี้ให้เสร็จภายในวันศุกร์"},
+ {"id":11,"tier":"medium","text":"My brother is much taller than me.","translation":"พี่ชายฉันตัวสูงกว่าฉันมาก"},
+ {"id":12,"tier":"medium","text":"Could you tell me how to get there?","translation":"ช่วยบอกทางไปที่นั่นให้หน่อยได้ไหมคะ"},
+ {"id":13,"tier":"hard","text":"Although it was raining, we decided to go for a walk.","translation":"แม้ว่าฝนจะตก แต่เราก็ตัดสินใจออกไปเดินเล่น"},
+ {"id":14,"tier":"hard","text":"If I had more time, I would learn another language.","translation":"ถ้าฉันมีเวลามากกว่านี้ ฉันจะเรียนภาษาอีกภาษาหนึ่ง"},
+ {"id":15,"tier":"hard","text":"The book that you recommended was extremely interesting.","translation":"หนังสือที่คุณแนะนำน่าสนใจมากๆ"},
+ {"id":16,"tier":"hard","text":"She said that she would call me back later.","translation":"เธอบอกว่าจะโทรกลับมาหาฉันทีหลัง"},
+ {"id":17,"tier":"hard","text":"Despite working very hard, he did not pass the exam.","translation":"แม้จะทำงานหนักมาก แต่เขาก็สอบไม่ผ่าน"},
+ {"id":18,"tier":"hard","text":"Whoever finishes the task first will receive a reward.","translation":"ใครก็ตามที่ทำงานเสร็จก่อนจะได้รับรางวัล"}
+]

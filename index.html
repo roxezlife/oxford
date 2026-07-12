@@ -274,6 +274,18 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:'Sarabun'
 .wp-check-item.on .wp-check-box::after{content:'✓';color:var(--bg);font-size:13px;font-weight:900}
 .wp-check-txt{font-size:13px;color:var(--tx2);line-height:1.6}
 .wp-check-item.on .wp-check-txt{color:var(--tx);text-decoration:line-through;text-decoration-color:var(--br2)}
+.micbtn{width:64px;height:64px;border-radius:50%;background:var(--gd);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;margin:0 auto;transition:all .12s;flex-shrink:0}
+.micbtn:active{transform:scale(.95)}
+.micbtn svg{width:26px;height:26px;fill:var(--bg);stroke:none}
+.micbtn.rec{background:var(--rd);animation:micpulse 1s ease-in-out infinite}
+@keyframes micpulse{0%,100%{box-shadow:0 0 0 0 rgba(224,92,106,.35)}50%{box-shadow:0 0 0 16px rgba(224,92,106,0)}}
+.mic-status{text-align:center;font-size:12px;color:var(--tx2);margin-top:10px}
+.sp-target{font-size:17px;line-height:1.9;color:var(--tx);font-weight:600}
+.sp-word{display:inline-block;margin:2px 3px 2px 0;padding:2px 7px;border-radius:6px}
+.sp-word.hit{background:var(--gr2);color:var(--gr)}
+.sp-word.miss{background:var(--rd2);color:var(--rd);text-decoration:line-through;text-decoration-color:rgba(224,92,106,.5)}
+.sp-heard{font-size:12.5px;color:var(--tx2);line-height:1.7;margin-top:8px;font-style:italic}
+.sp-noSupport{background:var(--rd2);border:1px solid rgba(224,92,106,.25);border-radius:10px;padding:12px 14px;font-size:12.5px;color:var(--rd);line-height:1.6;margin-bottom:12px}
 </style>
 </head>
 <body>
@@ -356,6 +368,17 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:'Sarabun'
               <div class="mc-t" style="font-size:16px;margin-bottom:3px">การเขียน</div>
               <div class="mc-d">Writing · IELTS Style</div>
               <div style="font-size:11px;color:var(--gd);font-weight:600;margin-top:4px" id="home-wtxt">0/17 บท</div>
+            </div>
+            <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:18px 20px;gap:16px" onclick="goSc('speaking')">
+            <div class="mc-ico" style="width:52px;height:52px;border-radius:14px;flex-shrink:0">
+              <svg viewBox="0 0 24 24" style="width:22px;height:22px"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8"/></svg>
+            </div>
+            <div style="flex:1">
+              <div class="mc-t" style="font-size:16px;margin-bottom:3px">การพูด</div>
+              <div class="mc-d">Speaking · คำ/ประโยค/บทความ</div>
+              <div style="font-size:11px;color:var(--gd);font-weight:600;margin-top:4px" id="home-sptxt">0 ครั้ง</div>
             </div>
             <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
           </div>
@@ -1091,6 +1114,120 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:'Sarabun'
       <div class="sc-foot" id="wp-foot"></div>
     </div>
 
+    <!-- SPEAKING HUB -->
+    <div id="sc-speaking" class="sc">
+      <div class="sc-body">
+        <div class="sec" style="margin-bottom:12px">การพูด (Speaking)</div>
+        <div id="sp-nosupport-wrap"></div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:16px 18px;gap:14px;border-color:rgba(212,168,75,.35);background:var(--gd2)" onclick="goSc('speaksession');startSpeakToday()">
+            <div class="mc-ico" style="width:44px;height:44px;border-radius:12px;flex-shrink:0;background:rgba(212,168,75,.2);color:var(--gd)"><svg viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M13 2L4.5 13H11L10 22L19.5 11H13Z"/></svg></div>
+            <div style="flex:1"><div class="mc-t" style="color:var(--gd)">บทเรียนวันนี้</div><div class="mc-d">ผสมคำ/ประโยค/บทความ</div></div>
+            <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--gd);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:16px 18px;gap:14px" onclick="goSc('speakcats')">
+            <div class="mc-ico" style="width:44px;height:44px;border-radius:12px;flex-shrink:0"><svg viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div>
+            <div style="flex:1"><div class="mc-t">เลือกหมวด</div><div class="mc-d">คำศัพท์ → ประโยค → บทความ</div></div>
+            <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:16px 18px;gap:14px" onclick="goSc('speaktest');showSpeakTStart()">
+            <div class="mc-ico" style="width:44px;height:44px;border-radius:12px;flex-shrink:0"><svg viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 12h6M9 16h4"/></svg></div>
+            <div style="flex:1"><div class="mc-t">ทดสอบ</div><div class="mc-d">พูดโดยไม่มีเสียงต้นแบบ</div></div>
+            <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPEAKING CATEGORY PICK -->
+    <div id="sc-speakcats" class="sc">
+      <div class="sc-body">
+        <div class="sec" style="margin-bottom:12px">เลือกหมวด</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:16px 18px;gap:14px" onclick="goSc('speaklevels');renderSpeakLevels('word')">
+            <div style="flex:1"><div class="mc-t">คำศัพท์</div><div class="mc-d">ฝึกออกเสียงคำเดี่ยว</div></div>
+            <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:16px 18px;gap:14px" onclick="goSc('speaklevels');renderSpeakLevels('sentence')">
+            <div style="flex:1"><div class="mc-t">ประโยค</div><div class="mc-d">ฝึกพูดเป็นประโยค</div></div>
+            <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:16px 18px;gap:14px" onclick="goSc('speaklevels');renderSpeakLevels('passage')">
+            <div style="flex:1"><div class="mc-t">บทความ</div><div class="mc-d">ฝึกอ่านออกเสียงย่อหน้า</div></div>
+            <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPEAKING LEVEL PICK (within a category) -->
+    <div id="sc-speaklevels" class="sc">
+      <div class="sc-body">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+          <button class="btn bout" style="width:auto;padding:8px 14px;flex-shrink:0" onclick="goSc('speakcats')">‹ กลับ</button>
+          <div class="sec" id="spl-cat-title" style="margin-bottom:0;flex:1;text-align:right">หมวด</div>
+        </div>
+        <div id="speaklevels-list"></div>
+      </div>
+    </div>
+
+    <!-- SPEAKING SESSION (sequential practice: today's mix OR a chosen category+level) -->
+    <div id="sc-speaksession" class="sc">
+      <div class="sc-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+          <div style="font-family:'Inter',sans-serif;font-size:16px;font-weight:900">ฝึกพูด</div>
+          <div class="flctr" id="sps-ctr">0/0</div>
+        </div>
+        <div id="sps-body"><div class="empty"><span class="empty-ico">🎙️</span>กดเริ่มด้านล่าง</div></div>
+      </div>
+      <div class="sc-foot">
+        <div id="sps-ctrl" style="display:none">
+          <div class="row mb8">
+            <button class="btn bfail" onclick="markSpeakSession('fail')">✕ ฝึกใหม่</button>
+            <button class="btn bok" onclick="markSpeakSession('ok')">✓ พอใจแล้ว</button>
+          </div>
+          <div class="row">
+            <button class="btn bnav" onclick="prevSpeakSession()">‹ ก่อนหน้า</button>
+            <button class="btn bnav" onclick="nextSpeakSession()">ถัดไป ›</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPEAKING TEST (no model audio, mic + auto-score) -->
+    <div id="sc-speaktest" class="sc">
+      <div id="spt-start" style="flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:16px">
+        <div class="sec" style="margin-bottom:12px">เลือกหมวดที่จะทดสอบ</div>
+        <div class="menu2" id="spt-menu"></div>
+      </div>
+      <!-- quiz -->
+      <div id="spt-quiz" style="display:none;flex-direction:column;flex:1;overflow:hidden">
+        <div style="flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:16px 16px 0">
+          <div class="tprog"><div class="tprogf" id="spt-prog" style="width:0%"></div></div>
+          <div class="tmeta"><span>ข้อ <b id="spt-qn">1</b>/<b id="spt-tot">8</b></span><span>✓ <b id="spt-sc">0</b></span></div>
+          <div class="qcard"><div class="qtype" id="spt-type"></div><div id="spt-qbody"></div></div>
+          <div id="spt-result-box" style="display:none;margin-top:12px" class="card"></div>
+        </div>
+        <div style="flex-shrink:0;display:flex;flex-direction:column;gap:10px;padding:16px 16px calc(12px + env(safe-area-inset-bottom,0px));background:var(--bg);border-top:1px solid var(--br)">
+          <button class="micbtn" id="spt-micbtn" onclick="toggleSpeakTestMic()"><svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8"/></svg></button>
+          <div class="mic-status" id="spt-mic-status">แตะไมค์เพื่อเริ่มพูด</div>
+          <button class="bnext" id="spt-next" onclick="nextSpeakTQ()" style="display:block;visibility:hidden;flex-shrink:0">ข้อถัดไป →</button>
+        </div>
+      </div>
+      <!-- result -->
+      <div id="spt-result" style="display:none;flex-direction:column;flex:1;overflow-y:auto">
+        <div class="rh"><div class="rn" id="sptr-n">0</div><div class="rof">จาก <span id="sptr-tot">8</span> ข้อ</div><div class="rmsg" id="sptr-msg">ดีมาก!</div></div>
+        <div class="rgrid">
+          <div class="rbox ok"><div class="rboxn" id="sptr-c">0</div><div class="rboxl">ผ่าน</div></div>
+          <div class="rbox fl"><div class="rboxn" id="sptr-w">0</div><div class="rboxl">ควรฝึกต่อ</div></div>
+        </div>
+        <div class="rbtns">
+          <button class="bgold" style="flex:1;border-radius:10px" onclick="startSpeakTest(window._sptMode)">ทำใหม่</button>
+          <button class="btn bout" onclick="showSpeakTStart()">เมนู</button>
+        </div>
+      </div>
+    </div>
+
     <!-- SETTINGS -->
     <div id="sc-cfg" class="sc">
       <div class="sc-body">
@@ -1143,6 +1280,8 @@ let lsCards=[],lsIdx=0;
 let ltQs=[],ltIdx=0,ltOk=0,ltFail=[];
 let wsCards=[],wsIdx=0;
 let wtQs=[],wtIdx=0,wtOk=0,wtFail=[];
+let spCards=[],spIdx=0;
+let sptQs=[],sptIdx=0,sptOk=0,sptFail=[];
 window._gtMode='ALL';
 const _ac={};
 
@@ -1223,6 +1362,7 @@ function playUrl(url,wIds,fid){
 
 function goSc(id){
   stopLSSpeech();
+  if(typeof stopSR==='function')stopSR();
   if(id!=='writingpractice'&&typeof wpTimerId!=='undefined'&&wpTimerId){clearInterval(wpTimerId);wpTimerId=null;}
   document.querySelectorAll('.sc').forEach(s=>s.classList.remove('on'));
   document.querySelectorAll('.nb').forEach(b=>b.classList.remove('on'));
@@ -1233,6 +1373,7 @@ function goSc(id){
   if(id==='gram')ensureGram().then(renderGramHub);
   if(id==='listen')ensureListen().then(renderListenHub);
   if(id==='writing')ensureWriting().then(renderWritingHub);
+  if(id==='speaking')ensureSpeaking().then(renderSpeakingHub);
 }
 
 function renderHome(){
@@ -1255,11 +1396,13 @@ function renderHome(){
   const wlDone=[...new Set(PROG.filter(p=>p.mode==='writinglesson'&&p.result==='ok').map(p=>p.word))].length;
   const wlTot=(WU||[]).length||17;
   document.getElementById('home-wtxt').textContent=wlDone+'/'+wlTot+' บท';
+  const spDone=PROG.filter(p=>p.mode==='speaklesson'||p.mode==='speaktest').length;
+  document.getElementById('home-sptxt').textContent=spDone+' ครั้ง';
   const rec=[...PROG].reverse().slice(0,5),el=document.getElementById('home-recent');
   if(!rec.length){el.innerHTML='<div class="empty" style="padding:10px 0"><span class="empty-ico">📖</span>เริ่มเรียนเพื่อดูประวัติ</div>';return;}
   el.innerHTML=rec.map(p=>'<div class="hi"><div class="hd '+(p.result==='ok'?'ok':p.result==='fail'?'fl':'ln')+'"></div><div style="flex:1"><div class="hw">'+p.word+'</div><div class="hm">'+mL(p.mode)+'</div></div><div class="ht">'+p.date+'</div></div>').join('');
 }
-function mL(m){return{flash:'แฟลช',random:'สุ่ม',test_ok:'ทดสอบ ✓',test_fail:'ทดสอบ ✗',syn:'Synonym',listenlesson:'ฟังบทเรียน',listentest:'ทดสอบฟัง',writinglesson:'เขียนบทเรียน',writingtest:'ทดสอบเขียน',writingpractice:'ฝึกเขียนจับเวลา'}[m]||m;}
+function mL(m){return{flash:'แฟลช',random:'สุ่ม',test_ok:'ทดสอบ ✓',test_fail:'ทดสอบ ✗',syn:'Synonym',listenlesson:'ฟังบทเรียน',listentest:'ทดสอบฟัง',writinglesson:'เขียนบทเรียน',writingtest:'ทดสอบเขียน',writingpractice:'ฝึกเขียนจับเวลา',speaklesson:'ฝึกพูด',speaktest:'ทดสอบพูด'}[m]||m;}
 function applyHdr(){
   document.getElementById('hdr-sub').textContent=CFG.name?'สวัสดี '+CFG.name:'เรียนภาษาอังกฤษ';
   const ln=[...new Set(PROG.map(p=>p.word))].length;
@@ -2676,6 +2819,271 @@ function toggleWPCheck(i){
     const drafts=loadWDrafts();
     if(drafts[wpPrompt.id]){drafts[wpPrompt.id].checklist=wpChecked.slice();saveWDrafts(drafts);}
   }
+}
+
+// ── Speaking Module (Web Speech API SpeechRecognition — rough, free, browser-only) ──
+function getSRCtor(){return window.SpeechRecognition||window.webkitSpeechRecognition||null;}
+let _srSupported=null;
+function srSupported(){if(_srSupported!==null)return _srSupported;_srSupported=!!getSRCtor();return _srSupported;}
+let _srInstance=null,_srListening=false,_srFinalText='';
+function startSR(onInterim,onFinalReady){
+  const Ctor=getSRCtor();
+  if(!Ctor){toast('อุปกรณ์นี้ไม่รองรับการรู้จำเสียงพูด');return false;}
+  stopSR();
+  _srFinalText='';
+  const r=new Ctor();
+  r.lang='en-US';r.continuous=true;r.interimResults=true;r.maxAlternatives=1;
+  r.onresult=(e)=>{
+    let interim='';
+    for(let i=e.resultIndex;i<e.results.length;i++){
+      const tr=e.results[i][0].transcript;
+      if(e.results[i].isFinal)_srFinalText+=tr+' ';else interim+=tr;
+    }
+    onInterim&&onInterim((_srFinalText+interim).trim());
+  };
+  r.onerror=(e)=>{
+    _srListening=false;
+    if(e.error==='not-allowed'||e.error==='service-not-allowed')toast('กรุณาอนุญาตการใช้ไมโครโฟน');
+    else if(e.error!=='no-speech'&&e.error!=='aborted')toast('เกิดข้อผิดพลาดในการฟังเสียง');
+  };
+  r.onend=()=>{_srListening=false;onFinalReady&&onFinalReady(_srFinalText.trim());};
+  _srInstance=r;_srListening=true;
+  try{r.start();}catch(e){_srListening=false;toast('เริ่มไมโครโฟนไม่ได้');return false;}
+  return true;
+}
+function stopSR(){if(_srInstance&&_srListening){try{_srInstance.stop();}catch(e){}}_srListening=false;}
+
+function normWords(s){return String(s||'').toLowerCase().replace(/[^a-z0-9\s']/g,'').trim().split(/\s+/).filter(Boolean);}
+function scoreSpeechMatch(target,heard){
+  const t=normWords(target),h=normWords(heard);
+  if(!t.length)return{pct:0,matched:[]};
+  const hCount={};h.forEach(w=>{hCount[w]=(hCount[w]||0)+1;});
+  let hit=0;
+  const matched=t.map(w=>{if(hCount[w]>0){hCount[w]--;hit++;return true;}return false;});
+  return{pct:Math.round(hit/t.length*100),matched};
+}
+function spFeedbackHTML(item,heard){
+  const sc=scoreSpeechMatch(item.text,heard);
+  const origWords=item.text.split(/\s+/);
+  const wordsHtml=origWords.map((w,i)=>'<span class="sp-word '+(sc.matched[i]?'hit':'miss')+'">'+esc(w)+'</span>').join('');
+  const color=sc.pct>=70?'var(--gr)':sc.pct>=40?'var(--gd)':'var(--rd)';
+  const msg=sc.pct>=70?'✓ เยี่ยมมาก!':sc.pct>=40?'⚠️ พอใช้ ลองอีกครั้ง':'✗ ลองใหม่อีกครั้งนะ';
+  return{pct:sc.pct,html:'<div style="margin-top:14px"><div style="font-size:13px;font-weight:700;color:'+color+'">'+msg+' ('+sc.pct+'%)</div>'
+    +'<div style="margin-top:8px">'+wordsHtml+'</div>'
+    +'<div class="sp-heard">ระบบได้ยิน: "'+esc(heard||'(ไม่ได้ยินอะไรเลย)')+'"</div></div>'};
+}
+
+let SS=null;
+async function ensureSpeaking(){
+  if(!WORDS.length)await loadData();
+  await ensureListen();
+  if(SS===null)SS=await fetch(DATA_BASE+'speaking_sentences.json').then(r=>r.json()).catch(()=>[]);
+}
+function spKindLabel(k){return{word:'คำศัพท์',sentence:'ประโยค',passage:'บทความ'}[k]||k;}
+function spTierLabel(t){return{A:'Level A',B:'Level B',C:'Level C',easy:'Easy',medium:'Medium',hard:'Hard'}[t]||t;}
+function spItem(kind,id,text,translation,tier,titleExtra){return{kind,id,text,translation,tier,titleExtra:titleExtra||''};}
+function spWordsPool(bucket){
+  return(WORDS||[]).filter(w=>!bucket||w.level.startsWith(bucket)).map(w=>spItem('word',w.word.toLowerCase(),w.word,w.meaning,w.level.startsWith('A')?'A':w.level.startsWith('B')?'B':'C'));
+}
+function spSentPool(tier){
+  return(SS||[]).filter(s=>!tier||tier==='ALL'||s.tier===tier).map(s=>spItem('sentence','s'+s.id,s.text,s.translation,s.tier));
+}
+function spPassPool(tier){
+  return(LSU||[]).filter(u=>!tier||tier==='ALL'||u.tier===tier).map(u=>spItem('passage','p'+u.unit,u.transcript,u.translation,u.tier,u.title));
+}
+function spAllPool(){return[...spWordsPool(null),...spSentPool('ALL'),...spPassPool('ALL')];}
+
+function renderSpeakingHub(){
+  const el=document.getElementById('sp-nosupport-wrap');
+  el.innerHTML=srSupported()?'':'<div class="sp-noSupport">⚠️ อุปกรณ์/เบราว์เซอร์นี้อาจไม่รองรับการรู้จำเสียงพูด (Speech Recognition) ฟีเจอร์นี้ใช้ได้ดีที่สุดบน Chrome (Android/คอมพิวเตอร์) ถ้าใช้ iPhone/Safari อาจใช้งานไม่ได้หรือไม่เสถียร</div>';
+}
+
+function spSessionCardHTML(item){
+  const big=item.kind==='word';
+  return'<div class="fcard">'
+    +'<div class="fcard-top"><span class="fcard-tag" style="background:rgba(212,168,75,.15);color:var(--gd)">'+esc(spKindLabel(item.kind))+' · '+esc(spTierLabel(item.tier))+'</span></div>'
+    +(item.kind==='passage'
+      ?'<div class="gkh-passage" style="margin-bottom:10px">'+esc(item.text)+'</div>'
+      :'<div class="'+(big?'fcard-word':'sp-target')+'" style="margin-bottom:10px">'+esc(item.text)+'</div>')
+    +'<div style="font-size:12.5px;color:var(--tx2);line-height:1.6;margin-bottom:16px">'+esc(item.translation)+'</div>'
+    +'<div class="aplayer" style="margin-bottom:14px"><button class="apbtn" id="sps-playbtn" onclick="speakSPSPlay()"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>'
+    +'<div class="apinfo"><div class="apword">ฟังต้นแบบ</div><div class="apsub">แตะเพื่อฟังการออกเสียงที่ถูกต้อง</div></div>'
+    +'<div class="apwv" id="sps-wv"><span style="height:4px"></span><span style="height:9px"></span><span style="height:13px"></span><span style="height:8px"></span><span style="height:4px"></span></div></div>'
+    +'<button class="micbtn" id="sps-micbtn" onclick="toggleSpeakSessionMic()"><svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8"/></svg></button>'
+    +'<div class="mic-status" id="sps-mic-status">แตะไมค์แล้วลองพูดตาม</div>'
+    +'<div id="sps-feedback"></div>'
+    +'</div>';
+}
+function renderSpeakSession(){
+  stopLSSpeech();stopSR();
+  if(!spCards.length)return;
+  document.getElementById('sps-ctr').textContent=(spIdx+1)+'/'+spCards.length;
+  document.getElementById('sps-body').innerHTML=spSessionCardHTML(spCards[spIdx]);
+}
+function speakSPSPlay(){const it=spCards[spIdx];if(it)toggleLSPlay('sps-playbtn','sps-wv',it.text,1);}
+function toggleSpeakSessionMic(){
+  const btn=document.getElementById('sps-micbtn'),status=document.getElementById('sps-mic-status');
+  if(_srListening){stopSR();return;}
+  stopLSSpeech();
+  document.getElementById('sps-feedback').innerHTML='';
+  const it=spCards[spIdx];if(!it)return;
+  const started=startSR(
+    (interim)=>{status.textContent='กำลังฟัง... "'+interim+'"';},
+    (finalText)=>{
+      btn.classList.remove('rec');
+      status.textContent='แตะไมค์แล้วลองพูดตาม';
+      const fb=spFeedbackHTML(it,finalText);
+      document.getElementById('sps-feedback').innerHTML=fb.html;
+    }
+  );
+  if(started){btn.classList.add('rec');status.textContent='กำลังฟัง... แตะอีกครั้งเมื่อพูดจบ';}
+}
+function markSpeakSession(res){
+  const it=spCards[spIdx];if(!it)return;
+  addProg({word:'sp_'+it.kind+'_'+it.id,mode:'speaklesson',result:res});
+  nextSpeakSession();
+}
+function nextSpeakSession(){stopSR();if(spIdx<spCards.length-1){spIdx++;renderSpeakSession();}else endSpeakSession();}
+function prevSpeakSession(){stopSR();if(spIdx>0){spIdx--;renderSpeakSession();}}
+function endSpeakSession(){
+  stopLSSpeech();stopSR();
+  document.getElementById('sps-body').innerHTML='<div class="empty"><span class="empty-ico">🎉</span>ฝึกจบแล้ว!</div>';
+  document.getElementById('sps-ctrl').style.display='none';
+  renderHome();toast('🎉 ฝึกพูดจบแล้ว!');
+}
+
+async function startSpeakToday(){
+  await ensureSpeaking();
+  const hist={};
+  PROG.filter(p=>p.mode==='speaklesson').forEach(p=>{if(!hist[p.word])hist[p.word]={o:0,f:0};if(p.result==='ok')hist[p.word].o++;else hist[p.word].f++;});
+  const wordsSample=shuf(spWordsPool(null)).slice(0,60);
+  const pool=[...wordsSample,...spSentPool('ALL'),...spPassPool('ALL')];
+  const nL=[],wL=[],oL=[];
+  pool.forEach(it=>{const key='sp_'+it.kind+'_'+it.id;const h=hist[key];if(!h)nL.push(it);else if(h.f>0&&h.o===0)wL.push(it);else oL.push(it);});
+  const pick=(a,k)=>shuf([...a]).slice(0,k);
+  const n=6;
+  let sel=[...pick(nL,Math.ceil(n*.6)),...pick(wL,Math.floor(n*.25)),...pick(oL,Math.floor(n*.15))];
+  if(sel.length<n){const used=new Set(sel.map(x=>x.kind+x.id));sel.push(...pick([...nL,...oL,...wL].filter(x=>!used.has(x.kind+x.id)),n-sel.length));}
+  spCards=shuf(sel).slice(0,n);spIdx=0;
+  if(!spCards.length){document.getElementById('sps-body').innerHTML='<div class="empty"><span class="empty-ico">🎉</span>ยังไม่มีรายการฝึก</div>';document.getElementById('sps-ctrl').style.display='none';return;}
+  document.getElementById('sps-ctrl').style.display='block';
+  renderSpeakSession();
+}
+async function startSpeakLevel(kind,tier){
+  await ensureSpeaking();
+  let pool;
+  if(kind==='word')pool=shuf(spWordsPool(tier)).slice(0,15);
+  else if(kind==='sentence')pool=spSentPool(tier);
+  else pool=spPassPool(tier);
+  spCards=pool;spIdx=0;
+  if(!spCards.length){document.getElementById('sps-body').innerHTML='<div class="empty"><span class="empty-ico">🎉</span>ไม่มีรายการในหมวดนี้</div>';document.getElementById('sps-ctrl').style.display='none';return;}
+  document.getElementById('sps-ctrl').style.display='block';
+  renderSpeakSession();
+}
+
+window._splKind=null;
+async function renderSpeakLevels(kind){
+  await ensureSpeaking();
+  window._splKind=kind;
+  document.getElementById('spl-cat-title').textContent=spKindLabel(kind);
+  let tiers,countOf;
+  if(kind==='word'){tiers=['A','B','C'];countOf=t=>spWordsPool(t).length;}
+  else if(kind==='sentence'){tiers=['easy','medium','hard'];countOf=t=>spSentPool(t).length;}
+  else{tiers=['easy','medium','hard'];countOf=t=>spPassPool(t).length;}
+  document.getElementById('speaklevels-list').innerHTML=tiers.map(t=>{
+    const n=countOf(t);
+    return'<div class="gt-topic-row" onclick="goSc(\'speaksession\');startSpeakLevel(\''+kind+'\',\''+t+'\')">'
+      +'<div><div style="font-size:14px;font-weight:600;color:var(--tx)">'+esc(spTierLabel(t))+'</div>'
+      +'<div style="font-size:11px;color:var(--tx2);margin-top:2px">'+n+' รายการ</div></div>'
+      +'<svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>'
+      +'</div>';
+  }).join('');
+}
+
+function spTestCardHTML(item){
+  return item.kind==='passage'
+    ?'<div class="gkh-passage" style="margin-bottom:0">'+esc(item.text)+'</div>'
+    :'<div class="'+(item.kind==='word'?'fcard-word':'sp-target')+'">'+esc(item.text)+'</div>';
+}
+async function showSpeakTStart(){
+  await ensureSpeaking();
+  document.getElementById('spt-start').style.display='block';
+  document.getElementById('spt-quiz').style.display='none';
+  document.getElementById('spt-result').style.display='none';
+  const cats=[['word','คำศัพท์'],['sentence','ประโยค'],['passage','บทความ'],['ALL','ผสมทุกหมวด']];
+  document.getElementById('spt-menu').innerHTML=cats.map(([k,l])=>'<div class="mc" onclick="startSpeakTest(\''+k+'\')"><div class="mc-t" style="font-size:13px">'+l+'</div></div>').join('');
+}
+async function startSpeakTest(kind){
+  await ensureSpeaking();
+  window._sptMode=kind;
+  let pool;
+  if(kind==='word')pool=shuf(spWordsPool(null)).slice(0,40);
+  else if(kind==='sentence')pool=spSentPool('ALL');
+  else if(kind==='passage')pool=spPassPool('ALL');
+  else pool=spAllPool();
+  const N=Math.min(8,pool.length);
+  if(!N){toast('ยังไม่มีรายการในหมวดนี้');return;}
+  sptQs=shuf(pool).slice(0,N);
+  sptIdx=0;sptOk=0;sptFail=[];
+  document.getElementById('spt-start').style.display='none';
+  document.getElementById('spt-quiz').style.display='flex';
+  document.getElementById('spt-result').style.display='none';
+  document.getElementById('spt-tot').textContent=sptQs.length;
+  renderSpeakTQ();
+}
+let sptAnswered=false;
+function renderSpeakTQ(){
+  stopSR();stopLSSpeech();
+  if(sptIdx>=sptQs.length){showSpeakTResult();return;}
+  const q=sptQs[sptIdx];
+  sptAnswered=false;
+  document.getElementById('spt-prog').style.width=(sptIdx/sptQs.length*100)+'%';
+  document.getElementById('spt-qn').textContent=sptIdx+1;
+  document.getElementById('spt-sc').textContent=sptOk;
+  document.getElementById('spt-type').textContent=spKindLabel(q.kind)+' · '+spTierLabel(q.tier);
+  document.getElementById('spt-qbody').innerHTML=spTestCardHTML(q);
+  const box=document.getElementById('spt-result-box');box.style.display='none';box.innerHTML='';
+  document.getElementById('spt-mic-status').textContent='แตะไมค์เพื่อเริ่มพูด';
+  document.getElementById('spt-micbtn').classList.remove('rec');
+  document.getElementById('spt-next').style.visibility='hidden';
+}
+function toggleSpeakTestMic(){
+  const btn=document.getElementById('spt-micbtn'),status=document.getElementById('spt-mic-status');
+  if(_srListening){stopSR();return;}
+  const q=sptQs[sptIdx];if(!q)return;
+  const started=startSR(
+    (interim)=>{status.textContent='กำลังฟัง... "'+interim+'"';},
+    (finalText)=>{
+      btn.classList.remove('rec');
+      const sc=scoreSpeechMatch(q.text,finalText);
+      const ok=sc.pct>=70;
+      const fb=spFeedbackHTML(q,finalText);
+      const box=document.getElementById('spt-result-box');
+      box.style.display='block';box.innerHTML=fb.html;
+      if(!sptAnswered){
+        sptAnswered=true;
+        if(ok)sptOk++;else sptFail.push(q);
+        addProg({word:'sp_'+q.kind+'_'+q.id,mode:'speaktest',result:ok?'ok':'fail'});
+        document.getElementById('spt-sc').textContent=sptOk;
+      }
+      status.textContent=ok?'✓ ผ่าน (แตะไมค์เพื่อลองใหม่ได้)':'ลองแตะไมค์เพื่อพูดใหม่ หรือไปข้อถัดไป';
+      document.getElementById('spt-next').style.visibility='visible';
+    }
+  );
+  if(started){btn.classList.add('rec');status.textContent='กำลังฟัง... แตะอีกครั้งเมื่อพูดจบ';}
+}
+function nextSpeakTQ(){sptIdx++;renderSpeakTQ();}
+function showSpeakTResult(){
+  document.getElementById('spt-quiz').style.display='none';
+  document.getElementById('spt-result').style.display='flex';
+  const tot=sptQs.length,c=sptOk,w=tot-c,pct=tot?Math.round(c/tot*100):0;
+  document.getElementById('sptr-n').textContent=c;
+  document.getElementById('sptr-tot').textContent=tot;
+  document.getElementById('sptr-c').textContent=c;
+  document.getElementById('sptr-w').textContent=w;
+  const msgs=[[90,'🏆 ยอดเยี่ยม!'],[70,'👍 ดีมาก!'],[50,'📚 พอใช้ได้'],[0,'💪 ฝึกต่อไปนะ']];
+  document.getElementById('sptr-msg').textContent=(msgs.find(m=>pct>=m[0])||msgs[3])[1];
+  updateStats();renderHome();
 }
 
 // iOS keyboard input focus fix
