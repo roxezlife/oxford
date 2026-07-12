@@ -1695,12 +1695,27 @@ document.addEventListener('DOMContentLoaded',()=>{
 // Register Service Worker for offline support
 if('serviceWorker' in navigator){
   const swCode=`
-self.addEventListener('install',e=>e.waitUntil(
-  caches.open('oxford-v1').then(c=>c.addAll(['./',]))
-));
+const CACHE='oxford-v2';
+self.addEventListener('install',e=>{
+  self.skipWaiting();
+  e.waitUntil(caches.open(CACHE).then(c=>c.addAll(['./'])));
+});
+self.addEventListener('activate',e=>{
+  e.waitUntil(
+    caches.keys()
+      .then(ks=>Promise.all(ks.filter(k=>k!==CACHE).map(k=>caches.delete(k))))
+      .then(()=>self.clients.claim())
+  );
+});
 self.addEventListener('fetch',e=>{
   if(e.request.url.includes('script.google.com')||e.request.url.includes('drive.google.com'))return;
-  e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request)));
+  e.respondWith(
+    fetch(e.request).then(r=>{
+      const rc=r.clone();
+      caches.open(CACHE).then(c=>c.put(e.request,rc));
+      return r;
+    }).catch(()=>caches.match(e.request))
+  );
 });`;
   const blob=new Blob([swCode],{type:'application/javascript'});
   navigator.serviceWorker.register(URL.createObjectURL(blob)).catch(()=>{});
