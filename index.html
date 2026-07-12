@@ -267,6 +267,13 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:'Sarabun'
 .gt-topic-row:active{transform:scale(.98)}
 .spd-chip{transition:all .12s}
 .spd-chip.active{background:var(--gd2);color:var(--gd);border-color:rgba(212,168,75,.4)}
+.wp-check-item{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid var(--br);cursor:pointer;-webkit-user-select:none}
+.wp-check-item:last-child{border-bottom:none}
+.wp-check-box{width:20px;height:20px;border-radius:6px;border:1.5px solid var(--br2);flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:1px;transition:all .12s}
+.wp-check-item.on .wp-check-box{background:var(--gr);border-color:var(--gr)}
+.wp-check-item.on .wp-check-box::after{content:'✓';color:var(--bg);font-size:13px;font-weight:900}
+.wp-check-txt{font-size:13px;color:var(--tx2);line-height:1.6}
+.wp-check-item.on .wp-check-txt{color:var(--tx);text-decoration:line-through;text-decoration-color:var(--br2)}
 </style>
 </head>
 <body>
@@ -338,6 +345,17 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:'Sarabun'
               <div class="mc-t" style="font-size:16px;margin-bottom:3px">การฟัง</div>
               <div class="mc-d">Listening · ALCPT/IELTS</div>
               <div style="font-size:11px;color:var(--gd);font-weight:600;margin-top:4px" id="home-ltxt">0/20 บท</div>
+            </div>
+            <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:18px 20px;gap:16px" onclick="goSc('writing')">
+            <div class="mc-ico" style="width:52px;height:52px;border-radius:14px;flex-shrink:0">
+              <svg viewBox="0 0 24 24" style="width:22px;height:22px"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </div>
+            <div style="flex:1">
+              <div class="mc-t" style="font-size:16px;margin-bottom:3px">การเขียน</div>
+              <div class="mc-d">Writing · IELTS Style</div>
+              <div style="font-size:11px;color:var(--gd);font-weight:600;margin-top:4px" id="home-wtxt">0/17 บท</div>
             </div>
             <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
           </div>
@@ -897,6 +915,182 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:'Sarabun'
       </div>
     </div>
 
+    <!-- WRITING HUB -->
+    <div id="sc-writing" class="sc">
+      <div class="sc-body">
+        <div class="sec" style="margin-bottom:12px">การเขียน (Writing)</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:16px 18px;gap:14px;border-color:rgba(212,168,75,.35);background:var(--gd2)" onclick="goSc('writinglesson');startWritingLesson()">
+            <div class="mc-ico" style="width:44px;height:44px;border-radius:12px;flex-shrink:0;background:rgba(212,168,75,.2);color:var(--gd)"><svg viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M13 2L4.5 13H11L10 22L19.5 11H13Z"/></svg></div>
+            <div style="flex:1"><div class="mc-t" style="color:var(--gd)">บทเรียนวันนี้</div><div class="mc-d">โครงสร้าง สำนวน จุดที่มักผิด</div></div>
+            <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--gd);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:16px 18px;gap:14px" onclick="goSc('writingcats');renderWritingCats()">
+            <div class="mc-ico" style="width:44px;height:44px;border-radius:12px;flex-shrink:0"><svg viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div>
+            <div style="flex:1"><div class="mc-t">เลือกหมวด</div><div class="mc-d">พื้นฐาน · Task 1 · Task 2</div></div>
+            <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:16px 18px;gap:14px" onclick="goSc('writingtest');showWritingTStart()">
+            <div class="mc-ico" style="width:44px;height:44px;border-radius:12px;flex-shrink:0"><svg viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 12h6M9 16h4"/></svg></div>
+            <div style="flex:1"><div class="mc-t">Quick Check</div><div class="mc-d">ทดสอบแบบตรวจอัตโนมัติ</div></div>
+            <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:16px 18px;gap:14px" onclick="goSc('writingpractice');showWPStart()">
+            <div class="mc-ico" style="width:44px;height:44px;border-radius:12px;flex-shrink:0"><svg viewBox="0 0 24 24" style="width:20px;height:20px"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+            <div style="flex:1"><div class="mc-t">ฝึกเขียนจับเวลา</div><div class="mc-d">Task 1/2 จริง + เทียบ Model Answer</div></div>
+            <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+        </div>
+        <div class="card" style="margin-top:14px;margin-bottom:12px;padding:14px 16px">
+          <div class="prog-row" style="margin-bottom:6px">
+            <span class="prog-lbl">บทที่เข้าใจแล้ว</span>
+            <span class="prog-pct" id="writing-hub-pct">0%</span>
+          </div>
+          <div class="prog-track"><div class="prog-fill" id="writing-hub-bar" style="width:0%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WRITING LESSON (today's mix, SRS) -->
+    <div id="sc-writinglesson" class="sc">
+      <div class="sc-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+          <div style="font-family:'Inter',sans-serif;font-size:18px;font-weight:900">บทเรียนเขียนวันนี้</div>
+          <div class="flctr" id="wl-ctr">0/0</div>
+        </div>
+        <div id="wl-body"><div class="empty"><span class="empty-ico">✍️</span>กดเริ่มด้านล่าง</div></div>
+      </div>
+      <div class="sc-foot">
+        <div id="wl-ctrl" style="display:none">
+          <div class="row mb8">
+            <button class="btn bfail" onclick="markWritingLesson('fail')">✕ ยังไม่เข้าใจ</button>
+            <button class="btn bok" onclick="markWritingLesson('ok')">✓ เข้าใจแล้ว</button>
+          </div>
+          <div class="row">
+            <button class="btn bnav" onclick="prevWritingLesson()">‹ ก่อนหน้า</button>
+            <button class="btn bnav" onclick="nextWritingLesson()">ถัดไป ›</button>
+          </div>
+        </div>
+        <div id="wl-start">
+          <button class="bgold" onclick="startWritingLesson()">เริ่มบทเรียนเขียนวันนี้</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- WRITING CATEGORIES -->
+    <div id="sc-writingcats" class="sc">
+      <div class="sc-body">
+        <div class="sec" style="margin-bottom:12px">เลือกหมวด</div>
+        <div id="writingcats-list"></div>
+      </div>
+    </div>
+
+    <!-- WRITING UNIT LIST within a category -->
+    <div id="sc-writingunits" class="sc">
+      <div class="sc-body">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+          <button class="btn bout" style="width:auto;padding:8px 14px;flex-shrink:0" onclick="goSc('writingcats')">‹ กลับ</button>
+          <div class="sec" id="wu-cat-title" style="margin-bottom:0;flex:1;text-align:right">หมวด</div>
+        </div>
+        <div id="writingunits-list"></div>
+      </div>
+    </div>
+
+    <!-- SINGLE UNIT WRITING STUDY -->
+    <div id="sc-unitwriting" class="sc">
+      <div class="sc-body" id="uw-scroll">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <button class="btn bout" style="width:auto;padding:8px 14px" onclick="goSc('writingunits')">‹ รายการบท</button>
+          <div class="flctr" id="uw-ctr"></div>
+        </div>
+        <div id="uw-body"></div>
+      </div>
+      <div class="sc-foot" id="uw-foot"></div>
+    </div>
+
+    <!-- WRITING QUICK CHECK TEST -->
+    <div id="sc-writingtest" class="sc">
+      <div id="wt-start" style="flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:16px">
+        <div class="sec" style="margin-bottom:12px">เลือกหมวดที่จะทดสอบ</div>
+        <div class="menu2" id="wt-menu"></div>
+        <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:16px 18px;gap:14px;margin-top:10px;border-color:rgba(212,168,75,.35);background:var(--gd2)" onclick="startWritingTest('ALL')">
+          <div class="mc-ico" style="width:44px;height:44px;border-radius:12px;flex-shrink:0;background:rgba(212,168,75,.2);color:var(--gd)"><svg viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg></div>
+          <div style="flex:1"><div class="mc-t" style="color:var(--gd)">ผสมทุกหมวด</div><div class="mc-d">สุ่มจากทุกหัวข้อการเขียน</div></div>
+          <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--gd);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+      </div>
+      <!-- quiz -->
+      <div id="wt-quiz" style="display:none;flex-direction:column;flex:1;overflow:hidden">
+        <div style="flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:16px 16px 0">
+          <div class="tprog"><div class="tprogf" id="wt-prog" style="width:0%"></div></div>
+          <div class="tmeta"><span>ข้อ <b id="wt-qn">1</b>/<b id="wt-tot">10</b></span><span>✓ <b id="wt-sc">0</b></span></div>
+          <div class="qcard"><div class="qtype" id="wt-type"></div><div id="wt-qbody"></div></div>
+          <div class="fb" id="wt-fb"></div>
+        </div>
+        <div style="flex-shrink:0;display:flex;flex-direction:column;gap:10px;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:var(--bg);border-top:1px solid var(--br)">
+          <div class="gkh-choices" id="wt-choices"></div>
+          <button class="bnext" id="wt-next" onclick="nextWritingTQ()" style="display:block;visibility:hidden;flex-shrink:0">ข้อถัดไป →</button>
+        </div>
+      </div>
+      <!-- result -->
+      <div id="wt-result" style="display:none;flex-direction:column;flex:1;overflow-y:auto">
+        <div class="rh"><div class="rn" id="wtr-n">0</div><div class="rof">จาก <span id="wtr-tot">10</span> ข้อ</div><div class="rmsg" id="wtr-msg">ดีมาก!</div></div>
+        <div class="rgrid">
+          <div class="rbox ok"><div class="rboxn" id="wtr-c">0</div><div class="rboxl">ถูก</div></div>
+          <div class="rbox fl"><div class="rboxn" id="wtr-w">0</div><div class="rboxl">ผิด</div></div>
+        </div>
+        <div id="wtr-wrong-wrap" style="padding:0 16px;margin-bottom:12px;display:none">
+          <div class="card"><div class="sec" style="margin-bottom:8px">ข้อที่ตอบผิด</div><div id="wtr-wrong-list"></div></div>
+        </div>
+        <div class="rbtns">
+          <button class="bgold" style="flex:1;border-radius:10px" onclick="startWritingTest(window._wtMode)">ทำใหม่</button>
+          <button class="btn bout" onclick="showWritingTStart()">เมนู</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- WRITING TIMED PRACTICE -->
+    <div id="sc-writingpractice" class="sc">
+      <div class="sc-body" id="wp-scroll">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <button class="btn bout" style="width:auto;padding:8px 14px" onclick="goSc('writing')">‹ เมนูการเขียน</button>
+          <div class="flctr" id="wp-timer" style="display:none">20:00</div>
+        </div>
+        <div id="wp-start">
+          <div class="sec" style="margin-bottom:12px">เลือกโจทย์ฝึกเขียน</div>
+          <div id="wp-prompt-list"></div>
+        </div>
+        <div id="wp-writing" style="display:none">
+          <div style="display:flex;justify-content:flex-end;margin-bottom:10px">
+            <div class="flctr" id="wp-wordcount">0 คำ</div>
+          </div>
+          <div class="card" style="margin-bottom:12px">
+            <div class="sec" id="wp-task-type" style="margin-bottom:8px">Task 1</div>
+            <div id="wp-prompt-text" style="font-size:13.5px;color:var(--tx);line-height:1.7;white-space:pre-wrap"></div>
+          </div>
+          <textarea id="wp-textarea" class="cin" style="width:100%;min-height:280px;resize:vertical;line-height:1.7;font-size:14px" placeholder="เริ่มเขียนคำตอบที่นี่..." oninput="updateWPWordCount()"></textarea>
+        </div>
+        <div id="wp-review" style="display:none">
+          <div class="card" style="margin-bottom:12px">
+            <div class="sec" style="margin-bottom:8px">คำตอบของคุณ (<span id="wp-review-wc">0</span> คำ)</div>
+            <div id="wp-review-text" style="font-size:13px;color:var(--tx2);line-height:1.8;white-space:pre-wrap"></div>
+          </div>
+          <div class="card" style="margin-bottom:12px">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+              <div class="sec" style="margin-bottom:0">Model Answer</div>
+              <button class="btn bout" style="padding:6px 12px;font-size:12px" onclick="toggleWPModelLang()">EN / TH</button>
+            </div>
+            <div id="wp-model-text" style="font-size:13px;color:var(--tx);line-height:1.8;white-space:pre-wrap"></div>
+          </div>
+          <div class="card" style="margin-bottom:12px">
+            <div class="sec" style="margin-bottom:8px">ตรวจสอบตัวเอง (Checklist)</div>
+            <div id="wp-checklist"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sc-foot" id="wp-foot"></div>
+    </div>
+
     <!-- SETTINGS -->
     <div id="sc-cfg" class="sc">
       <div class="sc-body">
@@ -947,6 +1141,8 @@ let glCards=[],glIdx=0;
 let gtQs=[],gtIdx=0,gtOk=0,gtFail=[];
 let lsCards=[],lsIdx=0;
 let ltQs=[],ltIdx=0,ltOk=0,ltFail=[];
+let wsCards=[],wsIdx=0;
+let wtQs=[],wtIdx=0,wtOk=0,wtFail=[];
 window._gtMode='ALL';
 const _ac={};
 
@@ -1027,6 +1223,7 @@ function playUrl(url,wIds,fid){
 
 function goSc(id){
   stopLSSpeech();
+  if(id!=='writingpractice'&&typeof wpTimerId!=='undefined'&&wpTimerId){clearInterval(wpTimerId);wpTimerId=null;}
   document.querySelectorAll('.sc').forEach(s=>s.classList.remove('on'));
   document.querySelectorAll('.nb').forEach(b=>b.classList.remove('on'));
   document.getElementById('sc-'+id).classList.add('on');
@@ -1035,6 +1232,7 @@ function goSc(id){
   if(id==='gkh')ensureGkh();
   if(id==='gram')ensureGram().then(renderGramHub);
   if(id==='listen')ensureListen().then(renderListenHub);
+  if(id==='writing')ensureWriting().then(renderWritingHub);
 }
 
 function renderHome(){
@@ -1054,11 +1252,14 @@ function renderHome(){
   const llDone=[...new Set(PROG.filter(p=>p.mode==='listenlesson'&&p.result==='ok').map(p=>p.word))].length;
   const llTot=(LSU||[]).length||20;
   document.getElementById('home-ltxt').textContent=llDone+'/'+llTot+' บท';
+  const wlDone=[...new Set(PROG.filter(p=>p.mode==='writinglesson'&&p.result==='ok').map(p=>p.word))].length;
+  const wlTot=(WU||[]).length||17;
+  document.getElementById('home-wtxt').textContent=wlDone+'/'+wlTot+' บท';
   const rec=[...PROG].reverse().slice(0,5),el=document.getElementById('home-recent');
   if(!rec.length){el.innerHTML='<div class="empty" style="padding:10px 0"><span class="empty-ico">📖</span>เริ่มเรียนเพื่อดูประวัติ</div>';return;}
   el.innerHTML=rec.map(p=>'<div class="hi"><div class="hd '+(p.result==='ok'?'ok':p.result==='fail'?'fl':'ln')+'"></div><div style="flex:1"><div class="hw">'+p.word+'</div><div class="hm">'+mL(p.mode)+'</div></div><div class="ht">'+p.date+'</div></div>').join('');
 }
-function mL(m){return{flash:'แฟลช',random:'สุ่ม',test_ok:'ทดสอบ ✓',test_fail:'ทดสอบ ✗',syn:'Synonym',listenlesson:'ฟังบทเรียน',listentest:'ทดสอบฟัง'}[m]||m;}
+function mL(m){return{flash:'แฟลช',random:'สุ่ม',test_ok:'ทดสอบ ✓',test_fail:'ทดสอบ ✗',syn:'Synonym',listenlesson:'ฟังบทเรียน',listentest:'ทดสอบฟัง',writinglesson:'เขียนบทเรียน',writingtest:'ทดสอบเขียน',writingpractice:'ฝึกเขียนจับเวลา'}[m]||m;}
 function applyHdr(){
   document.getElementById('hdr-sub').textContent=CFG.name?'สวัสดี '+CFG.name:'เรียนภาษาอังกฤษ';
   const ln=[...new Set(PROG.map(p=>p.word))].length;
@@ -2151,6 +2352,330 @@ function showListenTResult(){
     document.getElementById('ltr-wrong-list').innerHTML=ltFail.map(q=>'<div class="hi"><div class="hd fl"></div><div style="flex:1"><div class="hw" style="font-size:12px;line-height:1.4">'+esc((q.text||'').slice(0,80))+'</div><div class="hm">เฉลย: '+esc(q.choices[String(q.answer)])+'</div></div></div>').join('');
   }else ww.style.display='none';
   updateStats();renderHome();
+}
+
+// ── Writing Module (IELTS-style) ──
+let WU=null,WUP=null,WPR=null;
+function ensureWriting(){
+  if(WU!==null&&WUP!==null&&WPR!==null)return Promise.resolve();
+  const p1=fetch(DATA_BASE+'writing_units.json').then(r=>r.json()).catch(()=>[]);
+  const p2=fetch(DATA_BASE+'writing_unit_practice.json').then(r=>r.json()).catch(()=>[]);
+  const p3=fetch(DATA_BASE+'writing_prompts.json').then(r=>r.json()).catch(()=>[]);
+  return Promise.all([p1,p2,p3]).then(([u,p,pr])=>{WU=u||[];WUP=p||[];WPR=pr||[];});
+}
+function writingCats(){return['foundation','task1','task2'];}
+function writingCatLabel(c){return{foundation:'พื้นฐาน',task1:'Task 1',task2:'Task 2'}[c]||c;}
+function writingPool(cat){return(WUP||[]).filter(q=>!cat||cat==='ALL'||q.category===cat);}
+const W_QTYPE_LBL={combine:'รวมประโยคให้ถูกต้อง',error:'หา Error',linking:'เลือกคำเชื่อม',paraphrase:'เลือก Paraphrase ที่ดีกว่า',order:'เรียงประโยคให้ถูกต้อง',cloze:'เติมคำในช่องว่าง'};
+
+function renderWritingHub(){
+  const wlDone=[...new Set(PROG.filter(p=>p.mode==='writinglesson'&&p.result==='ok').map(p=>p.word))].length;
+  const tot=(WU||[]).length||1;
+  const pct=Math.min(100,Math.round(wlDone/tot*100));
+  document.getElementById('writing-hub-pct').textContent=pct+'%';
+  document.getElementById('writing-hub-bar').style.width=pct+'%';
+}
+
+function writingUnitCardHTML(u){
+  const kpHtml=(u.keyPoints||[]).map(k=>'<div class="gl-summary-item">'+mdBold(k)+'</div>').join('');
+  const mistakeHtml=u.mistake?'<div class="gl-block"><div class="gl-sec">⚠️ ข้อผิดพลาดที่พบบ่อย</div><div class="gl-mistake">'
+    +'<div class="gl-mistake-row w">✗ '+esc(u.mistake.wrong)+'</div>'
+    +'<div class="gl-mistake-row r">✓ '+esc(u.mistake.right)+'</div>'
+    +'<div class="gl-mistake-note">'+esc(u.mistake.note)+'</div>'
+    +'</div></div>':'';
+  return'<div class="fcard">'
+    +'<div class="fcard-top"><span class="fcard-tag" style="background:rgba(212,168,75,.15);color:var(--gd)">Unit '+u.unit+' · '+esc(writingCatLabel(u.category))+'</span></div>'
+    +'<div class="fcard-word" style="font-size:21px;line-height:1.35;margin-bottom:16px">'+esc(u.title)+'</div>'
+    +'<div class="gl-block"><div class="gl-sec">คำอธิบาย</div><div class="gl-usec-explain" style="margin-bottom:0">'+mdBold(u.explain)+'</div></div>'
+    +(kpHtml?'<div class="gl-block"><div class="gl-sec">📌 ประเด็นสำคัญ</div><div class="gl-summary">'+kpHtml+'</div></div>':'')
+    +(u.example?'<div class="gl-block"><div class="gl-intro"><div class="gl-intro-lbl">✏️ ตัวอย่าง</div><div class="gl-intro-en" style="font-weight:400;font-size:13.5px;line-height:1.7">'+esc(u.example.en)+'</div></div>'
+      +'<div style="margin-top:8px;font-size:12.5px;color:var(--tx2);line-height:1.7">'+esc(u.example.th)+'</div></div>':'')
+    +mistakeHtml
+    +'</div>';
+}
+
+function buildWritingPkg(){
+  const hist={};
+  PROG.filter(p=>p.mode==='writinglesson').forEach(p=>{
+    if(!hist[p.word])hist[p.word]={o:0,f:0};
+    if(p.result==='ok')hist[p.word].o++;else hist[p.word].f++;
+  });
+  const pool=WU||[];
+  const nL=[],wL=[],oL=[];
+  pool.forEach(l=>{const h=hist['wl_u'+l.unit];if(!h)nL.push(l);else if(h.f>0&&h.o===0)wL.push(l);else oL.push(l);});
+  const pick=(a,k)=>shuf([...a]).slice(0,k);
+  const n=Math.min(6,pool.length);
+  let sel=[...pick(nL,Math.ceil(n*.57)),...pick(wL,Math.floor(n*.29)),...pick(oL,Math.floor(n*.14))];
+  if(sel.length<n){const u=new Set(sel.map(x=>x.unit));sel.push(...pick([...nL,...oL,...wL].filter(x=>!u.has(x.unit)),n-sel.length));}
+  return sel.slice(0,n);
+}
+async function startWritingLesson(){
+  await ensureWriting();
+  wsCards=shuf(buildWritingPkg());wsIdx=0;
+  if(!wsCards.length){
+    document.getElementById('wl-body').innerHTML='<div class="empty"><span class="empty-ico">🎉</span>ยังไม่มีบทเรียน หรือเรียนครบแล้ว</div>';
+    document.getElementById('wl-ctrl').style.display='none';document.getElementById('wl-start').style.display='block';
+    return;
+  }
+  document.getElementById('wl-start').style.display='none';
+  document.getElementById('wl-ctrl').style.display='block';
+  renderWritingLesson();
+}
+function renderWritingLesson(){
+  if(!wsCards.length)return;
+  document.getElementById('wl-ctr').textContent=(wsIdx+1)+'/'+wsCards.length;
+  document.getElementById('wl-body').innerHTML=writingUnitCardHTML(wsCards[wsIdx]);
+}
+function markWritingLesson(res){
+  const l=wsCards[wsIdx];if(!l)return;
+  addProg({word:'wl_u'+l.unit,mode:'writinglesson',result:res});
+  nextWritingLesson();
+}
+function nextWritingLesson(){if(wsIdx<wsCards.length-1){wsIdx++;renderWritingLesson();}else endWritingLesson();}
+function prevWritingLesson(){if(wsIdx>0){wsIdx--;renderWritingLesson();}}
+function endWritingLesson(){
+  document.getElementById('wl-body').innerHTML='<div class="empty"><span class="empty-ico">🎉</span>จบบทเรียนเขียนวันนี้แล้ว!</div>';
+  document.getElementById('wl-ctrl').style.display='none';
+  document.getElementById('wl-start').style.display='block';
+  renderHome();renderWritingHub();toast('🎉 จบบทเรียนเขียนแล้ว!');
+}
+
+async function renderWritingCats(){
+  await ensureWriting();
+  const el=document.getElementById('writingcats-list');
+  const hist={};
+  PROG.filter(p=>p.mode==='writinglesson'&&p.result==='ok').forEach(p=>hist[p.word]=true);
+  el.innerHTML=writingCats().map(c=>{
+    const units=(WU||[]).filter(u=>u.category===c);
+    const done=units.filter(u=>hist['wl_u'+u.unit]).length;
+    const qn=writingPool(c).length;
+    return'<div class="gt-topic-row" onclick="goSc(\'writingunits\');renderWritingUnitsList(\''+c+'\')">'
+      +'<div><div style="font-size:14px;font-weight:600;color:var(--tx)">'+esc(writingCatLabel(c))+'</div>'
+      +'<div style="font-size:11px;color:var(--tx2);margin-top:2px">'+done+'/'+units.length+' บทเรียน · '+qn+' ข้อฝึก</div></div>'
+      +'<svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>'
+      +'</div>';
+  }).join('');
+}
+window._wuCat=null;
+async function renderWritingUnitsList(cat){
+  await ensureWriting();
+  window._wuCat=cat;
+  document.getElementById('wu-cat-title').textContent=writingCatLabel(cat);
+  const units=(WU||[]).filter(u=>u.category===cat).sort((a,b)=>a.unit-b.unit);
+  const done={};
+  PROG.filter(p=>p.mode==='writinglesson'&&p.result==='ok').forEach(p=>done[p.word]=true);
+  document.getElementById('writingunits-list').innerHTML=units.map(u=>{
+    const read=!!done['wl_u'+u.unit];
+    return'<div class="gt-topic-row" onclick="goSc(\'unitwriting\');startUnitWriting('+u.unit+')">'
+      +'<div><div style="font-size:14px;font-weight:600;color:var(--tx)">Unit '+u.unit+' · '+esc(u.title)+'</div>'
+      +'<div style="font-size:11px;color:var(--tx2);margin-top:2px">'+(read?'<span style="color:var(--gr)">✓ อ่านแล้ว</span>':'<span>ยังไม่ได้อ่าน</span>')+'</div></div>'
+      +'<svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>'
+      +'</div>';
+  }).join('');
+}
+let uwUnit=null;
+async function startUnitWriting(unitNum){
+  await ensureWriting();
+  uwUnit=(WU||[]).find(u=>u.unit===unitNum);
+  if(!uwUnit){toast('ไม่พบบทเรียนนี้');return;}
+  document.getElementById('uw-body').innerHTML=writingUnitCardHTML(uwUnit);
+  document.getElementById('uw-ctr').textContent='Unit '+uwUnit.unit;
+  document.getElementById('uw-scroll').scrollTop=0;
+  addProg({word:'wl_u'+uwUnit.unit,mode:'writinglesson',result:'ok'});
+  const nextUnit=(WU||[]).filter(u=>u.category===uwUnit.category).sort((a,b)=>a.unit-b.unit).find(u=>u.unit>uwUnit.unit);
+  document.getElementById('uw-foot').innerHTML=nextUnit
+    ?'<button class="bgold" onclick="startUnitWriting('+nextUnit.unit+')">✓ เข้าใจแล้ว บทถัดไป: Unit '+nextUnit.unit+' →</button>'
+    :'<button class="bgold" onclick="goSc(\'writingunits\')">✓ เข้าใจแล้ว กลับไปรายการบท</button>';
+  renderHome();renderWritingHub();
+}
+
+async function showWritingTStart(){
+  await ensureWriting();
+  document.getElementById('wt-start').style.display='block';
+  document.getElementById('wt-quiz').style.display='none';
+  document.getElementById('wt-result').style.display='none';
+  document.getElementById('wt-menu').innerHTML=writingCats().map(c=>{
+    const n=writingPool(c).length;
+    return'<div class="mc" onclick="startWritingTest(\''+c+'\')"><div class="mc-t" style="font-size:13px">'+esc(writingCatLabel(c))+'</div><div class="mc-d">'+n+' ข้อ</div></div>';
+  }).join('');
+}
+async function startWritingTest(cat){
+  await ensureWriting();
+  window._wtMode=cat;
+  const pool=writingPool(cat);
+  if(!pool.length){toast('ยังไม่มีข้อสอบในหมวดนี้');return;}
+  const hist={};
+  PROG.filter(p=>p.mode==='writingtest'&&p.word.startsWith('wq_')).forEach(p=>{
+    const id=p.word.slice(3);
+    if(!hist[id])hist[id]={ok:0,fail:0};
+    if(p.result==='ok')hist[id].ok++;else hist[id].fail++;
+  });
+  const newQs=pool.filter(q=>!hist[q.id]);
+  const wrongQs=pool.filter(q=>hist[q.id]&&hist[q.id].fail>0&&hist[q.id].ok===0);
+  const doneQs=pool.filter(q=>hist[q.id]&&hist[q.id].ok>0);
+  const N=10;
+  const pick=(arr,n)=>shuf([...arr]).slice(0,n);
+  let picked=[...pick(wrongQs,Math.round(N*0.35)),...pick(doneQs,Math.round(N*0.15)),...pick(newQs,Math.round(N*0.50))];
+  if(picked.length<N){
+    const used=new Set(picked.map(q=>q.id));
+    const fill=shuf(pool.filter(q=>!used.has(q.id)));
+    fill.forEach(q=>{if(picked.length<N&&!used.has(q.id)){picked.push(q);used.add(q.id);}});
+  }
+  if(picked.length<N&&cat&&cat!=='ALL'){
+    const used=new Set(picked.map(q=>q.id));
+    const fillOther=shuf(writingPool('ALL').filter(q=>!used.has(q.id)));
+    fillOther.forEach(q=>{if(picked.length<N&&!used.has(q.id)){picked.push(q);used.add(q.id);}});
+  }
+  wtQs=shuf(picked).slice(0,N);
+  wtIdx=0;wtOk=0;wtFail=[];
+  document.getElementById('wt-start').style.display='none';
+  document.getElementById('wt-quiz').style.display='flex';
+  document.getElementById('wt-result').style.display='none';
+  document.getElementById('wt-tot').textContent=wtQs.length;
+  renderWritingTQ();
+}
+function renderWritingTQ(){
+  if(wtIdx>=wtQs.length){showWritingTResult();return;}
+  const q=wtQs[wtIdx];
+  document.getElementById('wt-prog').style.width=(wtIdx/wtQs.length*100)+'%';
+  document.getElementById('wt-qn').textContent=wtIdx+1;
+  document.getElementById('wt-sc').textContent=wtOk;
+  document.getElementById('wt-type').textContent=(W_QTYPE_LBL[q.qtype]||q.qtype)+' · '+writingCatLabel(q.category);
+  document.getElementById('wt-qbody').innerHTML='<div class="gkh-qbody">'+esc(q.text||'')+'</div>';
+  const fb=document.getElementById('wt-fb');fb.className='fb';fb.textContent='';fb.style.flexDirection='';fb.style.alignItems='';
+  document.getElementById('wt-next').style.visibility='hidden';
+  const GOPT='width:100%;display:flex;align-items:center;background:var(--sf2);border:1.5px solid var(--br2);border-radius:10px;padding:10px 16px;font-family:Sarabun,sans-serif;font-size:14px;font-weight:500;color:var(--tx);cursor:pointer;text-align:left;line-height:1.4;overflow:hidden;transition:all .12s;-webkit-user-select:none;box-sizing:border-box';
+  document.getElementById('wt-choices').innerHTML=[1,2,3,4].map(i=>'<button style="'+GOPT+'" onclick="ansWritingTQ('+i+')">'+esc(q.choices[String(i)]||'')+'</button>').join('');
+}
+function writingMarkResult(q,ok,correctDisplay){
+  const fb=document.getElementById('wt-fb');
+  fb.style.flexDirection='column';fb.style.alignItems='flex-start';
+  const why=q.explain||'';
+  if(ok){wtOk++;fb.className='fb fb-ok on';fb.innerHTML='<div>✓ ถูกต้อง!</div><div style="margin-top:6px;font-size:12px;line-height:1.6;opacity:.9">'+esc(why)+'</div>';}
+  else{wtFail.push(q);fb.className='fb fb-fail on';fb.innerHTML='<div>✗ ผิด! เฉลย: <b>'+esc(correctDisplay)+'</b></div><div style="margin-top:6px;font-size:12px;line-height:1.6;opacity:.9">'+esc(why)+'</div>';}
+  addProg({word:'wq_'+q.id,mode:'writingtest',result:ok?'ok':'fail'});
+  document.getElementById('wt-next').style.visibility='visible';
+}
+function ansWritingTQ(i){
+  const q=wtQs[wtIdx];const ok=i===q.answer;
+  const btns=document.querySelectorAll('#wt-choices button');
+  btns.forEach((b,j)=>{b.disabled=true;if(j+1===q.answer){b.style.background='var(--gr2)';b.style.borderColor='var(--gr)';b.style.color='var(--gr)';}});
+  const sel=btns[i-1];if(ok){sel.style.background='var(--gr2)';sel.style.borderColor='var(--gr)';sel.style.color='var(--gr)';}else{sel.style.background='var(--rd2)';sel.style.borderColor='var(--rd)';sel.style.color='var(--rd)';}
+  writingMarkResult(q,ok,q.choices[String(q.answer)]);
+}
+function nextWritingTQ(){wtIdx++;renderWritingTQ();}
+function showWritingTResult(){
+  document.getElementById('wt-quiz').style.display='none';
+  document.getElementById('wt-result').style.display='flex';
+  const tot=wtQs.length,c=wtOk,w=tot-c,pct=tot?Math.round(c/tot*100):0;
+  document.getElementById('wtr-n').textContent=c;
+  document.getElementById('wtr-tot').textContent=tot;
+  document.getElementById('wtr-c').textContent=c;
+  document.getElementById('wtr-w').textContent=w;
+  const msgs=[[90,'🏆 ยอดเยี่ยม!'],[70,'👍 ดีมาก!'],[50,'📚 พอใช้ได้'],[0,'💪 ฝึกต่อไปนะ']];
+  document.getElementById('wtr-msg').textContent=(msgs.find(m=>pct>=m[0])||msgs[3])[1];
+  const ww=document.getElementById('wtr-wrong-wrap');
+  if(wtFail.length){
+    ww.style.display='block';
+    document.getElementById('wtr-wrong-list').innerHTML=wtFail.map(q=>'<div class="hi"><div class="hd fl"></div><div style="flex:1"><div class="hw" style="font-size:12px;line-height:1.4">'+esc((q.text||'').slice(0,80))+'</div><div class="hm">เฉลย: '+esc(q.choices[String(q.answer)])+'</div></div></div>').join('');
+  }else ww.style.display='none';
+  updateStats();renderHome();
+}
+
+// ---- Timed Writing Practice ----
+function loadWDrafts(){try{return JSON.parse(localStorage.getItem('ox_wdrafts')||'{}');}catch(e){return{};}}
+function saveWDrafts(d){try{localStorage.setItem('ox_wdrafts',JSON.stringify(d));}catch(e){}}
+let wpPrompt=null,wpTimerId=null,wpSecLeft=0,wpModelLang='en',wpChecked=[];
+async function showWPStart(){
+  await ensureWriting();
+  clearInterval(wpTimerId);wpTimerId=null;
+  document.getElementById('wp-timer').style.display='none';
+  document.getElementById('wp-start').style.display='block';
+  document.getElementById('wp-writing').style.display='none';
+  document.getElementById('wp-review').style.display='none';
+  const drafts=loadWDrafts();
+  document.getElementById('wp-prompt-list').innerHTML=(WPR||[]).map(p=>{
+    const done=drafts[p.id];
+    return'<div class="gt-topic-row" onclick="startWP('+p.id+')">'
+      +'<div><div style="font-size:14px;font-weight:600;color:var(--tx)">Task '+p.task+' · '+esc(p.type)+'</div>'
+      +'<div style="font-size:11px;color:var(--tx2);margin-top:2px">'+p.timeLimit+' นาที · อย่างน้อย '+p.minWords+' คำ'+(done?' · <span style="color:var(--gr)">✓ เคยทำแล้ว</span>':'')+'</div></div>'
+      +'<svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>'
+      +'</div>';
+  }).join('');
+  document.getElementById('wp-foot').innerHTML='';
+}
+function startWP(id){
+  wpPrompt=(WPR||[]).find(p=>p.id===id);
+  if(!wpPrompt)return;
+  document.getElementById('wp-start').style.display='none';
+  document.getElementById('wp-writing').style.display='block';
+  document.getElementById('wp-review').style.display='none';
+  document.getElementById('wp-task-type').textContent='Task '+wpPrompt.task+' · '+wpPrompt.type;
+  document.getElementById('wp-prompt-text').textContent=wpPrompt.prompt+'\n\n'+wpPrompt.promptTh;
+  document.getElementById('wp-textarea').value='';
+  updateWPWordCount();
+  wpSecLeft=wpPrompt.timeLimit*60;
+  const timerEl=document.getElementById('wp-timer');
+  timerEl.style.display='inline-block';
+  updateWPTimerDisplay();
+  clearInterval(wpTimerId);
+  wpTimerId=setInterval(()=>{
+    wpSecLeft--;
+    updateWPTimerDisplay();
+    if(wpSecLeft<=0){clearInterval(wpTimerId);wpTimerId=null;toast('⏰ หมดเวลา!');submitWP();}
+  },1000);
+  document.getElementById('wp-foot').innerHTML='<button class="bgold" onclick="submitWP()">ส่งคำตอบ</button>';
+  document.getElementById('wp-scroll').scrollTop=0;
+}
+function updateWPTimerDisplay(){
+  const m=Math.max(0,Math.floor(wpSecLeft/60)),s=Math.max(0,wpSecLeft%60);
+  document.getElementById('wp-timer').textContent=(m<10?'0':'')+m+':'+(s<10?'0':'')+s;
+}
+function updateWPWordCount(){
+  const txt=document.getElementById('wp-textarea').value.trim();
+  const n=txt?txt.split(/\s+/).filter(Boolean).length:0;
+  document.getElementById('wp-wordcount').textContent=n+' คำ';
+}
+function submitWP(){
+  if(!wpPrompt)return;
+  clearInterval(wpTimerId);wpTimerId=null;
+  document.getElementById('wp-timer').style.display='none';
+  const text=document.getElementById('wp-textarea').value;
+  const wc=text.trim()?text.trim().split(/\s+/).filter(Boolean).length:0;
+  const drafts=loadWDrafts();
+  wpChecked=new Array((wpPrompt.checklist||[]).length).fill(false);
+  drafts[wpPrompt.id]={text,wc,checklist:wpChecked.slice(),date:fmtD(new Date())};
+  saveWDrafts(drafts);
+  addProg({word:'wp_'+wpPrompt.id,mode:'writingpractice',result:'done'});
+  document.getElementById('wp-writing').style.display='none';
+  document.getElementById('wp-review').style.display='block';
+  document.getElementById('wp-review-wc').textContent=wc;
+  document.getElementById('wp-review-text').textContent=text||'(ไม่ได้เขียนอะไรเลย)';
+  wpModelLang='en';
+  renderWPModel();
+  renderWPChecklist();
+  document.getElementById('wp-foot').innerHTML='<div class="row"><button class="btn bnav" onclick="showWPStart()">‹ ลองข้ออื่น</button><button class="btn bnav" onclick="startWP('+wpPrompt.id+')">ทำข้อนี้ใหม่</button></div>';
+  document.getElementById('wp-scroll').scrollTop=0;
+  renderHome();renderWritingHub();
+}
+function toggleWPModelLang(){wpModelLang=wpModelLang==='en'?'th':'en';renderWPModel();}
+function renderWPModel(){
+  if(!wpPrompt)return;
+  document.getElementById('wp-model-text').textContent=wpModelLang==='en'?wpPrompt.modelAnswer:wpPrompt.modelAnswerTh;
+}
+function renderWPChecklist(){
+  if(!wpPrompt)return;
+  document.getElementById('wp-checklist').innerHTML=(wpPrompt.checklist||[]).map((c,i)=>
+    '<div class="wp-check-item" onclick="toggleWPCheck('+i+')" id="wp-chk-'+i+'"><div class="wp-check-box"></div><div class="wp-check-txt">'+esc(c)+'</div></div>'
+  ).join('');
+}
+function toggleWPCheck(i){
+  wpChecked[i]=!wpChecked[i];
+  document.getElementById('wp-chk-'+i).classList.toggle('on',wpChecked[i]);
+  if(wpPrompt){
+    const drafts=loadWDrafts();
+    if(drafts[wpPrompt.id]){drafts[wpPrompt.id].checklist=wpChecked.slice();saveWDrafts(drafts);}
+  }
 }
 
 // iOS keyboard input focus fix

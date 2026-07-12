@@ -1,0 +1,343 @@
+[
+ {
+  "unit": 1,
+  "category": "foundation",
+  "title": "โครงสร้างประโยคพื้นฐาน (Sentence Structures)",
+  "explain": "งานเขียนที่ดีต้องมีประโยคหลากหลายรูปแบบ ไม่ใช่ **Simple Sentence** สั้นๆ ซ้ำๆ ต่อกัน มี 3 แบบหลัก: **Simple** (ประธาน+กริยา 1 ชุด), **Compound** (2 simple sentences เชื่อมด้วย and/but/or/so), **Complex** (main clause + subordinate clause เชื่อมด้วย because/although/since/when/while/if)",
+  "keyPoints": [
+   "Simple sentence เช่น 'The city has grown rapidly.'",
+   "Compound sentence เชื่อมด้วย and/but/or/so/yet",
+   "Complex sentence เชื่อมด้วย because/although/since/when/while/if",
+   "งานเขียนระดับสูงควรผสมทั้ง 3 แบบ ไม่ใช้ simple sentence ล้วน"
+  ],
+  "example": {
+   "en": "The population increased steadily between 2000 and 2010. This growth was largely due to migration from rural areas, although the birth rate also played a significant role.",
+   "th": "ประชากรเพิ่มขึ้นอย่างต่อเนื่องระหว่างปี 2000 ถึง 2010 การเติบโตนี้ส่วนใหญ่มาจากการย้ายถิ่นจากชนบท แม้ว่าอัตราการเกิดก็มีบทบาทสำคัญเช่นกัน"
+  },
+  "mistake": {
+   "wrong": "The sales increased. The company hired more staff. The company expanded.",
+   "right": "The sales increased, so the company hired more staff and expanded.",
+   "note": "การเขียนประโยค simple sentence สั้นๆ ติดกันหลายประโยคทำให้งานเขียนดูขาดความลื่นไหล ควรเชื่อมประโยคด้วย compound/complex sentence"
+  }
+ },
+ {
+  "unit": 2,
+  "category": "foundation",
+  "title": "Linking Words & Cohesive Devices",
+  "explain": "กลุ่มคำเชื่อมตามหน้าที่: **Addition** (Furthermore, In addition, Moreover), **Contrast** (However, On the other hand, Nevertheless), **Cause-Effect** (Therefore, As a result, Consequently), **Sequence** (Firstly, Subsequently, Finally), **Example** (For instance, For example, Such as)",
+  "keyPoints": [
+   "ใช้คำเชื่อมให้หลากหลาย ไม่ซ้ำคำเดิม",
+   "คำเชื่อมที่ขึ้นต้นประโยคต้องตามด้วยเครื่องหมายจุลภาค (comma) เช่น 'However, ...'",
+   "ไม่ควรใช้คำเชื่อมมากเกินไปในย่อหน้าเดียว เพราะจะดูไม่เป็นธรรมชาติ"
+  ],
+  "example": {
+   "en": "Many people believe that working from home increases productivity. However, others argue that it leads to isolation and reduced collaboration. Therefore, a hybrid model may offer the best of both approaches.",
+   "th": "หลายคนเชื่อว่าการทำงานจากที่บ้านช่วยเพิ่มประสิทธิภาพ อย่างไรก็ตาม บางคนแย้งว่ามันนำไปสู่ความโดดเดี่ยวและการทำงานร่วมกันที่ลดลง ดังนั้น รูปแบบผสมผสานอาจเป็นทางเลือกที่ดีที่สุด"
+  },
+  "mistake": {
+   "wrong": "Working from home is good. And it saves time. And it reduces stress.",
+   "right": "Working from home is beneficial because it saves time and reduces stress.",
+   "note": "การใช้ 'And' ขึ้นต้นประโยคซ้ำๆ ทำให้งานเขียนดูเป็นภาษาพูดมากเกินไป ควรรวมความคิดด้วยคำเชื่อมที่เหมาะสม"
+  }
+ },
+ {
+  "unit": 3,
+  "category": "foundation",
+  "title": "เทคนิคการ Paraphrase",
+  "explain": "3 เทคนิคหลัก: 1) เปลี่ยนคำเป็นคำพ้องความหมาย (**synonym substitution**) 2) เปลี่ยนรูปคำ (**word form change** เช่น increase→increasing→increment) 3) เปลี่ยนโครงสร้างประโยค (active↔passive, สลับลำดับ clause) — สำคัญเพราะ Task 1 ต้อง paraphrase คำถามใน overview ไม่ลอกคำถามมาตรงๆ",
+  "keyPoints": [
+   "อย่า paraphrase คำศัพท์เฉพาะทาง/ชื่อเฉพาะ/ตัวเลข เพราะจะทำให้ความหมายเปลี่ยน",
+   "ใช้ทั้ง 3 เทคนิคผสมกันจะดูเป็นธรรมชาติกว่าเปลี่ยนแค่คำเดียว",
+   "ห้าม paraphrase จนความหมายผิดเพี้ยนไปจากต้นฉบับ"
+  ],
+  "example": {
+   "en": "Original: 'The graph shows the number of tourists visiting France from 2010 to 2020.' Paraphrase: 'The chart illustrates how many tourists travelled to France over an eleven-year period, from 2010 to 2020.'",
+   "th": "ต้นฉบับ: กราฟแสดงจำนวนนักท่องเที่ยวที่มาเยือนฝรั่งเศสตั้งแต่ปี 2010 ถึง 2020 / เปลี่ยนคำ: แผนภูมิแสดงให้เห็นว่ามีนักท่องเที่ยวเดินทางไปฝรั่งเศสกี่คนในช่วงสิบเอ็ดปี ตั้งแต่ 2010 ถึง 2020"
+  },
+  "mistake": {
+   "wrong": "The graph shows the number of tourists visiting France from 2010 to 2020. (ก็อปคำถามมาทั้งประโยค)",
+   "right": "The chart illustrates the volume of visitors to France across an eleven-year period.",
+   "note": "การลอกประโยคคำถามมาทั้งดุ้นใน Overview จะถูกตัดคะแนน Lexical Resource ใน IELTS จริง ต้อง paraphrase เสมอ"
+  }
+ },
+ {
+  "unit": 4,
+  "category": "foundation",
+  "title": "ข้อผิดพลาดทางไวยากรณ์ที่พบบ่อยในงานเขียน",
+  "explain": "รวม error ยอดฮิต: **Tense consistency** (สลับ tense มั่วในย่อหน้าเดียว), **Subject-Verb Agreement**, **Article** (a/an/the) ผิด, **Run-on sentence/Comma splice**, **Countable/Uncountable noun confusion** (เช่น informations ผิด ต้องเป็น information)",
+  "keyPoints": [
+   "Task 1 บรรยายข้อมูลในอดีตที่จบแล้ว ใช้ Past Tense; ถ้าเป็นข้อมูลคาดการณ์อนาคตใช้ Future/Modal",
+   "Comma splice: ห้ามเชื่อม 2 independent clauses ด้วย comma เฉยๆ ต้องใช้ conjunction หรือ semicolon",
+   "Uncountable nouns (information, advice, research, furniture) ไม่มี -s ต่อท้าย"
+  ],
+  "example": {
+   "en": "Research shows that students who read regularly perform better academically; however, this trend has declined in recent years.",
+   "th": "งานวิจัยแสดงให้เห็นว่านักเรียนที่อ่านหนังสือสม่ำเสมอมีผลการเรียนที่ดีกว่า อย่างไรก็ตาม แนวโน้มนี้ลดลงในช่วงไม่กี่ปีที่ผ่านมา"
+  },
+  "mistake": {
+   "wrong": "The number of students increased, it then decreased sharply.",
+   "right": "The number of students increased, and it then decreased sharply.",
+   "note": "Comma splice: เชื่อม 2 independent clauses ด้วย comma เฉยๆ ไม่ได้ ต้องมี conjunction (and/but) หรือใช้ semicolon (;) แทน"
+  }
+ },
+ {
+  "unit": 5,
+  "category": "foundation",
+  "title": "Formal vs Informal Tone",
+  "explain": "โทนภาษาทางการ (ใช้ใน Academic Task1/Task2 และ Formal Letter) ต่างจากไม่เป็นทางการ (ใช้ได้เฉพาะ Informal Letter): หลีกเลี่ยง **contractions** (don't→do not), คำแสลง, first person 'I think' มากเกินไปใน Task1",
+  "keyPoints": [
+   "Academic Writing ห้ามใช้ contractions (isn't, don't, can't) ต้องเขียนเต็ม",
+   "หลีกเลี่ยงคำไม่เป็นทางการ เช่น 'a lot of' → ใช้ 'a significant number of / considerably'",
+   "Formal Letter เปิดด้วย 'Dear Sir/Madam' ปิดด้วย 'Yours faithfully' / Informal เปิดด้วย 'Hi/Dear [name]' ปิดด้วย 'Best wishes'"
+  ],
+  "example": {
+   "en": "A significant proportion of respondents indicated that they do not have sufficient time for physical exercise.",
+   "th": "ผู้ตอบแบบสอบถามส่วนใหญ่ระบุว่าพวกเขาไม่มีเวลาเพียงพอสำหรับการออกกำลังกาย"
+  },
+  "mistake": {
+   "wrong": "A lot of people don't have time to exercise, which isn't great.",
+   "right": "A significant number of people do not have sufficient time to exercise, which is a concerning trend.",
+   "note": "ในงานเขียนแบบทางการ ห้ามใช้ contractions (don't, isn't) และคำไม่เป็นทางการอย่าง 'a lot of'"
+  }
+ },
+ {
+  "unit": 6,
+  "category": "task1",
+  "title": "โครงสร้าง Task 1 Academic (Overview + Body)",
+  "explain": "โครงสร้างมาตรฐาน 4 ย่อหน้า: 1) Introduction (paraphrase คำถาม) 2) **Overview** (สรุปแนวโน้มหลัก 2-3 จุดเด่นแบบภาพรวม ไม่ลงรายละเอียดตัวเลข) 3-4) Body paragraphs (อธิบายรายละเอียดข้อมูล แบ่งกลุ่มข้อมูลที่คล้ายกันไว้ด้วยกัน)",
+  "keyPoints": [
+   "Overview ต้องมีเสมอ และเขียนก่อนลงรายละเอียด — ถ้าไม่มีจะเสียคะแนน Task Achievement มาก",
+   "ห้ามใส่ความคิดเห็นส่วนตัวใน Task 1 (ต่างจาก Task 2)",
+   "ควรจัดกลุ่มข้อมูลที่มีความคล้ายกันไว้ด้วยกัน"
+  ],
+  "example": {
+   "en": "Overview: Overall, sales of smartphones increased significantly over the period, while sales of tablets remained relatively stable, with only a slight decline towards the end.",
+   "th": "ภาพรวม: โดยรวมแล้ว ยอดขายสมาร์ทโฟนเพิ่มขึ้นอย่างมีนัยสำคัญตลอดช่วงเวลาที่กำหนด ในขณะที่ยอดขายแท็บเล็ตค่อนข้างคงที่ โดยลดลงเล็กน้อยในช่วงท้าย"
+  },
+  "mistake": {
+   "wrong": "In 2015, sales were 200 units... (ข้ามการเขียน Overview ไปเลย เริ่มบรรยายตัวเลขทันที)",
+   "right": "Overall, sales fluctuated throughout the period, reaching a peak in 2018. In 2015, sales were 200 units...",
+   "note": "การข้าม Overview ไปเลยเป็นความผิดพลาดที่พบบ่อยที่สุดใน Task 1 ทำให้เสียคะแนน Task Achievement อย่างมาก"
+  }
+ },
+ {
+  "unit": 7,
+  "category": "task1",
+  "title": "คำศัพท์อธิบายแนวโน้ม (Describing Trends)",
+  "explain": "กลุ่มคำศัพท์บอกทิศทาง: **Increase** (rise, grow, climb, soar, surge), **Decrease** (fall, decline, drop, plummet, dip), **Stable** (remain stable/steady, level off, plateau), **Fluctuate** (fluctuate, vary) และ adverbs บอกระดับ: dramatically, significantly, slightly, gradually, sharply",
+  "keyPoints": [
+   "คำกริยาแต่ละคำมีระดับความรุนแรงต่างกัน เช่น 'soar/plummet' = เปลี่ยนแปลงรุนแรงมาก",
+   "Noun form สำคัญ: a sharp increase, a steady rise, a gradual decline (ใช้กับ 'there was...')",
+   "peak (จุดสูงสุด), trough/bottom out (จุดต่ำสุด) ใช้บอกจุดสุดขั้วของกราฟ"
+  ],
+  "example": {
+   "en": "The number of visitors soared from 2015 to 2017, before declining sharply and eventually levelling off at around 500 in 2020.",
+   "th": "จำนวนผู้เยี่ยมชมพุ่งสูงขึ้นตั้งแต่ปี 2015 ถึง 2017 ก่อนจะลดลงอย่างรวดเร็วและในที่สุดก็คงที่อยู่ที่ประมาณ 500 คนในปี 2020"
+  },
+  "mistake": {
+   "wrong": "The number went up a lot and then went down a lot.",
+   "right": "The number increased dramatically before declining sharply.",
+   "note": "คำว่า 'went up/down a lot' เป็นภาษาพูด ไม่เหมาะกับงานเขียนวิชาการ ควรใช้คำศัพท์เฉพาะทางแทน"
+  }
+ },
+ {
+  "unit": 8,
+  "category": "task1",
+  "title": "การเปรียบเทียบข้อมูล (Comparing & Contrasting)",
+  "explain": "โครงสร้างประโยคเปรียบเทียบ: **Comparative** (higher than, more than, twice as many as), **Superlative** (the highest, the most significant), คำเชื่อมเปรียบเทียบ (whereas, while, in contrast, compared to/with)",
+  "keyPoints": [
+   "ใช้ 'whereas/while' เชื่อม 2 ข้อมูลที่ตรงข้ามกันในประโยคเดียว ทำให้กระชับ",
+   "ระวังการเปรียบเทียบ ต้องเทียบหน่วยเดียวกัน (เปอร์เซ็นต์กับเปอร์เซ็นต์ ไม่ใช่จำนวนกับเปอร์เซ็นต์)",
+   "'twice/three times as + adj + as' ใช้บอกอัตราส่วน"
+  ],
+  "example": {
+   "en": "Whereas male participants preferred outdoor activities, female participants were twice as likely to choose indoor hobbies.",
+   "th": "ในขณะที่ผู้เข้าร่วมชายชอบกิจกรรมกลางแจ้ง ผู้เข้าร่วมหญิงมีแนวโน้มที่จะเลือกงานอดิเรกในร่มมากกว่าถึงสองเท่า"
+  },
+  "mistake": {
+   "wrong": "Men like outdoor. Women like indoor more.",
+   "right": "Men preferred outdoor activities, whereas women were more inclined towards indoor hobbies.",
+   "note": "การเขียนประโยคสั้นห้วนแบบภาษาพูดไม่แสดงทักษะการใช้โครงสร้างเปรียบเทียบที่หลากหลาย"
+  }
+ },
+ {
+  "unit": 9,
+  "category": "task1",
+  "title": "อธิบายกระบวนการ/แผนภาพ (Process & Diagram)",
+  "explain": "สำหรับโจทย์ Diagram/Process (เช่น วงจรการผลิต, ขั้นตอนการรีไซเคิล) ต้องใช้ **Passive Voice** เป็นหลัก เพราะเน้นกระบวนการ ไม่เน้นผู้กระทำ และคำเชื่อมลำดับขั้นตอน: First/Initially, Next/Then/After that, Following this, Finally/Eventually",
+  "keyPoints": [
+   "ใช้ Passive Voice เกือบทั้งหมด เช่น 'The water is heated to 100 degrees' แทน 'They heat the water'",
+   "ระบุจำนวนขั้นตอนทั้งหมดใน Overview ก่อน เช่น 'The process involves six main stages'",
+   "ถ้าเป็น cyclical process (วนซ้ำ) ให้กล่าวถึงตอนท้ายว่ากระบวนการเริ่มต้นใหม่"
+  ],
+  "example": {
+   "en": "Overview: Overall, the process of making paper involves six stages, beginning with the collection of wood and ending with the packaging of the finished product. First, logs are transported to the factory, where the bark is removed.",
+   "th": "ภาพรวม: โดยรวมกระบวนการผลิตกระดาษมีทั้งหมด 6 ขั้นตอน เริ่มจากการเก็บไม้และจบที่การบรรจุผลิตภัณฑ์สำเร็จรูป ขั้นแรก ท่อนไม้จะถูกขนส่งไปยังโรงงานซึ่งเปลือกไม้จะถูกลอกออก"
+  },
+  "mistake": {
+   "wrong": "They collect the wood. Then they remove the bark.",
+   "right": "The wood is collected. The bark is then removed.",
+   "note": "โจทย์ Process ต้องใช้ Passive Voice เป็นหลัก เพราะเน้นที่ตัวกระบวนการ ไม่ใช่ผู้กระทำ"
+  }
+ },
+ {
+  "unit": 10,
+  "category": "task1",
+  "title": "การเขียนจดหมาย (Letter Writing - General Training)",
+  "explain": "3 ประเภทจดหมาย: **Formal** (ไม่รู้จักผู้รับ เช่น ร้องเรียนบริษัท), **Semi-formal** (รู้จักแต่ไม่สนิท เช่น เจ้านาย), **Informal** (เพื่อน/ครอบครัว) พร้อมโครงสร้างเปิด-ปิดที่ต่างกัน และเนื้อหา 3 ย่อหน้า (เหตุผลที่เขียน / รายละเอียด / สิ่งที่ต้องการให้ทำ)",
+  "keyPoints": [
+   "Formal: 'Dear Sir/Madam,' ... 'Yours faithfully,' (ไม่รู้ชื่อผู้รับ) หรือ 'Dear Mr. Smith,' ... 'Yours sincerely,' (รู้ชื่อ)",
+   "Informal: 'Hi John,' ... 'Best wishes,' / 'Love,'",
+   "ย่อหน้าแรกต้องบอกจุดประสงค์ของจดหมายอย่างชัดเจนทันที (I am writing to...)"
+  ],
+  "example": {
+   "en": "Dear Sir/Madam, I am writing to complain about the poor service I received at your restaurant last weekend. Firstly, we waited over an hour for our order to arrive...",
+   "th": "เรียนท่าน ดิฉันเขียนจดหมายฉบับนี้เพื่อร้องเรียนเกี่ยวกับการบริการที่ไม่ดีที่ได้รับจากร้านอาหารของท่านเมื่อสุดสัปดาห์ที่ผ่านมา ประการแรก เรารอคำสั่งอาหารนานกว่าหนึ่งชั่วโมง..."
+  },
+  "mistake": {
+   "wrong": "Hi, Your restaurant was bad. I want money back.",
+   "right": "Dear Sir/Madam, I am writing to express my dissatisfaction with the service and to request a refund.",
+   "note": "จดหมายทางการห้ามใช้ 'Hi' และประโยคสั้นห้วนแบบภาษาพูด ต้องใช้ภาษาที่สุภาพเป็นทางการ"
+  }
+ },
+ {
+  "unit": 11,
+  "category": "task2",
+  "title": "โครงสร้าง Essay 4 ย่อหน้า",
+  "explain": "โครงสร้างมาตรฐาน: Introduction (paraphrase + thesis) / Body 1 (ประเด็นแรก + เหตุผล + ตัวอย่าง) / Body 2 (ประเด็นที่สอง) / Conclusion (สรุป+ย้ำ thesis) แต่ละ Body paragraph ควรมี Topic sentence → Explanation → Example",
+  "keyPoints": [
+   "1 ย่อหน้า = 1 ความคิดหลักเท่านั้น (One paragraph, one idea)",
+   "Body paragraph ที่ดีต้องมีตัวอย่างประกอบ เช่น 'For example, in many countries...'",
+   "ความยาวรวมควรอย่างน้อย 250 คำ (IELTS Task 2)"
+  ],
+  "example": {
+   "en": "Topic sentence: One major advantage of remote working is the flexibility it offers employees. Explanation: Workers can arrange their schedules around personal commitments. Example: For instance, parents can attend school events without needing to request time off.",
+   "th": "ประโยคหัวข้อ: ข้อดีหลักประการหนึ่งของการทำงานทางไกลคือความยืดหยุ่นที่มอบให้พนักงาน คำอธิบาย: พนักงานสามารถจัดตารางเวลาตามภาระผูกพันส่วนตัวได้ ตัวอย่าง: เช่น พ่อแม่สามารถเข้าร่วมกิจกรรมโรงเรียนได้โดยไม่ต้องลา"
+  },
+  "mistake": {
+   "wrong": "ย่อหน้าเดียวพูดหลายประเด็นปนกัน ไม่มีตัวอย่างประกอบ",
+   "right": "แยกแต่ละประเด็นเป็นคนละย่อหน้า พร้อมตัวอย่างประกอบทุกย่อหน้า",
+   "note": "การยัดหลายประเด็นไว้ย่อหน้าเดียวโดยไม่มีตัวอย่างทำให้คะแนน Coherence and Cohesion ต่ำ"
+  }
+ },
+ {
+  "unit": 12,
+  "category": "task2",
+  "title": "การเขียน Introduction ที่ดี",
+  "explain": "Introduction ที่ดีมี 2 ส่วน: 1) Paraphrase คำถาม (background statement) 2) **Thesis statement** (บอกจุดยืน/ทิศทางของ essay อย่างชัดเจน) ห้ามยาวเกิน 2-3 ประโยค",
+  "keyPoints": [
+   "Thesis statement ต้องตอบคำถามตรงประเด็น (ถ้าถาม agree/disagree ต้องบอกชัดว่าเห็นด้วยหรือไม่)",
+   "ห้ามยกตัวอย่างหรืออธิบายรายละเอียดใน Introduction (เก็บไว้ Body)",
+   "Thesis statement ที่ดีมักบอกด้วยว่า essay จะพูดถึงประเด็นอะไรบ้าง (essay map)"
+  ],
+  "example": {
+   "en": "It is often argued that technology has made children less active. While I acknowledge that screen time has increased, I believe that technology itself is not solely responsible for this trend.",
+   "th": "มักมีการโต้แย้งว่าเทคโนโลยีทำให้เด็กเคลื่อนไหวน้อยลง แม้ฉันจะยอมรับว่าเวลาหน้าจอเพิ่มขึ้น แต่ฉันเชื่อว่าเทคโนโลยีเองไม่ใช่สาเหตุเดียวของแนวโน้มนี้"
+  },
+  "mistake": {
+   "wrong": "I will talk about technology and children in this essay.",
+   "right": "While technology has changed how children spend their leisure time, I would argue that parental guidance plays a more critical role in shaping activity levels.",
+   "note": "การบอกแค่ 'I will talk about...' ตรงๆ ไม่ถือเป็น thesis statement ที่ดี ต้องแสดงจุดยืนที่ชัดเจน"
+  }
+ },
+ {
+  "unit": 13,
+  "category": "task2",
+  "title": "Opinion Essay (Agree/Disagree)",
+  "explain": "โจทย์ถามความเห็น (Do you agree or disagree?) ต้องเลือกจุดยืนเดียวตั้งแต่ Introduction แล้วสนับสนุนด้วยเหตุผล 2 ข้อตลอดทั้ง essay หรือถ้าเห็นด้วยบางส่วน (partial agreement) ต้องระบุให้ชัดว่าเห็นด้วยส่วนไหนไม่เห็นด้วยส่วนไหน",
+  "keyPoints": [
+   "ต้องเลือกจุดยืนตั้งแต่ต้น ห้าม 'เห็นด้วยก็ได้ ไม่เห็นด้วยก็ได้' แบบกำกวม",
+   "Body 1 และ 2 ต้องเป็นเหตุผลสนับสนุนจุดยืนเดียวกัน",
+   "ควรมีเหตุผลโต้แย้งฝ่ายตรงข้ามสั้นๆ แล้วอธิบายว่าทำไมยังยืนจุดยืนเดิม (concession) เพื่อแสดงการคิดวิเคราะห์"
+  ],
+  "example": {
+   "en": "In my opinion, social media platforms should be held responsible for the content shared by their users, primarily because they possess the technological tools to monitor and control harmful information effectively.",
+   "th": "ในความเห็นของฉัน แพลตฟอร์มโซเชียลมีเดียควรรับผิดชอบต่อเนื้อหาที่ผู้ใช้แชร์ เนื่องจากพวกเขามีเครื่องมือทางเทคโนโลยีที่จะตรวจสอบและควบคุมข้อมูลที่เป็นอันตรายได้อย่างมีประสิทธิภาพ"
+  },
+  "mistake": {
+   "wrong": "Some people agree and some disagree, both sides have good points.",
+   "right": "While both perspectives have merit, I firmly believe that...",
+   "note": "โจทย์ agree/disagree ต้องแสดงจุดยืนของผู้เขียนเองชัดเจน ไม่ใช่แค่บรรยายว่าคนอื่นคิดอย่างไร"
+  }
+ },
+ {
+  "unit": 14,
+  "category": "task2",
+  "title": "Discussion Essay (Both Views)",
+  "explain": "โจทย์ให้พูดถึง 2 มุมมอง (Discuss both views and give your opinion) โครงสร้าง: Intro (paraphrase+บอกว่าจะพูดถึง 2 มุมมอง) / Body 1 (มุมมองที่ 1) / Body 2 (มุมมองที่ 2) / Conclusion (สรุป+ให้ความเห็นตัวเอง)",
+  "keyPoints": [
+   "ต้องอธิบายทั้ง 2 มุมมองอย่างเป็นกลางใน Body ก่อน แล้วค่อยให้ความเห็นตัวเองใน Conclusion",
+   "ห้ามลืมให้ความเห็นส่วนตัว (your opinion) เพราะเป็นส่วนหนึ่งของโจทย์ที่ถูกประเมิน",
+   "ใช้ภาษาที่แสดงว่าเป็นมุมมองของคนอื่น เช่น 'Proponents argue that...', 'Critics claim that...'"
+  ],
+  "example": {
+   "en": "Some people believe that university education should be free for all students. Others, however, argue that charging tuition fees ensures better quality and accountability. This essay will discuss both views before presenting my own opinion.",
+   "th": "บางคนเชื่อว่าการศึกษามหาวิทยาลัยควรฟรีสำหรับนักศึกษาทุกคน ในขณะที่บางคนแย้งว่าการเก็บค่าเล่าเรียนช่วยรับประกันคุณภาพและความรับผิดชอบที่ดีกว่า เรียงความนี้จะกล่าวถึงทั้งสองมุมมองก่อนนำเสนอความเห็นส่วนตัวของฉัน"
+  },
+  "mistake": {
+   "wrong": "พูดแค่มุมมองเดียวทั้ง essay ไม่พูดถึงอีกฝั่งเลย",
+   "right": "อธิบายทั้งสองมุมมองอย่างสมดุลใน Body 1 และ Body 2 ก่อนให้ความเห็นตัวเอง",
+   "note": "Discussion essay ต้องพูดถึงทั้งสองมุมมองอย่างสมดุล การพูดแค่ฝั่งเดียวจะไม่ตอบโจทย์ Task Achievement"
+  }
+ },
+ {
+  "unit": 15,
+  "category": "task2",
+  "title": "Problem-Solution Essay",
+  "explain": "โจทย์ถามปัญหาและทางแก้ (What problems does X cause? What solutions can be suggested?) โครงสร้าง: Intro / Body 1 (ปัญหา 2 ข้อ + ผลกระทบ) / Body 2 (ทางแก้ที่สอดคล้องกับปัญหาที่กล่าวไป) / Conclusion",
+  "keyPoints": [
+   "ทางแก้ใน Body 2 ต้องตอบโจทย์ปัญหาที่กล่าวไปใน Body 1 โดยตรง (จับคู่ปัญหา-ทางแก้)",
+   "ใช้ modal verbs บอกความเป็นไปได้ของทางแก้: could, should, might, it would be advisable to...",
+   "ควรระบุว่าใครควรเป็นผู้รับผิดชอบทางแก้ (รัฐบาล/บุคคล/องค์กร)"
+  ],
+  "example": {
+   "en": "One major problem caused by urban traffic congestion is increased air pollution, which poses serious health risks to city residents. A viable solution would be for governments to invest in efficient public transportation systems, thereby reducing reliance on private vehicles.",
+   "th": "ปัญหาสำคัญประการหนึ่งที่เกิดจากการจราจรติดขัดในเมืองคือมลพิษทางอากาศที่เพิ่มขึ้น ซึ่งก่อให้เกิดความเสี่ยงต่อสุขภาพของผู้อยู่อาศัยในเมืองอย่างร้ายแรง ทางแก้ที่เป็นไปได้คือรัฐบาลควรลงทุนในระบบขนส่งสาธารณะที่มีประสิทธิภาพ เพื่อลดการพึ่งพารถยนต์ส่วนตัว"
+  },
+  "mistake": {
+   "wrong": "กล่าวถึงปัญหา 3 ข้อ แต่เสนอทางแก้แค่ข้อเดียวที่ไม่ตรงกับปัญหาที่พูดถึง",
+   "right": "ทางแก้ที่เสนอควรตอบโจทย์ปัญหาที่กล่าวไว้ก่อนหน้าอย่างตรงจุด",
+   "note": "ทางแก้ที่ไม่สอดคล้องกับปัญหาที่กล่าวถึงจะทำให้ essay ดูไม่มีเหตุผลเชื่อมโยงกัน (poor coherence)"
+  }
+ },
+ {
+  "unit": 16,
+  "category": "task2",
+  "title": "Advantages-Disadvantages Essay",
+  "explain": "โจทย์ถามข้อดีข้อเสีย มี 2 รูปแบบ: 1) 'Discuss the advantages and disadvantages' (แค่บรรยาย ไม่ต้องให้ความเห็น) 2) 'Do the advantages outweigh the disadvantages?' (ต้องสรุปว่าอะไรมากกว่ากันตอนท้าย) โครงสร้าง: Intro / Body 1 (ข้อดี) / Body 2 (ข้อเสีย) / Conclusion",
+  "keyPoints": [
+   "อ่านโจทย์ให้ดีว่าต้องให้ความเห็น (outweigh) หรือแค่บรรยายเฉยๆ",
+   "ควรมีข้อดี/ข้อเสียอย่างละ 2 ข้อ พร้อมตัวอย่างประกอบ",
+   "คำศัพท์สำคัญ: benefit, advantage, upside / drawback, downside, disadvantage"
+  ],
+  "example": {
+   "en": "One of the key advantages of studying abroad is exposure to a different culture, which broadens students' perspectives. On the other hand, a significant drawback is the high financial cost involved, which can place a burden on families.",
+   "th": "หนึ่งในข้อดีสำคัญของการไปเรียนต่างประเทศคือการได้สัมผัสวัฒนธรรมที่แตกต่าง ซึ่งช่วยเปิดมุมมองของนักเรียน ในทางกลับกัน ข้อเสียสำคัญคือค่าใช้จ่ายทางการเงินที่สูง ซึ่งอาจเป็นภาระต่อครอบครัว"
+  },
+  "mistake": {
+   "wrong": "โจทย์ถาม outweigh แต่ไม่สรุปจุดยืนใน Conclusion เลย",
+   "right": "In conclusion, while there are some drawbacks, I believe the advantages of studying abroad ultimately outweigh the disadvantages.",
+   "note": "ถ้าโจทย์ถามว่า advantages outweigh disadvantages หรือไม่ ต้องสรุปจุดยืนชัดเจนใน Conclusion ไม่ใช่แค่บรรยายข้อดีข้อเสียเฉยๆ"
+  }
+ },
+ {
+  "unit": 17,
+  "category": "task2",
+  "title": "การเขียน Conclusion + Proofreading Checklist",
+  "explain": "Conclusion ที่ดีสรุปประเด็นหลักอีกครั้ง (ไม่ใช่ copy จาก Introduction) และย้ำจุดยืน ไม่เพิ่มความคิดใหม่ ความยาว 2-3 ประโยค จากนั้นตรวจทานงานเขียนก่อนส่ง: ตรวจ tense, ตัวสะกด, ตอบครบทุกส่วนของโจทย์หรือไม่, ความยาวคำขั้นต่ำ",
+  "keyPoints": [
+   "Conclusion ห้ามมีข้อมูล/เหตุผลใหม่ที่ไม่เคยพูดถึงใน Body",
+   "ใช้คำเชื่อมเปิด Conclusion: In conclusion, To conclude, Overall, In summary",
+   "Checklist ก่อนส่ง: 1) ตอบครบทุกส่วนคำถามไหม 2) มี Overview/Thesis ชัดเจนไหม 3) แต่ละย่อหน้ามี 1 ความคิดหลักไหม 4) ใช้คำเชื่อมหลากหลายไหม 5) จำนวนคำครบขั้นต่ำไหม 6) ตรวจ grammar/spelling รอบสุดท้าย"
+  ],
+  "example": {
+   "en": "In conclusion, while remote working offers considerable flexibility, it also presents challenges related to collaboration and work-life balance. A hybrid approach may therefore provide the most effective solution for modern workplaces.",
+   "th": "โดยสรุป แม้การทำงานทางไกลจะมอบความยืดหยุ่นอย่างมาก แต่ก็มีความท้าทายเกี่ยวกับการทำงานร่วมกันและสมดุลชีวิตการทำงาน ดังนั้นแนวทางแบบผสมผสานอาจเป็นทางออกที่มีประสิทธิภาพที่สุดสำหรับที่ทำงานยุคใหม่"
+  },
+  "mistake": {
+   "wrong": "Conclusion เพิ่มตัวอย่างใหม่ที่ไม่เคยพูดถึงเลย เช่น อ้างสถิติใหม่",
+   "right": "Conclusion ควรสรุปสิ่งที่พูดไปแล้วเท่านั้น ไม่เพิ่มข้อมูลใหม่",
+   "note": "การเพิ่มเหตุผล/ตัวอย่างใหม่ใน Conclusion ที่ไม่เคยกล่าวถึงใน Body ถือเป็นจุดอ่อนที่พบบ่อย"
+  }
+ }
+]
