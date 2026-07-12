@@ -1,0 +1,358 @@
+[
+ {
+  "unit": 1,
+  "tier": "easy",
+  "topic": "Shopping",
+  "title": "At the Store",
+  "preteach": [
+   {"word": "jacket", "meaning": "เสื้อแจ็คเก็ต", "example": "I need a warm jacket for winter."},
+   {"word": "size", "meaning": "ขนาด/ไซส์", "example": "What size do you wear?"},
+   {"word": "tight", "meaning": "คับ/แน่น", "example": "These shoes feel tight."},
+   {"word": "receipt", "meaning": "ใบเสร็จ", "example": "Can I have a receipt, please?"}
+  ],
+  "transcript": "Woman: Excuse me, do you have this jacket in a bigger size?\nMan: Let me check. What size are you wearing now?\nWoman: I have a medium, but it feels a little tight.\nMan: We have a large in blue, but not in black.\nWoman: That's okay, I'll take the blue one.\nMan: Great. That will be forty-five dollars. Would you like a receipt?\nWoman: Yes, please.",
+  "translation": "หญิง: ขอโทษนะคะ เสื้อแจ็คเก็ตตัวนี้มีไซส์ใหญ่กว่านี้ไหมคะ\nชาย: ขอเช็คดูก่อนนะครับ ตอนนี้ใส่ไซส์อะไรอยู่ครับ\nหญิง: ใส่ไซส์กลางอยู่ค่ะ แต่รู้สึกว่ามันคับไปนิดหนึ่ง\nชาย: เรามีไซส์ใหญ่สีน้ำเงินครับ แต่ไม่มีสีดำ\nหญิง: ไม่เป็นไรค่ะ เอาสีน้ำเงินก็ได้\nชาย: ได้ครับ ราคาสี่สิบห้าดอลลาร์ ต้องการใบเสร็จไหมครับ\nหญิง: เอาค่ะ",
+  "keyPoints": [
+   {"phrase": "Do you have this in a bigger size?", "explain": "สำนวนถามหาสินค้าขนาดอื่นในร้าน ใช้บ่อยเวลาช้อปปิ้ง"},
+   {"phrase": "That will be ... dollars", "explain": "ประโยคที่พนักงานขายใช้บอกราคาที่ต้องจ่าย"}
+  ]
+ },
+ {
+  "unit": 2,
+  "tier": "easy",
+  "topic": "Dining Out",
+  "title": "Ordering Food",
+  "preteach": [
+   {"word": "grilled", "meaning": "ย่าง", "example": "I love grilled chicken."},
+   {"word": "spicy", "meaning": "เผ็ด", "example": "This soup is very spicy."},
+   {"word": "order", "meaning": "สั่ง(อาหาร)", "example": "Are you ready to order?"}
+  ],
+  "transcript": "Waiter: Hi, welcome. Are you ready to order?\nCustomer: Yes. I'd like the grilled chicken with rice, please.\nWaiter: Would you like anything to drink?\nCustomer: Just water, thanks. Oh, and can I get that without any spicy sauce?\nWaiter: Sure, no problem. Anything else?\nCustomer: No, that's all for now.",
+  "translation": "บริกร: สวัสดีครับ ยินดีต้อนรับ พร้อมสั่งอาหารหรือยังครับ\nลูกค้า: ค่ะ ขอไก่ย่างกับข้าวค่ะ\nบริกร: รับเครื่องดื่มอะไรไหมครับ\nลูกค้า: ขอน้ำเปล่าค่ะ อ้อ แล้วขอแบบไม่ใส่ซอสเผ็ดได้ไหมคะ\nบริกร: ได้เลยครับ ไม่มีปัญหา รับอะไรเพิ่มไหมครับ\nลูกค้า: ไม่แล้วค่ะ แค่นี้ก่อน",
+  "keyPoints": [
+   {"phrase": "Are you ready to order?", "explain": "ประโยคมาตรฐานที่บริกรถามลูกค้าในร้านอาหาร"},
+   {"phrase": "Can I get that without ... ?", "explain": "สำนวนขอไม่ใส่วัตถุดิบบางอย่างในอาหาร"}
+  ]
+ },
+ {
+  "unit": 3,
+  "tier": "easy",
+  "topic": "Getting Around",
+  "title": "Asking for Directions",
+  "preteach": [
+   {"word": "straight ahead", "meaning": "ตรงไป", "example": "Go straight ahead until you see the light."},
+   {"word": "turn left", "meaning": "เลี้ยวซ้าย", "example": "Turn left at the corner."},
+   {"word": "block", "meaning": "ช่วงตึก/บล็อกถนน", "example": "Walk two blocks north."}
+  ],
+  "transcript": "Man: Excuse me, could you tell me how to get to the train station?\nWoman: Sure. Go straight ahead for two blocks, then turn left at the bank.\nMan: Turn left at the bank, okay.\nWoman: Yes, then the station will be right in front of you, next to the post office.\nMan: Is it far from here?\nWoman: No, it's about a five-minute walk.\nMan: Thank you so much!",
+  "translation": "ชาย: ขอโทษครับ ช่วยบอกทางไปสถานีรถไฟหน่อยได้ไหมครับ\nหญิง: ได้ค่ะ เดินตรงไปสองบล็อก แล้วเลี้ยวซ้ายตรงธนาคาร\nชาย: เลี้ยวซ้ายตรงธนาคารนะครับ\nหญิง: ใช่ค่ะ แล้วสถานีจะอยู่ตรงหน้าเลย ข้างๆ ที่ทำการไปรษณีย์\nชาย: ไกลจากที่นี่ไหมครับ\nหญิง: ไม่ไกลค่ะ เดินประมาณห้านาที\nชาย: ขอบคุณมากครับ",
+  "keyPoints": [
+   {"phrase": "Could you tell me how to get to ... ?", "explain": "สำนวนสุภาพสำหรับถามทาง"},
+   {"phrase": "It's about a five-minute walk", "explain": "รูปแบบประโยคบอกระยะเวลาที่ใช้เดินถึง"}
+  ]
+ },
+ {
+  "unit": 4,
+  "tier": "easy",
+  "topic": "Phone Calls",
+  "title": "Making an Appointment",
+  "preteach": [
+   {"word": "appointment", "meaning": "การนัดหมาย", "example": "I have a doctor's appointment tomorrow."},
+   {"word": "check-up", "meaning": "การตรวจสุขภาพ", "example": "It's time for my yearly check-up."},
+   {"word": "opening", "meaning": "ช่วงเวลาว่าง/คิวว่าง", "example": "We have an opening next week."}
+  ],
+  "transcript": "Receptionist: Good morning, City Dental Clinic. How can I help you?\nCaller: Hi, I'd like to make an appointment for a check-up.\nReceptionist: Sure. Are you free this Thursday at 10 a.m.?\nCaller: Actually, I have work then. Do you have anything in the afternoon?\nReceptionist: Let me see... We have an opening at 3 p.m. on Thursday.\nCaller: That works for me.\nReceptionist: Great, can I have your name, please?",
+  "translation": "พนักงานต้อนรับ: สวัสดีค่ะ คลินิกทันตกรรมซิตี้ มีอะไรให้ช่วยคะ\nผู้โทร: สวัสดีครับ ผมอยากนัดตรวจฟันครับ\nพนักงานต้อนรับ: ได้ค่ะ วันพฤหัสฯ นี้ ตอนสิบโมงเช้า ว่างไหมคะ\nผู้โทร: จริงๆ ผมมีงานตอนนั้นครับ มีช่วงบ่ายไหมครับ\nพนักงานต้อนรับ: รอสักครู่นะคะ... มีคิวว่างบ่ายสามโมง วันพฤหัสฯ ค่ะ\nผู้โทร: ช่วงนั้นสะดวกครับ\nพนักงานต้อนรับ: ได้เลยค่ะ ขอชื่อคุณด้วยนะคะ",
+  "keyPoints": [
+   {"phrase": "I'd like to make an appointment", "explain": "สำนวนมาตรฐานสำหรับขอนัดหมาย"},
+   {"phrase": "Do you have anything in the afternoon?", "explain": "สำนวนถามหาช่วงเวลาว่างอื่น"}
+  ]
+ },
+ {
+  "unit": 5,
+  "tier": "easy",
+  "topic": "Small Talk",
+  "title": "Talking About the Weather",
+  "preteach": [
+   {"word": "scarf", "meaning": "ผ้าพันคอ", "example": "Wear a scarf, it's cold outside."},
+   {"word": "snow", "meaning": "หิมะ/หิมะตก", "example": "It might snow tomorrow."},
+   {"word": "borrow", "meaning": "ยืม", "example": "Can I borrow your pen?"}
+  ],
+  "transcript": "Anna: Wow, it's really cold today, isn't it?\nBen: Yeah, the news said it might even snow tonight.\nAnna: Really? I didn't bring a warm coat.\nBen: You can borrow my scarf if you want.\nAnna: Thanks, that's really kind of you.\nBen: No problem. Are you still going to the park later?\nAnna: Maybe not, if it's going to snow.",
+  "translation": "แอนนา: โห วันนี้หนาวจังเลยเนอะ\nเบน: ใช่ ข่าวบอกว่าคืนนี้อาจจะมีหิมะตกด้วย\nแอนนา: จริงเหรอ ฉันไม่ได้เอาเสื้อโค้ทหนาวๆ มาเลย\nเบน: ยืมผ้าพันคอฉันก็ได้นะถ้าอยากได้\nแอนนา: ขอบคุณนะ ใจดีจังเลย\nเบน: ไม่เป็นไร แล้วเธอจะไปสวนสาธารณะทีหลังไหม\nแอนนา: อาจจะไม่ไปแล้วมั้ง ถ้าหิมะจะตก",
+  "keyPoints": [
+   {"phrase": "..., isn't it?", "explain": "tag question ใช้ต่อท้ายประโยคเพื่อชวนคุยหรือขอความเห็นด้วย พบบ่อยใน small talk"},
+   {"phrase": "That's really kind of you", "explain": "สำนวนขอบคุณเมื่อมีคนช่วยเหลือหรือให้น้ำใจ"}
+  ]
+ },
+ {
+  "unit": 6,
+  "tier": "easy",
+  "topic": "Travel",
+  "title": "Airport Check-in",
+  "preteach": [
+   {"word": "passport", "meaning": "หนังสือเดินทาง", "example": "Don't forget your passport."},
+   {"word": "check bags", "meaning": "โหลดกระเป๋า", "example": "I need to check two bags."},
+   {"word": "gate", "meaning": "ประตูขึ้นเครื่อง", "example": "The gate number is on your ticket."},
+   {"word": "boarding", "meaning": "การขึ้นเครื่อง", "example": "Boarding will begin soon."}
+  ],
+  "transcript": "Agent: Good morning. May I see your passport and ticket, please?\nPassenger: Here you go.\nAgent: Thank you. Are you checking any bags today?\nPassenger: Yes, just this one suitcase.\nAgent: Okay, please place it on the scale... That's twenty kilograms, so you're all set.\nPassenger: Great. Which gate should I go to?\nAgent: Gate 14. Boarding starts at 9:30.",
+  "translation": "เจ้าหน้าที่: สวัสดีตอนเช้าค่ะ ขอดูพาสปอร์ตกับตั๋วหน่อยค่ะ\nผู้โดยสาร: นี่ครับ\nเจ้าหน้าที่: ขอบคุณค่ะ วันนี้จะโหลดกระเป๋าไหมคะ\nผู้โดยสาร: ครับ กระเป๋าใบนี้ใบเดียว\nเจ้าหน้าที่: ค่ะ วางบนตาชั่งได้เลย... หนักยี่สิบกิโลกรัม เรียบร้อยค่ะ\nผู้โดยสาร: เยี่ยมเลย ต้องไปประตูไหนครับ\nเจ้าหน้าที่: ประตู 14 ค่ะ เริ่มขึ้นเครื่องเก้าโมงครึ่ง",
+  "keyPoints": [
+   {"phrase": "May I see your passport and ticket, please?", "explain": "ประโยคมาตรฐานที่พนักงานเช็คอินใช้ขอดูเอกสาร"},
+   {"phrase": "Boarding starts at ...", "explain": "รูปแบบประโยคบอกเวลาที่เริ่มขึ้นเครื่อง"}
+  ]
+ },
+ {
+  "unit": 7,
+  "tier": "medium",
+  "topic": "Travel",
+  "title": "Flight Gate Change Announcement",
+  "preteach": [
+   {"word": "departure gate", "meaning": "ประตูขึ้นเครื่องขาออก", "example": "Check your departure gate on the screen."},
+   {"word": "scheduling conflict", "meaning": "ปัญหาตารางเวลาซ้อนกัน", "example": "The meeting was moved due to a scheduling conflict."},
+   {"word": "special assistance", "meaning": "ความช่วยเหลือพิเศษ", "example": "She needs special assistance to board."},
+   {"word": "inconvenience", "meaning": "ความไม่สะดวก", "example": "Sorry for the inconvenience."}
+  ],
+  "transcript": "Attention, passengers. We have an important update for flight AB 205 to Chicago. The departure gate has been changed from Gate 12 to Gate 27 due to a scheduling conflict. Please proceed to the new gate as soon as possible, as boarding will begin in twenty minutes. Passengers who require special assistance should speak to a staff member near the check-in counter. We apologize for any inconvenience this may cause. Once again, flight AB 205 to Chicago will now depart from Gate 27. Thank you for your understanding, and enjoy your flight.",
+  "translation": "โปรดทราบ ผู้โดยสารทุกท่าน เรามีการเปลี่ยนแปลงสำคัญสำหรับเที่ยวบิน AB 205 ไปชิคาโก ประตูขึ้นเครื่องมีการเปลี่ยนจากประตู 12 เป็นประตู 27 เนื่องจากปัญหาด้านตารางเวลา กรุณาไปยังประตูใหม่โดยเร็วที่สุด เนื่องจากจะเริ่มขึ้นเครื่องในอีกยี่สิบนาที ผู้โดยสารที่ต้องการความช่วยเหลือพิเศษ กรุณาติดต่อเจ้าหน้าที่บริเวณเคาน์เตอร์เช็คอิน เราขออภัยในความไม่สะดวกที่อาจเกิดขึ้น ขอย้ำอีกครั้ง เที่ยวบิน AB 205 ไปชิคาโก จะออกจากประตู 27 ขอบคุณสำหรับความเข้าใจ และขอให้เดินทางโดยสวัสดิภาพ",
+  "keyPoints": [
+   {"phrase": "has been changed from ... to ...", "explain": "โครงสร้างประโยคบอกการเปลี่ยนแปลง (passive voice) พบบ่อยในประกาศ"},
+   {"phrase": "We apologize for any inconvenience", "explain": "สำนวนขอโทษที่เป็นทางการ ใช้ในประกาศสาธารณะ"}
+  ]
+ },
+ {
+  "unit": 8,
+  "tier": "medium",
+  "topic": "Weather",
+  "title": "Weekly Weather Forecast",
+  "preteach": [
+   {"word": "forecast", "meaning": "พยากรณ์", "example": "The weather forecast says it will rain."},
+   {"word": "cold front", "meaning": "แนวอากาศเย็น", "example": "A cold front is moving in from the north."},
+   {"word": "clear up", "meaning": "(ท้องฟ้า)แจ่มใสขึ้น", "example": "The sky will clear up by noon."},
+   {"word": "drop sharply", "meaning": "ลดลงอย่างรวดเร็ว", "example": "Prices dropped sharply this month."}
+  ],
+  "transcript": "Good morning, and here is your weather forecast for the week. Today will be mostly sunny with a high of twenty-eight degrees, perfect for outdoor activities. However, we're expecting the weather to change by Wednesday, when a cold front will move in, bringing heavy rain and strong winds throughout the afternoon. Temperatures will drop sharply, so make sure to bring an umbrella and a jacket if you're heading out. By the weekend, skies should clear up again, with sunny conditions returning on Saturday and Sunday. That's your forecast — stay safe, and have a great week.",
+  "translation": "สวัสดีตอนเช้าค่ะ นี่คือพยากรณ์อากาศประจำสัปดาห์นี้ วันนี้ท้องฟ้าแจ่มใสเป็นส่วนใหญ่ อุณหภูมิสูงสุดยี่สิบแปดองศา เหมาะกับกิจกรรมกลางแจ้งมาก อย่างไรก็ตาม เราคาดว่าอากาศจะเปลี่ยนแปลงในวันพุธ เมื่อแนวอากาศเย็นเคลื่อนเข้ามา นำฝนตกหนักและลมแรงตลอดช่วงบ่าย อุณหภูมิจะลดลงอย่างรวดเร็ว ดังนั้นอย่าลืมพกร่มและเสื้อคลุมหากต้องออกไปข้างนอก พอถึงช่วงสุดสัปดาห์ ท้องฟ้าจะกลับมาแจ่มใสอีกครั้ง แดดออกทั้งวันเสาร์และวันอาทิตย์ นี่คือพยากรณ์อากาศของเรา ขอให้ปลอดภัย และมีสัปดาห์ที่ดีค่ะ",
+  "keyPoints": [
+   {"phrase": "We're expecting the weather to change by ...", "explain": "โครงสร้างประโยคคาดการณ์เหตุการณ์ในอนาคต"},
+   {"phrase": "make sure to bring an umbrella", "explain": "สำนวนแนะนำ/เตือนให้เตรียมของ"}
+  ]
+ },
+ {
+  "unit": 9,
+  "tier": "medium",
+  "topic": "Career",
+  "title": "Job Interview",
+  "preteach": [
+   {"word": "candidate", "meaning": "ผู้สมัคร", "example": "She is a strong candidate for the job."},
+   {"word": "deadline", "meaning": "เส้นตาย/กำหนดส่ง", "example": "The deadline is next Friday."},
+   {"word": "prioritize", "meaning": "จัดลำดับความสำคัญ", "example": "You need to prioritize your tasks."},
+   {"word": "under pressure", "meaning": "ภายใต้ความกดดัน", "example": "He works well under pressure."}
+  ],
+  "transcript": "Interviewer: So, tell me a little about your previous work experience.\nCandidate: Sure. I worked as a marketing assistant for three years at a small company, where I helped manage social media campaigns and organize events.\nInterviewer: That sounds relevant. Why are you interested in leaving that position?\nCandidate: I'm looking for more opportunities to grow, and I think this role offers a chance to lead bigger projects.\nInterviewer: I see. And how do you handle working under pressure, especially with tight deadlines?\nCandidate: I usually make a clear plan and prioritize the most urgent tasks first. That way, I stay organized even when things get busy.\nInterviewer: Great answer. Do you have any questions for me?",
+  "translation": "ผู้สัมภาษณ์: เล่าให้ฟังหน่อยได้ไหมครับ เกี่ยวกับประสบการณ์ทำงานก่อนหน้านี้\nผู้สมัคร: ได้ค่ะ ดิฉันทำงานเป็นผู้ช่วยฝ่ายการตลาดมาสามปีที่บริษัทเล็กๆ แห่งหนึ่ง โดยช่วยดูแลแคมเปญโซเชียลมีเดียและจัดงานอีเวนต์\nผู้สัมภาษณ์: ฟังดูเกี่ยวข้องกับตำแหน่งนี้เลย แล้วทำไมถึงสนใจจะออกจากตำแหน่งเดิมล่ะครับ\nผู้สมัคร: ดิฉันกำลังมองหาโอกาสที่จะเติบโตมากขึ้น และคิดว่าตำแหน่งนี้จะได้มีโอกาสดูแลโปรเจกต์ใหญ่ขึ้นค่ะ\nผู้สัมภาษณ์: เข้าใจครับ แล้วคุณรับมือกับความกดดันในการทำงานอย่างไร โดยเฉพาะเมื่อมีเดดไลน์กระชั้นชิด\nผู้สมัคร: ปกติดิฉันจะวางแผนให้ชัดเจนและจัดลำดับความสำคัญของงานที่เร่งด่วนที่สุดก่อน วิธีนี้ทำให้ยังจัดการงานได้เป็นระบบแม้จะยุ่งมากค่ะ\nผู้สัมภาษณ์: ตอบได้ดีมากครับ มีคำถามอะไรอยากถามผมไหมครับ",
+  "keyPoints": [
+   {"phrase": "Tell me a little about ...", "explain": "คำถามเปิดที่พบบ่อยที่สุดในการสัมภาษณ์งาน"},
+   {"phrase": "How do you handle working under pressure?", "explain": "คำถามเชิงพฤติกรรมที่ใช้ประเมินการทำงานของผู้สมัคร"}
+  ]
+ },
+ {
+  "unit": 10,
+  "tier": "medium",
+  "topic": "Health",
+  "title": "Doctor's Appointment",
+  "preteach": [
+   {"word": "sore throat", "meaning": "เจ็บคอ", "example": "I have a sore throat and can't talk much."},
+   {"word": "fever", "meaning": "ไข้", "example": "She has a high fever."},
+   {"word": "symptom", "meaning": "อาการ(ป่วย)", "example": "What are your symptoms?"},
+   {"word": "rest", "meaning": "การพักผ่อน", "example": "You need plenty of rest."}
+  ],
+  "transcript": "Doctor: So, what brings you in today?\nPatient: I've had a sore throat and a mild fever for the past three days. I also feel really tired.\nDoctor: Have you noticed any other symptoms, like coughing or body aches?\nPatient: Yes, actually, I've had a slight cough since yesterday.\nDoctor: Alright. It sounds like a common cold, but let's do a quick check just to be sure. Based on this, I recommend plenty of rest, drinking lots of water, and taking this medicine twice a day.\nPatient: How long will it take to feel better?\nDoctor: Usually about five to seven days. But if the fever gets worse or doesn't go away, come back and see me right away.",
+  "translation": "หมอ: วันนี้มาพบเพราะอะไรครับ\nคนไข้: ดิฉันเจ็บคอและมีไข้อ่อนๆ มาสามวันแล้วค่ะ แล้วก็รู้สึกเหนื่อยมากด้วย\nหมอ: มีอาการอื่นด้วยไหมครับ เช่น ไอ หรือปวดเมื่อยตัว\nคนไข้: ค่ะ จริงๆ มีอาการไอเล็กน้อยตั้งแต่เมื่อวานค่ะ\nหมอ: เข้าใจแล้วครับ ฟังดูเหมือนเป็นหวัดธรรมดา แต่เราตรวจเช็คสั้นๆ ให้แน่ใจก่อนนะครับ จากอาการนี้ ผมแนะนำให้พักผ่อนเยอะๆ ดื่มน้ำเยอะๆ และทานยานี้วันละสองครั้ง\nคนไข้: จะใช้เวลานานแค่ไหนถึงจะดีขึ้นคะ\nหมอ: ปกติประมาณห้าถึงเจ็ดวันครับ แต่ถ้าไข้สูงขึ้นหรือไม่หายไป ให้กลับมาพบผมทันทีนะครับ",
+  "keyPoints": [
+   {"phrase": "What brings you in today?", "explain": "คำถามที่หมอมักถามผู้ป่วยตอนเริ่มตรวจ"},
+   {"phrase": "I recommend ...", "explain": "โครงสร้างประโยคที่หมอใช้ให้คำแนะนำการรักษา"}
+  ]
+ },
+ {
+  "unit": 11,
+  "tier": "medium",
+  "topic": "Travel",
+  "title": "Hotel Check-in",
+  "preteach": [
+   {"word": "reservation", "meaning": "การจอง", "example": "I have a reservation for two nights."},
+   {"word": "maintenance", "meaning": "การซ่อมบำรุง", "example": "The pool is closed for maintenance."},
+   {"word": "upgrade", "meaning": "อัพเกรด/ปรับให้ดีขึ้น", "example": "They upgraded my seat to first class."},
+   {"word": "checkout", "meaning": "การเช็คเอาท์/คืนห้อง", "example": "Checkout time is noon."}
+  ],
+  "transcript": "Receptionist: Good evening, welcome to Sunrise Hotel. Do you have a reservation?\nGuest: Yes, under the name Somchai, for a double room for two nights.\nReceptionist: Let me check... I'm sorry, but it looks like your reserved room type isn't available due to a maintenance issue.\nGuest: Oh, that's disappointing. What can you offer instead?\nReceptionist: We can upgrade you to a deluxe room at no extra charge, as an apology for the inconvenience.\nGuest: That sounds fair. I'll take it.\nReceptionist: Great, here's your key card. Breakfast is served from seven to ten in the morning, and checkout is at noon.",
+  "translation": "พนักงานต้อนรับ: สวัสดีตอนเย็นค่ะ ยินดีต้อนรับสู่โรงแรมซันไรส์ มีการจองห้องพักไว้ไหมคะ\nแขก: มีครับ จองในชื่อสมชาย ห้องดับเบิ้ล สองคืนครับ\nพนักงานต้อนรับ: รอสักครู่นะคะ... ต้องขออภัยด้วยค่ะ ห้องประเภทที่จองไว้ไม่ว่างเนื่องจากมีปัญหาเรื่องการซ่อมบำรุง\nแขก: โอ้ น่าผิดหวังจัง แล้วมีอะไรเสนอให้แทนได้บ้างครับ\nพนักงานต้อนรับ: เราสามารถอัพเกรดเป็นห้องดีลักซ์ให้ได้โดยไม่คิดค่าใช้จ่ายเพิ่ม เพื่อขอโทษในความไม่สะดวกค่ะ\nแขก: ฟังดูยุติธรรมดีครับ เอาห้องนั้นแล้วกัน\nพนักงานต้อนรับ: ได้เลยค่ะ นี่คือกุญแจห้อง อาหารเช้าเสิร์ฟตั้งแต่เจ็ดโมงถึงสิบโมงเช้า และเช็คเอาท์ตอนเที่ยงค่ะ",
+  "keyPoints": [
+   {"phrase": "it looks like ... isn't available", "explain": "สำนวนบอกว่ามีปัญหา/ของที่ต้องการไม่พร้อมใช้งาน"},
+   {"phrase": "at no extra charge", "explain": "สำนวนบอกว่าไม่มีค่าใช้จ่ายเพิ่มเติม"}
+  ]
+ },
+ {
+  "unit": 12,
+  "tier": "medium",
+  "topic": "Customer Service",
+  "title": "Voicemail About a Delayed Item",
+  "preteach": [
+   {"word": "out of stock", "meaning": "สินค้าหมด", "example": "Sorry, this item is out of stock."},
+   {"word": "restock", "meaning": "เติมสินค้า/เข้าสต็อกใหม่", "example": "The store will restock next Monday."},
+   {"word": "replacement", "meaning": "สินค้าทดแทน", "example": "We can offer a replacement item."},
+   {"word": "partial refund", "meaning": "เงินคืนบางส่วน", "example": "You are eligible for a partial refund."}
+  ],
+  "transcript": "Hi, this message is for Mr. Wilson. This is Jenny calling from Green Valley Supplies. I'm reaching out about the order you placed last week, order number 4521. Unfortunately, one of the items you ordered is currently out of stock, and it may take an extra week to restock. I wanted to check if you'd like to wait for that item, choose a similar replacement, or have it removed from your order and receive a partial refund. Please give me a call back at 555-0192 whenever you get a chance, so we can sort this out. Thanks so much, and have a great day.",
+  "translation": "สวัสดีค่ะ ข้อความนี้ฝากถึงคุณวิลสันนะคะ ดิฉันเจนนี่โทรมาจากบริษัทกรีนวัลเลย์ซัพพลายส์ค่ะ ดิฉันโทรมาเรื่องคำสั่งซื้อที่คุณสั่งไว้เมื่อสัปดาห์ที่แล้ว หมายเลขคำสั่งซื้อ 4521 ค่ะ แต่น่าเสียดายที่สินค้าชิ้นหนึ่งที่คุณสั่งหมดสต็อกอยู่ตอนนี้ และอาจต้องใช้เวลาอีกหนึ่งสัปดาห์กว่าจะเข้าสต็อกใหม่ ดิฉันอยากทราบว่าคุณต้องการรอสินค้าชิ้นนั้น เลือกสินค้าทดแทนที่คล้ายกัน หรือให้ตัดออกจากคำสั่งซื้อแล้วรับเงินคืนบางส่วนคะ กรุณาโทรกลับมาที่เบอร์ 555-0192 เมื่อสะดวกนะคะ เพื่อเราจะได้จัดการเรื่องนี้ให้เรียบร้อยค่ะ ขอบคุณมากค่ะ และขอให้เป็นวันที่ดีค่ะ",
+  "keyPoints": [
+   {"phrase": "I'm reaching out about ...", "explain": "สำนวนเปิดเรื่องเมื่อโทรศัพท์/ฝากข้อความเกี่ยวกับเรื่องใดเรื่องหนึ่ง"},
+   {"phrase": "give me a call back at ...", "explain": "สำนวนขอให้โทรกลับ พร้อมบอกเบอร์โทร"}
+  ]
+ },
+ {
+  "unit": 13,
+  "tier": "medium",
+  "topic": "Education",
+  "title": "Classroom Homework Instructions",
+  "preteach": [
+   {"word": "assignment", "meaning": "งานที่ได้รับมอบหมาย", "example": "Please submit the assignment on time."},
+   {"word": "essay", "meaning": "เรียงความ", "example": "Write a 300-word essay."},
+   {"word": "conclusion", "meaning": "บทสรุป", "example": "Every essay needs a strong conclusion."},
+   {"word": "office hours", "meaning": "ช่วงเวลาให้คำปรึกษาของอาจารย์", "example": "Come see me during office hours."}
+  ],
+  "transcript": "Alright class, before we finish today, let me explain the homework assignment. You need to write a short essay, about three hundred words, on a topic of your choice related to what we discussed this week. Make sure to include an introduction, at least two supporting paragraphs, and a conclusion. Please type your essay and email it to me by Friday at midnight. Also, don't forget to include your full name and student number at the top of the page. If you have any questions, you can come see me during office hours tomorrow afternoon. That's all for today. Great work, everyone, and see you next class.",
+  "translation": "เอาล่ะนักเรียน ก่อนจะจบคาบเรียนวันนี้ ครูขออธิบายการบ้านนะคะ นักเรียนต้องเขียนเรียงความสั้นๆ ประมาณสามร้อยคำ ในหัวข้อที่เลือกเองซึ่งเกี่ยวข้องกับสิ่งที่เราคุยกันในสัปดาห์นี้ อย่าลืมใส่บทนำ ย่อหน้าเนื้อหาอย่างน้อยสองย่อหน้า และบทสรุป กรุณาพิมพ์เรียงความแล้วส่งอีเมลมาให้ครูภายในเที่ยงคืนวันศุกร์ค่ะ และอย่าลืมใส่ชื่อเต็มกับรหัสนักศึกษาไว้ด้านบนสุดของหน้าด้วยนะคะ ถ้ามีคำถามอะไร สามารถมาพบครูได้ในช่วงเวลาให้คำปรึกษาบ่ายวันพรุ่งนี้ค่ะ วันนี้เท่านี้ก่อนนะคะ ทำได้ดีมากทุกคน แล้วเจอกันคาบหน้าค่ะ",
+  "keyPoints": [
+   {"phrase": "Make sure to include ...", "explain": "สำนวนย้ำเตือนสิ่งที่ต้องทำ/ต้องมีในงาน"},
+   {"phrase": "by [deadline]", "explain": "โครงสร้างบอกกำหนดเวลาส่งงาน"}
+  ]
+ },
+ {
+  "unit": 14,
+  "tier": "medium",
+  "topic": "Customer Service",
+  "title": "Complaint About a Late Delivery",
+  "preteach": [
+   {"word": "package", "meaning": "พัสดุ/พัสดุห่อ", "example": "I'm waiting for a package."},
+   {"word": "delay", "meaning": "ความล่าช้า", "example": "There was a delay in shipping."},
+   {"word": "high demand", "meaning": "ความต้องการสูง", "example": "The product is in high demand."},
+   {"word": "discount", "meaning": "ส่วนลด", "example": "You get a 10% discount."}
+  ],
+  "transcript": "Agent: Thank you for calling customer support. How can I help you today?\nCustomer: Hi, I ordered a package last week, and it was supposed to arrive yesterday, but I still haven't received it.\nAgent: I'm sorry to hear that. Can I have your order number, please?\nCustomer: Sure, it's 78341.\nAgent: Thank you. Let me look into that... I see here that there was a delay at the shipping center due to high demand. It looks like it's now scheduled to arrive tomorrow.\nCustomer: That's frustrating, but okay. Is there anything you can do to make up for the delay?\nAgent: Of course. I can offer you a fifteen percent discount on your next order for the inconvenience.\nCustomer: Alright, I appreciate that. Thank you.",
+  "translation": "เจ้าหน้าที่: ขอบคุณที่โทรมาที่ฝ่ายบริการลูกค้าค่ะ มีอะไรให้ช่วยไหมคะ\nลูกค้า: สวัสดีครับ ผมสั่งพัสดุไว้เมื่อสัปดาห์ที่แล้ว ควรจะได้รับเมื่อวานแล้ว แต่ยังไม่ได้รับเลยครับ\nเจ้าหน้าที่: ขอโทษด้วยนะคะ ขอเลขที่คำสั่งซื้อได้ไหมคะ\nลูกค้า: ครับ 78341\nเจ้าหน้าที่: ขอบคุณค่ะ รอสักครู่นะคะ... ดิฉันเห็นว่ามีความล่าช้าที่ศูนย์กระจายสินค้าเนื่องจากมีคำสั่งซื้อจำนวนมาก ตอนนี้กำหนดจะถึงพรุ่งนี้ค่ะ\nลูกค้า: มันน่าหงุดหงิดนะครับ แต่ก็ได้ครับ มีอะไรที่จะช่วยชดเชยความล่าช้านี้ได้บ้างไหมครับ\nเจ้าหน้าที่: ได้แน่นอนค่ะ ดิฉันขอเสนอส่วนลดสิบห้าเปอร์เซ็นต์สำหรับคำสั่งซื้อครั้งถัดไป เพื่อชดเชยความไม่สะดวกนะคะ\nลูกค้า: โอเคครับ ขอบคุณมากครับ",
+  "keyPoints": [
+   {"phrase": "it was supposed to arrive ...", "explain": "โครงสร้างบอกสิ่งที่ควรจะเกิดขึ้นแต่ยังไม่เกิด"},
+   {"phrase": "Is there anything you can do to make up for ... ?", "explain": "สำนวนขอให้ชดเชยเมื่อเกิดปัญหา"}
+  ]
+ },
+ {
+  "unit": 15,
+  "tier": "hard",
+  "topic": "Economy",
+  "title": "Unemployment and Inflation Report",
+  "preteach": [
+   {"word": "unemployment rate", "meaning": "อัตราการว่างงาน", "example": "The unemployment rate fell this year."},
+   {"word": "inflation", "meaning": "ภาวะเงินเฟ้อ", "example": "Inflation is rising sharply."},
+   {"word": "interest rate", "meaning": "อัตราดอกเบี้ย", "example": "The bank raised interest rates."},
+   {"word": "cautiously optimistic", "meaning": "มองในแง่ดีอย่างระมัดระวัง", "example": "Investors are cautiously optimistic about the market."}
+  ],
+  "transcript": "In economic news today, the national statistics office reported that the country's unemployment rate has fallen to its lowest level in over a decade, dropping to just three point two percent last month. Analysts say this improvement is largely driven by strong growth in the technology and manufacturing sectors, which have added thousands of new jobs in recent months. However, some economists warn that this rapid growth may also lead to rising inflation, as businesses compete for a shrinking pool of available workers, pushing wages — and eventually prices — higher. The central bank has stated that it is closely monitoring the situation and may consider adjusting interest rates if inflation continues to climb faster than expected. In response to the report, the stock market saw modest gains this morning, with investors remaining cautiously optimistic about the overall direction of the economy. We'll have more details on this developing story later in the broadcast.",
+  "translation": "ข่าวเศรษฐกิจวันนี้ สำนักงานสถิติแห่งชาติรายงานว่าอัตราการว่างงานของประเทศลดลงสู่ระดับต่ำที่สุดในรอบกว่าทศวรรษ โดยลดลงมาอยู่ที่เพียงร้อยละ 3.2 ในเดือนที่ผ่านมา นักวิเคราะห์ระบุว่าการปรับตัวดีขึ้นนี้ส่วนใหญ่มาจากการเติบโตที่แข็งแกร่งในภาคเทคโนโลยีและการผลิต ซึ่งได้เพิ่มตำแหน่งงานใหม่หลายพันตำแหน่งในช่วงไม่กี่เดือนที่ผ่านมา อย่างไรก็ตาม นักเศรษฐศาสตร์บางคนเตือนว่าการเติบโตอย่างรวดเร็วนี้อาจนำไปสู่ภาวะเงินเฟ้อที่สูงขึ้น เนื่องจากธุรกิจต่างๆ แข่งขันกันแย่งแรงงานที่มีอยู่อย่างจำกัด ส่งผลให้ค่าจ้างและในที่สุดราคาสินค้าปรับตัวสูงขึ้น ธนาคารกลางระบุว่ากำลังจับตาสถานการณ์นี้อย่างใกล้ชิด และอาจพิจารณาปรับอัตราดอกเบี้ยหากเงินเฟ้อยังคงเพิ่มขึ้นเร็วกว่าที่คาดการณ์ไว้ จากรายงานดังกล่าว ตลาดหุ้นปรับตัวขึ้นเล็กน้อยในเช้านี้ โดยนักลงทุนยังคงมองในแง่ดีอย่างระมัดระวังต่อทิศทางเศรษฐกิจโดยรวม เราจะมีรายละเอียดเพิ่มเติมเกี่ยวกับเรื่องนี้ในช่วงต่อไปของรายการ",
+  "keyPoints": [
+   {"phrase": "largely driven by ...", "explain": "สำนวนบอกสาเหตุหลักของเหตุการณ์ พบบ่อยในข่าวเศรษฐกิจ"},
+   {"phrase": "may consider adjusting ... if ...", "explain": "โครงสร้างประโยคเงื่อนไขที่ใช้บอกความเป็นไปได้ในอนาคต"}
+  ]
+ },
+ {
+  "unit": 16,
+  "tier": "hard",
+  "topic": "Environment",
+  "title": "Understanding Climate Change",
+  "preteach": [
+   {"word": "greenhouse gases", "meaning": "ก๊าซเรือนกระจก", "example": "Greenhouse gases trap heat in the atmosphere."},
+   {"word": "deforestation", "meaning": "การตัดไม้ทำลายป่า", "example": "Deforestation contributes to climate change."},
+   {"word": "renewable energy", "meaning": "พลังงานหมุนเวียน", "example": "Solar power is a form of renewable energy."},
+   {"word": "carbon emissions", "meaning": "การปล่อยคาร์บอน", "example": "The country aims to cut carbon emissions."}
+  ],
+  "transcript": "Today, I want to talk about one of the most pressing challenges of our time: climate change. Over the past century, global average temperatures have risen by roughly one point one degrees Celsius, largely due to human activities such as burning fossil fuels, deforestation, and industrial processes that release greenhouse gases into the atmosphere. While this may sound like a small number, even a slight increase in global temperature can have significant consequences, including more frequent and intense heatwaves, rising sea levels, and disruptions to ecosystems and agriculture. Scientists generally agree that limiting warming to one point five degrees Celsius above pre-industrial levels is critical to avoiding the most severe impacts. To achieve this, countries around the world have committed to reducing carbon emissions through renewable energy, improved energy efficiency, and changes in land use. However, progress has been uneven, and many experts argue that current efforts are still not enough to meet these targets. In the next part of this lecture, we'll examine some of the technological and policy solutions being proposed to address this global challenge.",
+  "translation": "วันนี้ผมอยากพูดถึงหนึ่งในความท้าทายที่เร่งด่วนที่สุดของยุคเรา นั่นคือการเปลี่ยนแปลงสภาพภูมิอากาศ ในช่วงศตวรรษที่ผ่านมา อุณหภูมิเฉลี่ยของโลกเพิ่มขึ้นประมาณ 1.1 องศาเซลเซียส ซึ่งส่วนใหญ่เกิดจากกิจกรรมของมนุษย์ เช่น การเผาไหม้เชื้อเพลิงฟอสซิล การตัดไม้ทำลายป่า และกระบวนการทางอุตสาหกรรมที่ปล่อยก๊าซเรือนกระจกสู่ชั้นบรรยากาศ แม้ตัวเลขนี้อาจฟังดูน้อย แต่อุณหภูมิโลกที่เพิ่มขึ้นเพียงเล็กน้อยก็ส่งผลกระทบสำคัญได้ เช่น คลื่นความร้อนที่ถี่และรุนแรงขึ้น ระดับน้ำทะเลที่สูงขึ้น และความปั่นป่วนต่อระบบนิเวศและการเกษตร นักวิทยาศาสตร์ส่วนใหญ่เห็นตรงกันว่าการจำกัดภาวะโลกร้อนไว้ที่ 1.5 องศาเซลเซียสเหนือระดับก่อนยุคอุตสาหกรรมเป็นสิ่งสำคัญมากในการหลีกเลี่ยงผลกระทบที่รุนแรงที่สุด เพื่อบรรลุเป้าหมายนี้ ประเทศต่างๆ ทั่วโลกได้ให้คำมั่นที่จะลดการปล่อยคาร์บอนผ่านพลังงานหมุนเวียน การเพิ่มประสิทธิภาพการใช้พลังงาน และการเปลี่ยนแปลงการใช้ที่ดิน อย่างไรก็ตาม ความคืบหน้ายังไม่สม่ำเสมอ และผู้เชี่ยวชาญหลายคนเห็นว่าความพยายามในปัจจุบันยังไม่เพียงพอที่จะบรรลุเป้าหมายเหล่านี้ ในช่วงต่อไปของการบรรยายนี้ เราจะพิจารณาแนวทางแก้ไขเชิงเทคโนโลยีและนโยบายที่มีการเสนอเพื่อรับมือกับความท้าทายระดับโลกนี้",
+  "keyPoints": [
+   {"phrase": "largely due to ...", "explain": "สำนวนบอกสาเหตุหลักของปรากฏการณ์ พบบ่อยในเนื้อหาวิชาการ"},
+   {"phrase": "Scientists generally agree that ...", "explain": "โครงสร้างบอกความเห็นพ้องทางวิชาการ พบบ่อยในการบรรยาย/บทความวิชาการ"}
+  ]
+ },
+ {
+  "unit": 17,
+  "tier": "hard",
+  "topic": "Culture",
+  "title": "Museum Tour: Early Human Tools",
+  "preteach": [
+   {"word": "excavation", "meaning": "การขุดค้น(ทางโบราณคดี)", "example": "The excavation revealed ancient tools."},
+   {"word": "sophisticated", "meaning": "ซับซ้อน/มีการพัฒนามาก", "example": "The technology is very sophisticated."},
+   {"word": "cognitive abilities", "meaning": "ความสามารถทางสติปัญญา", "example": "Reading improves cognitive abilities."},
+   {"word": "interactive screen", "meaning": "จอทัชสกรีน/จอโต้ตอบ", "example": "Use the interactive screen to learn more."}
+  ],
+  "transcript": "Welcome, everyone, to the Natural History Wing. As you can see around you, this gallery focuses on the evolution of early human tools, dating back nearly two million years. The display case to your left contains some of the oldest known stone tools ever discovered, found during an excavation in East Africa in the nineteen sixties. These simple, sharpened stones were likely used for cutting meat and preparing animal hides. As we move further into the exhibit, you'll notice the tools become increasingly sophisticated, reflecting the gradual development of human cognitive abilities over hundreds of thousands of years. Please note that flash photography is not permitted in this section, as the light can damage the ancient materials. If you look at the interactive screen on your right, you can compare tool-making techniques across different time periods and regions. We'll spend about fifteen minutes here before moving on to the next gallery, which covers early agricultural societies. Feel free to ask questions as we go.",
+  "translation": "ยินดีต้อนรับทุกท่านสู่โซนประวัติศาสตร์ธรรมชาติค่ะ อย่างที่ทุกท่านเห็นรอบตัว แกลเลอรีนี้เน้นเรื่องวิวัฒนาการของเครื่องมือมนุษย์ยุคแรก ย้อนไปเกือบสองล้านปีก่อน ตู้จัดแสดงทางซ้ายมือของท่านมีเครื่องมือหินที่เก่าแก่ที่สุดเท่าที่เคยค้นพบ ซึ่งพบระหว่างการขุดค้นในแอฟริกาตะวันออกช่วงทศวรรษ 1960 หินที่ลับให้แหลมคมง่ายๆ เหล่านี้น่าจะถูกใช้สำหรับตัดเนื้อสัตว์และเตรียมหนังสัตว์ เมื่อเราเดินลึกเข้าไปในนิทรรศการมากขึ้น ท่านจะสังเกตเห็นว่าเครื่องมือมีความซับซ้อนมากขึ้นเรื่อยๆ สะท้อนถึงพัฒนาการทางสติปัญญาของมนุษย์ที่ค่อยๆ เกิดขึ้นตลอดหลายแสนปี โปรดทราบว่าห้ามใช้แฟลชถ่ายรูปในโซนนี้ เนื่องจากแสงอาจทำความเสียหายต่อวัตถุโบราณได้ หากท่านมองไปที่จอทัชสกรีนทางขวามือ ท่านสามารถเปรียบเทียบเทคนิคการทำเครื่องมือในแต่ละยุคสมัยและภูมิภาคได้ เราจะอยู่ที่นี่ประมาณสิบห้านาทีก่อนจะไปยังแกลเลอรีถัดไป ซึ่งครอบคลุมเรื่องสังคมเกษตรกรรมยุคแรก สามารถถามคำถามได้ตลอดการเดินชมนะคะ",
+  "keyPoints": [
+   {"phrase": "dating back nearly ...", "explain": "สำนวนบอกอายุ/ระยะเวลาย้อนไปในอดีต"},
+   {"phrase": "Please note that ... is not permitted", "explain": "โครงสร้างประโยคแจ้งกฎ/ข้อห้ามอย่างสุภาพ"}
+  ]
+ },
+ {
+  "unit": 18,
+  "tier": "hard",
+  "topic": "Business",
+  "title": "Product Launch Budget Meeting",
+  "preteach": [
+   {"word": "agenda", "meaning": "วาระการประชุม", "example": "The first item on the agenda is..."},
+   {"word": "cost-effective", "meaning": "คุ้มค่า/ประหยัดต้นทุน", "example": "This method is more cost-effective."},
+   {"word": "finalize", "meaning": "สรุปให้เสร็จสิ้น", "example": "We need to finalize the plan by Friday."},
+   {"word": "influencer", "meaning": "อินฟลูเอนเซอร์/ผู้มีอิทธิพลบนโซเชียล", "example": "They hired an influencer to promote the product."}
+  ],
+  "transcript": "Manager: Alright, let's get started. The main item on today's agenda is the budget for the new product launch next quarter. Sarah, can you walk us through the current numbers?\nSarah: Sure. Based on our latest estimates, the total marketing budget will need to increase by about fifteen percent compared to last year's launch, mainly due to higher advertising costs across digital platforms.\nManager: That's a significant jump. Is there any way we can reduce that without cutting the campaign's effectiveness?\nSarah: One option is to shift more of the budget toward social media advertising, which tends to be more cost-effective than traditional media, while still reaching a similar audience size.\nManager: I like that idea. Let's also consider partnering with a few smaller influencers instead of one large campaign, since that could stretch our budget further.\nSarah: Good point. I'll revise the proposal and send it to everyone by Wednesday for feedback before we finalize it.\nManager: Perfect. Let's aim to have the final budget approved by the end of next week.",
+  "translation": "ผู้จัดการ: เอาล่ะ เริ่มกันเลยนะครับ หัวข้อหลักของการประชุมวันนี้คืองบประมาณสำหรับการเปิดตัวสินค้าใหม่ในไตรมาสหน้า ซาร่าห์ช่วยอธิบายตัวเลขปัจจุบันให้ฟังหน่อยได้ไหมครับ\nซาร่าห์: ได้ค่ะ จากการประเมินล่าสุด งบประมาณการตลาดรวมจะต้องเพิ่มขึ้นประมาณสิบห้าเปอร์เซ็นต์เมื่อเทียบกับการเปิดตัวเมื่อปีที่แล้ว ซึ่งส่วนใหญ่มาจากค่าโฆษณาที่สูงขึ้นบนแพลตฟอร์มดิจิทัลค่ะ\nผู้จัดการ: นั่นเพิ่มขึ้นเยอะเลยนะ มีวิธีลดตรงนั้นได้โดยไม่กระทบประสิทธิภาพแคมเปญไหมครับ\nซาร่าห์: ทางเลือกหนึ่งคือย้ายงบประมาณไปที่โฆษณาโซเชียลมีเดียมากขึ้น ซึ่งมักจะคุ้มค่ากว่าสื่อดั้งเดิม แต่ยังเข้าถึงกลุ่มเป้าหมายขนาดใกล้เคียงกันค่ะ\nผู้จัดการ: ผมชอบไอเดียนั้นนะ ลองพิจารณาการร่วมมือกับอินฟลูเอนเซอร์รายเล็กๆ หลายคนแทนแคมเปญใหญ่รายเดียวด้วยไหมครับ เพราะอาจช่วยยืดงบประมาณของเราได้มากขึ้น\nซาร่าห์: จุดดีเลยค่ะ ดิฉันจะแก้ไขข้อเสนอแล้วส่งให้ทุกคนภายในวันพุธเพื่อขอความคิดเห็นก่อนสรุปนะคะ\nผู้จัดการ: เยี่ยมเลย ตั้งเป้าให้งบประมาณสุดท้ายได้รับการอนุมัติภายในสิ้นสัปดาห์หน้านะครับ",
+  "keyPoints": [
+   {"phrase": "walk us through ...", "explain": "สำนวนขอให้อธิบายรายละเอียดทีละขั้นตอน พบบ่อยในที่ประชุม"},
+   {"phrase": "Is there any way we can ... without ... ?", "explain": "โครงสร้างประโยคถามหาทางเลือกที่ไม่กระทบด้านอื่น"}
+  ]
+ },
+ {
+  "unit": 19,
+  "tier": "hard",
+  "topic": "Health & Science",
+  "title": "The Science of Sleep",
+  "preteach": [
+   {"word": "consolidate memories", "meaning": "รวบรวม/จัดเก็บความทรงจำ", "example": "Sleep helps consolidate memories."},
+   {"word": "immune system", "meaning": "ระบบภูมิคุ้มกัน", "example": "Good sleep strengthens the immune system."},
+   {"word": "sleep deprivation", "meaning": "การอดนอน", "example": "Sleep deprivation affects concentration."},
+   {"word": "internal clock", "meaning": "นาฬิกาชีวภาพของร่างกาย", "example": "An irregular schedule confuses your internal clock."}
+  ],
+  "transcript": "Host: Welcome back to the show. Today we're joined by Dr. Elena Cruz, a sleep researcher, to talk about why quality sleep matters so much for our health. Dr. Cruz, thanks for being here.\nDr. Cruz: Thanks for having me, it's a pleasure.\nHost: So, let's start with the basics. Why exactly do we need sleep, beyond just feeling rested?\nDr. Cruz: Great question. Sleep plays a crucial role in almost every system in the body. During deep sleep, our brains consolidate memories, essentially transferring information from short-term to long-term storage. At the same time, the body repairs tissue, regulates hormones, and even strengthens the immune system. Without enough sleep, these processes are disrupted, which is why chronic sleep deprivation is linked to problems like weakened immunity, difficulty concentrating, and even a higher risk of heart disease over time.\nHost: That's fascinating, and honestly a bit alarming. What would you say is the biggest mistake people make with their sleep habits?\nDr. Cruz: I'd say inconsistency is the biggest issue. Many people go to bed at wildly different times throughout the week, which confuses the body's internal clock. Keeping a consistent sleep schedule, even on weekends, can make a huge difference in sleep quality.\nHost: That's really helpful advice. We'll dive deeper into practical tips right after this short break.",
+  "translation": "พิธีกร: ยินดีต้อนรับกลับเข้าสู่รายการนะครับ วันนี้เรามีดอกเตอร์เอเลน่า ครูซ นักวิจัยด้านการนอนหลับ มาร่วมพูดคุยว่าทำไมการนอนหลับที่มีคุณภาพถึงสำคัญต่อสุขภาพของเรามาก ขอบคุณที่มาร่วมรายการนะครับ\nดร.ครูซ: ขอบคุณที่เชิญมาค่ะ ยินดีมากค่ะ\nพิธีกร: เริ่มจากพื้นฐานกันก่อนนะครับ ทำไมเราถึงต้องการการนอนหลับ นอกเหนือจากแค่รู้สึกสดชื่นครับ\nดร.ครูซ: คำถามดีมากค่ะ การนอนหลับมีบทบาทสำคัญในเกือบทุกระบบของร่างกาย ในช่วงหลับลึก สมองของเราจะรวบรวมความทรงจำ โดยพื้นฐานแล้วคือการย้ายข้อมูลจากความจำระยะสั้นไปเป็นความจำระยะยาว ในขณะเดียวกัน ร่างกายก็ซ่อมแซมเนื้อเยื่อ ปรับสมดุลฮอร์โมน และเสริมสร้างระบบภูมิคุ้มกันด้วยค่ะ หากนอนหลับไม่เพียงพอ กระบวนการเหล่านี้จะถูกรบกวน นี่จึงเป็นเหตุผลว่าทำไมการอดนอนเรื้อรังถึงเชื่อมโยงกับปัญหาต่างๆ เช่น ภูมิคุ้มกันอ่อนแอ สมาธิไม่ดี และแม้แต่ความเสี่ยงโรคหัวใจที่สูงขึ้นในระยะยาวค่ะ\nพิธีกร: น่าสนใจมากเลยครับ แล้วก็ค่อนข้างน่าตกใจด้วย แล้วดอกเตอร์คิดว่าความผิดพลาดที่ใหญ่ที่สุดที่คนมักทำเกี่ยวกับพฤติกรรมการนอนคืออะไรครับ\nดร.ครูซ: ดิฉันคิดว่าความไม่สม่ำเสมอเป็นปัญหาใหญ่ที่สุดค่ะ หลายคนเข้านอนในเวลาที่แตกต่างกันมากตลอดทั้งสัปดาห์ ซึ่งทำให้นาฬิกาชีวภาพของร่างกายสับสน การรักษาตารางการนอนที่สม่ำเสมอ แม้แต่ในวันหยุดสุดสัปดาห์ ก็สามารถสร้างความแตกต่างอย่างมากต่อคุณภาพการนอนได้ค่ะ\nพิธีกร: เป็นคำแนะนำที่มีประโยชน์มากเลยครับ เราจะพูดคุยเรื่องเคล็ดลับที่นำไปใช้ได้จริงกันต่อหลังจากพักช่วงสั้นๆ นี้ครับ",
+  "keyPoints": [
+   {"phrase": "plays a crucial role in ...", "explain": "สำนวนบอกว่าสิ่งใดสิ่งหนึ่งมีความสำคัญมากต่อสิ่งอื่น"},
+   {"phrase": "is linked to ...", "explain": "โครงสร้างประโยคบอกความเชื่อมโยงเชิงสาเหตุ พบบ่อยในเนื้อหาวิชาการ/สุขภาพ"}
+  ]
+ },
+ {
+  "unit": 20,
+  "tier": "hard",
+  "topic": "Environment",
+  "title": "Rainforest Conservation",
+  "preteach": [
+   {"word": "ecosystem", "meaning": "ระบบนิเวศ", "example": "The rainforest is a rich ecosystem."},
+   {"word": "poaching", "meaning": "การลักลอบล่าสัตว์", "example": "Poaching threatens endangered species."},
+   {"word": "extinction", "meaning": "การสูญพันธุ์", "example": "Many species are at risk of extinction."},
+   {"word": "sustainable", "meaning": "ยั่งยืน", "example": "We need sustainable land use practices."}
+  ],
+  "transcript": "Deep within the rainforest, where sunlight barely reaches the forest floor, an extraordinary web of life continues, largely unseen by human eyes. This region is home to thousands of species, many of which exist nowhere else on Earth. Yet in recent decades, this delicate ecosystem has faced unprecedented pressure. Logging, agricultural expansion, and illegal wildlife trade have pushed many species to the brink of extinction. Conservationists have been working tirelessly to reverse this trend, establishing protected reserves and working closely with local communities to promote sustainable land use. One such success story involves the region's population of forest elephants, which had declined sharply due to poaching. Through a combination of stricter law enforcement, community-led monitoring programs, and international cooperation, poaching rates have dropped significantly over the past five years, allowing the elephant population to slowly begin recovering. However, experts caution that this progress remains fragile. Continued funding, political commitment, and public awareness will be essential if these conservation efforts are to succeed in the long run. The fate of this remarkable ecosystem, and the countless species that depend on it, still hangs in the balance.",
+  "translation": "ลึกเข้าไปในป่าฝน ที่แสงแดดแทบส่องไม่ถึงพื้นป่า เครือข่ายชีวิตอันน่าทึ่งยังคงดำเนินต่อไป โดยส่วนใหญ่ไม่มีใครเห็น พื้นที่นี้เป็นบ้านของสิ่งมีชีวิตนับพันสายพันธุ์ ซึ่งหลายชนิดไม่พบที่ใดในโลกอีกแล้ว แต่ในช่วงไม่กี่ทศวรรษที่ผ่านมา ระบบนิเวศอันบอบบางนี้ต้องเผชิญแรงกดดันอย่างที่ไม่เคยเกิดขึ้นมาก่อน การตัดไม้ การขยายพื้นที่เกษตรกรรม และการค้าสัตว์ป่าผิดกฎหมาย ได้ผลักดันให้หลายสายพันธุ์เข้าใกล้การสูญพันธุ์ นักอนุรักษ์ทำงานอย่างไม่ลดละเพื่อพลิกกลับแนวโน้มนี้ โดยจัดตั้งเขตอนุรักษ์และทำงานร่วมกับชุมชนท้องถิ่นอย่างใกล้ชิดเพื่อส่งเสริมการใช้ที่ดินอย่างยั่งยืน หนึ่งในเรื่องราวความสำเร็จเกี่ยวข้องกับประชากรช้างป่าในภูมิภาคนี้ ซึ่งเคยลดลงอย่างมากจากการลักลอบล่า ผ่านการผสมผสานการบังคับใช้กฎหมายที่เข้มงวดขึ้น โครงการเฝ้าระวังโดยชุมชน และความร่วมมือระหว่างประเทศ อัตราการลักลอบล่าลดลงอย่างมีนัยสำคัญในช่วงห้าปีที่ผ่านมา ทำให้ประชากรช้างเริ่มฟื้นตัวอย่างช้าๆ อย่างไรก็ตาม ผู้เชี่ยวชาญเตือนว่าความคืบหน้านี้ยังเปราะบาง เงินทุนที่ต่อเนื่อง ความมุ่งมั่นทางการเมือง และความตระหนักรู้ของสาธารณชน ล้วนเป็นสิ่งจำเป็นหากความพยายามอนุรักษ์เหล่านี้จะประสบความสำเร็จในระยะยาว ชะตากรรมของระบบนิเวศอันน่าทึ่งนี้ และสิ่งมีชีวิตนับไม่ถ้วนที่พึ่งพามัน ยังคงแขวนอยู่บนเส้นด้าย",
+  "keyPoints": [
+   {"phrase": "pushed ... to the brink of extinction", "explain": "สำนวนบอกว่าใกล้จะสูญพันธุ์มาก"},
+   {"phrase": "hangs in the balance", "explain": "สำนวนแปลว่ายังไม่แน่นอน/อยู่ในภาวะเสี่ยง ผลลัพธ์ยังไม่ชัดเจน"}
+  ]
+ }
+]

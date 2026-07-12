@@ -265,6 +265,8 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:'Sarabun'
 .gl-tl-swatch{width:9px;height:9px;border-radius:3px;flex-shrink:0;margin-top:3px}
 .gt-topic-row{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:var(--sf);border:1px solid var(--br2);border-radius:12px;margin-bottom:10px;cursor:pointer}
 .gt-topic-row:active{transform:scale(.98)}
+.spd-chip{transition:all .12s}
+.spd-chip.active{background:var(--gd2);color:var(--gd);border-color:rgba(212,168,75,.4)}
 </style>
 </head>
 <body>
@@ -325,6 +327,17 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:'Sarabun'
               <div class="mc-t" style="font-size:16px;margin-bottom:3px">ก.พ.</div>
               <div class="mc-d">English Exam</div>
               <div style="font-size:11px;color:var(--tx2);font-weight:600;margin-top:4px">1,735 ข้อ</div>
+            </div>
+            <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:18px 20px;gap:16px" onclick="goSc('listen')">
+            <div class="mc-ico" style="width:52px;height:52px;border-radius:14px;flex-shrink:0">
+              <svg viewBox="0 0 24 24" style="width:24px;height:24px"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>
+            </div>
+            <div style="flex:1">
+              <div class="mc-t" style="font-size:16px;margin-bottom:3px">การฟัง</div>
+              <div class="mc-d">Listening · ALCPT/IELTS</div>
+              <div style="font-size:11px;color:var(--gd);font-weight:600;margin-top:4px" id="home-ltxt">0/20 บท</div>
             </div>
             <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
           </div>
@@ -742,6 +755,148 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:'Sarabun'
       </div>
     </div>
 
+    <!-- LISTENING HUB -->
+    <div id="sc-listen" class="sc">
+      <div class="sc-body">
+        <div class="sec" style="margin-bottom:12px">การฟัง (Listening)</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:16px 18px;gap:14px;border-color:rgba(212,168,75,.35);background:var(--gd2)" onclick="goSc('listenlesson');startListenLesson()">
+            <div class="mc-ico" style="width:44px;height:44px;border-radius:12px;flex-shrink:0;background:rgba(212,168,75,.2);color:var(--gd)"><svg viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M13 2L4.5 13H11L10 22L19.5 11H13Z"/></svg></div>
+            <div style="flex:1"><div class="mc-t" style="color:var(--gd)">บทเรียนวันนี้</div><div class="mc-d">ฟัง อ่าน แปล ฝึกซ้ำ</div></div>
+            <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--gd);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:16px 18px;gap:14px" onclick="goSc('listentiers');renderListenTiers()">
+            <div class="mc-ico" style="width:44px;height:44px;border-radius:12px;flex-shrink:0"><svg viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div>
+            <div style="flex:1"><div class="mc-t">เลือกระดับ</div><div class="mc-d">Easy · Medium · Hard</div></div>
+            <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:16px 18px;gap:14px" onclick="goSc('listentest');showListenTStart()">
+            <div class="mc-ico" style="width:44px;height:44px;border-radius:12px;flex-shrink:0"><svg viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 12h6M9 16h4"/></svg></div>
+            <div style="flex:1"><div class="mc-t">ทดสอบ</div><div class="mc-d">ALCPT / IELTS Style</div></div>
+            <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+        </div>
+        <div class="card" style="margin-top:14px;margin-bottom:12px;padding:14px 16px">
+          <div class="prog-row" style="margin-bottom:6px">
+            <span class="prog-lbl">บทที่ฟังเข้าใจแล้ว</span>
+            <span class="prog-pct" id="listen-hub-pct">0%</span>
+          </div>
+          <div class="prog-track"><div class="prog-fill" id="listen-hub-bar" style="width:0%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LISTENING LESSON (today's mix, SRS) -->
+    <div id="sc-listenlesson" class="sc">
+      <div class="sc-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+          <div style="font-family:'Inter',sans-serif;font-size:18px;font-weight:900">บทเรียนฟังวันนี้</div>
+          <div class="flctr" id="ll-ctr">0/0</div>
+        </div>
+        <div id="ll-body"><div class="empty"><span class="empty-ico">🎧</span>กดเริ่มด้านล่าง</div></div>
+      </div>
+      <div class="sc-foot">
+        <div id="ll-ctrl" style="display:none">
+          <div class="row mb8">
+            <button class="btn bfail" onclick="markListenLesson('fail')">✕ ฟังซ้ำอีกครั้ง</button>
+            <button class="btn bok" onclick="markListenLesson('ok')">✓ เข้าใจแล้ว</button>
+          </div>
+          <div class="row">
+            <button class="btn bnav" onclick="prevListenLesson()">‹ ก่อนหน้า</button>
+            <button class="btn bnav" onclick="nextListenLesson()">ถัดไป ›</button>
+          </div>
+        </div>
+        <div id="ll-start">
+          <button class="bgold" onclick="startListenLesson()">เริ่มบทเรียนฟังวันนี้</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- LISTENING TIERS -->
+    <div id="sc-listentiers" class="sc">
+      <div class="sc-body">
+        <div class="sec" style="margin-bottom:12px">เลือกระดับความยาก</div>
+        <div id="listentiers-list"></div>
+      </div>
+    </div>
+
+    <!-- LISTENING UNIT LIST within a tier -->
+    <div id="sc-listenunits" class="sc">
+      <div class="sc-body">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+          <button class="btn bout" style="width:auto;padding:8px 14px;flex-shrink:0" onclick="goSc('listentiers')">‹ กลับ</button>
+          <div class="sec" id="lu-tier-title" style="margin-bottom:0;flex:1;text-align:right">ระดับ</div>
+        </div>
+        <div id="listenunits-list"></div>
+      </div>
+    </div>
+
+    <!-- SINGLE UNIT LISTENING STUDY -->
+    <div id="sc-unitlisten" class="sc">
+      <div class="sc-body" id="ul-scroll">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <button class="btn bout" style="width:auto;padding:8px 14px" onclick="goSc('listenunits')">‹ รายการบท</button>
+          <div class="flctr" id="ul-ctr"></div>
+        </div>
+        <div id="ul-body"></div>
+      </div>
+      <div class="sc-foot" id="ul-foot"></div>
+    </div>
+
+    <!-- LISTENING TEST (ALCPT/IELTS style) -->
+    <div id="sc-listentest" class="sc">
+      <div id="lt-start" style="flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:16px">
+        <div class="sec" style="margin-bottom:12px">เลือกระดับที่จะทดสอบ</div>
+        <div class="menu2" id="lt-menu"></div>
+        <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:16px 18px;gap:14px;margin-top:10px;border-color:rgba(212,168,75,.35);background:var(--gd2)" onclick="startListenTest('ALL')">
+          <div class="mc-ico" style="width:44px;height:44px;border-radius:12px;flex-shrink:0;background:rgba(212,168,75,.2);color:var(--gd)"><svg viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg></div>
+          <div style="flex:1"><div class="mc-t" style="color:var(--gd)">ผสมทุกระดับ</div><div class="mc-d">สุ่มจากทุกระดับความยาก</div></div>
+          <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--gd);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+      </div>
+      <!-- quiz -->
+      <div id="lt-quiz" style="display:none;flex-direction:column;flex:1;overflow:hidden">
+        <div style="flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:16px 16px 0">
+          <div class="tprog"><div class="tprogf" id="lt-prog" style="width:0%"></div></div>
+          <div class="tmeta"><span>ข้อ <b id="lt-qn">1</b>/<b id="lt-tot">10</b></span><span>✓ <b id="lt-sc">0</b></span></div>
+          <div class="qcard">
+            <div class="qtype" id="lt-type"></div>
+            <div class="aplayer" style="margin-bottom:12px">
+              <button class="apbtn" onclick="speakLTPlay()"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+              <div class="apinfo"><div class="apword">ฟังแล้วตอบคำถาม</div><div class="apsub">แตะเพื่อฟัง ฟังซ้ำได้</div></div>
+              <div class="apwv" id="lt-wv"><span style="height:4px"></span><span style="height:9px"></span><span style="height:13px"></span><span style="height:8px"></span><span style="height:4px"></span></div>
+            </div>
+            <div class="row" style="gap:8px;margin-bottom:14px">
+              <button class="btn bout spd-chip" data-rate="0.75" style="flex:1" onclick="setLTRate(0.75)">0.75x</button>
+              <button class="btn bout spd-chip active" data-rate="1" style="flex:1" onclick="setLTRate(1)">1x</button>
+              <button class="btn bout spd-chip" data-rate="1.25" style="flex:1" onclick="setLTRate(1.25)">1.25x</button>
+            </div>
+            <div id="lt-qbody"></div>
+          </div>
+          <div class="fb" id="lt-fb"></div>
+        </div>
+        <div style="flex-shrink:0;display:flex;flex-direction:column;gap:10px;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:var(--bg);border-top:1px solid var(--br)">
+          <div class="gkh-choices" id="lt-choices"></div>
+          <button class="bnext" id="lt-next" onclick="nextListenTQ()" style="display:block;visibility:hidden;flex-shrink:0">ข้อถัดไป →</button>
+        </div>
+      </div>
+      <!-- result -->
+      <div id="lt-result" style="display:none;flex-direction:column;flex:1;overflow-y:auto">
+        <div class="rh"><div class="rn" id="ltr-n">0</div><div class="rof">จาก <span id="ltr-tot">10</span> ข้อ</div><div class="rmsg" id="ltr-msg">ดีมาก!</div></div>
+        <div class="rgrid">
+          <div class="rbox ok"><div class="rboxn" id="ltr-c">0</div><div class="rboxl">ถูก</div></div>
+          <div class="rbox fl"><div class="rboxn" id="ltr-w">0</div><div class="rboxl">ผิด</div></div>
+        </div>
+        <div id="ltr-wrong-wrap" style="padding:0 16px;margin-bottom:12px;display:none">
+          <div class="card"><div class="sec" style="margin-bottom:8px">ข้อที่ตอบผิด</div><div id="ltr-wrong-list"></div></div>
+        </div>
+        <div class="rbtns">
+          <button class="bgold" style="flex:1;border-radius:10px" onclick="startListenTest(window._ltMode)">ทำใหม่</button>
+          <button class="btn bout" onclick="showListenTStart()">เมนู</button>
+        </div>
+      </div>
+    </div>
+
     <!-- SETTINGS -->
     <div id="sc-cfg" class="sc">
       <div class="sc-body">
@@ -790,6 +945,8 @@ let GKH_QS=null,gkh_qs=[],gkh_idx=0,gkh_ok=0,gkh_fail=[];
 window._gkhMode='conv';
 let glCards=[],glIdx=0;
 let gtQs=[],gtIdx=0,gtOk=0,gtFail=[];
+let lsCards=[],lsIdx=0;
+let ltQs=[],ltIdx=0,ltOk=0,ltFail=[];
 window._gtMode='ALL';
 const _ac={};
 
@@ -876,6 +1033,7 @@ function goSc(id){
   if(id==='stats')updateStats();if(id==='home')renderHome();
   if(id==='gkh')ensureGkh();
   if(id==='gram')ensureGram().then(renderGramHub);
+  if(id==='listen')ensureListen().then(renderListenHub);
 }
 
 function renderHome(){
@@ -892,11 +1050,14 @@ function renderHome(){
   const glDone=[...new Set(PROG.filter(p=>p.mode==='gramlesson'&&p.result==='ok').map(p=>p.word))].length;
   const glTot=(GU||[]).length||6;
   document.getElementById('home-gtxt').textContent=glDone+'/'+glTot+' บทเรียน';
+  const llDone=[...new Set(PROG.filter(p=>p.mode==='listenlesson'&&p.result==='ok').map(p=>p.word))].length;
+  const llTot=(LSU||[]).length||20;
+  document.getElementById('home-ltxt').textContent=llDone+'/'+llTot+' บท';
   const rec=[...PROG].reverse().slice(0,5),el=document.getElementById('home-recent');
   if(!rec.length){el.innerHTML='<div class="empty" style="padding:10px 0"><span class="empty-ico">📖</span>เริ่มเรียนเพื่อดูประวัติ</div>';return;}
   el.innerHTML=rec.map(p=>'<div class="hi"><div class="hd '+(p.result==='ok'?'ok':p.result==='fail'?'fl':'ln')+'"></div><div style="flex:1"><div class="hw">'+p.word+'</div><div class="hm">'+mL(p.mode)+'</div></div><div class="ht">'+p.date+'</div></div>').join('');
 }
-function mL(m){return{flash:'แฟลช',random:'สุ่ม',test_ok:'ทดสอบ ✓',test_fail:'ทดสอบ ✗',syn:'Synonym'}[m]||m;}
+function mL(m){return{flash:'แฟลช',random:'สุ่ม',test_ok:'ทดสอบ ✓',test_fail:'ทดสอบ ✗',syn:'Synonym',listenlesson:'ฟังบทเรียน',listentest:'ทดสอบฟัง'}[m]||m;}
 function applyHdr(){
   document.getElementById('hdr-sub').textContent=CFG.name?'สวัสดี '+CFG.name:'เรียนภาษาอังกฤษ';
   const ln=[...new Set(PROG.map(p=>p.word))].length;
@@ -1679,6 +1840,288 @@ function showGramTResult(){
   if(gtFail.length){
     ww.style.display='block';
     document.getElementById('gtr-wrong-list').innerHTML=gtFail.map(q=>'<div class="hi"><div class="hd fl"></div><div style="flex:1"><div class="hw" style="font-size:12px;line-height:1.4">'+esc((q.text||'').slice(0,80))+'</div><div class="hm">เฉลย: '+esc(q.choices[String(q.answer)])+'</div></div></div>').join('');
+  }else ww.style.display='none';
+  updateStats();renderHome();
+}
+
+// ── Listening Module (ALCPT/IELTS-style, audio via Web Speech API TTS) ──
+let LSU=null,LSP=null;
+function ensureListen(){
+  if(LSU!==null&&LSP!==null)return Promise.resolve();
+  const p1=fetch(DATA_BASE+'listening_units.json').then(r=>r.json()).catch(()=>[]);
+  const p2=fetch(DATA_BASE+'listening_unit_practice.json').then(r=>r.json()).catch(()=>[]);
+  return Promise.all([p1,p2]).then(([u,p])=>{LSU=u||[];LSP=p||[];});
+}
+function listenTiers(){return['easy','medium','hard'];}
+function listenTierLabel(t){return{easy:'Easy',medium:'Medium',hard:'Hard'}[t]||t;}
+function listenPool(tier){return(LSP||[]).filter(q=>!tier||tier==='ALL'||q.tier===tier);}
+
+// TTS playback
+let _lsVoice=null,_lsRate=1,_ltRate=1,_lsCur=null;
+if('speechSynthesis' in window)speechSynthesis.onvoiceschanged=()=>{_lsVoice=null;};
+function pickLSVoice(){
+  if(_lsVoice)return _lsVoice;
+  if(!('speechSynthesis' in window))return null;
+  const vs=speechSynthesis.getVoices();
+  _lsVoice=vs.find(v=>v.lang==='en-US')||vs.find(v=>v.lang&&v.lang.startsWith('en'))||vs[0]||null;
+  return _lsVoice;
+}
+function speakLS(text,rate,wvId){
+  if(!('speechSynthesis' in window)){toast('อุปกรณ์นี้ไม่รองรับการอ่านออกเสียง');return;}
+  if(!text)return;
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(text.replace(/\n/g,' '));
+  u.lang='en-US';u.rate=rate||1;const v=pickLSVoice();if(v)u.voice=v;
+  const wv=wvId?document.getElementById(wvId):null;
+  if(wv){wv.classList.add('go');u.onend=()=>wv.classList.remove('go');u.onerror=()=>wv.classList.remove('go');}
+  speechSynthesis.speak(u);
+}
+function speakULPlay(){if(_lsCur)speakLS(_lsCur.transcript,_lsRate,'ul-wv');}
+function setULRate(r){
+  _lsRate=r;
+  document.querySelectorAll('#ll-body .spd-chip, #ul-body .spd-chip').forEach(b=>b.classList.toggle('active',parseFloat(b.dataset.rate)===r));
+  speakULPlay();
+}
+function toggleULBox(kind){
+  const el=document.getElementById('ul-box-'+kind);
+  if(el)el.style.display=el.style.display==='none'?'block':'none';
+}
+
+function unitCardHTML(u){
+  const tierLbl=listenTierLabel(u.tier);
+  const preHtml=(u.preteach||[]).map(p=>'<div class="gl-ex"><div class="gl-ex-n">🔤</div><div class="gl-ex-en"><b style="color:var(--gd)">'+esc(p.word)+'</b> — '+esc(p.meaning)+'<div style="font-size:12px;color:var(--tx2);margin-top:3px">'+esc(p.example)+'</div></div></div>').join('');
+  const kpHtml=(u.keyPoints||[]).map(k=>'<div class="gl-summary-item"><b style="color:var(--tx)">'+esc(k.phrase)+'</b> — '+esc(k.explain)+'</div>').join('');
+  return'<div class="fcard">'
+    +'<div class="fcard-top"><span class="fcard-tag" style="background:rgba(212,168,75,.15);color:var(--gd)">Unit '+u.unit+' · '+esc(tierLbl)+'</span><span class="fcard-tag" style="background:rgba(255,255,255,.06);color:var(--tx2)">'+esc(u.topic)+'</span></div>'
+    +'<div class="fcard-word" style="font-size:22px;line-height:1.35;margin-bottom:16px">'+esc(u.title)+'</div>'
+    +(preHtml?'<div class="gl-block"><div class="gl-sec">🔤 คำศัพท์ปูพื้นก่อนฟัง</div>'+preHtml+'</div>':'')
+    +'<div class="gl-block"><div class="gl-sec">🎧 ฟังเสียง</div>'
+      +'<div class="aplayer" style="margin-bottom:10px"><button class="apbtn" onclick="speakULPlay()"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>'
+      +'<div class="apinfo"><div class="apword">'+esc(u.title)+'</div><div class="apsub">แตะเพื่อฟัง ฟังซ้ำได้ไม่จำกัด</div></div>'
+      +'<div class="apwv" id="ul-wv"><span style="height:4px"></span><span style="height:9px"></span><span style="height:13px"></span><span style="height:8px"></span><span style="height:4px"></span></div></div>'
+      +'<div class="row" style="gap:8px">'
+        +[0.75,1,1.25].map(r=>'<button class="btn bout spd-chip'+(r===1?' active':'')+'" data-rate="'+r+'" style="flex:1" onclick="setULRate('+r+')">'+r+'x</button>').join('')
+      +'</div>'
+    +'</div>'
+    +'<div class="gl-block"><div class="row" style="gap:8px">'
+      +'<button class="btn bout" style="flex:1" onclick="toggleULBox(\'transcript\')">📄 Transcript</button>'
+      +'<button class="btn bout" style="flex:1" onclick="toggleULBox(\'translation\')">🇹🇭 คำแปล</button>'
+    +'</div>'
+    +'<div id="ul-box-transcript" style="display:none;margin-top:10px" class="gkh-passage">'+esc(u.transcript).replace(/\n/g,'<br>')+'</div>'
+    +'<div id="ul-box-translation" style="display:none;margin-top:10px" class="gkh-passage">'+esc(u.translation).replace(/\n/g,'<br>')+'</div>'
+    +'</div>'
+    +(kpHtml?'<div class="gl-block"><div class="gl-sec">💡 สำนวน/โครงสร้างสำคัญ</div><div class="gl-summary">'+kpHtml+'</div></div>':'')
+    +'</div>';
+}
+
+function renderListenHub(){
+  const llDone=[...new Set(PROG.filter(p=>p.mode==='listenlesson'&&p.result==='ok').map(p=>p.word))].length;
+  const tot=(LSU||[]).length||1;
+  const pct=Math.min(100,Math.round(llDone/tot*100));
+  document.getElementById('listen-hub-pct').textContent=pct+'%';
+  document.getElementById('listen-hub-bar').style.width=pct+'%';
+}
+
+function buildListenPkg(){
+  const hist={};
+  PROG.filter(p=>p.mode==='listenlesson').forEach(p=>{
+    if(!hist[p.word])hist[p.word]={o:0,f:0};
+    if(p.result==='ok')hist[p.word].o++;else hist[p.word].f++;
+  });
+  const pool=LSU||[];
+  const nL=[],wL=[],oL=[];
+  pool.forEach(l=>{const h=hist['ll_u'+l.unit];if(!h)nL.push(l);else if(h.f>0&&h.o===0)wL.push(l);else oL.push(l);});
+  const pick=(a,k)=>shuf([...a]).slice(0,k);
+  const n=Math.min(6,pool.length);
+  let sel=[...pick(nL,Math.ceil(n*.57)),...pick(wL,Math.floor(n*.29)),...pick(oL,Math.floor(n*.14))];
+  if(sel.length<n){const u=new Set(sel.map(x=>x.unit));sel.push(...pick([...nL,...oL,...wL].filter(x=>!u.has(x.unit)),n-sel.length));}
+  return sel.slice(0,n);
+}
+async function startListenLesson(){
+  await ensureListen();
+  lsCards=shuf(buildListenPkg());lsIdx=0;
+  if(!lsCards.length){
+    document.getElementById('ll-body').innerHTML='<div class="empty"><span class="empty-ico">🎉</span>ยังไม่มีบทเรียน หรือเรียนครบแล้ว</div>';
+    document.getElementById('ll-ctrl').style.display='none';document.getElementById('ll-start').style.display='block';
+    return;
+  }
+  document.getElementById('ll-start').style.display='none';
+  document.getElementById('ll-ctrl').style.display='block';
+  renderListenLesson();
+}
+function renderListenLesson(){
+  if(!lsCards.length)return;
+  document.getElementById('ll-ctr').textContent=(lsIdx+1)+'/'+lsCards.length;
+  _lsCur=lsCards[lsIdx];_lsRate=1;
+  document.getElementById('ll-body').innerHTML=unitCardHTML(_lsCur);
+}
+function markListenLesson(res){
+  const l=lsCards[lsIdx];if(!l)return;
+  addProg({word:'ll_u'+l.unit,mode:'listenlesson',result:res});
+  nextListenLesson();
+}
+function nextListenLesson(){if(lsIdx<lsCards.length-1){lsIdx++;renderListenLesson();}else endListenLesson();}
+function prevListenLesson(){if(lsIdx>0){lsIdx--;renderListenLesson();}}
+function endListenLesson(){
+  document.getElementById('ll-body').innerHTML='<div class="empty"><span class="empty-ico">🎉</span>จบบทเรียนฟังวันนี้แล้ว!</div>';
+  document.getElementById('ll-ctrl').style.display='none';
+  document.getElementById('ll-start').style.display='block';
+  renderHome();renderListenHub();toast('🎉 จบบทเรียนฟังแล้ว!');
+}
+
+async function renderListenTiers(){
+  await ensureListen();
+  const el=document.getElementById('listentiers-list');
+  const hist={};
+  PROG.filter(p=>p.mode==='listenlesson'&&p.result==='ok').forEach(p=>hist[p.word]=true);
+  el.innerHTML=listenTiers().map(t=>{
+    const units=(LSU||[]).filter(u=>u.tier===t);
+    const done=units.filter(u=>hist['ll_u'+u.unit]).length;
+    return'<div class="gt-topic-row" onclick="goSc(\'listenunits\');renderListenUnitsList(\''+t+'\')">'
+      +'<div><div style="font-size:14px;font-weight:600;color:var(--tx)">'+esc(listenTierLabel(t))+'</div>'
+      +'<div style="font-size:11px;color:var(--tx2);margin-top:2px">'+done+'/'+units.length+' บท</div></div>'
+      +'<svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>'
+      +'</div>';
+  }).join('');
+}
+window._luTier=null;
+async function renderListenUnitsList(tier){
+  await ensureListen();
+  window._luTier=tier;
+  document.getElementById('lu-tier-title').textContent=listenTierLabel(tier);
+  const units=(LSU||[]).filter(u=>u.tier===tier).sort((a,b)=>a.unit-b.unit);
+  const done={};
+  PROG.filter(p=>p.mode==='listenlesson'&&p.result==='ok').forEach(p=>done[p.word]=true);
+  document.getElementById('listenunits-list').innerHTML=units.map(u=>{
+    const read=!!done['ll_u'+u.unit];
+    return'<div class="gt-topic-row" onclick="goSc(\'unitlisten\');startUnitListen('+u.unit+')">'
+      +'<div><div style="font-size:14px;font-weight:600;color:var(--tx)">Unit '+u.unit+' · '+esc(u.title)+'</div>'
+      +'<div style="font-size:11px;color:var(--tx2);margin-top:2px">'+esc(u.topic)+' · '+(read?'<span style="color:var(--gr)">✓ ฟังแล้ว</span>':'<span>ยังไม่ได้ฟัง</span>')+'</div></div>'
+      +'<svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>'
+      +'</div>';
+  }).join('');
+}
+let ulUnit=null;
+async function startUnitListen(unitNum){
+  await ensureListen();
+  ulUnit=(LSU||[]).find(u=>u.unit===unitNum);
+  if(!ulUnit){toast('ไม่พบบทเรียนนี้');return;}
+  _lsCur=ulUnit;_lsRate=1;
+  document.getElementById('ul-body').innerHTML=unitCardHTML(ulUnit);
+  document.getElementById('ul-ctr').textContent='Unit '+ulUnit.unit;
+  document.getElementById('ul-scroll').scrollTop=0;
+  addProg({word:'ll_u'+ulUnit.unit,mode:'listenlesson',result:'ok'});
+  const nextUnit=(LSU||[]).filter(u=>u.tier===ulUnit.tier).sort((a,b)=>a.unit-b.unit).find(u=>u.unit>ulUnit.unit);
+  document.getElementById('ul-foot').innerHTML=nextUnit
+    ?'<button class="bgold" onclick="startUnitListen('+nextUnit.unit+')">✓ เข้าใจแล้ว บทถัดไป: Unit '+nextUnit.unit+' →</button>'
+    :'<button class="bgold" onclick="goSc(\'listenunits\')">✓ เข้าใจแล้ว กลับไปรายการบท</button>';
+  renderHome();renderListenHub();
+}
+
+async function showListenTStart(){
+  await ensureListen();
+  document.getElementById('lt-start').style.display='block';
+  document.getElementById('lt-quiz').style.display='none';
+  document.getElementById('lt-result').style.display='none';
+  document.getElementById('lt-menu').innerHTML=listenTiers().map(t=>{
+    const n=listenPool(t).length;
+    return'<div class="mc" onclick="startListenTest(\''+t+'\')"><div class="mc-t" style="font-size:13px">'+esc(listenTierLabel(t))+'</div><div class="mc-d">'+n+' ข้อ</div></div>';
+  }).join('');
+}
+function speakLTPlay(){
+  const q=ltQs[ltIdx];if(!q)return;
+  const u=(LSU||[]).find(x=>x.unit===q.unit);
+  if(u)speakLS(u.transcript,_ltRate,'lt-wv');
+}
+function setLTRate(r){
+  _ltRate=r;
+  document.querySelectorAll('#sc-listentest .spd-chip').forEach(b=>b.classList.toggle('active',parseFloat(b.dataset.rate)===r));
+  speakLTPlay();
+}
+async function startListenTest(tier){
+  await ensureListen();
+  window._ltMode=tier;
+  const pool=listenPool(tier);
+  if(!pool.length){toast('ยังไม่มีข้อสอบในระดับนี้');return;}
+  const hist={};
+  PROG.filter(p=>p.mode==='listentest'&&p.word.startsWith('lq_')).forEach(p=>{
+    const id=p.word.slice(3);
+    if(!hist[id])hist[id]={ok:0,fail:0};
+    if(p.result==='ok')hist[id].ok++;else hist[id].fail++;
+  });
+  const newQs=pool.filter(q=>!hist[q.id]);
+  const wrongQs=pool.filter(q=>hist[q.id]&&hist[q.id].fail>0&&hist[q.id].ok===0);
+  const doneQs=pool.filter(q=>hist[q.id]&&hist[q.id].ok>0);
+  const N=10;
+  const pick=(arr,n)=>shuf([...arr]).slice(0,n);
+  let picked=[...pick(wrongQs,Math.round(N*0.35)),...pick(doneQs,Math.round(N*0.15)),...pick(newQs,Math.round(N*0.50))];
+  if(picked.length<N){
+    const used=new Set(picked.map(q=>q.id));
+    const fill=shuf(pool.filter(q=>!used.has(q.id)));
+    fill.forEach(q=>{if(picked.length<N&&!used.has(q.id)){picked.push(q);used.add(q.id);}});
+  }
+  if(picked.length<N&&tier&&tier!=='ALL'){
+    const used=new Set(picked.map(q=>q.id));
+    const fillOther=shuf(listenPool('ALL').filter(q=>!used.has(q.id)));
+    fillOther.forEach(q=>{if(picked.length<N&&!used.has(q.id)){picked.push(q);used.add(q.id);}});
+  }
+  ltQs=shuf(picked).slice(0,N);
+  ltIdx=0;ltOk=0;ltFail=[];
+  document.getElementById('lt-start').style.display='none';
+  document.getElementById('lt-quiz').style.display='flex';
+  document.getElementById('lt-result').style.display='none';
+  document.getElementById('lt-tot').textContent=ltQs.length;
+  renderListenTQ();
+}
+const LT_QTYPE_LBL={gist:'จับใจความสำคัญ',detail:'หารายละเอียด',inference:'อนุมานจากบริบท',vocab:'คำศัพท์ในบริบท'};
+function renderListenTQ(){
+  if(ltIdx>=ltQs.length){showListenTResult();return;}
+  const q=ltQs[ltIdx];
+  document.getElementById('lt-prog').style.width=(ltIdx/ltQs.length*100)+'%';
+  document.getElementById('lt-qn').textContent=ltIdx+1;
+  document.getElementById('lt-sc').textContent=ltOk;
+  document.getElementById('lt-type').textContent=(LT_QTYPE_LBL[q.qtype]||q.qtype)+' · '+listenTierLabel(q.tier);
+  document.getElementById('lt-qbody').innerHTML='<div class="gkh-qbody">'+esc(q.text||'')+'</div>';
+  _ltRate=1;
+  document.querySelectorAll('#sc-listentest .spd-chip').forEach(b=>b.classList.toggle('active',parseFloat(b.dataset.rate)===1));
+  const fb=document.getElementById('lt-fb');fb.className='fb';fb.textContent='';fb.style.flexDirection='';fb.style.alignItems='';
+  document.getElementById('lt-next').style.visibility='hidden';
+  const GOPT='width:100%;display:flex;align-items:center;background:var(--sf2);border:1.5px solid var(--br2);border-radius:10px;padding:10px 16px;font-family:Sarabun,sans-serif;font-size:14px;font-weight:500;color:var(--tx);cursor:pointer;text-align:left;line-height:1.4;overflow:hidden;transition:all .12s;-webkit-user-select:none;box-sizing:border-box';
+  document.getElementById('lt-choices').innerHTML=[1,2,3,4].map(i=>'<button style="'+GOPT+'" onclick="ansListenTQ('+i+')">'+esc(q.choices[String(i)]||'')+'</button>').join('');
+}
+function listenMarkResult(q,ok,correctDisplay){
+  const fb=document.getElementById('lt-fb');
+  fb.style.flexDirection='column';fb.style.alignItems='flex-start';
+  const why=q.explain||'';
+  const u=(LSU||[]).find(x=>x.unit===q.unit);
+  const transcriptHtml=u?'<div style="margin-top:8px;padding-top:8px;border-top:1px solid var(--br);font-size:11.5px;line-height:1.7;opacity:.85;white-space:pre-wrap">'+esc(u.transcript)+'</div>':'';
+  if(ok){ltOk++;fb.className='fb fb-ok on';fb.innerHTML='<div>✓ ถูกต้อง!</div><div style="margin-top:6px;font-size:12px;line-height:1.6;opacity:.9">'+esc(why)+'</div>'+transcriptHtml;}
+  else{ltFail.push(q);fb.className='fb fb-fail on';fb.innerHTML='<div>✗ ผิด! เฉลย: <b>'+esc(correctDisplay)+'</b></div><div style="margin-top:6px;font-size:12px;line-height:1.6;opacity:.9">'+esc(why)+'</div>'+transcriptHtml;}
+  addProg({word:'lq_'+q.id,mode:'listentest',result:ok?'ok':'fail'});
+  document.getElementById('lt-next').style.visibility='visible';
+}
+function ansListenTQ(i){
+  const q=ltQs[ltIdx];const ok=i===q.answer;
+  const btns=document.querySelectorAll('#lt-choices button');
+  btns.forEach((b,j)=>{b.disabled=true;if(j+1===q.answer){b.style.background='var(--gr2)';b.style.borderColor='var(--gr)';b.style.color='var(--gr)';}});
+  const sel=btns[i-1];if(ok){sel.style.background='var(--gr2)';sel.style.borderColor='var(--gr)';sel.style.color='var(--gr)';}else{sel.style.background='var(--rd2)';sel.style.borderColor='var(--rd)';sel.style.color='var(--rd)';}
+  listenMarkResult(q,ok,q.choices[String(q.answer)]);
+}
+function nextListenTQ(){ltIdx++;renderListenTQ();}
+function showListenTResult(){
+  document.getElementById('lt-quiz').style.display='none';
+  document.getElementById('lt-result').style.display='flex';
+  const tot=ltQs.length,c=ltOk,w=tot-c,pct=tot?Math.round(c/tot*100):0;
+  document.getElementById('ltr-n').textContent=c;
+  document.getElementById('ltr-tot').textContent=tot;
+  document.getElementById('ltr-c').textContent=c;
+  document.getElementById('ltr-w').textContent=w;
+  const msgs=[[90,'🏆 ยอดเยี่ยม!'],[70,'👍 ดีมาก!'],[50,'📚 พอใช้ได้'],[0,'💪 ฝึกต่อไปนะ']];
+  document.getElementById('ltr-msg').textContent=(msgs.find(m=>pct>=m[0])||msgs[3])[1];
+  const ww=document.getElementById('ltr-wrong-wrap');
+  if(ltFail.length){
+    ww.style.display='block';
+    document.getElementById('ltr-wrong-list').innerHTML=ltFail.map(q=>'<div class="hi"><div class="hd fl"></div><div style="flex:1"><div class="hw" style="font-size:12px;line-height:1.4">'+esc((q.text||'').slice(0,80))+'</div><div class="hm">เฉลย: '+esc(q.choices[String(q.answer)])+'</div></div></div>').join('');
   }else ww.style.display='none';
   updateStats();renderHome();
 }
