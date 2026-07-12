@@ -382,6 +382,17 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:'Sarabun'
             </div>
             <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
           </div>
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:18px 20px;gap:16px" onclick="goSc('reading')">
+            <div class="mc-ico" style="width:52px;height:52px;border-radius:14px;flex-shrink:0">
+              <svg viewBox="0 0 24 24" style="width:22px;height:22px"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><path d="M9 7h7M9 11h7"/></svg>
+            </div>
+            <div style="flex:1">
+              <div class="mc-t" style="font-size:16px;margin-bottom:3px">การอ่าน</div>
+              <div class="mc-d">Reading · A1 → C2</div>
+              <div style="font-size:11px;color:var(--gd);font-weight:600;margin-top:4px" id="home-rdtxt">0/20 บท</div>
+            </div>
+            <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
         </div>
         <!-- Progress -->
         <div class="card" style="margin-bottom:12px;padding:14px 16px">
@@ -1228,6 +1239,136 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:'Sarabun'
       </div>
     </div>
 
+    <!-- READING HUB -->
+    <div id="sc-reading" class="sc">
+      <div class="sc-body">
+        <div class="sec" style="margin-bottom:12px">การอ่าน (Reading)</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:16px 18px;gap:14px;border-color:rgba(212,168,75,.35);background:var(--gd2)" onclick="goSc('readlesson');startReadLesson()">
+            <div class="mc-ico" style="width:44px;height:44px;border-radius:12px;flex-shrink:0;background:rgba(212,168,75,.2);color:var(--gd)"><svg viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M13 2L4.5 13H11L10 22L19.5 11H13Z"/></svg></div>
+            <div style="flex:1"><div class="mc-t" style="color:var(--gd)">บทเรียนวันนี้</div><div class="mc-d">อ่าน แปล คำศัพท์สำคัญ</div></div>
+            <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--gd);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:16px 18px;gap:14px" onclick="goSc('readlevels');renderReadLevels()">
+            <div class="mc-ico" style="width:44px;height:44px;border-radius:12px;flex-shrink:0"><svg viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div>
+            <div style="flex:1"><div class="mc-t">เลือกระดับ</div><div class="mc-d">A1 · A2 · B1 · B2 · C1-C2</div></div>
+            <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+          <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:16px 18px;gap:14px" onclick="goSc('readtest');showReadTStart()">
+            <div class="mc-ico" style="width:44px;height:44px;border-radius:12px;flex-shrink:0"><svg viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 12h6M9 16h4"/></svg></div>
+            <div style="flex:1"><div class="mc-t">ทดสอบ</div><div class="mc-d">A1 → C2 เลือกระดับได้</div></div>
+            <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+        </div>
+        <div class="card" style="margin-top:14px;margin-bottom:12px;padding:14px 16px">
+          <div class="prog-row" style="margin-bottom:6px">
+            <span class="prog-lbl">บทที่อ่านเข้าใจแล้ว</span>
+            <span class="prog-pct" id="reading-hub-pct">0%</span>
+          </div>
+          <div class="prog-track"><div class="prog-fill" id="reading-hub-bar" style="width:0%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- READING LESSON (today's mix, SRS) -->
+    <div id="sc-readlesson" class="sc">
+      <div class="sc-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+          <div style="font-family:'Inter',sans-serif;font-size:18px;font-weight:900">บทเรียนอ่านวันนี้</div>
+          <div class="flctr" id="rl-ctr">0/0</div>
+        </div>
+        <div id="rl-body"><div class="empty"><span class="empty-ico">📖</span>กดเริ่มด้านล่าง</div></div>
+      </div>
+      <div class="sc-foot">
+        <div id="rl-ctrl" style="display:none">
+          <div class="row mb8">
+            <button class="btn bfail" onclick="markReadLesson('fail')">✕ ยังไม่เข้าใจ</button>
+            <button class="btn bok" onclick="markReadLesson('ok')">✓ เข้าใจแล้ว</button>
+          </div>
+          <div class="row">
+            <button class="btn bnav" onclick="prevReadLesson()">‹ ก่อนหน้า</button>
+            <button class="btn bnav" onclick="nextReadLesson()">ถัดไป ›</button>
+          </div>
+        </div>
+        <div id="rl-start">
+          <button class="bgold" onclick="startReadLesson()">เริ่มบทเรียนอ่านวันนี้</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- READING LEVELS -->
+    <div id="sc-readlevels" class="sc">
+      <div class="sc-body">
+        <div class="sec" style="margin-bottom:12px">เลือกระดับ (CEFR)</div>
+        <div id="readlevels-list"></div>
+      </div>
+    </div>
+
+    <!-- READING UNIT LIST within a level -->
+    <div id="sc-readunits" class="sc">
+      <div class="sc-body">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+          <button class="btn bout" style="width:auto;padding:8px 14px;flex-shrink:0" onclick="goSc('readlevels')">‹ กลับ</button>
+          <div class="sec" id="ru-level-title" style="margin-bottom:0;flex:1;text-align:right">ระดับ</div>
+        </div>
+        <div id="readunits-list"></div>
+      </div>
+    </div>
+
+    <!-- SINGLE UNIT READING STUDY -->
+    <div id="sc-unitread" class="sc">
+      <div class="sc-body" id="ur-scroll">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <button class="btn bout" style="width:auto;padding:8px 14px" onclick="goSc('readunits')">‹ รายการบท</button>
+          <div class="flctr" id="ur-ctr"></div>
+        </div>
+        <div id="ur-body"></div>
+      </div>
+      <div class="sc-foot" id="ur-foot"></div>
+    </div>
+
+    <!-- READING TEST -->
+    <div id="sc-readtest" class="sc">
+      <div id="rt-start" style="flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:16px">
+        <div class="sec" style="margin-bottom:12px">เลือกระดับที่จะทดสอบ</div>
+        <div class="menu2" id="rt-menu"></div>
+        <div class="mc" style="display:flex;flex-direction:row;align-items:center;padding:16px 18px;gap:14px;margin-top:10px;border-color:rgba(212,168,75,.35);background:var(--gd2)" onclick="startReadTest('ALL')">
+          <div class="mc-ico" style="width:44px;height:44px;border-radius:12px;flex-shrink:0;background:rgba(212,168,75,.2);color:var(--gd)"><svg viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg></div>
+          <div style="flex:1"><div class="mc-t" style="color:var(--gd)">ผสมทุกระดับ</div><div class="mc-d">สุ่มจากทุกระดับ A1-C2</div></div>
+          <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--gd);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+      </div>
+      <!-- quiz -->
+      <div id="rt-quiz" style="display:none;flex-direction:column;flex:1;overflow:hidden">
+        <div style="flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:16px 16px 0">
+          <div class="tprog"><div class="tprogf" id="rt-prog" style="width:0%"></div></div>
+          <div class="tmeta"><span>ข้อ <b id="rt-qn">1</b>/<b id="rt-tot">10</b></span><span>✓ <b id="rt-sc">0</b></span></div>
+          <div class="gkh-passage" id="rt-passage" style="max-height:180px;overflow-y:auto"></div>
+          <div class="qcard"><div class="qtype" id="rt-type"></div><div id="rt-qbody"></div></div>
+          <div class="fb" id="rt-fb"></div>
+        </div>
+        <div style="flex-shrink:0;display:flex;flex-direction:column;gap:10px;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:var(--bg);border-top:1px solid var(--br)">
+          <div class="gkh-choices" id="rt-choices"></div>
+          <button class="bnext" id="rt-next" onclick="nextReadTQ()" style="display:block;visibility:hidden;flex-shrink:0">ข้อถัดไป →</button>
+        </div>
+      </div>
+      <!-- result -->
+      <div id="rt-result" style="display:none;flex-direction:column;flex:1;overflow-y:auto">
+        <div class="rh"><div class="rn" id="rtr-n">0</div><div class="rof">จาก <span id="rtr-tot">10</span> ข้อ</div><div class="rmsg" id="rtr-msg">ดีมาก!</div></div>
+        <div class="rgrid">
+          <div class="rbox ok"><div class="rboxn" id="rtr-c">0</div><div class="rboxl">ถูก</div></div>
+          <div class="rbox fl"><div class="rboxn" id="rtr-w">0</div><div class="rboxl">ผิด</div></div>
+        </div>
+        <div id="rtr-wrong-wrap" style="padding:0 16px;margin-bottom:12px;display:none">
+          <div class="card"><div class="sec" style="margin-bottom:8px">ข้อที่ตอบผิด</div><div id="rtr-wrong-list"></div></div>
+        </div>
+        <div class="rbtns">
+          <button class="bgold" style="flex:1;border-radius:10px" onclick="startReadTest(window._rtMode)">ทำใหม่</button>
+          <button class="btn bout" onclick="showReadTStart()">เมนู</button>
+        </div>
+      </div>
+    </div>
+
     <!-- SETTINGS -->
     <div id="sc-cfg" class="sc">
       <div class="sc-body">
@@ -1282,6 +1423,8 @@ let wsCards=[],wsIdx=0;
 let wtQs=[],wtIdx=0,wtOk=0,wtFail=[];
 let spCards=[],spIdx=0;
 let sptQs=[],sptIdx=0,sptOk=0,sptFail=[];
+let rdCards=[],rdIdx=0;
+let rtQs=[],rtIdx=0,rtOk=0,rtFail=[];
 window._gtMode='ALL';
 const _ac={};
 
@@ -1374,6 +1517,7 @@ function goSc(id){
   if(id==='listen')ensureListen().then(renderListenHub);
   if(id==='writing')ensureWriting().then(renderWritingHub);
   if(id==='speaking')ensureSpeaking().then(renderSpeakingHub);
+  if(id==='reading')ensureReading().then(renderReadingHub);
 }
 
 function renderHome(){
@@ -1398,11 +1542,14 @@ function renderHome(){
   document.getElementById('home-wtxt').textContent=wlDone+'/'+wlTot+' บท';
   const spDone=PROG.filter(p=>p.mode==='speaklesson'||p.mode==='speaktest').length;
   document.getElementById('home-sptxt').textContent=spDone+' ครั้ง';
+  const rdDone=[...new Set(PROG.filter(p=>p.mode==='readlesson'&&p.result==='ok').map(p=>p.word))].length;
+  const rdTot=(RDU||[]).length||20;
+  document.getElementById('home-rdtxt').textContent=rdDone+'/'+rdTot+' บท';
   const rec=[...PROG].reverse().slice(0,5),el=document.getElementById('home-recent');
   if(!rec.length){el.innerHTML='<div class="empty" style="padding:10px 0"><span class="empty-ico">📖</span>เริ่มเรียนเพื่อดูประวัติ</div>';return;}
   el.innerHTML=rec.map(p=>'<div class="hi"><div class="hd '+(p.result==='ok'?'ok':p.result==='fail'?'fl':'ln')+'"></div><div style="flex:1"><div class="hw">'+p.word+'</div><div class="hm">'+mL(p.mode)+'</div></div><div class="ht">'+p.date+'</div></div>').join('');
 }
-function mL(m){return{flash:'แฟลช',random:'สุ่ม',test_ok:'ทดสอบ ✓',test_fail:'ทดสอบ ✗',syn:'Synonym',listenlesson:'ฟังบทเรียน',listentest:'ทดสอบฟัง',writinglesson:'เขียนบทเรียน',writingtest:'ทดสอบเขียน',writingpractice:'ฝึกเขียนจับเวลา',speaklesson:'ฝึกพูด',speaktest:'ทดสอบพูด'}[m]||m;}
+function mL(m){return{flash:'แฟลช',random:'สุ่ม',test_ok:'ทดสอบ ✓',test_fail:'ทดสอบ ✗',syn:'Synonym',listenlesson:'ฟังบทเรียน',listentest:'ทดสอบฟัง',writinglesson:'เขียนบทเรียน',writingtest:'ทดสอบเขียน',writingpractice:'ฝึกเขียนจับเวลา',speaklesson:'ฝึกพูด',speaktest:'ทดสอบพูด',readlesson:'อ่านบทเรียน',readtest:'ทดสอบอ่าน'}[m]||m;}
 function applyHdr(){
   document.getElementById('hdr-sub').textContent=CFG.name?'สวัสดี '+CFG.name:'เรียนภาษาอังกฤษ';
   const ln=[...new Set(PROG.map(p=>p.word))].length;
@@ -3083,6 +3230,235 @@ function showSpeakTResult(){
   document.getElementById('sptr-w').textContent=w;
   const msgs=[[90,'🏆 ยอดเยี่ยม!'],[70,'👍 ดีมาก!'],[50,'📚 พอใช้ได้'],[0,'💪 ฝึกต่อไปนะ']];
   document.getElementById('sptr-msg').textContent=(msgs.find(m=>pct>=m[0])||msgs[3])[1];
+  updateStats();renderHome();
+}
+
+// ── Reading Module (CEFR A1→C2) ──
+let RDU=null,RDP=null;
+function ensureReading(){
+  if(RDU!==null&&RDP!==null)return Promise.resolve();
+  const p1=fetch(DATA_BASE+'reading_units.json').then(r=>r.json()).catch(()=>[]);
+  const p2=fetch(DATA_BASE+'reading_unit_practice.json').then(r=>r.json()).catch(()=>[]);
+  return Promise.all([p1,p2]).then(([u,p])=>{RDU=u||[];RDP=p||[];});
+}
+function readLevels(){return['A1','A2','B1','B2','C1C2'];}
+function readLevelLabel(l){return{A1:'A1 (Beginner)',A2:'A2 (Elementary)',B1:'B1 (Intermediate)',B2:'B2 (Upper-Int)',C1C2:'C1-C2 (Advanced)'}[l]||l;}
+function readPool(level){return(RDP||[]).filter(q=>!level||level==='ALL'||q.level===level);}
+const RD_QTYPE_LBL={gist:'จับใจความสำคัญ',detail:'หารายละเอียด',inference:'อนุมานจากบริบท',vocab:'คำศัพท์ในบริบท'};
+
+function renderReadingHub(){
+  const rdDone=[...new Set(PROG.filter(p=>p.mode==='readlesson'&&p.result==='ok').map(p=>p.word))].length;
+  const tot=(RDU||[]).length||1;
+  const pct=Math.min(100,Math.round(rdDone/tot*100));
+  document.getElementById('reading-hub-pct').textContent=pct+'%';
+  document.getElementById('reading-hub-bar').style.width=pct+'%';
+}
+
+function readUnitCardHTML(u){
+  const preHtml=(u.preteach||[]).map(p=>'<div class="gl-ex"><div class="gl-ex-n">🔤</div><div class="gl-ex-en"><b style="color:var(--gd)">'+esc(p.word)+'</b> — '+esc(p.meaning)+'<div style="font-size:12px;color:var(--tx2);margin-top:3px">'+esc(p.example)+'</div></div></div>').join('');
+  const kpHtml=(u.keyPoints||[]).map(k=>'<div class="gl-summary-item"><b style="color:var(--tx)">'+esc(k.phrase)+'</b> — '+esc(k.explain)+'</div>').join('');
+  return'<div class="fcard">'
+    +'<div class="fcard-top"><span class="fcard-tag" style="background:rgba(212,168,75,.15);color:var(--gd)">Unit '+u.unit+' · '+esc(readLevelLabel(u.level))+'</span><span class="fcard-tag" style="background:rgba(255,255,255,.06);color:var(--tx2)">'+esc(u.topic)+'</span></div>'
+    +'<div class="fcard-word" style="font-size:22px;line-height:1.35;margin-bottom:16px">'+esc(u.title)+'</div>'
+    +(preHtml?'<div class="gl-block"><div class="gl-sec">🔤 คำศัพท์ปูพื้นก่อนอ่าน</div>'+preHtml+'</div>':'')
+    +'<div class="gl-block"><div class="gl-sec">📖 บทอ่าน</div><div class="gkh-passage">'+esc(u.passage)+'</div></div>'
+    +'<div class="gl-block"><div class="row" style="gap:8px"><button class="btn bout" style="flex:1" onclick="toggleURTranslation()">🇹🇭 แสดง/ซ่อนคำแปล</button></div>'
+    +'<div id="ur-translation" style="display:none;margin-top:10px" class="gkh-passage">'+esc(u.translation)+'</div></div>'
+    +(kpHtml?'<div class="gl-block"><div class="gl-sec">💡 สำนวน/โครงสร้างสำคัญ</div><div class="gl-summary">'+kpHtml+'</div></div>':'')
+    +'</div>';
+}
+function toggleURTranslation(){
+  const el=document.getElementById('ur-translation');
+  if(el)el.style.display=el.style.display==='none'?'block':'none';
+}
+
+function buildReadPkg(){
+  const hist={};
+  PROG.filter(p=>p.mode==='readlesson').forEach(p=>{
+    if(!hist[p.word])hist[p.word]={o:0,f:0};
+    if(p.result==='ok')hist[p.word].o++;else hist[p.word].f++;
+  });
+  const pool=RDU||[];
+  const nL=[],wL=[],oL=[];
+  pool.forEach(l=>{const h=hist['rd_u'+l.unit];if(!h)nL.push(l);else if(h.f>0&&h.o===0)wL.push(l);else oL.push(l);});
+  const pick=(a,k)=>shuf([...a]).slice(0,k);
+  const n=Math.min(5,pool.length);
+  let sel=[...pick(nL,Math.ceil(n*.6)),...pick(wL,Math.floor(n*.25)),...pick(oL,Math.floor(n*.15))];
+  if(sel.length<n){const u=new Set(sel.map(x=>x.unit));sel.push(...pick([...nL,...oL,...wL].filter(x=>!u.has(x.unit)),n-sel.length));}
+  return sel.slice(0,n);
+}
+async function startReadLesson(){
+  await ensureReading();
+  rdCards=shuf(buildReadPkg());rdIdx=0;
+  if(!rdCards.length){
+    document.getElementById('rl-body').innerHTML='<div class="empty"><span class="empty-ico">🎉</span>ยังไม่มีบทเรียน หรืออ่านครบแล้ว</div>';
+    document.getElementById('rl-ctrl').style.display='none';document.getElementById('rl-start').style.display='block';
+    return;
+  }
+  document.getElementById('rl-start').style.display='none';
+  document.getElementById('rl-ctrl').style.display='block';
+  renderReadLesson();
+}
+function renderReadLesson(){
+  if(!rdCards.length)return;
+  document.getElementById('rl-ctr').textContent=(rdIdx+1)+'/'+rdCards.length;
+  document.getElementById('rl-body').innerHTML=readUnitCardHTML(rdCards[rdIdx]);
+}
+function markReadLesson(res){
+  const l=rdCards[rdIdx];if(!l)return;
+  addProg({word:'rd_u'+l.unit,mode:'readlesson',result:res});
+  nextReadLesson();
+}
+function nextReadLesson(){if(rdIdx<rdCards.length-1){rdIdx++;renderReadLesson();}else endReadLesson();}
+function prevReadLesson(){if(rdIdx>0){rdIdx--;renderReadLesson();}}
+function endReadLesson(){
+  document.getElementById('rl-body').innerHTML='<div class="empty"><span class="empty-ico">🎉</span>จบบทเรียนอ่านวันนี้แล้ว!</div>';
+  document.getElementById('rl-ctrl').style.display='none';
+  document.getElementById('rl-start').style.display='block';
+  renderHome();renderReadingHub();toast('🎉 จบบทเรียนอ่านแล้ว!');
+}
+
+async function renderReadLevels(){
+  await ensureReading();
+  const el=document.getElementById('readlevels-list');
+  const hist={};
+  PROG.filter(p=>p.mode==='readlesson'&&p.result==='ok').forEach(p=>hist[p.word]=true);
+  el.innerHTML=readLevels().map(l=>{
+    const units=(RDU||[]).filter(u=>u.level===l);
+    const done=units.filter(u=>hist['rd_u'+u.unit]).length;
+    return'<div class="gt-topic-row" onclick="goSc(\'readunits\');renderReadUnitsList(\''+l+'\')">'
+      +'<div><div style="font-size:14px;font-weight:600;color:var(--tx)">'+esc(readLevelLabel(l))+'</div>'
+      +'<div style="font-size:11px;color:var(--tx2);margin-top:2px">'+done+'/'+units.length+' บท</div></div>'
+      +'<svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>'
+      +'</div>';
+  }).join('');
+}
+window._ruLevel=null;
+async function renderReadUnitsList(level){
+  await ensureReading();
+  window._ruLevel=level;
+  document.getElementById('ru-level-title').textContent=readLevelLabel(level);
+  const units=(RDU||[]).filter(u=>u.level===level).sort((a,b)=>a.unit-b.unit);
+  const done={};
+  PROG.filter(p=>p.mode==='readlesson'&&p.result==='ok').forEach(p=>done[p.word]=true);
+  document.getElementById('readunits-list').innerHTML=units.map(u=>{
+    const read=!!done['rd_u'+u.unit];
+    return'<div class="gt-topic-row" onclick="goSc(\'unitread\');startUnitRead('+u.unit+')">'
+      +'<div><div style="font-size:14px;font-weight:600;color:var(--tx)">Unit '+u.unit+' · '+esc(u.title)+'</div>'
+      +'<div style="font-size:11px;color:var(--tx2);margin-top:2px">'+esc(u.topic)+' · '+(read?'<span style="color:var(--gr)">✓ อ่านแล้ว</span>':'<span>ยังไม่ได้อ่าน</span>')+'</div></div>'
+      +'<svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--tx3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><path d="M9 18l6-6-6-6"/></svg>'
+      +'</div>';
+  }).join('');
+}
+let urUnit=null;
+async function startUnitRead(unitNum){
+  await ensureReading();
+  urUnit=(RDU||[]).find(u=>u.unit===unitNum);
+  if(!urUnit){toast('ไม่พบบทเรียนนี้');return;}
+  document.getElementById('ur-body').innerHTML=readUnitCardHTML(urUnit);
+  document.getElementById('ur-ctr').textContent='Unit '+urUnit.unit;
+  document.getElementById('ur-scroll').scrollTop=0;
+  addProg({word:'rd_u'+urUnit.unit,mode:'readlesson',result:'ok'});
+  const nextUnit=(RDU||[]).filter(u=>u.level===urUnit.level).sort((a,b)=>a.unit-b.unit).find(u=>u.unit>urUnit.unit);
+  document.getElementById('ur-foot').innerHTML=nextUnit
+    ?'<button class="bgold" onclick="startUnitRead('+nextUnit.unit+')">✓ เข้าใจแล้ว บทถัดไป: Unit '+nextUnit.unit+' →</button>'
+    :'<button class="bgold" onclick="goSc(\'readunits\')">✓ เข้าใจแล้ว กลับไปรายการบท</button>';
+  renderHome();renderReadingHub();
+}
+
+async function showReadTStart(){
+  await ensureReading();
+  document.getElementById('rt-start').style.display='block';
+  document.getElementById('rt-quiz').style.display='none';
+  document.getElementById('rt-result').style.display='none';
+  document.getElementById('rt-menu').innerHTML=readLevels().map(l=>{
+    const n=readPool(l).length;
+    return'<div class="mc" onclick="startReadTest(\''+l+'\')"><div class="mc-t" style="font-size:13px">'+esc(readLevelLabel(l))+'</div><div class="mc-d">'+n+' ข้อ</div></div>';
+  }).join('');
+}
+async function startReadTest(level){
+  await ensureReading();
+  window._rtMode=level;
+  const pool=readPool(level);
+  if(!pool.length){toast('ยังไม่มีข้อสอบในระดับนี้');return;}
+  const hist={};
+  PROG.filter(p=>p.mode==='readtest'&&p.word.startsWith('rq_')).forEach(p=>{
+    const id=p.word.slice(3);
+    if(!hist[id])hist[id]={ok:0,fail:0};
+    if(p.result==='ok')hist[id].ok++;else hist[id].fail++;
+  });
+  const newQs=pool.filter(q=>!hist[q.id]);
+  const wrongQs=pool.filter(q=>hist[q.id]&&hist[q.id].fail>0&&hist[q.id].ok===0);
+  const doneQs=pool.filter(q=>hist[q.id]&&hist[q.id].ok>0);
+  const N=10;
+  const pick=(arr,n)=>shuf([...arr]).slice(0,n);
+  let picked=[...pick(wrongQs,Math.round(N*0.35)),...pick(doneQs,Math.round(N*0.15)),...pick(newQs,Math.round(N*0.50))];
+  if(picked.length<N){
+    const used=new Set(picked.map(q=>q.id));
+    const fill=shuf(pool.filter(q=>!used.has(q.id)));
+    fill.forEach(q=>{if(picked.length<N&&!used.has(q.id)){picked.push(q);used.add(q.id);}});
+  }
+  if(picked.length<N&&level&&level!=='ALL'){
+    const used=new Set(picked.map(q=>q.id));
+    const fillOther=shuf(readPool('ALL').filter(q=>!used.has(q.id)));
+    fillOther.forEach(q=>{if(picked.length<N&&!used.has(q.id)){picked.push(q);used.add(q.id);}});
+  }
+  rtQs=shuf(picked).slice(0,N);
+  rtIdx=0;rtOk=0;rtFail=[];
+  document.getElementById('rt-start').style.display='none';
+  document.getElementById('rt-quiz').style.display='flex';
+  document.getElementById('rt-result').style.display='none';
+  document.getElementById('rt-tot').textContent=rtQs.length;
+  renderReadTQ();
+}
+function renderReadTQ(){
+  if(rtIdx>=rtQs.length){showReadTResult();return;}
+  const q=rtQs[rtIdx];
+  const u=(RDU||[]).find(x=>x.unit===q.unit);
+  document.getElementById('rt-prog').style.width=(rtIdx/rtQs.length*100)+'%';
+  document.getElementById('rt-qn').textContent=rtIdx+1;
+  document.getElementById('rt-sc').textContent=rtOk;
+  document.getElementById('rt-type').textContent=(RD_QTYPE_LBL[q.qtype]||q.qtype)+' · '+readLevelLabel(q.level);
+  document.getElementById('rt-passage').textContent=u?u.passage:'';
+  document.getElementById('rt-passage').scrollTop=0;
+  document.getElementById('rt-qbody').innerHTML='<div class="gkh-qbody">'+esc(q.text||'')+'</div>';
+  const fb=document.getElementById('rt-fb');fb.className='fb';fb.textContent='';fb.style.flexDirection='';fb.style.alignItems='';
+  document.getElementById('rt-next').style.visibility='hidden';
+  const GOPT='width:100%;display:flex;align-items:center;background:var(--sf2);border:1.5px solid var(--br2);border-radius:10px;padding:10px 16px;font-family:Sarabun,sans-serif;font-size:14px;font-weight:500;color:var(--tx);cursor:pointer;text-align:left;line-height:1.4;overflow:hidden;transition:all .12s;-webkit-user-select:none;box-sizing:border-box';
+  document.getElementById('rt-choices').innerHTML=[1,2,3,4].map(i=>'<button style="'+GOPT+'" onclick="ansReadTQ('+i+')">'+esc(q.choices[String(i)]||'')+'</button>').join('');
+}
+function readMarkResult(q,ok,correctDisplay){
+  const fb=document.getElementById('rt-fb');
+  fb.style.flexDirection='column';fb.style.alignItems='flex-start';
+  const why=q.explain||'';
+  if(ok){rtOk++;fb.className='fb fb-ok on';fb.innerHTML='<div>✓ ถูกต้อง!</div><div style="margin-top:6px;font-size:12px;line-height:1.6;opacity:.9">'+esc(why)+'</div>';}
+  else{rtFail.push(q);fb.className='fb fb-fail on';fb.innerHTML='<div>✗ ผิด! เฉลย: <b>'+esc(correctDisplay)+'</b></div><div style="margin-top:6px;font-size:12px;line-height:1.6;opacity:.9">'+esc(why)+'</div>';}
+  addProg({word:'rq_'+q.id,mode:'readtest',result:ok?'ok':'fail'});
+  document.getElementById('rt-next').style.visibility='visible';
+}
+function ansReadTQ(i){
+  const q=rtQs[rtIdx];const ok=i===q.answer;
+  const btns=document.querySelectorAll('#rt-choices button');
+  btns.forEach((b,j)=>{b.disabled=true;if(j+1===q.answer){b.style.background='var(--gr2)';b.style.borderColor='var(--gr)';b.style.color='var(--gr)';}});
+  const sel=btns[i-1];if(ok){sel.style.background='var(--gr2)';sel.style.borderColor='var(--gr)';sel.style.color='var(--gr)';}else{sel.style.background='var(--rd2)';sel.style.borderColor='var(--rd)';sel.style.color='var(--rd)';}
+  readMarkResult(q,ok,q.choices[String(q.answer)]);
+}
+function nextReadTQ(){rtIdx++;renderReadTQ();}
+function showReadTResult(){
+  document.getElementById('rt-quiz').style.display='none';
+  document.getElementById('rt-result').style.display='flex';
+  const tot=rtQs.length,c=rtOk,w=tot-c,pct=tot?Math.round(c/tot*100):0;
+  document.getElementById('rtr-n').textContent=c;
+  document.getElementById('rtr-tot').textContent=tot;
+  document.getElementById('rtr-c').textContent=c;
+  document.getElementById('rtr-w').textContent=w;
+  const msgs=[[90,'🏆 ยอดเยี่ยม!'],[70,'👍 ดีมาก!'],[50,'📚 พอใช้ได้'],[0,'💪 ฝึกต่อไปนะ']];
+  document.getElementById('rtr-msg').textContent=(msgs.find(m=>pct>=m[0])||msgs[3])[1];
+  const ww=document.getElementById('rtr-wrong-wrap');
+  if(rtFail.length){
+    ww.style.display='block';
+    document.getElementById('rtr-wrong-list').innerHTML=rtFail.map(q=>'<div class="hi"><div class="hd fl"></div><div style="flex:1"><div class="hw" style="font-size:12px;line-height:1.4">'+esc((q.text||'').slice(0,80))+'</div><div class="hm">เฉลย: '+esc(q.choices[String(q.answer)])+'</div></div></div>').join('');
+  }else ww.style.display='none';
   updateStats();renderHome();
 }
 
